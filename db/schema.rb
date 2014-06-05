@@ -13,31 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20140605063610) do
 
-  create_table "document_types", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "inicios", force: true do |t|
     t.string   "index"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "personas", force: true do |t|
-    t.string   "nombre"
-    t.string   "apellido"
-    t.string   "telefono"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "password"
-    t.string   "remember_session"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
