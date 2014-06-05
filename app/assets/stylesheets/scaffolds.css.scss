@@ -67,3 +67,38 @@ div {
     list-style: square;
   }
 }
+/* footer */
+
+footer {
+  position:absolute;
+  bottom:0px;
+  left:30px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  width:95%;
+  height:40px;
+  padding-top:10px;
+  padding-left:50px;
+}
+
+footer a {
+  color: #555;
+}  
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
