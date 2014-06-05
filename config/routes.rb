@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :type_changes
-
   resources :modalities_types
 
   resources :type_rules
