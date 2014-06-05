@@ -1,3 +1,9 @@
+Introducción
+
+Road Sport es un software basado en los procesos deportivos que se pueden llevar a cabo dentro de una institución educativa
+y en donde le aporta a un control de los procesos y una independencia para que los usuarios se inscriban de manera autónoma
+a los diferentes eventos deportivos, torneos y demás actividades para el desarrollo integral de los estudiantes.
+
 == README
 
 This README would normally document whatever steps are necessary to get the
