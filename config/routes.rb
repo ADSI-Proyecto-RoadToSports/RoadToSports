@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  resources :type_changes
+
+  resources :modalities_types
+
+  resources :type_rules
+
+  resources :type_tournaments
+
+  resources :type_preferences
+
+  resources :type_configurations
+
+  resources :type_informations
+
+  resources :new_types
+
+  resources :type_roles
+
+  resources :document_types
+
   match '/home', to: 'static_pages#home',  via: 'get'
   match '/help',    to: 'static_pages#help',  via: 'get'
   match '/about',   to: 'static_pages#about',  via: 'get'

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @modalities_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @modalities_type.description %>
+</p>
+
+<%= link_to 'Edit', edit_modalities_type_path(@modalities_type) %> |
+<%= link_to 'Back', modalities_types_path %>

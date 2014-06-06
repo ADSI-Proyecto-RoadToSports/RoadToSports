@@ -1,0 +1,2 @@
+module NewTypesHelper
+end

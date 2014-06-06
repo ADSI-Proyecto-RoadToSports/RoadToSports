@@ -1,0 +1,27 @@
+<h1>Listing type_roles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @type_roles.each do |type_role| %>
+      <tr>
+        <td><%= type_role.name %></td>
+        <td><%= type_role.description %></td>
+        <td><%= link_to 'Show', type_role %></td>
+        <td><%= link_to 'Edit', edit_type_role_path(type_role) %></td>
+        <td><%= link_to 'Destroy', type_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Type role', new_type_role_path %>
