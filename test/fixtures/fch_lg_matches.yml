@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  strart_date: 2014-06-06
+  ending_date: 2014-06-06
+  place: MyString
+  description: MyText
+  team: MyString
+  tournament_id: 
+
+two:
+  strart_date: 2014-06-06
+  ending_date: 2014-06-06
+  place: MyString
+  description: MyText
+  team: MyString
+  tournament_id: 

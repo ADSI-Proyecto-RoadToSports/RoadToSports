@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pre_registration.name %>
+</p>
+
+<p>
+  <strong>Modalities:</strong>
+  <%= @pre_registration.modalities %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @pre_registration.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pre_registration.user %>
+</p>
+
+<p>
+  <strong>Tournament:</strong>
+  <%= @pre_registration.tournament %>
+</p>
+
+<p>
+  <strong>Acceptance:</strong>
+  <%= @pre_registration.acceptance %>
+</p>
+
+<%= link_to 'Edit', edit_pre_registration_path(@pre_registration) %> |
+<%= link_to 'Back', pre_registrations_path %>

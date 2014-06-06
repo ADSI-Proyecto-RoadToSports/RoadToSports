@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @novelty.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @novelty.description %>
+</p>
+
+<p>
+  <strong>New type:</strong>
+  <%= @novelty.new_type %>
+</p>
+
+<%= link_to 'Edit', edit_novelty_path(@novelty) %> |
+<%= link_to 'Back', novelties_path %>

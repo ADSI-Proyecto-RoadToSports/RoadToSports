@@ -1,4 +1,40 @@
 Rails.application.routes.draw do
+  resources :novelties
+
+  resources :sports
+
+  resources :pre_registrations
+
+  resources :matches
+
+  resources :scores
+
+  resources :teams
+
+  resources :fch_lg_matches
+
+  resources :modalities
+
+  resources :tournaments
+
+  resources :acceptances
+
+  resources :preferences
+
+  resources :sessions
+
+  resources :information
+
+  resources :activities
+
+  resources :constituents
+
+  resources :rules
+
+  resources :configurations
+
+  resources :users
+
   resources :modalities_types
 
   resources :type_rules
@@ -12,8 +48,6 @@ Rails.application.routes.draw do
   resources :type_informations
 
   resources :new_types
-
-  resources :type_roles
 
   resources :document_types
 

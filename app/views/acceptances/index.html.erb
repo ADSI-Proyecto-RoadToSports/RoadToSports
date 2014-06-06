@@ -1,0 +1,27 @@
+<h1>Listing acceptances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @acceptances.each do |acceptance| %>
+      <tr>
+        <td><%= acceptance.description %></td>
+        <td><%= acceptance.user %></td>
+        <td><%= link_to 'Show', acceptance %></td>
+        <td><%= link_to 'Edit', edit_acceptance_path(acceptance) %></td>
+        <td><%= link_to 'Destroy', acceptance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Acceptance', new_acceptance_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Strart date:</strong>
+  <%= @fch_lg_match.strart_date %>
+</p>
+
+<p>
+  <strong>Ending date:</strong>
+  <%= @fch_lg_match.ending_date %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @fch_lg_match.place %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fch_lg_match.description %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @fch_lg_match.team %>
+</p>
+
+<p>
+  <strong>Tournament:</strong>
+  <%= @fch_lg_match.tournament %>
+</p>
+
+<%= link_to 'Edit', edit_fch_lg_match_path(@fch_lg_match) %> |
+<%= link_to 'Back', fch_lg_matches_path %>

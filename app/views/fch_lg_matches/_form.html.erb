@@ -1,0 +1,41 @@
+<%= form_for(@fch_lg_match) do |f| %>
+  <% if @fch_lg_match.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fch_lg_match.errors.count, "error") %> prohibited this fch_lg_match from being saved:</h2>
+
+      <ul>
+      <% @fch_lg_match.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :strart_date %><br>
+    <%= f.date_select :strart_date %>
+  </div>
+  <div class="field">
+    <%= f.label :ending_date %><br>
+    <%= f.date_select :ending_date %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :team %><br>
+    <%= f.text_field :team %>
+  </div>
+  <div class="field">
+    <%= f.label :tournament_id %><br>
+    <%= f.text_field :tournament_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

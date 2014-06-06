@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  state: false
+  type_information_id: 
+
+two:
+  description: MyText
+  state: false
+  type_information_id: 

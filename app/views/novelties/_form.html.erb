@@ -1,0 +1,29 @@
+<%= form_for(@novelty) do |f| %>
+  <% if @novelty.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@novelty.errors.count, "error") %> prohibited this novelty from being saved:</h2>
+
+      <ul>
+      <% @novelty.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :new_type_id %><br>
+    <%= f.text_field :new_type_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
