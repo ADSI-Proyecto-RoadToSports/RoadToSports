@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'usuario/index'
+
   resources :novelties
 
   resources :sports

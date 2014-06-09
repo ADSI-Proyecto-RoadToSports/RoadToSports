@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606093420) do
+ActiveRecord::Schema.define(version: 20140609131828) do
 
   create_table "acceptances", force: true do |t|
     t.text     "description"
@@ -135,16 +135,6 @@ ActiveRecord::Schema.define(version: 20140606093420) do
     t.datetime "updated_at"
   end
 
-  create_table "news", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "new_type_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "news", ["new_type_id"], name: "index_news_on_new_type_id"
-
   create_table "novelties", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -205,6 +195,16 @@ ActiveRecord::Schema.define(version: 20140606093420) do
   add_index "scores", ["modalitie_id"], name: "index_scores_on_modalitie_id"
   add_index "scores", ["team_id"], name: "index_scores_on_team_id"
 
+  create_table "sessions", force: true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["user_id"], name: "index_sessions_on_user_id"
+
   create_table "sports", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -239,13 +239,6 @@ ActiveRecord::Schema.define(version: 20140606093420) do
 
   add_index "tournaments", ["acceptance_id"], name: "index_tournaments_on_acceptance_id"
   add_index "tournaments", ["type_tournament_id"], name: "index_tournaments_on_type_tournament_id"
-
-  create_table "type_changes", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "type_configurations", force: true do |t|
     t.string   "name"
@@ -306,5 +299,11 @@ ActiveRecord::Schema.define(version: 20140606093420) do
   end
 
   add_index "users", ["document_type_id"], name: "index_users_on_document_type_id"
+
+  create_table "usuarios", force: true do |t|
+    t.string   "index"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
