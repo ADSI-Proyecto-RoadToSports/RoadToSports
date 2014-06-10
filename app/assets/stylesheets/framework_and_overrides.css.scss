@@ -43,3 +43,9 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+.menu li ul{display:none; position:absolute;}
+.menu li ul li {display:block; float:none;
+position:relative; padding:0px;}
+.menu li:hover ul{display:block; padding-left:0px;}
+.menu li ul li a{display:block;}

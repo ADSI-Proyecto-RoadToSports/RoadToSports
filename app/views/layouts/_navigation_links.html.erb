@@ -1,3 +1,17 @@
 <%# add navigation links to this file %>
-<li><%= link_to "Usuarios", controller: "usuario", action: "index" %></li>
+<li><%= link_to 'Road To Sports ▼', root_path, class: 'navbar-brand' %>
+	<ul class="dropdown-menu">
+		<li><a href="#">Torneos</a></li>
+	    <li><a href="#">Galeria</a></li>
+	    <li><a href="#">Noveades</a></li>
+	</ul>
+</li>
+<li><%= link_to "Usuarios ▼", controller: "usuario", action: "index" %>
+	<ul class="dropdown-menu">
+		<li><a href="#">Pre-Inscripción</a></li>
+	    <li><a href="#">Equipo</a></li>
+	    <li><a href="#">Partidos</a></li>
+	    <li><a href="#">Reglas</a></li>
+	</ul>
+</li>
 <li><%= link_to "Administración", "#" %></li>
