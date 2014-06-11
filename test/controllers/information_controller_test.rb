@@ -18,7 +18,7 @@ class InformationControllerTest < ActionController::TestCase
 
   test "should create information" do
     assert_difference('Information.count') do
-      post :create, information: { description: @information.description, state: @information.state, type_information_id: @information.type_information_id }
+      post :create, information: { description: @information.description, state: @information.state, typeinformation_id: @information.typeinformation_id }
     end
 
     assert_redirected_to information_path(assigns(:information))
@@ -35,7 +35,7 @@ class InformationControllerTest < ActionController::TestCase
   end
 
   test "should update information" do
-    patch :update, id: @information, information: { description: @information.description, state: @information.state, type_information_id: @information.type_information_id }
+    patch :update, id: @information, information: { description: @information.description, state: @information.state, typeinformation_id: @information.typeinformation_id }
     assert_redirected_to information_path(assigns(:information))
   end
 

@@ -2,12 +2,12 @@
 
 one:
   description: MyText
-  date_score: 2014-06-06
+  datescore: 2014-06-11
   modalitie_id: 
   team_id: 
 
 two:
   description: MyText
-  date_score: 2014-06-06
+  datescore: 2014-06-11
   modalitie_id: 
   team_id: 

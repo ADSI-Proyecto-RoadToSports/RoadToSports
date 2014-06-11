@@ -69,6 +69,6 @@ class AcceptancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def acceptance_params
-      params.require(:acceptance).permit(:description, :user_id)
+      params.require(:acceptance).permit(:description, :user_id, :rol_id)
     end
 end

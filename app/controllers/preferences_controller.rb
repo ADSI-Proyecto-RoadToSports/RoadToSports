@@ -69,6 +69,6 @@ class PreferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def preference_params
-      params.require(:preference).permit(:name, :description, :type_preference_id, :session_id)
+      params.require(:preference).permit(:name, :description, :typepreference_id, :session_id)
     end
 end

@@ -4,10 +4,8 @@ one:
   name: MyString
   description: MyText
   state: false
-  type_rule_id: 
 
 two:
   name: MyString
   description: MyText
   state: false
-  type_rule_id: 

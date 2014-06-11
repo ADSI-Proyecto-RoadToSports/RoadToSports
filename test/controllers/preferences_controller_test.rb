@@ -18,7 +18,7 @@ class PreferencesControllerTest < ActionController::TestCase
 
   test "should create preference" do
     assert_difference('Preference.count') do
-      post :create, preference: { description: @preference.description, name: @preference.name, session_id: @preference.session_id, type_preference_id: @preference.type_preference_id }
+      post :create, preference: { description: @preference.description, name: @preference.name, session_id: @preference.session_id, typepreference_id: @preference.typepreference_id }
     end
 
     assert_redirected_to preference_path(assigns(:preference))
@@ -35,7 +35,7 @@ class PreferencesControllerTest < ActionController::TestCase
   end
 
   test "should update preference" do
-    patch :update, id: @preference, preference: { description: @preference.description, name: @preference.name, session_id: @preference.session_id, type_preference_id: @preference.type_preference_id }
+    patch :update, id: @preference, preference: { description: @preference.description, name: @preference.name, session_id: @preference.session_id, typepreference_id: @preference.typepreference_id }
     assert_redirected_to preference_path(assigns(:preference))
   end
 

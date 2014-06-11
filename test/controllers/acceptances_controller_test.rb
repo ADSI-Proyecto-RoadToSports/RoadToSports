@@ -18,7 +18,7 @@ class AcceptancesControllerTest < ActionController::TestCase
 
   test "should create acceptance" do
     assert_difference('Acceptance.count') do
-      post :create, acceptance: { description: @acceptance.description, user_id: @acceptance.user_id }
+      post :create, acceptance: { description: @acceptance.description, rol_id: @acceptance.rol_id, user_id: @acceptance.user_id }
     end
 
     assert_redirected_to acceptance_path(assigns(:acceptance))
@@ -35,7 +35,7 @@ class AcceptancesControllerTest < ActionController::TestCase
   end
 
   test "should update acceptance" do
-    patch :update, id: @acceptance, acceptance: { description: @acceptance.description, user_id: @acceptance.user_id }
+    patch :update, id: @acceptance, acceptance: { description: @acceptance.description, rol_id: @acceptance.rol_id, user_id: @acceptance.user_id }
     assert_redirected_to acceptance_path(assigns(:acceptance))
   end
 

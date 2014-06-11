@@ -18,7 +18,7 @@ class FchLgMatchesControllerTest < ActionController::TestCase
 
   test "should create fch_lg_match" do
     assert_difference('FchLgMatch.count') do
-      post :create, fch_lg_match: { description: @fch_lg_match.description, ending_date: @fch_lg_match.ending_date, place: @fch_lg_match.place, strart_date: @fch_lg_match.strart_date, team: @fch_lg_match.team, tournament_id: @fch_lg_match.tournament_id }
+      post :create, fch_lg_match: { description: @fch_lg_match.description, endingdate: @fch_lg_match.endingdate, place: @fch_lg_match.place, startdate: @fch_lg_match.startdate, team: @fch_lg_match.team, tournament_id: @fch_lg_match.tournament_id }
     end
 
     assert_redirected_to fch_lg_match_path(assigns(:fch_lg_match))
@@ -35,7 +35,7 @@ class FchLgMatchesControllerTest < ActionController::TestCase
   end
 
   test "should update fch_lg_match" do
-    patch :update, id: @fch_lg_match, fch_lg_match: { description: @fch_lg_match.description, ending_date: @fch_lg_match.ending_date, place: @fch_lg_match.place, strart_date: @fch_lg_match.strart_date, team: @fch_lg_match.team, tournament_id: @fch_lg_match.tournament_id }
+    patch :update, id: @fch_lg_match, fch_lg_match: { description: @fch_lg_match.description, endingdate: @fch_lg_match.endingdate, place: @fch_lg_match.place, startdate: @fch_lg_match.startdate, team: @fch_lg_match.team, tournament_id: @fch_lg_match.tournament_id }
     assert_redirected_to fch_lg_match_path(assigns(:fch_lg_match))
   end
 

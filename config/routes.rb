@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'usuario/index'
-
-  resources :novelties
-
   resources :sports
 
   resources :pre_registrations
@@ -27,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :information
 
-  resources :activities
+  resources :novelties
 
   resources :constituents
 
@@ -36,6 +32,8 @@ Rails.application.routes.draw do
   resources :configurations
 
   resources :users
+
+  resources :activities
 
   resources :modalities_types
 
@@ -52,6 +50,8 @@ Rails.application.routes.draw do
   resources :new_types
 
   resources :document_types
+
+  get 'usuario/index'
 
   match '/home', to: 'static_pages#home',  via: 'get'
   match '/help',    to: 'static_pages#help',  via: 'get'

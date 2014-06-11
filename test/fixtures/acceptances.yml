@@ -3,7 +3,9 @@
 one:
   description: MyText
   user_id: 
+  rol_id: 
 
 two:
   description: MyText
   user_id: 
+  rol_id: 

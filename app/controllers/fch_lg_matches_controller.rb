@@ -69,6 +69,6 @@ class FchLgMatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fch_lg_match_params
-      params.require(:fch_lg_match).permit(:strart_date, :ending_date, :place, :description, :team, :tournament_id)
+      params.require(:fch_lg_match).permit(:startdate, :endingdate, :place, :description, :team, :tournament_id)
     end
 end

@@ -1,10 +1,11 @@
-<h1>Listado aceptaciones</h1>
+<h1>Listing acceptances</h1>
 
 <table>
   <thead>
     <tr>
       <th>Description</th>
       <th>User</th>
+      <th>Rol</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= acceptance.description %></td>
         <td><%= acceptance.user %></td>
+        <td><%= acceptance.rol %></td>
         <td><%= link_to 'Show', acceptance %></td>
         <td><%= link_to 'Edit', edit_acceptance_path(acceptance) %></td>
         <td><%= link_to 'Destroy', acceptance, method: :delete, data: { confirm: 'Are you sure?' } %></td>

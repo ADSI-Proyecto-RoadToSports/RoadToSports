@@ -2,16 +2,16 @@
 
 one:
   name: MyString
-  modalities: MyString
+  modalitiestype_id: 
   state: false
-  date: 2014-06-06
-  type_tournament_id: 
+  date: 2014-06-11
+  typetournament_id: 
   acceptance_id: 
 
 two:
   name: MyString
-  modalities: MyString
+  modalitiestype_id: 
   state: false
-  date: 2014-06-06
-  type_tournament_id: 
+  date: 2014-06-11
+  typetournament_id: 
   acceptance_id: 

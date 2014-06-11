@@ -18,7 +18,7 @@ class ConfigurationsControllerTest < ActionController::TestCase
 
   test "should create configuration" do
     assert_difference('Configuration.count') do
-      post :create, configuration: { description: @configuration.description, name: @configuration.name, type_configuration_id: @configuration.type_configuration_id, user_id: @configuration.user_id }
+      post :create, configuration: { description: @configuration.description, name: @configuration.name, typeconfiguration_id: @configuration.typeconfiguration_id, user_id: @configuration.user_id }
     end
 
     assert_redirected_to configuration_path(assigns(:configuration))
@@ -35,7 +35,7 @@ class ConfigurationsControllerTest < ActionController::TestCase
   end
 
   test "should update configuration" do
-    patch :update, id: @configuration, configuration: { description: @configuration.description, name: @configuration.name, type_configuration_id: @configuration.type_configuration_id, user_id: @configuration.user_id }
+    patch :update, id: @configuration, configuration: { description: @configuration.description, name: @configuration.name, typeconfiguration_id: @configuration.typeconfiguration_id, user_id: @configuration.user_id }
     assert_redirected_to configuration_path(assigns(:configuration))
   end
 

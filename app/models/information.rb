@@ -1,3 +1,3 @@
 class Information < ActiveRecord::Base
-  belongs_to :type_information
+  belongs_to :typeinformation
 end

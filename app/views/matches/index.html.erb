@@ -3,12 +3,12 @@
 <table>
   <thead>
     <tr>
-      <th>Team a</th>
-      <th>Team b</th>
+      <th>Teama</th>
+      <th>Teamb</th>
       <th>Modalitie</th>
       <th>Tournament</th>
       <th>Score</th>
-      <th>Fch lg match</th>
+      <th>Fchlgmatch</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,12 +16,12 @@
   <tbody>
     <% @matches.each do |match| %>
       <tr>
-        <td><%= match.team_a %></td>
-        <td><%= match.team_b %></td>
+        <td><%= match.teamA %></td>
+        <td><%= match.teamB %></td>
         <td><%= match.modalitie %></td>
         <td><%= match.tournament %></td>
         <td><%= match.score %></td>
-        <td><%= match.fch_lg_match %></td>
+        <td><%= match.fchlgmatch %></td>
         <td><%= link_to 'Show', match %></td>
         <td><%= link_to 'Edit', edit_match_path(match) %></td>
         <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -4,24 +4,24 @@ one:
   name: MyString
   apellido: MyString
   identification: MyString
-  birthday: 2014-06-06
+  birthday: 2014-06-11
   mail: MyString
   password: MyString
   address: MyString
   phone: MyString
   gender: false
   picture: MyString
-  document_type_id: 
+  documenttype_id: 
 
 two:
   name: MyString
   apellido: MyString
   identification: MyString
-  birthday: 2014-06-06
+  birthday: 2014-06-11
   mail: MyString
   password: MyString
   address: MyString
   phone: MyString
   gender: false
   picture: MyString
-  document_type_id: 
+  documenttype_id: 

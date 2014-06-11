@@ -4,10 +4,10 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Modalities</th>
+      <th>Modalitiestype</th>
       <th>State</th>
       <th>Date</th>
-      <th>Type tournament</th>
+      <th>Typetournament</th>
       <th>Acceptance</th>
       <th colspan="3"></th>
     </tr>
@@ -17,10 +17,10 @@
     <% @tournaments.each do |tournament| %>
       <tr>
         <td><%= tournament.name %></td>
-        <td><%= tournament.modalities %></td>
+        <td><%= tournament.modalitiestype %></td>
         <td><%= tournament.state %></td>
         <td><%= tournament.date %></td>
-        <td><%= tournament.type_tournament %></td>
+        <td><%= tournament.typetournament %></td>
         <td><%= tournament.acceptance %></td>
         <td><%= link_to 'Show', tournament %></td>
         <td><%= link_to 'Edit', edit_tournament_path(tournament) %></td>

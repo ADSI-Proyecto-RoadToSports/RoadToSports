@@ -3,9 +3,9 @@
 one:
   description: MyText
   state: false
-  type_information_id: 
+  typeinformation_id: 
 
 two:
   description: MyText
   state: false
-  type_information_id: 
+  typeinformation_id: 

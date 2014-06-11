@@ -18,7 +18,7 @@ class MatchesControllerTest < ActionController::TestCase
 
   test "should create match" do
     assert_difference('Match.count') do
-      post :create, match: { fch_lg_match_id: @match.fch_lg_match_id, modalitie_id: @match.modalitie_id, score_id: @match.score_id, team_a: @match.team_a, team_b: @match.team_b, tournament_id: @match.tournament_id }
+      post :create, match: { fchlgmatch_id: @match.fchlgmatch_id, modalitie_id: @match.modalitie_id, score_id: @match.score_id, teamA: @match.teamA, teamB: @match.teamB, tournament_id: @match.tournament_id }
     end
 
     assert_redirected_to match_path(assigns(:match))
@@ -35,7 +35,7 @@ class MatchesControllerTest < ActionController::TestCase
   end
 
   test "should update match" do
-    patch :update, id: @match, match: { fch_lg_match_id: @match.fch_lg_match_id, modalitie_id: @match.modalitie_id, score_id: @match.score_id, team_a: @match.team_a, team_b: @match.team_b, tournament_id: @match.tournament_id }
+    patch :update, id: @match, match: { fchlgmatch_id: @match.fchlgmatch_id, modalitie_id: @match.modalitie_id, score_id: @match.score_id, teamA: @match.teamA, teamB: @match.teamB, tournament_id: @match.tournament_id }
     assert_redirected_to match_path(assigns(:match))
   end
 

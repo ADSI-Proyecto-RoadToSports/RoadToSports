@@ -18,7 +18,7 @@ class NoveltiesControllerTest < ActionController::TestCase
 
   test "should create novelty" do
     assert_difference('Novelty.count') do
-      post :create, novelty: { description: @novelty.description, name: @novelty.name, new_type_id: @novelty.new_type_id }
+      post :create, novelty: { description: @novelty.description, name: @novelty.name, newtype_id: @novelty.newtype_id }
     end
 
     assert_redirected_to novelty_path(assigns(:novelty))
@@ -35,7 +35,7 @@ class NoveltiesControllerTest < ActionController::TestCase
   end
 
   test "should update novelty" do
-    patch :update, id: @novelty, novelty: { description: @novelty.description, name: @novelty.name, new_type_id: @novelty.new_type_id }
+    patch :update, id: @novelty, novelty: { description: @novelty.description, name: @novelty.name, newtype_id: @novelty.newtype_id }
     assert_redirected_to novelty_path(assigns(:novelty))
   end
 
