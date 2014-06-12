@@ -255,13 +255,6 @@ ActiveRecord::Schema.define(version: 20140612151412) do
   add_index "tournaments", ["modalitiestype_id"], name: "index_tournaments_on_modalitiestype_id"
   add_index "tournaments", ["typetournament_id"], name: "index_tournaments_on_typetournament_id"
 
-  create_table "type_changes", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "type_configurations", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -314,5 +307,11 @@ ActiveRecord::Schema.define(version: 20140612151412) do
   end
 
   add_index "users", ["documenttype_id"], name: "index_users_on_documenttype_id"
+
+  create_table "usuarios", force: true do |t|
+    t.string   "index"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
