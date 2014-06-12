@@ -1,17 +1,28 @@
 <%# add navigation links to this file %>
 <li><%= link_to 'Road To Sports ▼', root_path, class: 'navbar-brand' %>
 	<ul class="dropdown-menu">
-		<li><a href="#">Torneos</a></li>
+		<li><%= link_to "Torneos", tournaments_path %></li>
 	    <li><a href="#">Galeria</a></li>
-	    <li><a href="#">Noveades</a></li>
+	    <li><%= link_to "Novedades y Noticias", novelties_path %></li>
+	    <li><%= link_to "Actividades", activities_path %></li>
 	</ul>
 </li>
 <li><%= link_to "Usuarios ▼", controller: "usuario", action: "index" %>
 	<ul class="dropdown-menu">
-		<li><a href="#">Pre-Inscripción</a></li>
-	    <li><a href="#">Equipo</a></li>
-	    <li><a href="#">Partidos</a></li>
-	    <li><a href="#">Reglas</a></li>
+		<li><%= link_to "Pre-registros", new_pre_registration_path %></li>
+	    <li><%= link_to "Equipos", teams_path %></li>
+	    <li><%= link_to "Partidos realizados", matches_path %></li>
+	    <li><%= link_to "Partidos pendientes", fch_lg_matches_path %></li>
+	    <li><%= link_to "Puntajes", scores_path %></li>
+	    <li><%= link_to "Reglas", rules_path %></li>
 	</ul>
 </li>
-<li><%= link_to "Administración", "#" %></li>
+<li><%= link_to "Administración ▼", "#" %>
+	<ul class="dropdown-menu">
+		<li><%= link_to "Configuraciones de tipos", controller: "tipos_config", action: "index" %></li>
+		<li><%= link_to "Deportes", sports_path %></li>
+		<li><%= link_to "Modalidades", modalities_path %></li>
+		<li><%= link_to "Aceptaciones pendientes", acceptances_path %></li>
+
+	</ul>
+</li>

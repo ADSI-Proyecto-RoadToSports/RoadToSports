@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611144010) do
+ActiveRecord::Schema.define(version: 20140611162711) do
 
   create_table "acceptances", force: true do |t|
     t.text     "description"
@@ -224,6 +224,12 @@ ActiveRecord::Schema.define(version: 20140611144010) do
   end
 
   add_index "teams", ["modalities_id"], name: "index_teams_on_modalities_id"
+
+  create_table "tipos_configs", force: true do |t|
+    t.string   "index"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tournaments", force: true do |t|
     t.string   "name"

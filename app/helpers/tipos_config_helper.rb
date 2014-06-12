@@ -1,0 +1,2 @@
+module TiposConfigHelper
+end

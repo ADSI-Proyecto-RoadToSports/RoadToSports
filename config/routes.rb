@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tipos_config/index'
+
   resources :sports
 
   resources :pre_registrations
