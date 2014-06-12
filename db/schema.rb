@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611162711) do
+ActiveRecord::Schema.define(version: 20140612151412) do
 
   create_table "acceptances", force: true do |t|
     t.text     "description"
@@ -76,6 +76,15 @@ ActiveRecord::Schema.define(version: 20140611162711) do
   end
 
   add_index "fch_lg_matches", ["tournament_id"], name: "index_fch_lg_matches_on_tournament_id"
+
+  create_table "galleries", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "information", force: true do |t|
     t.text     "description"
@@ -298,11 +307,5 @@ ActiveRecord::Schema.define(version: 20140611162711) do
   end
 
   add_index "users", ["documenttype_id"], name: "index_users_on_documenttype_id"
-
-  create_table "usuarios", force: true do |t|
-    t.string   "index"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end
