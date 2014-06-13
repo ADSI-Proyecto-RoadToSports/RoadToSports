@@ -51,3 +51,5 @@ gem 'rails_layout'
 end
 
 gem 'paperclip'
+
+gem 'sorcery'
