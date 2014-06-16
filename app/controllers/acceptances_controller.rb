@@ -4,7 +4,7 @@ class AcceptancesController < ApplicationController
   # GET /acceptances
   # GET /acceptances.json
   def index
-    @acceptances = Acceptance.all
+    @acceptances = Acceptance.search(params[:search], params[:page])
   end
 
   # GET /acceptances/1

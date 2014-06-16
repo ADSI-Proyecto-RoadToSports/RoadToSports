@@ -4,7 +4,7 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.json
   def index
-    @galleries = Gallery.all
+    @galleries = Gallery.search(params[:search], params[:page])
   end
 
   # GET /galleries/1

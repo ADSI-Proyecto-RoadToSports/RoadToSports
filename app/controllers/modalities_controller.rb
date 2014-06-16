@@ -4,7 +4,7 @@ class ModalitiesController < ApplicationController
   # GET /modalities
   # GET /modalities.json
   def index
-    @modalities = Modalitie.all
+    @modalities = Modalitie.search(params[:search], params[:page])
   end
 
   # GET /modalities/1

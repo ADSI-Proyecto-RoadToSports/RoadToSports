@@ -7,7 +7,18 @@
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active in cont1" id="inicio">
 <h1>Listing galleries</h1>
+  <%= form_tag galleries_path, :method => 'get' do %> 
 
+   <% content_tag :label do %> 
+
+   Search term:
+   <%= text_field_tag :search, params[:search] %> 
+
+   <%= submit_tag "Buscar", :name => nil %> 
+
+   <% end %> 
+
+  <% end %>
 <table>
   <thead>
     <tr>
@@ -30,7 +41,11 @@
 
 <br>
 
-<%= link_to 'New Gallery', new_gallery_path %>
+<%= link_to 'New Gallery', new_gallery_path %><br>
+<%= will_paginate @galleries, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
+&raquo;' %> 
+<br> 
+Fotos: <%= @galleries.count %>
 </div>
 </div>
 </div>

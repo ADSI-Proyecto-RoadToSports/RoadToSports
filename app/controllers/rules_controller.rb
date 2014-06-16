@@ -4,7 +4,7 @@ class RulesController < ApplicationController
   # GET /rules
   # GET /rules.json
   def index
-    @rules = Rule.all
+    @rules = Rule.search(params[:search], params[:page])
   end
 
   # GET /rules/1

@@ -4,7 +4,7 @@ class PreRegistrationsController < ApplicationController
   # GET /pre_registrations
   # GET /pre_registrations.json
   def index
-    @pre_registrations = PreRegistration.all
+    @pre_registrations = PreRegistration.search(params[:search], params[:page])
   end
 
   # GET /pre_registrations/1

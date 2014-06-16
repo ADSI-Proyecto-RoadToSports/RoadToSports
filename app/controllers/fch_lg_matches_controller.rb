@@ -4,7 +4,7 @@ class FchLgMatchesController < ApplicationController
   # GET /fch_lg_matches
   # GET /fch_lg_matches.json
   def index
-    @fch_lg_matches = FchLgMatch.all
+    @fch_lg_matches = FchLgMatch.search(params[:search], params[:page])
   end
 
   # GET /fch_lg_matches/1
