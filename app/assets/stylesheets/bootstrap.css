@@ -3628,7 +3628,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .tab-content > .tab-pane {
   display: none;
-  height: 580px;
+  height: 570px;
   overflow-y:scroll;
   overflow-x:none;  
 }
