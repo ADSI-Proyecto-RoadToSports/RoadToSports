@@ -1,4 +1,6 @@
 class Acceptance < ActiveRecord::Base
+  has_many :pre_registrations
+  
   belongs_to :user
   belongs_to :rol
   def self.search(search, page)

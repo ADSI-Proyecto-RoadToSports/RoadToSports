@@ -22,11 +22,11 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Modalities type</th>
       <th>Players</th>
       <th>Activity</th>
       <th>Tournament</th>
-      <th>Modalities type</th>
+      <th>Sports</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,11 +34,12 @@
   <tbody>
     <% @modalities.each do |modality| %>
       <tr>
+        <td><%= modality.modalities_type %></td>
         <td><%= modality.name %></td>
         <td><%= modality.players %></td>
         <td><%= modality.activity %></td>
         <td><%= modality.tournament %></td>
-        <td><%= modality.modalities_type %></td>
+        <td><%= modality.sport %></td>
         <td><%= link_to 'Show', modality %></td>
         <td><%= link_to 'Edit', edit_modality_path(modality) %></td>
         <td><%= link_to 'Destroy', modality, method: :delete, data: { confirm: 'Are you sure?' } %></td>

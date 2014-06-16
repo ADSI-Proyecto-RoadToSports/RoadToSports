@@ -1,5 +1,7 @@
 class Sport < ActiveRecord::Base
-  belongs_to :modalitie
+  has_many :modalities
+  
+  belongs_to :modality
   belongs_to :rule
 
   def self.search(search, page)

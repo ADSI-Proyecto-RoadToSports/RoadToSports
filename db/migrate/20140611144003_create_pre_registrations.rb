@@ -2,7 +2,7 @@ class CreatePreRegistrations < ActiveRecord::Migration
   def change
     create_table :pre_registrations do |t|
       t.string :name
-      t.string :modalities
+      t.references :modality, index: true
       t.text :description
       t.references :user, index: true
       t.references :tournament, index: true

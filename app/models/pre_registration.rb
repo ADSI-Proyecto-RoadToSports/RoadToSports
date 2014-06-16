@@ -1,4 +1,5 @@
 class PreRegistration < ActiveRecord::Base
+  belongs_to :modality
   belongs_to :user
   belongs_to :tournament
   belongs_to :acceptance

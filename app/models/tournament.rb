@@ -1,4 +1,6 @@
 class Tournament < ActiveRecord::Base
+  has_many :pre_registrations
+  
   belongs_to :modalitiestype
   belongs_to :typetournament
   belongs_to :acceptance
