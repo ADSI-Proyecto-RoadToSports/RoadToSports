@@ -1,0 +1,29 @@
+<div class="contenido ">
+<div class="img1"></div>
+<div class="img2"></div>
+<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+  <li class="active"><a href="#documentos" data-toggle="tab">Tipos de documentos</a></li>
+  <li class=""><a href="#modalidad" data-toggle="tab">Tipos de modalidad</a></li>
+  <li class=""><a href="#novedad" data-toggle="tab">Tipos de novedades</a></li>
+  <li class=""><a href="#torneo" data-toggle="tab">Tipos de torneos</a></li>
+  <li class=""><a href="#reglas" data-toggle="tab">Tipos de reglas</a></li>
+  
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in" id="documentos">
+  	<%= render 'document_types/index' %>
+  </div>
+  <div class="tab-pane fade" id="modalidad">
+	<%= render 'modalities_types/index' %>
+  </div>
+  <div class="tab-pane fade" id="novedad">
+	<%= render 'new_types/index' %>
+  </div>
+  <div class="tab-pane fade" id="torneo">
+	<%= render 'type_tournaments/index' %>
+  </div>
+  <div class="tab-pane fade" id="reglas">
+	<%= render 'type_rules/index' %>
+  </div>
+</div>
+</div>

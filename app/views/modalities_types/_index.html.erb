@@ -1,0 +1,27 @@
+<h1>Listing modalities_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @modalities_types.each do |modalities_type| %>
+      <tr>
+        <td><%= modalities_type.name %></td>
+        <td><%= modalities_type.description %></td>
+        <td><%= link_to 'Show', modalities_type %></td>
+        <td><%= link_to 'Edit', edit_modalities_type_path(modalities_type) %></td>
+        <td><%= link_to 'Destroy', modalities_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Modalities type', new_modalities_type_path %>

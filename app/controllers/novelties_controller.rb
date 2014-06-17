@@ -4,7 +4,7 @@ class NoveltiesController < ApplicationController
   # GET /novelties
   # GET /novelties.json
   def index
-    @novelties = Novelty.all
+    @novelties = Novelty.search(params[:search], params[:page])
   end
 
   # GET /novelties/1

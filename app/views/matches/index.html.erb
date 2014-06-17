@@ -1,5 +1,24 @@
-<h1>Listing matches</h1>
+<div class="contenido ">
+<div class="img1"></div>
+<div class="img2"></div>
+<ul class="nav nav-tabs" style="margin-bottom: 15px;">
 
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in cont1" id="inicio">
+<h1>Listing matches</h1>
+<%= form_tag matches_path, :method => 'get' do %> 
+
+   <% content_tag :label do %> 
+
+   Search term:
+   <%= text_field_tag :search, params[:search] %> 
+
+   <%= submit_tag "Buscar", :name => nil %> 
+
+   <% end %> 
+
+  <% end %>
 <table>
   <thead>
     <tr>
@@ -32,4 +51,9 @@
 
 <br>
 
-<%= link_to 'New Match', new_match_path %>
+<%= link_to 'New Match', new_match_path %><br>
+<%= will_paginate @matches, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
+&raquo;' %> 
+<br> 
+Partidos: <%= @matches.count %>
+</div></div></div>

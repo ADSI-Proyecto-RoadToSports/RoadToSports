@@ -1,3 +1,5 @@
 class User < ActiveRecord::Base
-  belongs_to :documenttype
+  has_many :pre_regitrations
+  
+  belongs_to :document_type
 end

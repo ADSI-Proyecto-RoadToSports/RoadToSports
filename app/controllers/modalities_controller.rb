@@ -4,7 +4,7 @@ class ModalitiesController < ApplicationController
   # GET /modalities
   # GET /modalities.json
   def index
-    @modalities = Modalitie.all
+    @modalities = Modalitie.search(params[:search], params[:page])
   end
 
   # GET /modalities/1
@@ -69,6 +69,6 @@ class ModalitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def modality_params
-      params.require(:modality).permit(:name, :players, :activity_id, :tournament_id, :modalities_type_id)
+      params.require(:modality).permit( :modalities_type_id, :players, :activity_id, :tournament_id, :sport_id)
     end
 end

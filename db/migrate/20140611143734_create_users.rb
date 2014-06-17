@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :apellido
       t.string :identification
       t.date :birthday
-      t.string :mail
+      t.string :email
       t.string :password
       t.string :address
       t.string :phone
