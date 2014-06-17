@@ -4,7 +4,7 @@ class PreRegistrationsController < ApplicationController
   # GET /pre_registrations
   # GET /pre_registrations.json
   def index
-    @pre_registrations = PreRegistration.all
+    @pre_registrations = PreRegistration.search(params[:search], params[:page])
   end
 
   # GET /pre_registrations/1
@@ -69,6 +69,6 @@ class PreRegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pre_registration_params
-      params.require(:pre_registration).permit(:name, :modalities, :description, :user_id, :tournament_id, :acceptance_id)
+      params.require(:pre_registration).permit(:name, :modality_id, :description, :user_id, :tournament_id, :acceptance_id)
     end
 end

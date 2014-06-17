@@ -1,5 +1,24 @@
-<h1>Listing pre_registrations</h1>
+<div class="contenido ">
+<div class="img1"></div>
+<div class="img2"></div>
+<ul class="nav nav-tabs" style="margin-bottom: 15px;">
 
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in cont1" id="inicio">
+<h1>Listing pre_registrations</h1>
+<%= form_tag pre_registrations_path, :method => 'get' do %> 
+
+   <% content_tag :label do %> 
+
+   Search term:
+   <%= text_field_tag :search, params[:search] %> 
+
+   <%= submit_tag "Buscar", :name => nil %> 
+
+   <% end %> 
+
+  <% end %>
 <table>
   <thead>
     <tr>
@@ -17,11 +36,11 @@
     <% @pre_registrations.each do |pre_registration| %>
       <tr>
         <td><%= pre_registration.name %></td>
-        <td><%= pre_registration.modalities %></td>
+        <td><%= pre_registration.modality.name %></td>
         <td><%= pre_registration.description %></td>
         <td><%= pre_registration.user %></td>
-        <td><%= pre_registration.tournament %></td>
-        <td><%= pre_registration.acceptance %></td>
+        <td><%= pre_registration.tournament.name %></td>
+        <td><%= pre_registration.acceptance.name %></td>
         <td><%= link_to 'Show', pre_registration %></td>
         <td><%= link_to 'Edit', edit_pre_registration_path(pre_registration) %></td>
         <td><%= link_to 'Destroy', pre_registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,4 +51,9 @@
 
 <br>
 
-<%= link_to 'New Pre registration', new_pre_registration_path %>
+<%= link_to 'New Pre registration', new_pre_registration_path %><br>
+<%= will_paginate @pre_registrations, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
+&raquo;' %> 
+<br> 
+Pre-registros: <%= @pre_registrations.count %>
+</div></div></div>

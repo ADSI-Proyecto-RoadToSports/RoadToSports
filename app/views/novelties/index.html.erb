@@ -1,11 +1,30 @@
-<h1>Listing novelties</h1>
+<div class="contenido ">
+<div class="img1"></div>
+<div class="img2"></div>
+<ul class="nav nav-tabs" style="margin-bottom: 15px;">
 
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in cont1" id="inicio">
+<h1>Novedades y Noticias</h1>
+<%= form_tag novelties_path, :method => 'get' do %> 
+
+   <% content_tag :label do %> 
+
+   Search term:
+   <%= text_field_tag :search, params[:search] %> 
+
+   <%= submit_tag "Buscar", :name => nil %> 
+
+   <% end %> 
+
+  <% end %>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Newtype</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Tipo Novedad</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +35,9 @@
         <td><%= novelty.name %></td>
         <td><%= novelty.description %></td>
         <td><%= novelty.newtype %></td>
-        <td><%= link_to 'Show', novelty %></td>
-        <td><%= link_to 'Edit', edit_novelty_path(novelty) %></td>
-        <td><%= link_to 'Destroy', novelty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', novelty %></td>
+        <td><%= link_to 'Editar', edit_novelty_path(novelty) %></td>
+        <td><%= link_to 'Eliminar', novelty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +45,11 @@
 
 <br>
 
-<%= link_to 'New Novelty', new_novelty_path %>
+<%= link_to 'Nueva Novedad', new_novelty_path %><br>
+<%= will_paginate @novelties, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
+&raquo;' %> 
+<br> 
+Novedades: <%= @novelties.count %>
+</div>
+</div>
+</div>

@@ -37,7 +37,7 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate'
 
 gem 'bootstrap-sass'
 
@@ -49,3 +49,7 @@ gem 'quiet_assets'
 gem 'rails_layout'
 
 end
+
+gem 'paperclip'
+
+gem 'sorcery'

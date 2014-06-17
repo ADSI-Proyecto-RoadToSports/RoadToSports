@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611144010) do
+ActiveRecord::Schema.define(version: 20140612151412) do
 
   create_table "acceptances", force: true do |t|
     t.text     "description"
@@ -76,6 +76,15 @@ ActiveRecord::Schema.define(version: 20140611144010) do
   end
 
   add_index "fch_lg_matches", ["tournament_id"], name: "index_fch_lg_matches_on_tournament_id"
+
+  create_table "galleries", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "information", force: true do |t|
     t.text     "description"
@@ -225,6 +234,12 @@ ActiveRecord::Schema.define(version: 20140611144010) do
 
   add_index "teams", ["modalities_id"], name: "index_teams_on_modalities_id"
 
+  create_table "tipos_configs", force: true do |t|
+    t.string   "index"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tournaments", force: true do |t|
     t.string   "name"
     t.integer  "modalitiestype_id"
@@ -239,13 +254,6 @@ ActiveRecord::Schema.define(version: 20140611144010) do
   add_index "tournaments", ["acceptance_id"], name: "index_tournaments_on_acceptance_id"
   add_index "tournaments", ["modalitiestype_id"], name: "index_tournaments_on_modalitiestype_id"
   add_index "tournaments", ["typetournament_id"], name: "index_tournaments_on_typetournament_id"
-
-  create_table "type_changes", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "type_configurations", force: true do |t|
     t.string   "name"

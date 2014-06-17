@@ -1,34 +1,35 @@
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @tournament.name %>
 </p>
 
 <p>
-  <strong>Modalitiestype:</strong>
+  <strong>Tipo Modalidad:</strong>
   <%= @tournament.modalitiestype %>
 </p>
 
 <p>
-  <strong>State:</strong>
+  <strong>Estado:</strong>
   <%= @tournament.state %>
 </p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>Fecha:</strong>
   <%= @tournament.date %>
 </p>
 
 <p>
-  <strong>Typetournament:</strong>
+  <strong>Tipo Torneo:</strong>
   <%= @tournament.typetournament %>
 </p>
 
 <p>
-  <strong>Acceptance:</strong>
+  <strong>Aceptación:</strong>
   <%= @tournament.acceptance %>
 </p>
 
-<%= link_to 'Edit', edit_tournament_path(@tournament) %> |
-<%= link_to 'Back', tournaments_path %>
+<%= link_to 'Editar', edit_tournament_path(@tournament) %> |
+<%= link_to 'Atras', tournaments_path %>

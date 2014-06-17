@@ -1,13 +1,13 @@
-<h1>Lista de Torneos</h1>
+<h1>Torneos</h1>
 
 <table class="table table-striped table-hover ">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Modalities</th>
-      <th>State</th>
-      <th>Date</th>
-      <th>Type tournament</th>
+      <th>Nombre</th>
+      <th>Modalidad</th>
+      <th>Estado</th>
+      <th>Fecha</th>
+      <th>Tipo Torneo</th>
       <th>Acceptance</th>
       <th colspan="3"></th>
     </tr>
@@ -22,7 +22,7 @@
         <td><%= tournament.date %></td>
         <td><%= tournament.type_tournament %></td>
         <td><%= tournament.acceptance %></td>
-        <td><%= link_to 'Show', tournament %></td>
+        <td><%= link_to 'Ver', tournament %></td>
       </tr>
     <% end %>
   </tbody>

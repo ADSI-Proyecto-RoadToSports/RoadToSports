@@ -1,19 +1,20 @@
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @novelty.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descripción:</strong>
   <%= @novelty.description %>
 </p>
 
 <p>
-  <strong>Newtype:</strong>
+  <strong>Tipo Novedad:</strong>
   <%= @novelty.newtype %>
 </p>
 
-<%= link_to 'Edit', edit_novelty_path(@novelty) %> |
-<%= link_to 'Back', novelties_path %>
+<%= link_to 'Editar', edit_novelty_path(@novelty) %> |
+<%= link_to 'Atras', novelties_path %>

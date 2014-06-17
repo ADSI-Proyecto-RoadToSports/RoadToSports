@@ -4,7 +4,7 @@ class SportsController < ApplicationController
   # GET /sports
   # GET /sports.json
   def index
-    @sports = Sport.all
+    @sports = Sport.search(params[:search], params[:page])
   end
 
   # GET /sports/1
