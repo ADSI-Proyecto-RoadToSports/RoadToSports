@@ -10,29 +10,34 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
+<div class="field">
+    <%= f.label :Nombre %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :modalities %><br>
-    <%= f.text_field :modality_id %>
+    <label>Modalidad de Juego</label><br>
+<%= f.collection_select :modalities_type_id, ModalitiesType.all, :id, :name, class: "form-control", prompt:
+"Seleccione Modalidad"%>
+</div>
+  <div class="field">
+    <label>Deportes a Jugar</label><br>
+    <%= f.collection_select :sport_id, Sport.all, :id, :name, class: "form-control", prompt: "Seleccione Deporte"%>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :Descripcion %><br>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= f.label :Email %><br>
+    <%= f.text_field :mail %>
   </div>
   <div class="field">
-    <%= f.label :tournament_id %><br>
-    <%= f.text_field :tournament_id %>
+    <%= f.label :Torneos_a_Jugar %><br>
+    <%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: "form-control", prompt:
+"Seleccione Torneo" %>
   </div>
   <div class="field">
-    <%= f.label :acceptance_id %><br>
+    <%= f.label :Aceptacion %><br>
     <%= f.text_field :acceptance_id %>
   </div>
   <div class="actions">

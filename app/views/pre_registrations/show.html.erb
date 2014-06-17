@@ -8,9 +8,12 @@
 
 <p>
   <strong>Modalities:</strong>
-  <%= @pre_registration.modalities %>
+  <%= @pre_registration.modalities_type.name %>
 </p>
-
+<p>
+  <strong>Deporte:</strong>
+  <%= @pre_registration.sport.name %>
+</p>
 <p>
   <strong>Description:</strong>
   <%= @pre_registration.description %>
@@ -18,17 +21,17 @@
 
 <p>
   <strong>User:</strong>
-  <%= @pre_registration.user %>
+  <%= @pre_registration.mail %>
 </p>
 
 <p>
   <strong>Tournament:</strong>
-  <%= @pre_registration.tournament %>
+  <%= @pre_registration.tournament.name %>
 </p>
 
 <p>
   <strong>Acceptance:</strong>
-  <%= @pre_registration.acceptance %>
+  <%= @pre_registration.acceptance.name %>
 </p>
 
 <%= link_to 'Edit', edit_pre_registration_path(@pre_registration) %> |

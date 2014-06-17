@@ -69,6 +69,6 @@ class PreRegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pre_registration_params
-      params.require(:pre_registration).permit(:name, :modality_id, :description, :user_id, :tournament_id, :acceptance_id)
+      params.require(:pre_registration).permit(:name, :modalities_type_id, :sport_id, :description, :mail, :tournament_id, :acceptance_id)
     end
 end
