@@ -119,14 +119,19 @@ ActiveRecord::Schema.define(version: 20140617211156) do
   add_index "matches", ["tournament_id"], name: "index_matches_on_tournament_id"
 
   create_table "modalities", force: true do |t|
-    t.integer  "sport_id"
     t.string   "players"
     t.integer  "activity_id"
     t.integer  "tournament_id"
     t.integer  "modalities_type_id"
+    t.integer  "sport_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "modalities", ["activity_id"], name: "index_modalities_on_activity_id"
+  add_index "modalities", ["modalities_type_id"], name: "index_modalities_on_modalities_type_id"
+  add_index "modalities", ["sport_id"], name: "index_modalities_on_sport_id"
+  add_index "modalities", ["tournament_id"], name: "index_modalities_on_tournament_id"
 
   create_table "modalities_types", force: true do |t|
     t.string   "name"
@@ -154,14 +159,20 @@ ActiveRecord::Schema.define(version: 20140617211156) do
 
   create_table "pre_registrations", force: true do |t|
     t.string   "name"
-    t.integer  "modality_id"
+    t.string   "mail"
+    t.integer  "modalities_type_id"
+    t.integer  "sport_id"
     t.text     "description"
-    t.integer  "user_id"
     t.integer  "tournament_id"
     t.integer  "acceptance_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "pre_registrations", ["acceptance_id"], name: "index_pre_registrations_on_acceptance_id"
+  add_index "pre_registrations", ["modalities_type_id"], name: "index_pre_registrations_on_modalities_type_id"
+  add_index "pre_registrations", ["sport_id"], name: "index_pre_registrations_on_sport_id"
+  add_index "pre_registrations", ["tournament_id"], name: "index_pre_registrations_on_tournament_id"
 
   create_table "preferences", force: true do |t|
     t.string   "name"
@@ -291,11 +302,5 @@ ActiveRecord::Schema.define(version: 20140617211156) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-
-  create_table "usuarios", force: true do |t|
-    t.string   "index"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end
