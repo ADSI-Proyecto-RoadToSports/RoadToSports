@@ -1,5 +1,6 @@
 class Sport < ActiveRecord::Base
   has_many :modalities
+  has_many :pre_registrations
   
   belongs_to :modality
   belongs_to :rule
