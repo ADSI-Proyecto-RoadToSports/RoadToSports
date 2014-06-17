@@ -7,18 +7,12 @@
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active in cont1" id="inicio">
 <h1>Novedades y Noticias</h1>
-<%= form_tag novelties_path, :method => 'get' do %> 
-
-   <% content_tag :label do %> 
-
-   Search term:
-   <%= text_field_tag :search, params[:search] %> 
-
-   <%= submit_tag "Buscar", :name => nil %> 
-
-   <% end %> 
-
-  <% end %>
+<%= form_tag novelties_path, :method => 'get' do %>
+<% content_tag :label do %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Buscar", :name => nil %>
+<% end %>
+<% end %>
 <table>
   <thead>
     <tr>
