@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+resources :user_sessions
+resources :users
+
+get 'login' => 'user_sessions#new', :as => :login
+get 'logout' => 'user_sessions#destroy', :as => :logout
+
   resources :galleries
 
   get 'tipos_config/index'
@@ -34,8 +40,6 @@ Rails.application.routes.draw do
   resources :rules
 
   resources :configurations
-
-  resources :users
 
   resources :activities
 

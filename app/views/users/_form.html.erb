@@ -11,51 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+ <div class="field">
+       <%= f.label :email %><br />
+       <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :apellido %><br>
-    <%= f.text_field :apellido %>
+     <%= f.label :password %><br />
+     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :identification %><br>
-    <%= f.text_field :identification %>
-  </div>
-  <div class="field">
-    <%= f.label :birthday %><br>
-    <%= f.date_select :birthday %>
-  </div>
-  <div class="field">
-    <%= f.label :mail %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.check_box :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :picture %><br>
-    <%= f.text_field :picture %>
-  </div>
-  <div class="field">
-    <%= f.label :documenttype_id %><br>
-    <%= f.text_field :documenttype_id %>
-  </div>
+     <%= f.label :password_confirmation %><br />
+     <%= f.password_field :password_confirmation %>
+  </div><br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Crear' %>
   </div>
 <% end %>

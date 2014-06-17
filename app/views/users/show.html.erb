@@ -1,59 +1,28 @@
+<div class="contenido ">
+<div class="img1"></div>
+<div class="img2"></div>
+<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in cont1" id="inicio">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Apellido:</strong>
-  <%= @user.apellido %>
-</p>
-
-<p>
-  <strong>Identification:</strong>
-  <%= @user.identification %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @user.birthday %>
-</p>
-
-<p>
-  <strong>Mail:</strong>
+  <strong>Email:</strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
+  <strong>Crypted password:</strong>
+  <%= @user.crypted_password %>
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @user.address %>
+  <strong>Salt:</strong>
+  <%= @user.salt %>
 </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= @user.picture %>
-</p>
-
-<p>
-  <strong>Documenttype:</strong>
-  <%= @user.documenttype %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Atras', users_path %>
+</div></div></div>
