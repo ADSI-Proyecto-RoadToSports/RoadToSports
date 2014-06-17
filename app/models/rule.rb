@@ -1,5 +1,6 @@
 class Rule < ActiveRecord::Base
-
+	has_many :sports
+	
 	def self.search(search, page)
 		where(['upper(id) like ?',
 		"%#{search}%".upcase]).paginate(page: page, per_page: 3).order("id")

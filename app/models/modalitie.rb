@@ -1,5 +1,6 @@
 class Modalitie < ActiveRecord::Base
   has_many :pre_registrations
+  has_many :sports
 
   belongs_to :activity
   belongs_to :tournament
