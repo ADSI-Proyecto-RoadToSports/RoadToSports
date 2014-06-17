@@ -11,12 +11,14 @@
       <ul class="nav navbar-nav menu">
         <%= render 'layouts/navigation_links' %>
       </ul>
-       <form class="navbar-form navbar-left">
-        <input class="form-control col-lg-8" placeholder="Buscar..." type="text">
-      </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Perfil</a></li>
-        <li><a href="#">Iniciar Sesión</a></li>
+        <% if current_user %>
+            <li><%= link_to "Editar Perfil", edit_user_path(current_user.id) %></li>
+            <li><%= link_to "Salir", :logout, method: :get %></li>
+         <% else %>
+            <li><%= link_to "Registrarse", new_user_path %></li> 
+            <li><%= link_to "Entrar", :login %></li>
+        <% end %>
       </ul>
 
     </div>

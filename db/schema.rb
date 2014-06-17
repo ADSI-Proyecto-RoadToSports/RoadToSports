@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612151412) do
+ActiveRecord::Schema.define(version: 20140617211156) do
 
   create_table "acceptances", force: true do |t|
     t.text     "description"
@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 20140612151412) do
   add_index "matches", ["tournament_id"], name: "index_matches_on_tournament_id"
 
   create_table "modalities", force: true do |t|
-    t.string   "name"
+    t.integer  "sport_id"
     t.string   "players"
     t.integer  "activity_id"
     t.integer  "tournament_id"
@@ -127,10 +127,6 @@ ActiveRecord::Schema.define(version: 20140612151412) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "modalities", ["activity_id"], name: "index_modalities_on_activity_id"
-  add_index "modalities", ["modalities_type_id"], name: "index_modalities_on_modalities_type_id"
-  add_index "modalities", ["tournament_id"], name: "index_modalities_on_tournament_id"
 
   create_table "modalities_types", force: true do |t|
     t.string   "name"
@@ -158,7 +154,7 @@ ActiveRecord::Schema.define(version: 20140612151412) do
 
   create_table "pre_registrations", force: true do |t|
     t.string   "name"
-    t.string   "modalities"
+    t.integer  "modality_id"
     t.text     "description"
     t.integer  "user_id"
     t.integer  "tournament_id"
@@ -166,10 +162,6 @@ ActiveRecord::Schema.define(version: 20140612151412) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "pre_registrations", ["acceptance_id"], name: "index_pre_registrations_on_acceptance_id"
-  add_index "pre_registrations", ["tournament_id"], name: "index_pre_registrations_on_tournament_id"
-  add_index "pre_registrations", ["user_id"], name: "index_pre_registrations_on_user_id"
 
   create_table "preferences", force: true do |t|
     t.string   "name"
@@ -291,22 +283,14 @@ ActiveRecord::Schema.define(version: 20140612151412) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "apellido"
-    t.string   "identification"
-    t.date     "birthday"
-    t.string   "mail"
-    t.string   "password"
-    t.string   "address"
-    t.string   "phone"
-    t.boolean  "gender"
-    t.string   "picture"
-    t.integer  "documenttype_id"
+    t.string   "email",            null: false
+    t.string   "crypted_password", null: false
+    t.string   "salt",             null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "users", ["documenttype_id"], name: "index_users_on_documenttype_id"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
   create_table "usuarios", force: true do |t|
     t.string   "index"
