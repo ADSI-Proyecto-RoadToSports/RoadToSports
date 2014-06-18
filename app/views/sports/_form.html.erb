@@ -20,12 +20,12 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :modalitie_id %><br>
-    <%= f.text_field :modalitie_id %>
+    <label>Modalidad de Juego</label><br>
+    <%= f.collection_select :modalitie_id, Modalitie.all, :id, :name, class: "form-control", prompt: "seleccione modalidad" %>
   </div>
   <div class="field">
-    <%= f.label :rule_id %><br>
-    <%= f.text_field :rule_id %>
+    <label>Reglas de Juego</label><br>
+    <%= f.collection_select :rule_id, Rule.all, :id, :name, class: "form-control", prompt: "seleccione regla" %>
   </div>
   <div class="actions">
     <%= f.submit %>
