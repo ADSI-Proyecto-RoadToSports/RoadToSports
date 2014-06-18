@@ -13,16 +13,6 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Crypted password:</strong>
-  <%= @user.crypted_password %>
-</p>
-
-<p>
-  <strong>Salt:</strong>
-  <%= @user.salt %>
-</p>
-
 <%= link_to 'Editar', edit_user_path(@user) %> |
 <%= link_to 'Atras', users_path %>
 </div></div></div>

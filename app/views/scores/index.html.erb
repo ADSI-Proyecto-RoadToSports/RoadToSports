@@ -13,14 +13,14 @@
 <%= submit_tag "Buscar", :name => nil %>
 <% end %>
 <% end %>
-<table>
+<table  class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Descripción</th>
       <th>Datescore</th>
       <th>Modalidad</th>
       <th>Equipo</th>
-      <th colspan="3"></th>
+      <th colspan="3">Opciones</th>
     </tr>
   </thead>
 
@@ -41,7 +41,7 @@
 
 <br>
 
-<%= link_to 'Nuevo puntuacion', new_score_path %><br>
+<%= button_to 'Nuevo puntuacion', new_score_path, :method=>"get", class: "btn btn-info" %><br>
 <%= will_paginate @scores, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

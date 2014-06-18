@@ -19,7 +19,7 @@
    <% end %> 
 
   <% end %>
-<table>
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Image</th>
@@ -41,7 +41,7 @@
 
 <br>
 
-<%= link_to 'Nueva Foto', new_gallery_path %><br>
+<%= button_to 'Nueva Foto', new_gallery_path, :method=>"get", class: "btn btn-info" %><br>
 <%= will_paginate @galleries, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

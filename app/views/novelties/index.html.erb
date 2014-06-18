@@ -13,13 +13,13 @@
 <%= submit_tag "Buscar", :name => nil %>
 <% end %>
 <% end %>
-<table>
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Nombre</th>
       <th>Descripción</th>
       <th>Tipo Novedad</th>
-      <th colspan="3"></th>
+      <th colspan="3">Opciones</th>
     </tr>
   </thead>
 
@@ -39,7 +39,7 @@
 
 <br>
 
-<%= link_to 'Nueva Novedad', new_novelty_path %><br>
+<%= button_to 'Nueva Novedad', new_novelty_path , :method=>"get", class: "btn btn-info"%><br>
 <%= will_paginate @novelties, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

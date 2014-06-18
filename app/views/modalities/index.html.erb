@@ -13,7 +13,7 @@
 <%= submit_tag "Buscar", :name => nil %>
 <% end %>
 <% end %>
-<table>
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Tipo Modalidad</th>
@@ -21,7 +21,7 @@
       <th>Actividad</th>
       <th>Torneo</th>
       <th>Deporte</th>
-      <th colspan="3"></th>
+      <th colspan="3">Opciones</th>
     </tr>
   </thead>
 
@@ -44,7 +44,7 @@
 
 <br>
 
-<%= link_to 'Nueva Modalidad', new_modality_path %><br>
+<%= button_to 'Nueva Modalidad', new_modality_path, :method=>"get", class: "btn btn-info" %><br>
 <%= will_paginate @modalities, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 
