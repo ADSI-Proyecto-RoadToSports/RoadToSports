@@ -5962,3 +5962,10 @@ button.close {
 .flechita{
  z-index:9999; 
 }
+.info{
+  position: absolute;
+  bottom: 50px;
+  left: 360px;
+  border-radius: 20px;
+  width: 600px;
+}
