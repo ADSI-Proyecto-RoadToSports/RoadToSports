@@ -1,5 +1,4 @@
 class Novelty < ActiveRecord::Base
-  belongs_to :newtype
 
   def self.search(search, page)
 		where(['upper(id) like ?',

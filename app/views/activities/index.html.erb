@@ -24,22 +24,13 @@
   </thead>
 
   <tbody>
-    <% @activities.each do |activity| %>
-      <tr>
-        <td><%= activity.name %></td>
-        <td><%= activity.state %></td>
-        <td><%= activity.description %></td>
-        <td><%= link_to 'Ver', activity %></td>
-        <td><%= link_to 'Editar', edit_activity_path(activity) %></td>
-        <td><%= link_to 'Eliminar', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @activities %>
   </tbody>
 </table>
 
 <br>
 
-<%= button_to 'Nueva Actividad', new_activity_path, :method=>"get", class: "btn btn-info" %><br>
+<%= button_to 'Nueva Actividad', new_activity_path, remote: true, :method=>"get", class: "btn btn-info" %><br>
 <%= will_paginate @activities, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

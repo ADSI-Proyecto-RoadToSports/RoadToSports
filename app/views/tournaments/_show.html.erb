@@ -1,4 +1,4 @@
-
+<div class='tournament'>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -8,7 +8,7 @@
 
 <p>
   <strong>Tipo Modalidad:</strong>
-  <%= @tournament.modalitiestype %>
+  <%= @tournament.modalities_type.name rescue nil %>
 </p>
 
 <p>
@@ -23,7 +23,7 @@
 
 <p>
   <strong>Tipo Torneo:</strong>
-  <%= @tournament.typetournament %>
+  <%= @tournament.type_tournament.name rescue nil %>
 </p>
 
 <p>
@@ -31,5 +31,4 @@
   <%= @tournament.acceptance %>
 </p>
 
-<%= link_to 'Editar', edit_tournament_path(@tournament) %> |
-<%= link_to 'Atras', tournaments_path %>
+</div>

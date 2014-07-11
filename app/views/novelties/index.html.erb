@@ -18,28 +18,18 @@
     <tr>
       <th>Nombre</th>
       <th>Descripción</th>
-      <th>Tipo Novedad</th>
       <th colspan="3">Opciones</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @novelties.each do |novelty| %>
-      <tr>
-        <td><%= novelty.name %></td>
-        <td><%= novelty.description %></td>
-        <td><%= novelty.newtype %></td>
-        <td><%= link_to 'Ver', novelty %></td>
-        <td><%= link_to 'Editar', edit_novelty_path(novelty) %></td>
-        <td><%= link_to 'Eliminar', novelty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+      <%= render @novelties %>
   </tbody>
 </table>
 
 <br>
 
-<%= button_to 'Nueva Novedad', new_novelty_path , :method=>"get", class: "btn btn-info"%><br>
+<%= button_to 'Nueva Novedad', new_novelty_path ,remote: true, :method=>"get", class: "btn btn-info"%><br>
 <%= will_paginate @novelties, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

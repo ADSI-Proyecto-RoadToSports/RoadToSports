@@ -53,3 +53,6 @@ end
 gem 'paperclip'
 
 gem 'sorcery'
+
+gem 'lazybox'
+gem 'simple_form'

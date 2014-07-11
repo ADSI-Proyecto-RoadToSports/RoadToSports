@@ -27,25 +27,13 @@
   </thead>
 
   <tbody>
-    <% @tournaments.each do |tournament| %>
-      <tr>
-        <td><%= tournament.name %></td>
-        <td><%= tournament.modalitiestype %></td>
-        <td><%= tournament.state %></td>
-        <td><%= tournament.date %></td>
-        <td><%= tournament.typetournament %></td>
-        <td><%= tournament.acceptance %></td>
-        <td><%= link_to 'Ver', tournament %></td>
-        <td><%= link_to 'Editar', edit_tournament_path(tournament) %></td>
-        <td><%= link_to 'Eliminar', tournament, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @tournaments %>
   </tbody>
 </table>
 
 <br>
 
-<%= button_to 'Nuevo Torneo', new_tournament_path, :method=>"get", class: "btn btn-info"  %><br>
+<%= button_to 'Nuevo Torneo', new_tournament_path, remote: true, :method=>"get", class: "btn btn-info"  %><br>
 <%= will_paginate @tournaments, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 
