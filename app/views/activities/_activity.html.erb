@@ -1,0 +1,8 @@
+<tr id=<%= "activity_#{activity.id}" %>>
+	<td><%= activity.name %></td>
+    <td><%= activity.state %></td>
+    <td><%= activity.description %></td>
+    <td><%= link_to 'Ver', activity, remote: true %></td>
+    <td><%= link_to 'Editar', edit_activity_path(activity), remote: true %></td>
+    <td><%= link_to 'Eliminar', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

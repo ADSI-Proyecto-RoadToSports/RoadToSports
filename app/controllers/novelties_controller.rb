@@ -10,6 +10,7 @@ class NoveltiesController < ApplicationController
   # GET /novelties/1
   # GET /novelties/1.json
   def show
+    @novelty = Novelty.find(params[:id])
   end
 
   # GET /novelties/new
@@ -19,36 +20,20 @@ class NoveltiesController < ApplicationController
 
   # GET /novelties/1/edit
   def edit
+    @novelty = Novelty.find(params[:id])
   end
 
   # POST /novelties
   # POST /novelties.json
   def create
     @novelty = Novelty.new(novelty_params)
-
-    respond_to do |format|
-      if @novelty.save
-        format.html { redirect_to @novelty, notice: 'Novelty was successfully created.' }
-        format.json { render :show, status: :created, location: @novelty }
-      else
-        format.html { render :new }
-        format.json { render json: @novelty.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @novelty.save
   end
 
   # PATCH/PUT /novelties/1
   # PATCH/PUT /novelties/1.json
   def update
-    respond_to do |format|
-      if @novelty.update(novelty_params)
-        format.html { redirect_to @novelty, notice: 'Novelty was successfully updated.' }
-        format.json { render :show, status: :ok, location: @novelty }
-      else
-        format.html { render :edit }
-        format.json { render json: @novelty.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @novelty.update_attributes(novelty_params)
   end
 
   # DELETE /novelties/1
@@ -56,7 +41,7 @@ class NoveltiesController < ApplicationController
   def destroy
     @novelty.destroy
     respond_to do |format|
-      format.html { redirect_to novelties_url, notice: 'Novelty was successfully destroyed.' }
+      format.html { redirect_to novelties_url, notice: 'La noticia/novedad ha sido eliminada.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +54,6 @@ class NoveltiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def novelty_params
-      params.require(:novelty).permit(:name, :description, :newtype_id)
+      params.require(:novelty).permit(:name, :description)
     end
 end

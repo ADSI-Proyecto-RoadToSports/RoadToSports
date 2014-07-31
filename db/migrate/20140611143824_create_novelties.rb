@@ -3,7 +3,6 @@ class CreateNovelties < ActiveRecord::Migration
     create_table :novelties do |t|
       t.string :name
       t.text :description
-      t.references :newtype, index: true
 
       t.timestamps
     end

@@ -10,6 +10,7 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
+    @activities = Activity.find(params[:id])
   end
 
   # GET /activities/new
@@ -19,6 +20,7 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/1/edit
   def edit
+    @activities = Activity.find(params[:id])
   end
 
   # POST /activities
@@ -26,29 +28,13 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
 
-    respond_to do |format|
-      if @activity.save
-        format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
-        format.json { render :show, status: :created, location: @activity }
-      else
-        format.html { render :new }
-        format.json { render json: @activity.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @activity.save
   end
 
   # PATCH/PUT /activities/1
   # PATCH/PUT /activities/1.json
   def update
-    respond_to do |format|
-      if @activity.update(activity_params)
-        format.html { redirect_to @activity, notice: 'Activity was successfully updated.' }
-        format.json { render :show, status: :ok, location: @activity }
-      else
-        format.html { render :edit }
-        format.json { render json: @activity.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @activity.update_attributes(activity_params)
   end
 
   # DELETE /activities/1
@@ -56,7 +42,7 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity.destroy
     respond_to do |format|
-      format.html { redirect_to activities_url, notice: 'Activity was successfully destroyed.' }
+      format.html { redirect_to activities_url, notice: 'La actividad ha sido eliminada.' }
       format.json { head :no_content }
     end
   end
