@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617211156) do
+ActiveRecord::Schema.define(version: 20140806210440) do
 
   create_table "acceptances", force: true do |t|
     t.text     "description"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20140617211156) do
     t.string   "name"
     t.boolean  "state"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.string   "content"
+    t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -185,6 +198,14 @@ ActiveRecord::Schema.define(version: 20140617211156) do
 
   add_index "preferences", ["session_id"], name: "index_preferences_on_session_id"
   add_index "preferences", ["typepreference_id"], name: "index_preferences_on_typepreference_id"
+
+  create_table "questions", force: true do |t|
+    t.string   "title"
+    t.integer  "category_id"
+    t.string   "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rules", force: true do |t|
     t.string   "name"
