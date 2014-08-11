@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
-
-  resources :questions
-
-  resources :categories
-
 resources :user_sessions
 resources :users
 

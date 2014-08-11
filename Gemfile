@@ -57,5 +57,3 @@ gem 'sorcery'
 
 gem 'lazybox'
 gem 'simple_form'
-
-gem 'protected_attributes'
