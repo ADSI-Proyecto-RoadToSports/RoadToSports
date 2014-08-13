@@ -1,5 +1,5 @@
 class Tournament < ActiveRecord::Base
-  has_many :pre_registrations
+
   
   belongs_to :modalities_type, :foreign_key => 'modalitiestype_id'
   belongs_to :type_tournament, :foreign_key => 'typetournament_id'

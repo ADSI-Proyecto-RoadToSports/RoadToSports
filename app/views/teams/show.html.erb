@@ -2,13 +2,13 @@
 
 <p>
   <strong>Nombre:</strong>
-  <%= @team.name %>
+  <%= @team.nombre %>
 </p>
 
 <p>
-  <strong>Modalidad:</strong>
-  <%= @team.modalities %>
+  <strong>Sport:</strong>
+  <%= @team.sport %>
 </p>
 
-<%= link_to 'Editar', edit_team_path(@team) %> |
-<%= link_to 'Atras', teams_path %>
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>

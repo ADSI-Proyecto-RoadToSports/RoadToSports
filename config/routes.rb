@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  resources :integrantes
+
+  resources :sports do
+    resources :teams
+  end
+
+  resources :teams do
+    resources :integrantes
+  end
+
+  resources :teams
+
 resources :user_sessions
 resources :users
 
@@ -11,21 +23,15 @@ get 'logout' => 'user_sessions#destroy', :as => :logout
 
   resources :sports
 
-  resources :pre_registrations
-
   resources :matches
 
   resources :scores
-
-  resources :teams
 
   resources :fch_lg_matches
 
   resources :modalities
 
   resources :tournaments
-
-  resources :acceptances
 
   resources :preferences
 

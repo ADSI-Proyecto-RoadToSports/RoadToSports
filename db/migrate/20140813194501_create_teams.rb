@@ -1,8 +1,8 @@
 class CreateTeams < ActiveRecord::Migration
   def change
     create_table :teams do |t|
-      t.string :name
-      t.references :modalities, index: true
+      t.string :nombre
+      t.references :sport, index: true
 
       t.timestamps
     end

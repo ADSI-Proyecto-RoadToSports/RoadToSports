@@ -1,10 +1,10 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:show, :edit, :update, :destroy]
+  before_action :set_team, only: [:show, :edit, :update, :destroy, :index, :new, :create]
 
   # GET /teams
   # GET /teams.json
   def index
-    @teams = Team.search(params[:search], params[:page])
+    @teams = @sport.teams.all
   end
 
   # GET /teams/1
@@ -25,10 +25,10 @@ class TeamsController < ApplicationController
   # POST /teams.json
   def create
     @team = Team.new(team_params)
-
+    @team.sport_id = @sport.id
     respond_to do |format|
       if @team.save
-        format.html { redirect_to @team, notice: 'Team was successfully created.' }
+        format.html { redirect_to sport_teams_path(@sport), notice: 'Team was successfully created.' }
         format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TeamsController < ApplicationController
   def update
     respond_to do |format|
       if @team.update(team_params)
-        format.html { redirect_to @team, notice: 'Team was successfully updated.' }
+        format.html { redirect_to sport_teams_path(@sport), notice: 'Team was successfully updated.' }
         format.json { render :show, status: :ok, location: @team }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
+      format.html { redirect_to sport_teams_url(@sport), notice: 'Team was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +64,12 @@ class TeamsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_team
-      @team = Team.find(params[:id])
+      @sport = Sport.find(params[:sport_id]) 
+      @team = Team.find(params[:id]) if params[:id] # recupera el id solo si lo envian
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :modalities_id)
+      params.require(:team).permit(:nombre, :sport_id)
     end
 end

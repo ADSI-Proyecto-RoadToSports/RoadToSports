@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @integrante.nombre %>
+</p>
+
+<p>
+  <strong>Document type:</strong>
+  <%= @integrante.document_type %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @integrante.documento %>
+</p>
+
+<p>
+  <strong>Ficha:</strong>
+  <%= @integrante.ficha %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @integrante.team %>
+</p>
+
+<%= link_to 'Edit', edit_integrante_path(@integrante) %> |
+<%= link_to 'Back', integrantes_path %>

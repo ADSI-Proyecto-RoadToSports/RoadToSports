@@ -16,6 +16,7 @@
 <table class="table table-striped table-hover ">
   <thead>
     <tr>
+      <th>Equipos</th>
       <th>Nombre</th>
       <th>Descripción</th>
       <th>Modalidad</th>
@@ -27,6 +28,7 @@
   <tbody>
     <% @sports.each do |sport| %>
       <tr>
+        <td><%= button_to 'Ver equipos ⇨ '+ sport.teams.count.to_s + '', sport_teams_path(sport), :method=>"get", class: "btn btn-default btn-sm" %></td>
         <td><%= sport.name %></td>
         <td><%= sport.description %></td>
         <td><%= sport.modality %></td>

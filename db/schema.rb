@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617211156) do
-
-  create_table "acceptances", force: true do |t|
-    t.text     "description"
-    t.integer  "user_id"
-    t.integer  "rol_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "acceptances", ["rol_id"], name: "index_acceptances_on_rol_id"
-  add_index "acceptances", ["user_id"], name: "index_acceptances_on_user_id"
+ActiveRecord::Schema.define(version: 20140813194733) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -102,6 +91,19 @@ ActiveRecord::Schema.define(version: 20140617211156) do
     t.datetime "updated_at"
   end
 
+  create_table "integrantes", force: true do |t|
+    t.string   "nombre"
+    t.integer  "document_type_id"
+    t.string   "documento"
+    t.string   "ficha"
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "integrantes", ["document_type_id"], name: "index_integrantes_on_document_type_id"
+  add_index "integrantes", ["team_id"], name: "index_integrantes_on_team_id"
+
   create_table "matches", force: true do |t|
     t.string   "teamA"
     t.string   "teamB"
@@ -140,39 +142,12 @@ ActiveRecord::Schema.define(version: 20140617211156) do
     t.datetime "updated_at"
   end
 
-  create_table "new_types", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "novelties", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "newtype_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "novelties", ["newtype_id"], name: "index_novelties_on_newtype_id"
-
-  create_table "pre_registrations", force: true do |t|
-    t.string   "name"
-    t.string   "mail"
-    t.integer  "modalities_type_id"
-    t.integer  "sport_id"
-    t.text     "description"
-    t.integer  "tournament_id"
-    t.integer  "acceptance_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "pre_registrations", ["acceptance_id"], name: "index_pre_registrations_on_acceptance_id"
-  add_index "pre_registrations", ["modalities_type_id"], name: "index_pre_registrations_on_modalities_type_id"
-  add_index "pre_registrations", ["sport_id"], name: "index_pre_registrations_on_sport_id"
-  add_index "pre_registrations", ["tournament_id"], name: "index_pre_registrations_on_tournament_id"
 
   create_table "preferences", force: true do |t|
     t.string   "name"
@@ -229,13 +204,13 @@ ActiveRecord::Schema.define(version: 20140617211156) do
   add_index "sports", ["rule_id"], name: "index_sports_on_rule_id"
 
   create_table "teams", force: true do |t|
-    t.string   "name"
-    t.integer  "modalities_id"
+    t.string   "nombre"
+    t.integer  "sport_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "teams", ["modalities_id"], name: "index_teams_on_modalities_id"
+  add_index "teams", ["sport_id"], name: "index_teams_on_sport_id"
 
   create_table "tipos_configs", force: true do |t|
     t.string   "index"
