@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813194733) do
+ActiveRecord::Schema.define(version: 20140814202914) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -161,6 +161,15 @@ ActiveRecord::Schema.define(version: 20140813194733) do
   add_index "preferences", ["session_id"], name: "index_preferences_on_session_id"
   add_index "preferences", ["typepreference_id"], name: "index_preferences_on_typepreference_id"
 
+  create_table "roadtosports", force: true do |t|
+    t.string   "registros"
+    t.string   "index"
+    t.string   "acerca"
+    t.string   "contacto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "rules", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -208,9 +217,8 @@ ActiveRecord::Schema.define(version: 20140813194733) do
     t.integer  "sport_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active"
   end
-
-  add_index "teams", ["sport_id"], name: "index_teams_on_sport_id"
 
   create_table "tipos_configs", force: true do |t|
     t.string   "index"

@@ -1,0 +1,42 @@
+<div class="contenido ">
+<div class="img1"></div>
+<div class="img2"></div>
+<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in cont1" id="inicio">
+    <h1>Registrate en tu deporte favorito</h1>
+    <div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Participa con tu equipo en:</h3>
+	  </div>
+	  <div class="panel-body">
+		   <div class="btn-group">
+			  <a type="button" class="btn btn-info"><%= button_to 'Fútbol', new_sport_team_path(1), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			  <a type="button" class="btn btn-info"><%= button_to 'Baloncesto', new_sport_team_path(3), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			  <a type="button" class="btn btn-info"><%= button_to 'Voleibol', new_sport_team_path(5), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			  <a type="button" class="btn btn-info"><%= button_to 'Micro Fútbol', new_sport_team_path(7), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			</div>
+	  </div>
+	</div>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Participa individualmente en:</h3>
+	  </div>
+	  <div class="panel-body">
+	  	<div class="btn-group">
+		    <div class="btn-group">
+			  <a type="button" class="btn btn-info">  <%= button_to 'Ajedrez', new_sport_team_path(2), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			  <a type="button" class="btn btn-info">  <%= button_to 'Tenis de mesa', new_sport_team_path(4), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			  <a type="button" class="btn btn-info">  <%= button_to 'Atletismo', new_sport_team_path(6), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			</div>
+		</div>
+	  </div>
+	</div>
+    
+
+  </div>
+  </div>
+</div>
+

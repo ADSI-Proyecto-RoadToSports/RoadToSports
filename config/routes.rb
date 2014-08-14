@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'roadtosports/registros'
+
+  get 'roadtosports/index'
+
+  get 'roadtosports/acerca'
+
+  get 'roadtosports/contacto'
+
   resources :integrantes
 
   resources :sports do
