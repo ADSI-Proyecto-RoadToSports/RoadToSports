@@ -4,7 +4,10 @@
   <strong>Nombre:</strong>
   <%= @team.nombre %>
 </p>
-
+<p>
+  <strong>Activo?:</strong>
+  <%= mostrar_activo(@team.active) %>
+</p>
 <p>
   <strong>Sport:</strong>
   <%= @team.sport %>

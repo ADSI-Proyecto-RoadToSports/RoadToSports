@@ -7,6 +7,6 @@ class Sport < ActiveRecord::Base
 
   def self.search(search, page)
 		where(['upper(name) like ?',
-		"%#{search}%".upcase]).paginate(page: page, per_page: 3).order("")
+		"%#{search}%".upcase]).paginate(page: page, per_page: 7).order("")
 	end
 end

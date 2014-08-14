@@ -8,6 +8,35 @@
   <div class="tab-pane fade active in cont1" id="inicio">
   	<h1>Road To Sports</h1>
     <p class="lead">Road Sport es un software basado en los procesos deportivos que se pueden llevar a cabo dentro de cualquier institución educativa y en donde le aporta un control de los procesos y una independencia, para que los usuarios se inscriban de manera autónoma a los diferentes eventos deportivos, torneos y demás actividades para el desarrollo integral de los estudiantes.</p>
+    <hr>
+    <h1>Registrate!</h1>
+    <div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Participa con tu equipo en:</h3>
+	  </div>
+	  <div class="panel-body">
+		   <div class="btn-group">
+			  <a type="button" class="btn btn-info"><%= button_to 'Fútbol', new_sport_team_path(1), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			  <a type="button" class="btn btn-info"><%= button_to 'Baloncesto', new_sport_team_path(3), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			  <a type="button" class="btn btn-info"><%= button_to 'Voleibol', new_sport_team_path(5), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			  <a type="button" class="btn btn-info"><%= button_to 'Micro Fútbol', new_sport_team_path(7), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			</div>
+	  </div>
+	</div>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Participa individualmente en:</h3>
+	  </div>
+	  <div class="panel-body">
+	  	<div class="btn-group">
+		    <div class="btn-group">
+			  <a type="button" class="btn btn-info">  <%= button_to 'Ajedrez', new_sport_team_path(2), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			  <a type="button" class="btn btn-info">  <%= button_to 'Tenis de mesa', new_sport_team_path(4), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			  <a type="button" class="btn btn-info">  <%= button_to 'Atletismo', new_sport_team_path(6), :method=>"get", class: "btn btn-default btn-lg" %></a>
+			</div>
+		</div>
+	  </div>
+	</div>
     
 
   </div>

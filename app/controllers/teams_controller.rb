@@ -28,7 +28,7 @@ class TeamsController < ApplicationController
     @team.sport_id = @sport.id
     respond_to do |format|
       if @team.save
-        format.html { redirect_to sport_teams_path(@sport), notice: 'Team was successfully created.' }
+        format.html { redirect_to new_team_integrante_path(@team), notice: 'Team was successfully created.' }
         format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new }
@@ -70,6 +70,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:nombre, :sport_id)
+      params.require(:team).permit(:nombre, :sport_id, :active)
     end
 end
