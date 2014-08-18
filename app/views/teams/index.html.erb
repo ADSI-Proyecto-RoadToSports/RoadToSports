@@ -22,7 +22,7 @@
     <% @teams.each do |team| %>
       <tr>
         <td><%= button_to team.nombre, team_integrantes_path(team), :method=>"get", class: "btn btn-default btn-sm"  %></td>
-        <td><%= team.sport %></td>
+        <td><%= team.sport.name %></td>
         <td><span class="label label-primary"><%= team.integrantes.count.to_s %></span></td>
         <td><%= mostrar_activo(team.active) %></td>
         <td><%= link_to 'Show', sport_team_path(@sport,team) %></td>

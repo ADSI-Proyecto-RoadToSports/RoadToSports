@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :verify_authenticity_token
   # GET /galleries
   # GET /galleries.json
   def index
@@ -10,6 +10,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/1
   # GET /galleries/1.json
   def show
+    @galleries = Gallery.find(params[:id])
   end
 
   # GET /galleries/new
@@ -19,36 +20,20 @@ class GalleriesController < ApplicationController
 
   # GET /galleries/1/edit
   def edit
+    @galleries = Gallery.find(params[:id])
   end
 
   # POST /galleries
   # POST /galleries.json
   def create
     @gallery = Gallery.new(gallery_params)
-
-    respond_to do |format|
-      if @gallery.save
-        format.html { redirect_to @gallery, notice: 'La Imagen A Sido Guardada Correctamente' }
-        format.json { render :show, status: :created, location: @gallery }
-      else
-        format.html { render :new }
-        format.json { render json: @gallery.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @gallery.save
   end
 
   # PATCH/PUT /galleries/1
   # PATCH/PUT /galleries/1.json
   def update
-    respond_to do |format|
-      if @gallery.update(gallery_params)
-        format.html { redirect_to @gallery, notice: 'La Imagen A Sido Actualizada Correctamente' }
-        format.json { render :show, status: :ok, location: @gallery }
-      else
-        format.html { render :edit }
-        format.json { render json: @gallery.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @gallery.update_attributes(gallery_params)
   end
 
   # DELETE /galleries/1

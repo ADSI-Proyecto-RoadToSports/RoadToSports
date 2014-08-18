@@ -1,0 +1,6 @@
+
+	<tr class="mov1" id=<%= "gallery_#{gallery.id}" %>>
+        <td> <%= link_to image_tag(gallery.image.url(:thumb)), gallery, remote: true %> <%= link_to 'Editar', edit_gallery_path(gallery), remote: true %>  <%= link_to 'Eliminar', gallery, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+
+</tr>
+ 
