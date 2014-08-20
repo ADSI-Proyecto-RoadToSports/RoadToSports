@@ -10,6 +10,7 @@ class ScoresController < ApplicationController
   # GET /scores/1
   # GET /scores/1.json
   def show
+    @scores = Score.find(params[:id])
   end
 
   # GET /scores/new
@@ -19,36 +20,20 @@ class ScoresController < ApplicationController
 
   # GET /scores/1/edit
   def edit
+    @scores = Score.find(params[:id])
   end
 
   # POST /scores
   # POST /scores.json
   def create
     @score = Score.new(score_params)
-
-    respond_to do |format|
-      if @score.save
-        format.html { redirect_to @score, notice: 'Score was successfully created.' }
-        format.json { render :show, status: :created, location: @score }
-      else
-        format.html { render :new }
-        format.json { render json: @score.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @score.save
   end
 
   # PATCH/PUT /scores/1
   # PATCH/PUT /scores/1.json
   def update
-    respond_to do |format|
-      if @score.update(score_params)
-        format.html { redirect_to @score, notice: 'Score was successfully updated.' }
-        format.json { render :show, status: :ok, location: @score }
-      else
-        format.html { render :edit }
-        format.json { render json: @score.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @score.update_attributes(score_params)
   end
 
   # DELETE /scores/1

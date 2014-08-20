@@ -10,6 +10,7 @@ class FchLgMatchesController < ApplicationController
   # GET /fch_lg_matches/1
   # GET /fch_lg_matches/1.json
   def show
+    @fch_lg_matches = FchLgMatch.find(params[:id])
   end
 
   # GET /fch_lg_matches/new
@@ -19,36 +20,20 @@ class FchLgMatchesController < ApplicationController
 
   # GET /fch_lg_matches/1/edit
   def edit
+    @fch_lg_matches = FchLgMatch.find(params[:id])
   end
 
   # POST /fch_lg_matches
   # POST /fch_lg_matches.json
   def create
     @fch_lg_match = FchLgMatch.new(fch_lg_match_params)
-
-    respond_to do |format|
-      if @fch_lg_match.save
-        format.html { redirect_to @fch_lg_match, notice: 'Fch lg match was successfully created.' }
-        format.json { render :show, status: :created, location: @fch_lg_match }
-      else
-        format.html { render :new }
-        format.json { render json: @fch_lg_match.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @fch_lg_match.save
   end
 
   # PATCH/PUT /fch_lg_matches/1
   # PATCH/PUT /fch_lg_matches/1.json
   def update
-    respond_to do |format|
-      if @fch_lg_match.update(fch_lg_match_params)
-        format.html { redirect_to @fch_lg_match, notice: 'Fch lg match was successfully updated.' }
-        format.json { render :show, status: :ok, location: @fch_lg_match }
-      else
-        format.html { render :edit }
-        format.json { render json: @fch_lg_match.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @fch_lg_match.update_attributes(fch_lg_match_params)
   end
 
   # DELETE /fch_lg_matches/1

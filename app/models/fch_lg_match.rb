@@ -1,4 +1,6 @@
 class FchLgMatch < ActiveRecord::Base
+	
+
   belongs_to :tournament
 
   def self.search(search, page)

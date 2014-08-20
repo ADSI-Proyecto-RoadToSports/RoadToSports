@@ -10,6 +10,8 @@ class SportsController < ApplicationController
   # GET /sports/1
   # GET /sports/1.json
   def show
+
+    @sports = Sport.find(params[:id])
   end
 
   # GET /sports/new
@@ -19,36 +21,20 @@ class SportsController < ApplicationController
 
   # GET /sports/1/edit
   def edit
+    @sports = Sport.find(params[:id])
   end
 
   # POST /sports
   # POST /sports.json
   def create
     @sport = Sport.new(sport_params)
-
-    respond_to do |format|
-      if @sport.save
-        format.html { redirect_to @sport, notice: 'Sport was successfully created.' }
-        format.json { render :show, status: :created, location: @sport }
-      else
-        format.html { render :new }
-        format.json { render json: @sport.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @sport.save
   end
 
   # PATCH/PUT /sports/1
   # PATCH/PUT /sports/1.json
   def update
-    respond_to do |format|
-      if @sport.update(sport_params)
-        format.html { redirect_to @sport, notice: 'Sport was successfully updated.' }
-        format.json { render :show, status: :ok, location: @sport }
-      else
-        format.html { render :edit }
-        format.json { render json: @sport.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @sport.update_attributes(sport_params)
   end
 
   # DELETE /sports/1

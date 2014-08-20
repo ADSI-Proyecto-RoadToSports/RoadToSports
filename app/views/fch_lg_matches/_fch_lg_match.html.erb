@@ -1,0 +1,11 @@
+<tr id=<%= "fch_lg_match_#{fch_lg_match.id}" %>>
+        <td><%= fch_lg_match.startdate %></td>
+        <td><%= fch_lg_match.endingdate %></td>
+        <td><%= fch_lg_match.place %></td>
+        <td><%= fch_lg_match.description %></td>
+        <td><%= fch_lg_match.team %></td>
+        <td><%= fch_lg_match.tournament %></td>
+        <td><%= link_to 'Ver', fch_lg_match, remote: true %></td>
+        <td><%= link_to 'Editar', edit_fch_lg_match_path(fch_lg_match), remote: true %></td>
+        <td><%= link_to 'Eliminar', fch_lg_match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>

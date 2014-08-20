@@ -1,4 +1,7 @@
 class Novelty < ActiveRecord::Base
+	
+	validates :name, :presence => true
+	validates :description, :presence => true
 
   def self.search(search, page)
 		where(['upper(id) like ?',

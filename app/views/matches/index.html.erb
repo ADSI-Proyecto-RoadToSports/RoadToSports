@@ -27,25 +27,13 @@
   </thead>
 
   <tbody>
-    <% @matches.each do |match| %>
-      <tr>
-        <td><%= match.teamA %></td>
-        <td><%= match.teamB %></td>
-        <td><%= match.modalitie %></td>
-        <td><%= match.tournament %></td>
-        <td><%= match.score %></td>
-        <td><%= match.fchlgmatch %></td>
-        <td><%= link_to 'Ver', match %></td>
-        <td><%= link_to 'Editar', edit_match_path(match) %></td>
-        <td><%= link_to 'Eliminar', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @matches %>
   </tbody>
 </table>
 
 <br>
 
-<%= button_to 'Nuevo Equipo', new_match_path, :method=>"get", class: "btn btn-info" %><br>
+<%= button_to 'Nuevo Equipo', new_match_path, remote: true, :method=>"get", class: "btn btn-info" %><br>
 <%= will_paginate @matches, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

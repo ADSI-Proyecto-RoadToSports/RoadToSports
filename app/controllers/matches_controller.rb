@@ -10,6 +10,7 @@ class MatchesController < ApplicationController
   # GET /matches/1
   # GET /matches/1.json
   def show
+    @matches = Match.find(params[:id])
   end
 
   # GET /matches/new
@@ -19,36 +20,20 @@ class MatchesController < ApplicationController
 
   # GET /matches/1/edit
   def edit
+    @matches = Match.find(params[:id])
   end
 
   # POST /matches
   # POST /matches.json
   def create
     @match = Match.new(match_params)
-
-    respond_to do |format|
-      if @match.save
-        format.html { redirect_to @match, notice: 'Match was successfully created.' }
-        format.json { render :show, status: :created, location: @match }
-      else
-        format.html { render :new }
-        format.json { render json: @match.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @match.save
   end
 
   # PATCH/PUT /matches/1
   # PATCH/PUT /matches/1.json
   def update
-    respond_to do |format|
-      if @match.update(match_params)
-        format.html { redirect_to @match, notice: 'Match was successfully updated.' }
-        format.json { render :show, status: :ok, location: @match }
-      else
-        format.html { render :edit }
-        format.json { render json: @match.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @match.update_attributes(match_params)
   end
 
   # DELETE /matches/1
