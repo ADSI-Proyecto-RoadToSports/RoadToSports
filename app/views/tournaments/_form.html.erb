@@ -16,8 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :modalitiestype_id %><br>
-    <%= f.text_field :modalitiestype_id %>
+    <label>Tipo De Modalidad</label><br>
+    <%= f.collection_select :modalitiestype_id, ModalitiesType.all, :id, :name, class: "form-control", prompt: "Seleccione Un Tipo De Modalidad" %>
   </div>
   <div class="field">
     <%= f.label :state %><br>
@@ -28,8 +28,8 @@
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :typetournament_id %><br>
-    <%= f.text_field :typetournament_id %>
+    <label>Tipo De Torneo</label><br>
+    <%= f.collection_select :typetournament_id, TypeTournament.all, :id, :name, class: "form-control", prompt: "Seleccione Un Tipo De Torneo" %>
   </div>
   <div class="field">
     <%= f.label :acceptance_id %><br>
