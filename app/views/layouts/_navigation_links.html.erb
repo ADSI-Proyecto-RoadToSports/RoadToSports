@@ -10,6 +10,7 @@
 </li>
 <li><%= link_to "Usuarios ▼", controller: "usuario", action: "index" %>
 	<ul class="dropdown-menu">
+		<li><%= link_to "Deportes", sports_path %></li>
 	    <li><%= link_to "Partidos realizados", matches_path %></li>
 	    <li><%= link_to "Partidos pendientes", fch_lg_matches_path %></li>
 	    <li><%= link_to "Puntajes", scores_path %></li>
@@ -19,7 +20,6 @@
 <li><%= link_to "Administración ▼", "#" %>
 	<ul class="dropdown-menu">
 		<li><%= link_to "Configuraciones de tipos", controller: "tipos_config", action: "index" %></li>
-		<li><%= link_to "Deportes", sports_path %></li>
 		<li><%= link_to "Modalidades", modalities_path %></li>
 
 	</ul>

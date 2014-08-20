@@ -9,16 +9,13 @@
 <h1>Galeria</h1>
   <%= form_tag galleries_path, :method => 'get' do %> 
     <% content_tag :label do %> 
-    Search term:
-    <%= text_field_tag :search, params[:search] %> 
-    <%= submit_tag "Buscar", :name => nil %> 
+    <%= hidden_field_tag :search, params[:search] %> 
     <% end %> 
   <% end %>
 <div id="galpi">
   <div id="galeria">
     <ul id="gallery">
-      <table >
-       
+      <table>
           <tr>
             <th></th>
           </tr>
