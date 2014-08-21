@@ -1,4 +1,12 @@
 class Match < ActiveRecord::Base
+	validates :teamA, :presence => true
+	validates :teamB, :presence =>true
+	validates :modalitie, :presence =>true
+	validates :tournament, :presence =>true 
+	validates :score, :presence =>true
+	validates :fchlgmatch, :presence =>true
+
+
   belongs_to :modalitie
   belongs_to :tournament
   belongs_to :score

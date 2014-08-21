@@ -26,23 +26,13 @@
   </thead>
 
   <tbody>
-    <% @sports.each do |sport| %>
-      <tr>
-        <td><%= button_to 'Ver equipos ⇨ '+ sport.teams.count.to_s + '', sport_teams_path(sport), :method=>"get", class: "btn btn-default btn-sm" %></td>
-        <td><%= sport.name %></td>
-        <td><%= sport.description %></td>
-        <td><%= sport.modality %></td>
-        <td><%= sport.rule %></td>
-        <td><%= link_to 'Ver', sport %></td>
-        <td><%= link_to 'Editar', edit_sport_path(sport) %></td>
-      </tr>
-    <% end %>
+    <%= render @sports %>
   </tbody>
 </table>
 
 <br>
 
-<%= button_to 'Nuevo Deporte', new_sport_path, :method=>"get", class: "btn btn-info" %><br>
+<%= button_to 'Nuevo Deporte', new_sport_path, remote: true, :method=>"get", class: "btn btn-info" %><br>
 <%= will_paginate @sports, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

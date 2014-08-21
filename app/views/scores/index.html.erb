@@ -25,23 +25,13 @@
   </thead>
 
   <tbody>
-    <% @scores.each do |score| %>
-      <tr>
-        <td><%= score.description %></td>
-        <td><%= score.datescore %></td>
-        <td><%= score.modalitie %></td>
-        <td><%= score.team %></td>
-        <td><%= link_to 'Ver', score %></td>
-        <td><%= link_to 'Editar', edit_score_path(score) %></td>
-        <td><%= link_to 'Eliminar', score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @scores %>
   </tbody>
 </table>
 
 <br>
 
-<%= button_to 'Nuevo puntuacion', new_score_path, :method=>"get", class: "btn btn-info" %><br>
+<%= button_to 'Nuevo puntuacion', new_score_path, remote: true, :method=>"get", class: "btn btn-info" %><br>
 <%= will_paginate @scores, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

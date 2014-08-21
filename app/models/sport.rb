@@ -1,4 +1,10 @@
 class Sport < ActiveRecord::Base
+	
+	validates :name, :presence => true
+	validates :description, :presence => true
+	validates :modality, :presence => true
+	validates :rule, :presence =>true
+
   has_many :modalities
   has_many :teams, :dependent => :destroy
 

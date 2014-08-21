@@ -27,25 +27,13 @@
   </thead>
 
   <tbody>
-    <% @fch_lg_matches.each do |fch_lg_match| %>
-      <tr>
-        <td><%= fch_lg_match.startdate %></td>
-        <td><%= fch_lg_match.endingdate %></td>
-        <td><%= fch_lg_match.place %></td>
-        <td><%= fch_lg_match.description %></td>
-        <td><%= fch_lg_match.team %></td>
-        <td><%= fch_lg_match.tournament %></td>
-        <td><%= link_to 'Ver', fch_lg_match %></td>
-        <td><%= link_to 'Editar', edit_fch_lg_match_path(fch_lg_match) %></td>
-        <td><%= link_to 'Eliminar', fch_lg_match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @fch_lg_matches%>
   </tbody>
 </table>
 
 <br>
 
-<%= button_to 'Nueva fecha', new_fch_lg_match_path, :method=>"get", class: "btn btn-info" %><br>
+<%= button_to 'Nueva fecha', new_fch_lg_match_path, remote: true, :method=>"get", class: "btn btn-info" %><br>
 <%= will_paginate @fch_lg_matches, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 
