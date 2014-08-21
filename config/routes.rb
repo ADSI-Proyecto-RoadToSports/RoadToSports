@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     resources :teams
   end
 
+  resources :tournaments do
+    resources :teams
+  end
+
   resources :teams do
     resources :integrantes
   end

@@ -6,7 +6,7 @@ class CreateIntegrantes < ActiveRecord::Migration
       t.string :documento
       t.string :ficha
       t.references :team, index: true
-
+      t.boolean :limite
       t.timestamps
     end
   end

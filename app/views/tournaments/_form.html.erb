@@ -20,6 +20,11 @@
     <%= f.collection_select :modalitiestype_id, ModalitiesType.all, :id, :name, class: "form-control", prompt: "Seleccione Un Tipo De Modalidad" %>
   </div>
   <div class="field">
+     <label>Deporte</label><br>
+    <%=f.collection_select :sport_id, Sport.all, :id, :name, class: "form-control", prompt: "Seleccione Un Deporte" %>
+  </div>
+
+  <div class="field">
     <%= f.label :state %><br>
     <%= f.check_box :state %>
   </div>
@@ -30,10 +35,6 @@
   <div class="field">
     <label>Tipo De Torneo</label><br>
     <%= f.collection_select :typetournament_id, TypeTournament.all, :id, :name, class: "form-control", prompt: "Seleccione Un Tipo De Torneo" %>
-  </div>
-  <div class="field">
-    <%= f.label :acceptance_id %><br>
-    <%= f.text_field :acceptance_id %>
   </div>
   <div class="actions">
     <%= f.submit 'Crear torneo'%>

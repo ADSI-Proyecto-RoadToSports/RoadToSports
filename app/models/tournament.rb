@@ -4,11 +4,12 @@ class Tournament < ActiveRecord::Base
 	validates :date, :presence =>true
 	validates :modalitiestype_id, :presence =>true
 	validates :typetournament_id, :presence =>true
-	validates :acceptance_id, :presence =>true
 
   belongs_to :modalities_type, :foreign_key => 'modalitiestype_id'
+  belongs_to :sport, :foreign_key => 'sport_id'
   belongs_to :type_tournament, :foreign_key => 'typetournament_id'
-  belongs_to :acceptance
+
+  has_many :teams, :dependent => :destroy
 
   def self.search(search, page)
 		where(['upper(name) like ?',

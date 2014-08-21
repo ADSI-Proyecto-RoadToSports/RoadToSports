@@ -10,6 +10,10 @@
   <strong>Tipo Modalidad:</strong>
   <%= @tournament.modalities_type.name rescue nil %>
 </p>
+<p>
+  <strong>Deporte:</strong>
+  <%= @tournament.sport_id.name rescue nil %>
+</p>
 
 <p>
   <strong>Estado:</strong>
@@ -26,9 +30,5 @@
   <%= @tournament.type_tournament.name rescue nil %>
 </p>
 
-<p>
-  <strong>Aceptación:</strong>
-  <%= @tournament.acceptance %>
-</p>
 
 </div>

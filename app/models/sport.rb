@@ -6,6 +6,7 @@ class Sport < ActiveRecord::Base
 	validates :rule, :presence =>true
 
   has_many :modalities
+  has_many :tournaments
   has_many :teams, :dependent => :destroy
 
   belongs_to :modality
