@@ -7,7 +7,7 @@
 
 <p>
   <strong>Document type:</strong>
-  <%= @integrante.document_type %>
+  <%= @integrante.document_type.name %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <strong>Team:</strong>
-  <%= @integrante.team %>
+  <%= @integrante.team.nombre %>
 </p>
 
 <%= link_to 'Editar', edit_team_integrante_path(@team,@integrante) %> |

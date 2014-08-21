@@ -24,10 +24,10 @@
     <% @integrantes.each do |integrante| %>
       <tr>
         <td><%= integrante.nombre %></td>
-        <td><%= integrante.document_type %></td>
+        <td><%= integrante.document_type.name %></td>
         <td><%= integrante.documento %></td>
         <td><%= integrante.ficha %></td>
-        <td><%= integrante.team %></td>
+        <td><%= integrante.team.nombre %></td>
         <td><%= link_to 'Show', team_integrante_path(@team,integrante) %></td>
         <td><%= link_to 'Edit', edit_team_integrante_path(@team,integrante) %></td>
         <td><%= link_to 'Destroy', team_integrante_path(@team,integrante), method: :delete, data: { confirm: 'Are you sure?' } %></td>
