@@ -4,7 +4,7 @@ class IntegrantesController < ApplicationController
   # GET /integrantes
   # GET /integrantes.json
   def index
-    @integrantes = @team.integrantes.all
+      @integrantes = @team.integrantes.all
   end
 
   # GET /integrantes/1
@@ -64,8 +64,8 @@ class IntegrantesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_integrante
-      @team = Team.find(params[:team_id]) 
-      @integrante = Integrante.find(params[:id]) if params[:id]
+        @team = Team.find(params[:team_id]) 
+        @integrante = Integrante.find(params[:id]) if params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

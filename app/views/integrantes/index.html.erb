@@ -15,47 +15,41 @@
       <th>Document type</th>
       <th>Documento</th>
       <th>Ficha</th>
-      <th>Team</th>
-      <th>Limite</th>
       <th colspan="3">Opciones</th>
     </tr>
   </thead>
 
   <tbody>
     <% @integrantes.each do |integrante| %>
+      
       <tr>
         <td><%= integrante.nombre %></td>
         <td><%= integrante.document_type.name %></td>
         <td><%= integrante.documento %></td>
         <td><%= integrante.ficha %></td>
-        <td><%= integrante.team.nombre %></td>
-        <td><%= integrante.limite %></td>
         <td><%= link_to 'Show', team_integrante_path(@team,integrante) %></td>
         <td><%= link_to 'Edit', edit_team_integrante_path(@team,integrante) %></td>
         <td><%= link_to 'Destroy', team_integrante_path(@team,integrante), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-     <%# <%=
-        if integrante.team.sport_id == 1
-          
-          if @integrantes.count >= 2
-            integrante.limite == true
-          end 
-
-        else
-          "no"
-        end
-        %>
+      <%#= integrante.team.sport_id %>
     <% end %>
   </tbody>
 </table>
 
+
 <br>
-<%= link_to 'New Integrante', new_team_integrante_path(@team) %>
+<%= 
+  #integrante.team.sport_id
+fut(@integrantes.count,@team.sport_id) 
+
+%>
+<br>
+
 <%#<%=
   if integrante.limite == true
     link_to 'New Integrante', new_team_integrante_path(@team) 
   end
-
+@team.sport_id
 %>
 
 
