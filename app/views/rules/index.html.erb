@@ -24,22 +24,13 @@
   </thead>
 
   <tbody>
-    <% @rules.each do |rule| %>
-      <tr>
-        <td><%= rule.name %></td>
-        <td><%= rule.description %></td>
-        <td><%= rule.state %></td>
-        <td><%= link_to 'Ver', rule %></td>
-        <td><%= link_to 'Editar', edit_rule_path(rule) %></td>
-        <td><%= link_to 'Eliminar', rule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @rules%>
   </tbody>
 </table>
 
 <br>
 
-<%= button_to 'Nueva Regla', new_rule_path, :method=>"get", class: "btn btn-info" %><br>
+<%= button_to 'Nueva Regla', new_rule_path, remote: true, :method=>"get", class: "btn btn-info" %><br>
 <%= will_paginate @rules, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

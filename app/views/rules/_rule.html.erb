@@ -1,0 +1,8 @@
+<tr id=<%= "rule_#{rule.id}" %>>
+        <td><%= rule.name %></td>
+        <td><%= rule.description %></td>
+        <td><%= rule.state %></td>
+        <td><%= link_to 'Ver', rule, remote: true %></td>
+        <td><%= link_to 'Editar', edit_rule_path(rule), remote: true %></td>
+        <td><%= link_to 'Eliminar', rule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>

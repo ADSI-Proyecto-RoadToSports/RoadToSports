@@ -10,6 +10,7 @@ class RulesController < ApplicationController
   # GET /rules/1
   # GET /rules/1.json
   def show
+    @rule = Rule.find(params[:id])
   end
 
   # GET /rules/new
@@ -19,36 +20,21 @@ class RulesController < ApplicationController
 
   # GET /rules/1/edit
   def edit
+    @rule = Rule.find(params[:id])
   end
 
   # POST /rules
   # POST /rules.json
   def create
     @rule = Rule.new(rule_params)
-
-    respond_to do |format|
-      if @rule.save
-        format.html { redirect_to @rule, notice: 'Rule was successfully created.' }
-        format.json { render :show, status: :created, location: @rule }
-      else
-        format.html { render :new }
-        format.json { render json: @rule.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @rule.save
   end
 
-  # PATCH/PUT /rules/1
-  # PATCH/PUT /rules/1.json
+  # PATCH/PUT /sports/1
+  # PATCH/PUT /sports/1.json
   def update
-    respond_to do |format|
-      if @rule.update(rule_params)
-        format.html { redirect_to @rule, notice: 'Rule was successfully updated.' }
-        format.json { render :show, status: :ok, location: @rule }
-      else
-        format.html { render :edit }
-        format.json { render json: @rule.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @rule.update_attributes(rule_params)
+      
   end
 
   # DELETE /rules/1
