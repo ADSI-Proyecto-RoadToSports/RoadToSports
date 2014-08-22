@@ -12,12 +12,12 @@
 </p>
 <p>
   <strong>Deporte:</strong>
-  <%= @tournament.sport_id.name rescue nil %>
+  <%= @tournament.sport.name rescue nil %>
 </p>
 
 <p>
   <strong>Estado:</strong>
-  <%= mostrar_estado(tournament.state) %>
+  <%= mostrar_estado(@tournament.state) %>
 </p>
 
 <p>
