@@ -6,4 +6,9 @@ module TournamentsHelper
 			"<span class='label label-danger'>Inactivo </span>".html_safe
 		end
 	end
+	def tipo()
+		"<script>
+			alert('Hello! I am an alert box!!');
+		</script>".html_safe
+	end
 end

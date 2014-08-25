@@ -3,8 +3,7 @@ class CreateSports < ActiveRecord::Migration
     create_table :sports do |t|
       t.string :name
       t.text :description
-      t.references :modalitie, index: true
-      t.references :rule, index: true
+      t.references :modalitiestype, index: true
 
       t.timestamps
     end
