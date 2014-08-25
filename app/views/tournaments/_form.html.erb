@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <label>Tipo De Modalidad</label><br>
-    <%= f.collection_select :modalitiestype_id, ModalitiesType.all, :id, :name, class: "form-control", prompt: "Seleccione Un Tipo De Modalidad"  %>
+    <%= f.collection_select :modalitiestype_id, ModalitiesType.all, :id, :name, class: "form-control", prompt: "Seleccione Un Tipo De Modalidad", :onchange => "alert('test');" %>
   </div>
   <div class="field">
      <label>Deporte</label><br>
