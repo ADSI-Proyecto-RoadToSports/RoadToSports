@@ -99,10 +99,8 @@ ActiveRecord::Schema.define(version: 20140814202914) do
     t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "limite",           default: false
   end
-
-  add_index "integrantes", ["document_type_id"], name: "index_integrantes_on_document_type_id"
-  add_index "integrantes", ["team_id"], name: "index_integrantes_on_team_id"
 
   create_table "matches", force: true do |t|
     t.string   "teamA"
@@ -232,14 +230,10 @@ ActiveRecord::Schema.define(version: 20140814202914) do
     t.boolean  "state"
     t.date     "date"
     t.integer  "typetournament_id"
-    t.integer  "acceptance_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sport_id"
   end
-
-  add_index "tournaments", ["acceptance_id"], name: "index_tournaments_on_acceptance_id"
-  add_index "tournaments", ["modalitiestype_id"], name: "index_tournaments_on_modalitiestype_id"
-  add_index "tournaments", ["typetournament_id"], name: "index_tournaments_on_typetournament_id"
 
   create_table "type_configurations", force: true do |t|
     t.string   "name"
