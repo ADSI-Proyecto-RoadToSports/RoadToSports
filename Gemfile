@@ -57,3 +57,4 @@ gem 'sorcery'
 
 gem 'lazybox'
 gem 'simple_form'
+gem 'fullcalendar-rails'
