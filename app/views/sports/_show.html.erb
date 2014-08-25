@@ -12,13 +12,9 @@
 
 <p>
   <strong>Modalidad:</strong>
-  <%= @sport.modality %>
+  <%= @sport.modalities_type.name rescue nil %>
 </p>
 
-<p>
-  <strong>Regla:</strong>
-  <%= @sport.rule %>
-</p>
 
 <%= link_to 'Editar', edit_sport_path(@sport) %> |
 <%= link_to 'Atras', sports_path %>

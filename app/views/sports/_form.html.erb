@@ -21,11 +21,7 @@
   </div>
   <div class="field">
     <label>Modalidad de Juego</label><br>
-    <%= f.collection_select :modalitie_id, Modalitie.all, :id, :name, class: "form-control", prompt: "seleccione modalidad" %>
-  </div>
-  <div class="field">
-    <label>Reglas de Juego</label><br>
-    <%= f.collection_select :rule_id, Rule.all, :id, :name, class: "form-control", prompt: "seleccione regla" %>
+    <%= f.collection_select :modalitiestype_id, ModalitiesType.all, :id, :name, class: "form-control", prompt: "Seleccione modalidad" %>
   </div>
   <div class="actions">
     <%= f.submit 'Crear Deporte'%>
