@@ -35,3 +35,19 @@
     opacity: 1;
     padding: 10px;
 }
+
+.contc{
+	/*border: 1px solid black;*/
+	height: 700px;
+	position: absolute;
+	margin-left: 220px;
+}
+.bot{
+	margin-left: 620px;
+	border: 1px solid black;
+	border-color: gray;
+	background-color: gold;
+	border-radius: 70px;
+	width: 88px;
+	text-align: center;
+}

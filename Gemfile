@@ -54,9 +54,7 @@ end
 gem 'paperclip'
 
 gem 'sorcery'
-
+#gem 'autocomplete-rails'
 gem 'lazybox'
 gem 'simple_form'
-
-gem 'rails4-autocomplete'
-gem 'jquery-ui-rails'
+gem 'fullcalendar-rails'

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :events
+
   get 'roadtosports/registros'
 
   get 'roadtosports/index'
