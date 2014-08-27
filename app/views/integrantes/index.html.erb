@@ -12,8 +12,8 @@
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Document type</th>
-      <th>Documento</th>
+      <th>Tipo de documento</th>
+      <th># Documento</th>
       <th>Ficha</th>
       <th colspan="3">Opciones</th>
     </tr>
@@ -27,9 +27,9 @@
         <td><%= integrante.document_type.name %></td>
         <td><%= integrante.documento %></td>
         <td><%= integrante.ficha %></td>
-        <td><%= link_to 'Show', team_integrante_path(@team,integrante) %></td>
-        <td><%= link_to 'Edit', edit_team_integrante_path(@team,integrante) %></td>
-        <td><%= link_to 'Destroy', team_integrante_path(@team,integrante), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', team_integrante_path(@team,integrante) %></td>
+        <td><%= link_to 'Editar', edit_team_integrante_path(@team,integrante) %></td>
+        <td><%= link_to 'Eliminar', team_integrante_path(@team,integrante), method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
       <%#= integrante.team.sport_id %>
     <% end %>
@@ -43,6 +43,9 @@
 fut(@integrantes.count,@team.sport_id) 
 
 %>
+
+<%= button_to 'Ir a los Torneos', tournaments_path, :method=>"get", class: "btn btn-success siguiente" %> <br>
+<%= button_to 'Volver a la lista de deportes', sports_path,  :method=>"get", class: "btn btn-primary volver" %>
 <br>
 
 <%#<%=

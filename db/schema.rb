@@ -201,14 +201,10 @@ ActiveRecord::Schema.define(version: 20140814202914) do
   create_table "sports", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "modalitie_id"
-    t.integer  "rule_id"
+    t.integer  "modalitiestype_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "sports", ["modalitie_id"], name: "index_sports_on_modalitie_id"
-  add_index "sports", ["rule_id"], name: "index_sports_on_rule_id"
 
   create_table "teams", force: true do |t|
     t.string   "nombre"
