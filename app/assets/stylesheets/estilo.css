@@ -38,9 +38,11 @@
 
 .contc{
 	/*border: 1px solid black;*/
-	height: 700px;
+	width: 890px;
+	height: 696px;
 	position: absolute;
 	margin-left: 220px;
+	margin-top: -10px;
 }
 .bot{
 	margin-left: 620px;

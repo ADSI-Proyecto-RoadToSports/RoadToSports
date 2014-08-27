@@ -1,37 +1,37 @@
-<div class="bot">
-<%= link_to 'Nuevo Evento', new_event_path %>
-</div>
+<%= link_to 'New Event', new_event_path %>
 <div class="contc">
 <div id='calendar'></div>
 <script>
-    $(document).ready(function() {
+		$(document).ready(function() {
 
-      var date = new Date();
-      var d = date.getDate();
-      var m = date.getMonth();
-      var y = date.getFullYear();
+			var date = new Date();
+			var d = date.getDate();
+			var m = date.getMonth();
+			var y = date.getFullYear();
 
-      $('#calendar').fullCalendar({
-        header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
-        },
-        editable: false,
-            events: {
-              url: '/events',
-              type: 'GET',
-              error: function() {
-                  alert('there was an error while fetching events!');
-              },
-              backgroundColor: 'blue',
-              textColor: 'black'
-          }
-      });
+			$('#calendar').fullCalendar({
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				editable: false,
+				    events: {
+						  url: '/events',
+						  type: 'GET',
+						  error: function() {
+						      alert('there was an error while fetching events!');
+						  },
+						  backgroundColor: 'blue',
+						  textColor: 'black'
+					}
+			});
 
-    });
-  </script>
+		});
+	</script>
 </div>
+
+
 <div id='loading' style='display:none'>loading...</div>
 
 
