@@ -5982,3 +5982,22 @@ button.close {
   ul li { list-style: none; }
   img { width: 100%; }
 }
+
+
+.siguiente {
+  position: absolute;
+  right: 250px;
+  bottom: 150px;
+}
+
+.volver{
+  position: absolute;
+  
+  bottom: 150px;
+}
+
+.nevento{
+  position: absolute;
+  top: 160px;
+  left: 110px;
+}

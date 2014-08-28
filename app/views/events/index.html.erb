@@ -1,4 +1,7 @@
-<%= link_to 'New Event', new_event_path %>
+<script src='assets/javascripts/es.js'></script>
+<div class="img1"></div>
+<div class="img2"></div>
+<%= button_to 'Nuevo Evento', new_event_path, remote: true, :method => "get", class: "btn btn-info nevento" %>
 <div class="contc">
 <div id='calendar'></div>
 <script>
@@ -16,13 +19,15 @@
 					right: 'month,agendaWeek,agendaDay'
 				},
 				editable: false,
+				lang: 'es',
+				eventColor: 'white',
 				    events: {
 						  url: '/events',
 						  type: 'GET',
 						  error: function() {
 						      alert('there was an error while fetching events!');
 						  },
-						  backgroundColor: 'blue',
+						  backgroundColor: 'red',
 						  textColor: 'black'
 					}
 			});

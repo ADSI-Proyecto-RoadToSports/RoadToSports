@@ -54,6 +54,6 @@ end
 gem 'paperclip'
 
 gem 'sorcery'
-
+#gem 'autocomplete-rails'
 gem 'lazybox'
 gem 'simple_form'
