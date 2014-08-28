@@ -5995,3 +5995,9 @@ button.close {
   
   bottom: 150px;
 }
+
+.nevento{
+  position: absolute;
+  top: 160px;
+  left: 110px;
+}
