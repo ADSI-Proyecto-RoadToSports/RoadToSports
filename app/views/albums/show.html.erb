@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @album.description %>
+</p>
+<p>
+	<strong>Imagen:</strong>
+	<%= image_tag @album.image.url(:medium) %>
+</p>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Ver imagenes', album_galleries_path(@album), :class=>"btn btn-default " %> &nbsp;&nbsp;&nbsp;
+<%= link_to 'Back', albums_path %>

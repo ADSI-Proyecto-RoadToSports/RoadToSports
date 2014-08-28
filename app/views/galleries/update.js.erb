@@ -1,2 +1,2 @@
-$('tr#gallery_<%= @gallery.id %>').replaceWith("<%= escape_javascript(render @gallery) %>")
+$('td#gallery_<%= @gallery.id %>').replaceWith("<%= escape_javascript(render @gallery) %>")
 $.lazybox.close()
