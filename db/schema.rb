@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20140829182316) do
     t.datetime "updated_at"
   end
 
+  create_table "albums", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
   create_table "configurations", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -82,6 +93,7 @@ ActiveRecord::Schema.define(version: 20140829182316) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "album_id"
   end
 
   create_table "information", force: true do |t|
@@ -165,6 +177,7 @@ ActiveRecord::Schema.define(version: 20140829182316) do
     t.datetime "fecha"
     t.boolean  "estado"
     t.integer  "user_id"
+    t.integer  "tournament_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

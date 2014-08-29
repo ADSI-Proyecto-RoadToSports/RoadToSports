@@ -15,5 +15,5 @@
   <%= @rule.state %>
 </p>
 
-<%= link_to 'Editar', edit_rule_path(@rule) %> |
+<%= link_to 'Editar', edit_rule_path(@rule), remote: true %> |
 <%= link_to 'Atras', rules_path %>
