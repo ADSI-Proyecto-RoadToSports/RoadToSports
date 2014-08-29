@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827081831) do
+ActiveRecord::Schema.define(version: 20140829182316) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -152,6 +152,19 @@ ActiveRecord::Schema.define(version: 20140827081831) do
   create_table "novelties", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pfutbols", force: true do |t|
+    t.string   "equipo1"
+    t.integer  "puntos2"
+    t.boolean  "gano1"
+    t.string   "equipo2"
+    t.boolean  "gano2"
+    t.datetime "fecha"
+    t.boolean  "estado"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

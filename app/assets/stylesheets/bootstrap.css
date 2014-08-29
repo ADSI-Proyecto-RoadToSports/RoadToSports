@@ -3006,6 +3006,7 @@ input[type="button"].btn-block {
 }
 .dropdown-menu {
   position: absolute;
+  color: white;
   top: 100%;
   left: 0;
   z-index: 1000;
@@ -3040,13 +3041,13 @@ input[type="button"].btn-block {
   clear: both;
   font-weight: normal;
   line-height: 1.42857143;
-  color: #333333;
+  color: white;
   white-space: nowrap;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #ffffff;
+  color: black;
   background-color: #2fa4e7;
 }
 .dropdown-menu > .active > a,

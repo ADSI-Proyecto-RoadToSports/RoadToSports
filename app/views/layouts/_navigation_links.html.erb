@@ -1,6 +1,6 @@
 <%# add navigation links to this file %>
 <li><%= link_to 'Inicio ▼', root_path, class: 'navbar-brand flechita' %>
-	<ul class="dropdown-menu">
+	<ul class="btn-info dropdown-menu">
 		<li><%= link_to "Torneos", tournaments_path %></li>
 	    <li><%= link_to "Galerias", galleries_path %></li>
 	    <li><%= link_to "Novedades y Noticias", novelties_path %></li>
@@ -9,7 +9,7 @@
 	</ul>
 </li>
 <li><%= link_to "Usuarios ▼", controller: "usuario", action: "index" %>
-	<ul class="dropdown-menu">
+	<ul class="btn-info dropdown-menu">
 		<li><%= link_to "Deportes", sports_path %></li>
 		<li><%= link_to "Agenda", events_path %></li>
 	    <li><%= link_to "Partidos realizados", matches_path %></li>
@@ -18,8 +18,8 @@
 	    <li><%= link_to "Reglas", rules_path %></li>
 	</ul>
 </li>
-<li><%= link_to "Administración ▼", "#" %>
-	<ul class="dropdown-menu">
+<li><%= link_to "Administración ▼", "#", class: "" %>
+	<ul class=" btn-info dropdown-menu">
 		<li><%= link_to "Configuraciones de tipos", controller: "tipos_config", action: "index" %></li>
 		<li><%= link_to "Modalidades", modalities_path %></li>
 

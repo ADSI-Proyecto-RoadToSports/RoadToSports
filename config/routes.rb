@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pfutbols
+
   resources :events
 
   get 'roadtosports/registros'
