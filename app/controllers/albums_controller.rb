@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /albums
   # GET /albums.json
@@ -10,6 +11,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
+    @album = Album.find(params[:id])
   end
 
   # GET /albums/new
@@ -19,36 +21,38 @@ class AlbumsController < ApplicationController
 
   # GET /albums/1/edit
   def edit
+    @album = Album.find(params[:id])
   end
 
   # POST /albums
   # POST /albums.json
   def create
     @album = Album.new(album_params)
-
-    respond_to do |format|
-      if @album.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
-        format.json { render :show, status: :created, location: @album }
-      else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @album.save
+    #respond_to do |format|
+    #  if @album.save
+    #    format.html { redirect_to @album, notice: 'Album was successfully created.' }
+    #    format.json { render :show, status: :created, location: @album }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @album.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /albums/1
   # PATCH/PUT /albums/1.json
   def update
-    respond_to do |format|
-      if @album.update(album_params)
-        format.html { redirect_to @album, notice: 'Album was successfully updated.' }
-        format.json { render :show, status: :ok, location: @album }
-      else
-        format.html { render :edit }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @album.update_attributes(album_params)
+    #respond_to do |format|
+    #  if @album.update(album_params)
+    #    format.html { redirect_to @album, notice: 'Album was successfully updated.' }
+    #    format.json { render :show, status: :ok, location: @album }
+    #  else
+    #    format.html { render :edit }
+    #    format.json { render json: @album.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # DELETE /albums/1

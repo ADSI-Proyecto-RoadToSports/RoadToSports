@@ -1,0 +1,2 @@
+$('td#album_<%= @album.id %>').replaceWith("<%= escape_javascript(render @album) %>")
+$.lazybox.close()

@@ -5987,13 +5987,13 @@ button.close {
 .siguiente {
   position: absolute;
   right: 250px;
-  bottom: 150px;
+  bottom: 130px;
 }
 
 .volver{
   position: absolute;
   
-  bottom: 150px;
+  bottom: 130px;
 }
 
 .nevento{
