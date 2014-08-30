@@ -1,0 +1,57 @@
+<%= form_for(@pfutbol) do |f| %>
+  <% if @pfutbol.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pfutbol.errors.count, "error") %> prohibited this pfutbol from being saved:</h2>
+
+      <ul>
+      <% @pfutbol.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :equipo1 %><br>
+    <%= f.text_field :equipo1 %>
+  </div>
+  <div class="field">
+    <%= f.label :puntos2 %><br>
+    <%= f.number_field :puntos2 %>
+  </div>
+  <div class="field">
+    <%= f.label :gano1 %><br>
+    <%= f.check_box :gano1 %>
+  </div>
+  <div class="field">
+    <%= f.label :equipo2 %><br>
+    <%= f.text_field :equipo2 %>
+  </div>
+  <div class="field">
+    <%= f.label :puntos2 %><br>
+    <%= f.number_field :puntos2 %>
+  </div>
+  <div class="field">
+    <%= f.label :gano2 %><br>
+    <%= f.check_box :gano2 %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.datetime_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.check_box :estado %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :torunament_id %><br>
+    <%= f.number_field :tournament_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

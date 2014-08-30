@@ -6,10 +6,11 @@
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active in cont1" id="inicio">
-<h1>Galeria</h1>
-<div id="galpi">
-  <div id="galeria">
-    <ul id="gallery">
+<ul class="nav nav-pills">
+  <li class="active"><a href="#"><strong>Galeria</strong> <span class="badge"><%= @galleries.count %> </span> Imagenes</a></li>
+</ul>
+<%= div(@galleries.count) %>
+    <ul>
       <table>
           <tr>
             <th></th>
@@ -18,14 +19,13 @@
       </table>
     </ul>
   </div>
-</div>
 
-<%= link_to 'Nueva Foto', new_album_gallery_path(@album), remote: true, class: "btn btn-info" %><br>
-<%= link_to 'Back to Albums', album_path(@album), :class=>"btn btn-default " %><br>
+<%= link_to 'Nueva Foto', new_album_gallery_path(@album), remote: true, class: "btn btn-info siguiente" %><br>
+<%= link_to 'Back to Albums', albums_path, :class=>"btn btn-default volver" %><br>
 <%#=<%= will_paginate @galleries, :previous_label => '&laquo; Pagina Anterior', :next_label => 'Siguiente Pagina 
 &raquo;' %>
 <br> 
-Numero De Imagenes: <%= @galleries.count %>
+
 </div>
 </div>
 </div>

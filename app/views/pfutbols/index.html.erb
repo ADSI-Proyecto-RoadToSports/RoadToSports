@@ -1,0 +1,52 @@
+<div class="contenido ">
+<div class="img1"></div>
+<div class="img2"></div>
+<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in cont1" id="inicio">
+<h1>Listing pfutbols</h1>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Equipo1</th>
+      <th>Puntos2</th>
+      <th>Gano1</th>
+      <th>Equipo2</th>
+      <th>Puntos2</th>
+      <th>Gano2</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th>User</th>
+      <th>Torneo</th>
+      <th colspan="3">Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pfutbols.each do |pfutbol| %>
+      <tr>
+        <td><%= pfutbol.equipo1 %></td>
+        <td><%= pfutbol.puntos2 %></td>
+        <td><%= pfutbol.gano1 %></td>
+        <td><%= pfutbol.equipo2 %></td>
+        <td><%= pfutbol.puntos2 %></td>
+        <td><%= pfutbol.gano2 %></td>
+        <td><%= pfutbol.fecha %></td>
+        <td><%= pfutbol.estado %></td>
+        <td><%= pfutbol.user.email %></td>
+        <td><%= pfutbol.tournament.name %></td>
+        <td><%= link_to 'Show', pfutbol %></td>
+        <td><%= link_to 'Edit', edit_pfutbol_path(pfutbol) %></td>
+        <td><%= link_to 'Destroy', pfutbol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pfutbol', new_pfutbol_path %>
+</div></div></div>

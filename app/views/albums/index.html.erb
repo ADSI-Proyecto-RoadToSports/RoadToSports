@@ -7,32 +7,15 @@
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active in cont1" id="inicio">
 <h1>Listing albums</h1>
-
+<div id="galeria">
 <table>
-  <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>img</th>
-      <th colspan="3">opc</th>
+      <th></th>
     </tr>
-  </thead>
-
-  <tbody>
-    <% @albums.each do |album| %>
-      <tr>
-        <td><%= album.title %></td>
-        <td><%= album.description %></td>
-        <td><%= image_tag album.image.url(:thumb) %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <%= render @albums %>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New Album', new_album_path %>
+<%= link_to 'New Album', new_album_path, remote: true %>
 </div></div></div>

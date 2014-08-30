@@ -1,3 +1,72 @@
+
+
+/* ________________________albums_____________________*/
+.mov2{
+	height: 210px;
+  	width: 285px;
+  	float: left;
+  	position: relative;
+  	margin: 10px -15px 6px 22px;
+  	list-style: none;
+	border: 1px none #ddd;
+	/* padding: 11px 11px 11px; */
+	padding: 11px 5px;
+	border: 1px solid #999;
+	box-shadow: 0px 0px 3px 2px gray;
+	border-radius: 5px;
+	background-color: #ffffff;
+}
+.title{
+	text-align: center;
+}
+.botones  {
+	z-index: 999;
+	position: relative;
+	top: -40px;
+	left: 10px;
+	display: none;
+
+}
+.botones:hover{
+	display: block;
+	transition:All 1s ease;
+    -webkit-transition:All 1s ease;
+    -moz-transition:All 1s ease;
+    -o-transition:All 1s ease;
+    
+	
+}
+.image:hover ~ .botones {
+	display: block;
+
+
+
+
+	transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -webkit-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -moz-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -o-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -ms-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+}
+	
+
+
+.encab{
+	text-align: center;
+}
+.desc{
+	border:1px solid transparent;
+	width: 250px;
+	height: 60px;
+	color: black;	
+	word-break: break-all;
+ 	word-wrap: break-word;
+ 	overflow-y:scroll;
+    overflow-x:none; 
+}
+
+/*:___________________________galerias_______________________:*/
+
 .mov1{
 	height: 120px;
   	width: 126px;
@@ -13,19 +82,32 @@
 	border-radius: 5px;
 	background-color: #ffffff;
 }
-
-#gallery { list-style: none; display: block; }
-#gallery li { float: left; margin: 0 10px 10px 0; }
+/*#gallery { list-style: none; display: block; }
+#gallery li { float: left; margin: 0 10px 10px 0; }*/
 #galeria{
-	width: 800px;
+	width: 900px;
+	height: 420px;
 	background-color: #f8f8f8;
 	border: 2px #3399ff solid;
 	border-radius: 5px;
 	z-index: 100;
     opacity: 1;
     box-shadow:0 0px 10px #0066cc, 0 0px 5px #787878 inset;
+    overflow-y:scroll;
+    overflow-x:none;
 }
-#galpi{
+#galeriao{
+	width: 800px;
+	background-color: #f8f8f8;
+	border: 2px #3399ff solid;
+	border-radius: 5px;
+	z-index: 100;
+    opacity: 0;
+    box-shadow:0 0px 10px #0066cc, 0 0px 5px #787878 inset;
+    overflow-y:scroll;
+    overflow-x:none;
+}
+/*#galpi{
 	margin-top: -5px;
 	border: 2px #ccc solid;
 	border-radius: 5px; 
@@ -34,8 +116,8 @@
 	z-index: 100;
     opacity: 1;
     padding: 10px;
-}
-
+}*/
+/*________________________calendario____________________________*/
 .contc{
 	/*border: 1px solid black;*/
 	width: 890px;
