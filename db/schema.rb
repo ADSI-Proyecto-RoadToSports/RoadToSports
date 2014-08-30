@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20140828092036) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "album_id"
   end
 
   create_table "information", force: true do |t|
