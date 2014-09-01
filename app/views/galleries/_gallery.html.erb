@@ -2,9 +2,9 @@
 <tr class="mov1" id=<%= "gallery_#{gallery.id}" %>>
     <td>
        	<%= link_to image_tag(gallery.image.url(:thumb)), album_gallery_path(@album,gallery), remote: true, class: "image1" %>
-        <div class="botones">
-        	<%= link_to 'Editar', edit_album_gallery_path(@album,gallery), remote: true, :class => 'btn btn-primary botonED' %>
-        	<%= link_to 'Eliminar', album_gallery_path(@album,gallery), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger botonEL' %>
+        <div class="botones2">
+        	<%= link_to 'Editar', edit_album_gallery_path(@album,gallery), remote: true, :class => 'btn btn-primary' %>
+        	<%= link_to 'Eliminar', album_gallery_path(@album,gallery), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
         </div>
     </td>
 </tr>

@@ -18,15 +18,31 @@
 }
 .title{
 	text-align: center;
+	z-index: 999;
+	margin-top: -220px;
+	font-size: 20px;
+	color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .botones  {
 	z-index: 999;
 	position: relative;
-	top: -40px;
-	left: 10px;
+	top: 100px;
+	left: 0px;
 	display: none;
-
+	padding-top: 10px;
+	padding-left: 5px;
 }
+.botones2  {
+	z-index: 999;
+	display: none;
+	height: 40px;
+	margin-top: -10px;
+	margin-left: 5px;
+	padding-top: 10px;
+}
+
+
 .botones:hover{
 	display: block;
 	transition:All 1s ease;
@@ -38,18 +54,30 @@
 }
 .image:hover ~ .botones {
 	display: block;
-
-
-
-
 	transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
     -webkit-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
     -moz-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
     -o-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
     -ms-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
 }
-	
 
+
+.botones2:hover{
+	display: block;
+    transition:All 1s ease;
+    -webkit-transition:All 1s ease;
+    -moz-transition:All 1s ease;
+    -o-transition:All 1s ease;
+	
+}
+.image1:hover ~ .botones2 {
+	display: block;
+	transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -webkit-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -moz-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -o-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -ms-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+}
 
 .encab{
 	text-align: center;
@@ -82,29 +110,8 @@
 	border-radius: 5px;
 	background-color: #ffffff;
 }
-.botonED{
-	width: 78px;
-	height: -5px;
-	margin-left: -20px;
-	margin-top: 50px;
-}
-.botonEL{
-	width: 78px;
-	height: -5px;
-	margin-top: 50px;
-}
 .image1{
 	margin-left: 155px;
-}
-.image1:hover ~ .botones {
-	display: block;
-
-
-	transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
-    -webkit-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
-    -moz-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
-    -o-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
-    -ms-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
 }
 /*#gallery { list-style: none; display: block; }
 #gallery li { float: left; margin: 0 10px 10px 0; }*/
