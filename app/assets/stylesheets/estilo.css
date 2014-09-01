@@ -27,11 +27,22 @@
 .botones  {
 	z-index: 999;
 	position: relative;
-	top: 120px;
-	left: 10px;
+	top: 100px;
+	left: 0px;
 	display: none;
-
+	padding-top: 10px;
+	padding-left: 5px;
 }
+.botones2  {
+	z-index: 999;
+	display: none;
+	height: 40px;
+	margin-top: -10px;
+	margin-left: 5px;
+	padding-top: 10px;
+}
+
+
 .botones:hover{
 	display: block;
 	transition:All 1s ease;
@@ -43,26 +54,38 @@
 }
 .image:hover ~ .botones {
 	display: block;
-
-
-
-
 	transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
     -webkit-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
     -moz-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
     -o-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
     -ms-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
 }
-	
 
+
+.botones2:hover{
+	display: block;
+    transition:All 1s ease;
+    -webkit-transition:All 1s ease;
+    -moz-transition:All 1s ease;
+    -o-transition:All 1s ease;
+	
+}
+.image1:hover ~ .botones2 {
+	display: block;
+	transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -webkit-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -moz-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -o-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+    -ms-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
+}
 
 .encab{
 	text-align: center;
 }
 .desc{
 	border:1px solid transparent;
-	width: 250px;
-	height: 60px;
+	width: 260px;
+	height: 70px;
 	color: black;	
 	word-break: break-all;
  	word-wrap: break-word;
@@ -73,19 +96,22 @@
 /*:___________________________galerias_______________________:*/
 
 .mov1{
-	height: 120px;
-  	width: 126px;
+	height: 150px;
+  	width: 175px;
   	float: left;
   	position: relative;
-  	margin: 10px -15px 6px 22px;
+  	margin: 20px 10px 6px 22px;
   	list-style: none;
 	border: 1px none #ddd;
 	/* padding: 11px 11px 11px; */
-	padding: 11px 5px;
+	padding: 13px 10px;
 	border: 1px solid #999;
 	box-shadow: 0px 0px 3px 2px gray;
 	border-radius: 5px;
 	background-color: #ffffff;
+}
+.image1{
+	margin-left: 155px;
 }
 /*#gallery { list-style: none; display: block; }
 #gallery li { float: left; margin: 0 10px 10px 0; }*/
