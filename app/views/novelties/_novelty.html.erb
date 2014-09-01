@@ -1,6 +1,6 @@
 <tr id=<%= "novelty_#{novelty.id}" %>>
     <td><%= novelty.name %></td>
-    <td><%= novelty.description %></td>
+    <td><div class="dc"><%= novelty.description %></div></td>
     <td><%= link_to 'Ver', novelty, remote: true %></td>
     <td><%= link_to 'Editar', edit_novelty_path(novelty), remote: true %></td>
     <td><%= link_to 'Eliminar', novelty, method: :delete, data: { confirm: 'Are you sure?' } %></td>

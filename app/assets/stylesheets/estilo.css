@@ -2,15 +2,14 @@
 
 /* ________________________albums_____________________*/
 .mov2{
-	height: 210px;
-  	width: 285px;
+	height: 130px;
+  	width: 280px;
   	float: left;
-  	position: relative;
   	margin: 10px -15px 6px 22px;
   	list-style: none;
 	border: 1px none #ddd;
 	/* padding: 11px 11px 11px; */
-	padding: 11px 5px;
+	padding: 10px 0px;
 	border: 1px solid #999;
 	box-shadow: 0px 0px 3px 2px gray;
 	border-radius: 5px;
@@ -19,20 +18,52 @@
 .title{
 	text-align: center;
 	z-index: 999;
-	margin-top: -220px;
+	margin-top: -120px;
 	font-size: 20px;
 	color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+.im{
+	overflow-y:scroll;
+    overflow-x:none; 
+    height: 80px;
+}
 .botones  {
 	z-index: 999;
-	position: relative;
-	top: 100px;
-	left: 0px;
-	display: none;
+	display: block;
 	padding-top: 10px;
-	padding-left: 5px;
+	padding-left: 8px;
+	width: 280px;
+	margin-top: 50px;
+	height: 30px;
+	transform: scale(0.8) ;
+    -webkit-transform:  scale(0.8) ;
+    -moz-transform:  scale(0.8) ;
+    -o-transform: scale(0.8) ;
+    -ms-transform: scale(0.8) ;
 }
+
+.botones:hover{
+	display: block;
+    transition:All 1s ease;
+    -webkit-transition:All 1s ease;
+    -moz-transition:All 1s ease;
+    -o-transition:All 1s ease;
+	
+}
+.im:hover ~ .botones {
+	display: block;
+	transform: rotate(0deg) scale(0.6) skew(1deg) translate(0px);
+    -webkit-transform: rotate(0deg) scale(0.6) skew(1deg) translate(0px);
+    -moz-transform: rotate(0deg) scale(0.6) skew(1deg) translate(0px);
+    -o-transform: rotate(0deg) scale(0.6) skew(1deg) translate(0px);
+    -ms-transform: rotate(0deg) scale(0.6) skew(1deg) translate(0px);
+}
+
+
+
+
+
 .botones2  {
 	z-index: 999;
 	display: none;
@@ -43,23 +74,6 @@
 }
 
 
-.botones:hover{
-	display: block;
-	transition:All 1s ease;
-    -webkit-transition:All 1s ease;
-    -moz-transition:All 1s ease;
-    -o-transition:All 1s ease;
-    
-	
-}
-.image:hover ~ .botones {
-	display: block;
-	transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
-    -webkit-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
-    -moz-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
-    -o-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
-    -ms-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
-}
 
 
 .botones2:hover{
@@ -85,14 +99,21 @@
 .desc{
 	border:1px solid transparent;
 	width: 260px;
-	height: 70px;
-	color: black;	
+	height: 70px;	
 	word-break: break-all;
  	word-wrap: break-word;
  	overflow-y:scroll;
     overflow-x:none; 
 }
-
+.dc{
+	border:1px solid transparent;
+	width: 250px;
+	height: 40px;	
+	word-break: break-all;
+ 	word-wrap: break-word;
+ 	overflow-y:scroll;
+    overflow-x:none; 
+}
 /*:___________________________galerias_______________________:*/
 
 .mov1{

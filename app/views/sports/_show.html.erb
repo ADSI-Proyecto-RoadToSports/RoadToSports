@@ -1,15 +1,16 @@
+<div class="encab">
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Nombre:</strong>
   <%= @sport.name %>
 </p>
-
+<div class="dc">
 <p>
   <strong>Descripción:</strong>
   <%= @sport.description %>
 </p>
-
+</div>
 <p>
   <strong>Modalidad:</strong>
   <%= @sport.modalities_type.name rescue nil %>
@@ -18,3 +19,4 @@
 
 <%= link_to 'Editar', edit_sport_path(@sport) %> |
 <%= link_to 'Atras', sports_path %>
+</div>

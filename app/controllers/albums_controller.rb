@@ -28,31 +28,31 @@ class AlbumsController < ApplicationController
   # POST /albums.json
   def create
     @album = Album.new(album_params)
-    render action: :new unless @album.save
-    #respond_to do |format|
-    #  if @album.save
-    #    format.html { redirect_to @album, notice: 'Album was successfully created.' }
-    #    format.json { render :show, status: :created, location: @album }
-    #  else
-    #    format.html { render :new }
-    #    format.json { render json: @album.errors, status: :unprocessable_entity }
-    #  end
-    #end
+    #render action: :new unless @album.save
+    respond_to do |format|
+      if @album.save
+        format.html { redirect_to albums_path, notice: 'Album was successfully created.' }
+        format.json { render :show, status: :created, location: @album }
+      else
+        format.html { render :new }
+        format.json { render json: @album.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /albums/1
   # PATCH/PUT /albums/1.json
   def update
-    render action: :edit unless @album.update_attributes(album_params)
-    #respond_to do |format|
-    #  if @album.update(album_params)
-    #    format.html { redirect_to @album, notice: 'Album was successfully updated.' }
-    #    format.json { render :show, status: :ok, location: @album }
-    #  else
-    #    format.html { render :edit }
-    #    format.json { render json: @album.errors, status: :unprocessable_entity }
-    #  end
-    #end
+    #render action: :edit unless @album.update_attributes(album_params)
+    respond_to do |format|
+      if @album.update(album_params)
+        format.html { redirect_to albums_path, notice: 'Album was successfully updated.' }
+        format.json { render :show, status: :ok, location: @album }
+      else
+        format.html { render :edit }
+        format.json { render json: @album.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # DELETE /albums/1

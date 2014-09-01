@@ -1,7 +1,7 @@
 <tr id=<%= "sport_#{sport.id}" %>>
         <td><%= button_to 'Ver equipos ⇨ '+ sport.teams.count.to_s + '', sport_teams_path(sport), :method=>"get", class: "btn btn-default btn-sm" %></td>
         <td><%= sport.name %></td>
-        <td><%= sport.description %></td>
+        <td><div class="dc"><%= sport.description %></div></td>
         <td><%= sport.modalities_type.name rescue nil %></td>
         <td><%= link_to 'Ver', sport, remote: true %></td>
         <td><%= link_to 'Editar', edit_sport_path(sport), remote: true %></td>

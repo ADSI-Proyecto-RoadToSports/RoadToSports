@@ -1,3 +1,4 @@
+<div class="encab">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -14,12 +15,12 @@
   <strong>Lugar:</strong>
   <%= @fch_lg_match.place %>
 </p>
-
+<div class="dc">
 <p>
   <strong>Descripción:</strong>
   <%= @fch_lg_match.description %>
 </p>
-
+</div>
 <p>
   <strong>Equipo:</strong>
   <%= @fch_lg_match.team %>
@@ -32,3 +33,4 @@
 
 <%= link_to 'Editar', edit_fch_lg_match_path(@fch_lg_match) %> |
 <%= link_to 'Atras', fch_lg_matches_path %>
+</div>
