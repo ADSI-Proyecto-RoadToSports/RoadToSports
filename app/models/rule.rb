@@ -1,4 +1,9 @@
 class Rule < ActiveRecord::Base
+
+	validates :name, :presence => true
+	validates :description, :presence => true
+	validates :state, inclusion: [true, false]
+	
 	has_many :sports
 	
 	def self.search(search, page)
