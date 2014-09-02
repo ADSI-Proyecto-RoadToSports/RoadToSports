@@ -42,12 +42,6 @@ get 'logout' => 'user_sessions#destroy', :as => :logout
 
   resources :sports
 
-  resources :matches
-
-  resources :scores
-
-  resources :fch_lg_matches
-
   resources :modalities
 
   resources :tournaments

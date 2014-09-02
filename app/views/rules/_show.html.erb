@@ -13,7 +13,7 @@
 </div>
 <p>
   <strong>Estado:</strong>
-  <%= @rule.state %>
+  <%= rule(@rule.state) %>
 </p>
 
 <%= link_to 'Editar', edit_rule_path(@rule), remote: true %> |
