@@ -42,23 +42,13 @@ get 'logout' => 'user_sessions#destroy', :as => :logout
 
   resources :sports
 
-  resources :modalities
-
   resources :tournaments
-
-  resources :preferences
 
   resources :sessions
 
-  resources :information
-
   resources :novelties
 
-  resources :constituents
-
   resources :rules
-
-  resources :configurations
 
   resources :activities
 
@@ -67,14 +57,6 @@ get 'logout' => 'user_sessions#destroy', :as => :logout
   resources :type_rules
 
   resources :type_tournaments
-
-  resources :type_preferences
-
-  resources :type_configurations
-
-  resources :type_informations
-
-  resources :new_types
 
   resources :document_types
 

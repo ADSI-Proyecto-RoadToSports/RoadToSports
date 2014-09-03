@@ -26,29 +26,13 @@ class PfutbolsController < ApplicationController
   def create
     @pfutbol = Pfutbol.new(pfutbol_params)
 
-    respond_to do |format|
-      if @pfutbol.save
-        format.html { redirect_to @pfutbol, notice: 'Pfutbol was successfully created.' }
-        format.json { render :show, status: :created, location: @pfutbol }
-      else
-        format.html { render :new }
-        format.json { render json: @pfutbol.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @pfutbol.save
   end
 
   # PATCH/PUT /pfutbols/1
   # PATCH/PUT /pfutbols/1.json
   def update
-    respond_to do |format|
-      if @pfutbol.update(pfutbol_params)
-        format.html { redirect_to @pfutbol, notice: 'Pfutbol was successfully updated.' }
-        format.json { render :show, status: :ok, location: @pfutbol }
-      else
-        format.html { render :edit }
-        format.json { render json: @pfutbol.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @pfutbol.update_attributes(pfutbol_params)
   end
 
   # DELETE /pfutbols/1
@@ -69,6 +53,6 @@ class PfutbolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pfutbol_params
-      params.require(:pfutbol).permit(:equipo1, :puntos2, :gano1, :equipo2, :puntos2, :gano2, :fecha, :estado, :user_id, :tournament_id)
+      params.require(:pfutbol).permit(:equipo1, :puntos1, :gano1, :equipo2, :puntos2, :gano2, :fecha, :estado, :user_id, :tournament_id)
     end
 end

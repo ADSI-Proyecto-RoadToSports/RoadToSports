@@ -1,4 +1,4 @@
-<%= form_for(@pfutbol) do |f| %>
+<%= simple_form_for(@pfutbol, :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
   <% if @pfutbol.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@pfutbol.errors.count, "error") %> prohibited this pfutbol from being saved:</h2>
@@ -16,12 +16,8 @@
     <%= f.text_field :equipo1 %>
   </div>
   <div class="field">
-    <%= f.label :puntos2 %><br>
-    <%= f.number_field :puntos2 %>
-  </div>
-  <div class="field">
-    <%= f.label :gano1 %><br>
-    <%= f.check_box :gano1 %>
+    <%= f.label :puntos1 %><br>
+    <%= f.number_field :puntos1 %>
   </div>
   <div class="field">
     <%= f.label :equipo2 %><br>
@@ -32,10 +28,6 @@
     <%= f.number_field :puntos2 %>
   </div>
   <div class="field">
-    <%= f.label :gano2 %><br>
-    <%= f.check_box :gano2 %>
-  </div>
-  <div class="field">
     <%= f.label :fecha %><br>
     <%= f.datetime_select :fecha %>
   </div>
@@ -44,14 +36,14 @@
     <%= f.check_box :estado %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <label>Administrador</label><br>
+    <%= f.collection_select :user_id, User.all, :id, :email, class: "form-control", prompt: "Seleccione Un Admin" %>
   </div>
   <div class="field">
-    <%= f.label :torunament_id %><br>
-    <%= f.number_field :tournament_id %>
+     <label>Torneor</label><br>
+    <%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: "form-control", prompt: "Seleccione Un Admin" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar"%>
   </div>
 <% end %>

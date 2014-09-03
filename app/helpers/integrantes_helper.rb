@@ -10,7 +10,7 @@ module IntegrantesHelper
 				  <strong>El maximo de integrantes para Futbol es de 22.</strong>
 				</div>".html_safe
 			else
-				link_to 'New Integrante', new_team_integrante_path(@team)
+				button_to 'Nuevo Integrante', new_team_integrante_path(@team), :method => "get", class: "btn btn-info"
 			end
 		elsif depo == 2 # AJEDREZ 
 
@@ -20,7 +20,7 @@ module IntegrantesHelper
 				  <strong>El maximo de integrantes para Ajedrez es de 1.</strong>
 				</div>".html_safe
 			else
-				link_to 'New Integrante', new_team_integrante_path(@team)
+				button_to 'Nuevo Integrante', new_team_integrante_path(@team), :method => "get", class: "btn btn-info"
 			end
 		elsif depo == 3 # BALONCESTO
 
@@ -30,7 +30,7 @@ module IntegrantesHelper
 				  <strong>El maximo de integrantes para Baloncesto es de 10.</strong>
 				</div>".html_safe
 			else
-				link_to 'New Integrante', new_team_integrante_path(@team)
+				button_to 'Nuevo Integrante', new_team_integrante_path(@team), :method => "get", class: "btn btn-info"
 			end
 		elsif depo == 4 # TENIS DE MESA
 
@@ -40,7 +40,7 @@ module IntegrantesHelper
 				  <strong>El maximo de integrantes para Tenis de mesa es de 1.</strong>
 				</div>".html_safe
 			else
-				link_to 'New Integrante', new_team_integrante_path(@team)
+				button_to 'Nuevo Integrante', new_team_integrante_path(@team), :method => "get", class: "btn btn-info"
 			end
 		elsif depo == 5 # VOLEIBOL
 
@@ -50,7 +50,7 @@ module IntegrantesHelper
 				  <strong>El maximo de integrantes para Voleibol es de 10.</strong>
 				</div>".html_safe
 			else
-				link_to 'New Integrante', new_team_integrante_path(@team)
+				button_to 'Nuevo Integrante', new_team_integrante_path(@team), :method => "get", class: "btn btn-info"
 			end
 		elsif depo == 6 # ATLETISMO
 
@@ -60,7 +60,7 @@ module IntegrantesHelper
 				  <strong>El maximo de integrantes para Atletismo es de 1.</strong>
 				</div>".html_safe
 			else
-				link_to 'New Integrante', new_team_integrante_path(@team)
+				button_to 'Nuevo Integrante', new_team_integrante_path(@team), :method => "get", class: "btn btn-info"
 			end
 		elsif depo == 7 # MICRO
 
@@ -70,7 +70,7 @@ module IntegrantesHelper
 				  <strong>El maximo de integrantes para MicroFutbol es de 10.</strong>
 				</div>".html_safe
 			else
-				link_to 'New Integrante', new_team_integrante_path(@team)
+				button_to 'Nuevo Integrante', new_team_integrante_path(@team), :method => "get", class: "btn btn-info"
 			end
 		end
 

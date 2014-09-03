@@ -27,15 +27,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to events_path, notice: 'El evento ha sido creado.' }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @event.save
   end
 
   # PATCH/PUT /events/1
@@ -43,7 +35,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to events_path, notice: 'El evento ha sido actualizado.' }
+        format.html { redirect_to @event, notice: 'El evento ha sido actualizado.' }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }

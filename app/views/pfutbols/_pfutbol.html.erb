@@ -1,0 +1,27 @@
+<tr id=<%= "pfutbol_#{pfutbol.id}" %>>
+        <td><%= pfutbol.equipo1 %></td>
+        <td><%= pfutbol.puntos1 %></td>
+        <td><%= if pfutbol.puntos1 > pfutbol.puntos2
+                    gano() 
+                elsif pfutbol.puntos1 == pfutbol.puntos2
+                    empate() 
+                else
+                    perdio()
+                end %></td>
+        <td><%= pfutbol.equipo2 %></td>
+        <td><%= pfutbol.puntos2 %></td>
+        <td><%= if pfutbol.puntos2 > pfutbol.puntos1
+                    gano() 
+                elsif pfutbol.puntos1 == pfutbol.puntos2
+                    empate() 
+                else
+                    perdio()
+                end  %></td>
+        <td><%= pfutbol.fecha %></td>
+        <td><%= estado(pfutbol.estado) %></td>
+        <td><%= pfutbol.user.email %></td>
+        <td><%= pfutbol.tournament.name %></td>
+        <td><%= link_to 'Ver', pfutbol , remote: true%></td>
+        <td><%= link_to 'Editar', edit_pfutbol_path(pfutbol), remote: true %></td>
+        <td><%= link_to 'Eliminar', pfutbol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>

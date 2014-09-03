@@ -5988,17 +5988,35 @@ button.close {
 .siguiente {
   position: absolute;
   right: 250px;
-  bottom: 130px;
+  bottom: 120px;
 }
 
 .volver{
   position: absolute;
   
-  bottom: 130px;
+  bottom: 120px;
+}
+
+.ir{
+  position: absolute;
+  left: 650px;
+  bottom: 120px;
 }
 
 .nevento{
   position: absolute;
   top: 160px;
-  left: 110px;
+  left: 100px;
+}
+#divi{
+  width: 900px;
+  height: 320px;
+  background-color: #f8f8f8;
+  border: 2px #3399ff solid;
+  border-radius: 5px;
+  z-index: 100;
+    opacity: 1;
+    box-shadow:0 0px 10px #0066cc, 0 0px 5px #787878 inset;
+    overflow-y:scroll;
+    overflow-x:none;
 }
