@@ -19,8 +19,10 @@
       </table>
     </ul>
   </div>
-
-<%= link_to 'Nueva Foto', new_album_gallery_path(@album), remote: true, class: "btn btn-info siguiente" %><br>
+<% if can? :create, @gallery %>
+<%= link_to 'Nueva Foto', new_album_gallery_path(@album), remote: true, class: "btn btn-info siguiente" %>
+<% end %>
+<br>
 <%= link_to 'Back to Albums', albums_path, :class=>"btn btn-default volver" %><br>
 <%#=<%= will_paginate @galleries, :previous_label => '&laquo; Pagina Anterior', :next_label => 'Siguiente Pagina 
 &raquo;' %>

@@ -9,7 +9,7 @@
 <h1>Novedades y Noticias</h1>
 <%= form_tag novelties_path, :method => 'get' do %>
 <% content_tag :label do %>
-<%= text_field_tag :search, params[:search] %>
+<%= text_field_tag :search, params[:search], :placeholder => "Buscar por nombre..." %>
 <%= submit_tag "Buscar", :name => nil %>
 <% end %>
 <% end %>
@@ -26,8 +26,9 @@
 </table>
 
 <br>
-
+<% if can? :create, @novelty %>
 <%= button_to 'Nueva Novedad', new_novelty_path ,remote: true, :method=>"get", class: "btn btn-info"%><br>
+<% end %>
 <%= will_paginate @novelties, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

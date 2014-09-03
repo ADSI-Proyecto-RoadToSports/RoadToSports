@@ -3,6 +3,10 @@
     <td><%= activity.state %></td>
     <td><div class="dc"><%= activity.description %></div></td>
     <td><%= link_to 'Ver', activity, remote: true %></td>
+    <% if can? :update, activity %>
     <td><%= link_to 'Editar', edit_activity_path(activity), remote: true %></td>
+    <% end %>
+    <% if can? :create, activity %>
     <td><%= link_to 'Eliminar', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
 </tr>

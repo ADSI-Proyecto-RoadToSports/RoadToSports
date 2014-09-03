@@ -16,6 +16,9 @@
 </table>
 </div>
 <br>
-
+<% if can? :create, @album %>
 <%= button_to 'Nuevo Album', new_album_path, remote: true, :method => "get", class: 'btn btn-info' %>
-</div></div></div>
+<% end %>
+</div>
+</div>
+</div>

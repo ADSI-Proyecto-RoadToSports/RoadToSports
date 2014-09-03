@@ -22,7 +22,21 @@
   <div class="field">
      <%= f.label :password_confirmation %><br />
      <%= f.password_field :password_confirmation %>
-  </div><br>
+  </div>
+  <p>Rol:</p>
+  <div class="field">
+    <%= f.label :Admin %><br>
+    <%= f.check_box :admin %>
+  </div>
+  <div class="field">
+    <%= f.label :Usuario %><br>
+    <%= f.check_box :usuario %>
+  </div>
+  <div class="field">
+    <%= f.label :invitado %><br>
+    <%= f.check_box :invitado %>
+  </div>
+  <br>
   <div class="actions">
     <%= f.submit 'Crear', :method=>"get", class: "btn btn-info" %>
   </div>

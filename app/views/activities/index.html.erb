@@ -9,7 +9,7 @@
 <h1>Actividades</h1>
 <%= form_tag activities_path, :method => 'get' do %>
 <% content_tag :label do %>
-<%= text_field_tag :search, params[:search] %>
+<%= text_field_tag :search, params[:search], :placeholder => "Buscar por nombre..." %>
 <%= submit_tag "Buscar", :name => nil %>
 <% end %>
 <% end %>
@@ -28,9 +28,14 @@
 
 <br>
 
-<%= button_to 'Nueva Actividad', new_activity_path, remote: true, :method=>"get", class: "btn btn-info" %><br>
+<% if can? :create, @activity %>
+	<%= button_to 'Nueva Actividad', new_activity_path, remote: true, :method=>"get", class: "btn btn-info" %>
+<% end %>
+<br>
 <%= will_paginate @activities, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 
 Lista de actividades: <%= @activities.count %>
-</div></div></div>
+</div>
+</div>
+</div>

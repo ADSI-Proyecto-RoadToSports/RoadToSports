@@ -7,7 +7,7 @@ class Sport < ActiveRecord::Base
 
 	  has_many :tournaments
 	  has_many :teams, :dependent => :destroy
-
+	  has_many :rules, :dependent => :destroy
 	  belongs_to :modalities_type, :foreign_key => 'modalitiestype_id'
 
   def self.search(search, page)

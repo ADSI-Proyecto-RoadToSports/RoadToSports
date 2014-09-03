@@ -9,7 +9,7 @@
 <h1>Torneos</h1>
 <%= form_tag tournaments_path, :method => 'get' do %>
 <% content_tag :label do %>
-<%= text_field_tag :search, params[:search] %>
+<%= text_field_tag :search, params[:search], :placeholder => "Buscar por nombre..." %>
 <%= submit_tag "Buscar", :name => nil %>
 <% end %>
 <% end %>
@@ -33,7 +33,9 @@
 </table>
 
 <br>
-<%= button_to 'Nuevo Torneo', new_tournament_path, remote: true, :method=>"get", class: "btn btn-info"  %><br>
+<% if can? :create, @tournament %>
+<%= button_to 'Nuevo Torneo', new_tournament_path, remote: true, :method=>"get", class: "btn btn-info"  %>
+<% end %><br>
 <%= will_paginate @tournaments, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

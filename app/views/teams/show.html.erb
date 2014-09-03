@@ -1,3 +1,11 @@
+<div class="contenido ">
+<div class="img1"></div>
+<div class="img2"></div>
+<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in cont1" id="inicio">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -9,9 +17,11 @@
   <%= mostrar_activo(@team.active) %>
 </p>
 <p>
-  <strong>Sport:</strong>
+  <strong>Deporte:</strong>
   <%= @team.sport.name %>
 </p>
-
+<% if can? :update, @team %>
 <%= link_to 'Editar', edit_sport_team_path(@sport,@team) %> |
+<% end %>
 <%= link_to 'Atras', sport_teams_path(@sport) %>
+</div></div></div>

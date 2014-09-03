@@ -14,7 +14,8 @@
 <p>
 	<%= image_tag @album.image.url(:medium) %>
 </p>
-
+<% if can? :create, @album %>
 <%= link_to 'Edit', edit_album_path(@album), remote: true, :class => 'btn btn-primary' %> |
+<% end %>
 <%= link_to 'Back', albums_path, :class => 'btn btn-default' %>
 </div>

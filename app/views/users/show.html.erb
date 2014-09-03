@@ -12,7 +12,15 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<p>
+<strong>Rol:</strong>
+<%= rol_usuarioA(@user.admin) %>
+<%= rol_usuarioU(@user.usuario) %>
+<%= rol_usuarioI(@user.invitado) %>
+</p>
 
-<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Editar', edit_user_path(@user) %>
+<% if can? :read, @user %>|
 <%= link_to 'Atras', users_path %>
+<% end %>
 </div></div></div>

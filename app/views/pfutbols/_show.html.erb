@@ -1,0 +1,58 @@
+<div class="pfutbol">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Equipo1:</strong>
+  <%= @pfutbol.equipo1 %>
+</p>
+
+<p>
+  <strong>Puntos1:</strong>
+  <%= @pfutbol.puntos1 %>
+  <%= if @pfutbol.puntos1 > @pfutbol.puntos2
+        gano() 
+      elsif @pfutbol.puntos1 == @pfutbol.puntos2
+        empate() 
+      else
+        perdio()
+      end %>
+</p>
+
+
+<p>
+  <strong>Equipo2:</strong>
+  <%= @pfutbol.equipo2 %>
+</p>
+
+<p>
+  <strong>Puntos2:</strong>
+  <%= @pfutbol.puntos2 %>
+  <%= if @pfutbol.puntos2 > @pfutbol.puntos1
+        gano() 
+      elsif @pfutbol.puntos1 == @pfutbol.puntos2
+        empate() 
+      else
+        perdio()
+      end %>
+</p>
+<p>
+  <strong>Fecha:</strong>
+  <%= @pfutbol.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= estado(@pfutbol.estado) %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pfutbol.user_id %>
+</p>
+
+<p>
+  <strong>Torneo:</strong>
+  <%= @pfutbol.tournament_id %>
+</p>
+
+</div>

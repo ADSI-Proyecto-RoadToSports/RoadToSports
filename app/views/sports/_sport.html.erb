@@ -4,5 +4,7 @@
         <td><div class="dc"><%= sport.description %></div></td>
         <td><%= sport.modalities_type.name rescue nil %></td>
         <td><%= link_to 'Ver', sport, remote: true %></td>
+        <% if can? :update, sport %>
         <td><%= link_to 'Editar', edit_sport_path(sport), remote: true %></td>
+        <% end %>
       </tr>

@@ -1,0 +1,4 @@
+<% @nombrepartidos.each do |nombrepartido| %>
+    <div class="titulop"><h1 class="titulon"><%= nombrepartido.nombre %></h1>
+    <%= button_to 'Editar', edit_nombrepartido_path(nombrepartido), :method => "get", class: "btn btn-primary opcione pull-right btn-xs" %></div>
+<% end %>

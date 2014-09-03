@@ -1,5 +1,7 @@
 class NoveltiesController < ApplicationController
   before_action :set_novelty, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  # comments_controller.rb possibility
 
   # GET /novelties
   # GET /novelties.json

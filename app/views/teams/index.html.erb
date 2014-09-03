@@ -6,7 +6,8 @@
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active in cont1" id="inicio">
-<h1>Listing teams</h1>
+<h1>Listado de equipos</h1>
+<div id="galeria">
 <table class="table table-striped table-hover ">
   <thead>
       <th>Nombre</th>
@@ -24,18 +25,20 @@
         <td><%= team.sport.name %></td>
         <td><span class="label label-primary"><%= team.integrantes.count.to_s %></span></td>
         <td><%= mostrar_activo(team.active) %></td>
-        <td><%= link_to 'Show', sport_team_path(@sport,team) %></td>
-        <td><%= link_to 'Edit', edit_sport_team_path(@sport,team) %></td>
-        <td><%= link_to 'Destroy', sport_team_path(@sport,team), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', sport_team_path(@sport,team) %></td>
+        <% if can? :update, team %>
+        <td><%= link_to 'Editar', edit_sport_team_path(@sport,team) %></td>
+        <% end %>
+        <% if can? :destroy, team %>
+        <td><%= link_to 'Eliminar', sport_team_path(@sport,team), method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
-
-<%= link_to 'New Team', new_sport_team_path(@sport) %>
-
 <%= button_to 'Volver a la lista de deportes', sports_path,  :method=>"get", class: "btn btn-primary volver" %>
 <%= button_to 'Ir a los Torneos', tournaments_path, :method=>"get", class: "btn btn-success siguiente" %>
+<%= button_to 'Ir a los Partidos', pfutbols_path, :method=>"get", class: "btn btn-warning ir" %>
 </div></div></div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :nombrepartidos
+
   resources :albums do
     resources :galleries
   end
@@ -42,29 +44,13 @@ get 'logout' => 'user_sessions#destroy', :as => :logout
 
   resources :sports
 
-  resources :matches
-
-  resources :scores
-
-  resources :fch_lg_matches
-
-  resources :modalities
-
   resources :tournaments
-
-  resources :preferences
 
   resources :sessions
 
-  resources :information
-
   resources :novelties
 
-  resources :constituents
-
   resources :rules
-
-  resources :configurations
 
   resources :activities
 
@@ -73,14 +59,6 @@ get 'logout' => 'user_sessions#destroy', :as => :logout
   resources :type_rules
 
   resources :type_tournaments
-
-  resources :type_preferences
-
-  resources :type_configurations
-
-  resources :type_informations
-
-  resources :new_types
 
   resources :document_types
 

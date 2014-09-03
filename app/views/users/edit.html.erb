@@ -10,6 +10,8 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Mostrar', @user %> |
+<%= link_to 'Mostrar', @user %> 
+<% if can? :read, @user %>|
 <%= link_to 'Atras', users_path %>
+<% end %>
 </div></div></div>
