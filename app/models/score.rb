@@ -1,4 +1,10 @@
 class Score < ActiveRecord::Base
+
+	validates :description, :presence => true
+	validates :datescore, :presence => true
+	validates :modalitie , :presence => true
+	validates :team, :presence => true
+	
   belongs_to :modalitie
   belongs_to :team
 
