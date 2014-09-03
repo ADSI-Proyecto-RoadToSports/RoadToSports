@@ -4,12 +4,14 @@ class PfutbolsController < ApplicationController
   # GET /pfutbols
   # GET /pfutbols.json
   def index
-    @pfutbols = Pfutbol.all
+    @pfutbols = Pfutbol.search(params[:search], params[:page])
+    @nombrepartidos = Nombrepartido.all
   end
 
   # GET /pfutbols/1
   # GET /pfutbols/1.json
   def show
+    @pfutbols = Pfutbol.find(params[:id])
   end
 
   # GET /pfutbols/new
@@ -19,6 +21,7 @@ class PfutbolsController < ApplicationController
 
   # GET /pfutbols/1/edit
   def edit
+    @pfutbols = Pfutbol.find(params[:id])
   end
 
   # POST /pfutbols

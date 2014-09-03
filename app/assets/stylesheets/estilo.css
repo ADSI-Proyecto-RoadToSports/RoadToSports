@@ -187,3 +187,31 @@
 	width: 88px;
 	text-align: center;
 }
+
+
+/*________________________Partidos____________________________*/
+
+.equi1{
+	background-color: #EDF0FF;
+}
+.lin{
+	border-left: 1px solid #A9A9A9;
+}
+
+.titulop{
+	border-radius: 20px;
+	text-align: center;
+	-webkit-box-shadow: -1px 0px 16px 0px rgba(0, 20, 146, 1);
+	-moz-box-shadow:    -1px 0px 16px 0px rgba(0, 20, 146, 1);
+	box-shadow:         -1px 0px 16px 0px rgba(0, 20, 146, 1);
+	height: 40px;
+	background-image: url(titulo.jpg);
+}
+.opcione{
+	position: relative;
+	top: -30px;
+	left: -20px;
+}
+.titulon{
+	color: white;
+}

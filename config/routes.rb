@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :nombrepartidos
+
   resources :albums do
     resources :galleries
   end

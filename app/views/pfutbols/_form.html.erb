@@ -40,8 +40,8 @@
     <%= f.collection_select :user_id, User.all, :id, :email, class: "form-control", prompt: "Seleccione Un Admin" %>
   </div>
   <div class="field">
-     <label>Torneor</label><br>
-    <%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: "form-control", prompt: "Seleccione Un Admin" %>
+     <label>Torneo</label><br>
+    <%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: "form-control", prompt: "Seleccione Un Torneo" %>
   </div>
   <div class="actions">
     <%= f.submit "Guardar"%>

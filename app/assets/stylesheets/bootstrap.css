@@ -5954,9 +5954,9 @@ button.close {
 }
 .logo{
  position: absolute;
-  top: 50px; left: 10px;
-  width: 150px;
-  height: 130px;
+  top: 20px; left: 5px;
+  width: 160px;
+  height: 140px;
   z-index:9998; 
 }
 .flechita{
