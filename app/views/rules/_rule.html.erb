@@ -3,6 +3,7 @@
         <td><div class="dc">
 <%= rule.description %></div></td>
         <td><%= rule.sport.name%></td>
+        <td><%= rule.type_rule.name %></td>
         <td><%= rule(rule.state) %></td>
         <td><%= link_to 'Ver', rule, remote: true %></td>
         <td><%= link_to 'Editar', edit_rule_path(rule), remote: true %></td>

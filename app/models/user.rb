@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
     
     validates :email, uniqueness: true
     validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, message: 'Formato no valido' }
+
+    def self.search(search, page)
+		where(['upper(email) like ?',
+		"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("id")
+	end
 end

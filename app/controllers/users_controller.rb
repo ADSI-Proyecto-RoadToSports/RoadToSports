@@ -4,10 +4,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.all
+    @users = User.search(params[:search], params[:page])
   end
 
   def show
+    @users = User.find(params[:id])
   end
 
   def new
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @users = User.find(params[:id])
   end
 
   def create

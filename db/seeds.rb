@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+document_types = [{name: "C.C", description: "Cedula de ciudadania"},
+				{name: "T.I", description: "Tarjeta de identidad"},
+				{name: "R.C", description: "Registro Civil"},
+				{name: "C.E", description: "Cedula extrangeria"}]
+document_types.each do |document_type|
+	DocumentType.create(document_type) unless DocumentType.exists?(document_type)
+end

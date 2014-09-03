@@ -9,7 +9,7 @@
 <h1>Torneos</h1>
 <%= form_tag tournaments_path, :method => 'get' do %>
 <% content_tag :label do %>
-<%= text_field_tag :search, params[:search] %>
+<%= text_field_tag :search, params[:search], :placeholder => "Buscar por nombre..." %>
 <%= submit_tag "Buscar", :name => nil %>
 <% end %>
 <% end %>
