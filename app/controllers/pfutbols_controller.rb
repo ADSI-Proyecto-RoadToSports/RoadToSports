@@ -55,6 +55,6 @@ class PfutbolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pfutbol_params
-      params.require(:pfutbol).permit(:equipo1, :puntos1, :equipo2, :puntos2, :fecha, :estado, :user_id, :tournament_id)
+      params.require(:pfutbol).permit(:equipo1, :puntos1, :equipo2, :puntos2, :fecha, :estado, :user_id, :tournament_id, :puntoso1, :puntoso2)
     end
 end

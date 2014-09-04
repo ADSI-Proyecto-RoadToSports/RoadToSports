@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :nombrepartidobs
+
+  resources :pbaloncestos
+
   resources :nombrepartidos
 
   resources :albums do

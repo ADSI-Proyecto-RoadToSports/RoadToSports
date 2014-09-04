@@ -8,6 +8,7 @@
                 else
                     perdio()
                 end %></td>
+        <td class="equi1"><%= pfutbol.puntoso1 %></td>
         <td class="equi1 lin"><%= pfutbol.equipo2 %></td>
         <td class="equi1"><%= pfutbol.puntos2 %></td>
         <td class="equi1"><%= if pfutbol.puntos2 > pfutbol.puntos1
@@ -17,10 +18,11 @@
                 else
                     perdio()
                 end  %></td>
+        <td class="equi1"><%= pfutbol.puntoso2 %>
         <td><%= pfutbol.tournament.name %></td>
         <td><%= pfutbol.fecha %></td>
         <td><%= estado(pfutbol.estado) %></td>
-        <td><%= pfutbol.user.email %></td>
+        <td><%= pfutbol.user.nombre %></td>
         <td><%= link_to 'Ver', pfutbol , remote: true%></td>
         <% if can? :update, pfutbol %>
         <td><%= link_to 'Editar', edit_pfutbol_path(pfutbol), remote: true %></td>

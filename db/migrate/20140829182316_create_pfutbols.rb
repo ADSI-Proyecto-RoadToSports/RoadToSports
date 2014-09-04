@@ -9,7 +9,8 @@ class CreatePfutbols < ActiveRecord::Migration
       t.boolean :estado
       t.integer :user_id
       t.integer :tournament_id
-
+      t.integer :puntoso1
+      t.integer :puntoso2
       t.timestamps
     end
   end
