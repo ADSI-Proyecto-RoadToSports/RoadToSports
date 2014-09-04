@@ -11,11 +11,23 @@
     </div>
   <% end %>
 
+   <div class="field">
+       <%= f.label :nombre %><br />
+       <%= f.text_field :nombre %>
+  </div>
+
  <div class="field">
        <%= f.label :email %><br />
        <%= f.text_field :email %>
   </div>
-
+  <div class="field">
+    <label>Tipo de documento</label><br>
+    <%= f.collection_select :document_type_id, DocumentType.all, :id, :description, class: "form-control", prompt: "Seleccione Un tipo de documento" %>
+  </div>
+  <div class="field">
+    <%= f.label :documento %><br>
+    <%= f.text_field :documento %>
+  </div>
   <div class="field">
      <%= f.label :password %><br />
      <%= f.password_field :password %>

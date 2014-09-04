@@ -8,10 +8,10 @@ class UserSessionsController < ApplicationController
 
  def create
     if @user = login(params[:email], params[:password])
-      redirect_back_or_to(:users, notice: 'Sesión iniciada.')
+      redirect_back_or_to(:users, notice: 'Bienvenido '+ current_user.nombre )
     else
       flash.now[:alert] = 'Error al iniciar sesión'
-      render action: 'new'
+      render action: 'index'
     end
   end
 

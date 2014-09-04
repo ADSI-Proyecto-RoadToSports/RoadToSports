@@ -1,6 +1,6 @@
 class PfutbolsController < ApplicationController
   before_action :set_pfutbol, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /pfutbols
   # GET /pfutbols.json
   def index
@@ -55,6 +55,6 @@ class PfutbolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pfutbol_params
-      params.require(:pfutbol).permit(:equipo1, :puntos1, :gano1, :equipo2, :puntos2, :gano2, :fecha, :estado, :user_id, :tournament_id)
+      params.require(:pfutbol).permit(:equipo1, :puntos1, :equipo2, :puntos2, :fecha, :estado, :user_id, :tournament_id)
     end
 end

@@ -1,3 +1,4 @@
+<% if can? :read, @user %>
 <div class="contenido ">
 <div class="img1"></div>
 <div class="img2"></div>
@@ -16,7 +17,10 @@
 <table class="table table-striped table-hover ">
   <thead>
     <tr>
+      <th>Nombre</th>
       <th>Email</th>
+      <th>Tipo de documento</th>
+      <th>Documento</th>
       <th colspan="3">Opciones</th>
     </tr>
   </thead>
@@ -24,7 +28,10 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.nombre %></td>
         <td><%= user.email %></td>
+        <td><%= user.document_type.description %></td>
+        <td><%= user.documento %></td>
         <td><%= link_to 'Mostrar', user %></td>
         <td><%= link_to 'Editar', edit_user_path(user) %></td>
         <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
@@ -39,3 +46,13 @@
 &raquo;' %> <br>
 Lista de usuarios: <%= @users.count %>
 </div></div></div>
+<% end %>
+<div class="alerta">
+  <div class="alertah">
+    <h2 class="panel-title">Acceso No autorizado.</h2>
+  </div>
+  <div class="panel-body">
+    <h1> </h1>
+    <p>El usuario: <b><%= current_user.nombre %></b> No esta autorizado para acceder a esta página.</p>
+  </div>
+</div>

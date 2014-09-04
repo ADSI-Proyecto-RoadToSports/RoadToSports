@@ -13,7 +13,7 @@ end
 #   redirect_to root_path, :alert => exception.message
 #end
 rescue_from CanCan::AccessDenied do |exception|
-  flash[:error] = "Access denied!"
+  flash[:error] = current_user.nombre+ " No esta autorizado para acceder a esta página."
   redirect_to root_url
 end
 end

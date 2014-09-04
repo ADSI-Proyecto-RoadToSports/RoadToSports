@@ -14,11 +14,11 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-            <li><%= link_to current_user.email, edit_user_path(current_user.id) %></li>
+            <li><%= link_to current_user.nombre, edit_user_path(current_user.id) %></li>
             <li><%= link_to "Salir", :logout, method: :get %></li>
          <% else %>
             <li><%= link_to "Registrarse", new_user_path %></li> 
-            <li><%= link_to "Entrar", :login %></li>
+            <li><%= link_to "Entrar", new_user_session_path, remote: true %></li>
         <% end %>
       </ul>
 

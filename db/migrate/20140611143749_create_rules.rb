@@ -5,7 +5,7 @@ class CreateRules < ActiveRecord::Migration
       t.text :description
       t.boolean :state
       t.integer :sport_id
-	  t.integer :type_rule_id
+	    t.integer :type_rule_id
       t.timestamps
     end
   end

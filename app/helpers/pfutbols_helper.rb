@@ -1,7 +1,7 @@
 module PfutbolsHelper
 
 	def gano()
-		"<span class='label label-success'>Ganó</span>".html_safe
+		"<span class='label label-success'>Ganaron</span>".html_safe
 	end
 
 	def empate()
@@ -9,7 +9,7 @@ module PfutbolsHelper
 	end
 
 	def perdio()
-		"<span class='label label-danger'>Perdió</span>".html_safe
+		"<span class='label label-danger'>Perdieron</span>".html_safe
 	end
 
 	def estado(est)

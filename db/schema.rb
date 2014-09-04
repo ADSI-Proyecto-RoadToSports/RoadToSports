@@ -137,6 +137,7 @@ ActiveRecord::Schema.define(version: 20140903194236) do
     t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sport_id"
   end
 
   create_table "sessions", force: true do |t|
@@ -204,7 +205,6 @@ ActiveRecord::Schema.define(version: 20140903194236) do
     t.datetime "updated_at"
     t.boolean  "admin"
     t.boolean  "usuario"
-    t.boolean  "invitado"
   end
 
 end

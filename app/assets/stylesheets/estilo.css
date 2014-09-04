@@ -220,3 +220,34 @@
 .ocultar{
 	visibility: hidden;
 }
+
+/*________________________Alerta____________________________*/
+.alerta{
+	margin-top: 200px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	text-align: center;
+	-webkit-box-shadow: -3px 3px 12px 0px rgba(0, 0, 0, 1);
+-moz-box-shadow:    -3px 3px 12px 0px rgba(0, 0, 0, 1);
+box-shadow:         -3px 3px 12px 0px rgba(0, 0, 0, 1);
+	font-size: 30px;
+	background-color: #F7F7F7;
+}
+.alertah{
+	background-color: #E60000;
+	height: 30px;
+	border-radius: 5px;
+	color: white;
+	padding: 6px;
+	text-align: center;
+}
+.mensa{
+	position: relative;
+	top: -5px;
+	color: white;
+}
+
+.login{
+	text-align: center;
+	
+}

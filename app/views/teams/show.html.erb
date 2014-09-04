@@ -13,6 +13,10 @@
   <%= @team.nombre %>
 </p>
 <p>
+  <strong>Lider del equipo:</strong>
+  <%= @team.lider %>
+</p>
+<p>
   <strong>Activo?:</strong>
   <%= mostrar_activo(@team.active) %>
 </p>
@@ -23,5 +27,5 @@
 <% if can? :update, @team %>
 <%= link_to 'Editar', edit_sport_team_path(@sport,@team) %> |
 <% end %>
-<%= link_to 'Atras', sport_teams_path(@sport) %>
+<%= button_to 'Atras', sport_teams_path(@sport), :method => "get", class: "btn btn-info btn-sm" %>
 </div></div></div>

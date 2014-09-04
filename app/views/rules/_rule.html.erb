@@ -1,7 +1,7 @@
 <tr id=<%= "rule_#{rule.id}" %>>
         <td><%= rule.name %></td>
         <td><div class="dc">
-<%= rule.description %></div></td>
+        <%= rule.description %></div></td>
         <td><%= rule.sport.name%></td>
         <td><%= rule.type_rule.name %></td>
         <td><%= rule(rule.state) %></td>
@@ -9,7 +9,7 @@
         <% if can? :update, rule %>
         <td><%= link_to 'Editar', edit_rule_path(rule), remote: true %></td>
         <% end %>
-        <% if can? :destroy, pfutbol %>
+        <% if can? :destroy, rule %>
         <td><%= link_to 'Eliminar', rule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>

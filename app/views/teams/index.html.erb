@@ -13,6 +13,7 @@
       <th>Nombre</th>
       <th>Sport</th>
       <th>Numero de integrantes</th>
+      <th>Lider email</th>
       <th>Estado</th>
       <th colspan="3">Opciones</th>
     </tr>
@@ -20,16 +21,22 @@
 
   <tbody>
     <% @teams.each do |team| %>
-      <tr>
-        <td><%= button_to team.nombre, team_integrantes_path(team), :method=>"get", class: "btn btn-default btn-sm"  %></td>
+      <tr><% if current_user.admin == true || current_user.email == team.lider  %>
+          <td><%= button_to team.nombre, team_integrantes_path(team), :method=>"get", class: "btn btn-default btn-sm"  %></td>
+          <% else %>
+          <td><%= button_to team.nombre, team_integrantes_path(team), :method=>"get", class: "btn btn-default btn-sm disabled"  %></td>
+          <% end %>
+        
         <td><%= team.sport.name %></td>
         <td><span class="label label-primary"><%= team.integrantes.count.to_s %></span></td>
+        <td><%= team.lider %></td>
         <td><%= mostrar_activo(team.active) %></td>
         <td><%= link_to 'Ver', sport_team_path(@sport,team) %></td>
-        <% if can? :update, team %>
+
+        <% if current_user.admin == true || current_user.email == team.lider  %>
         <td><%= link_to 'Editar', edit_sport_team_path(@sport,team) %></td>
         <% end %>
-        <% if can? :destroy, team %>
+        <% if current_user.admin == true || current_user.email == team.lider %>
         <td><%= link_to 'Eliminar', sport_team_path(@sport,team), method: :delete, data: { confirm: 'Estas seguro?' } %></td>
         <% end %>
       </tr>

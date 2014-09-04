@@ -1,6 +1,6 @@
 class SportsController < ApplicationController
   before_action :set_sport, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /sports
   # GET /sports.json
   def index

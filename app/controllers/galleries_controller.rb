@@ -1,6 +1,7 @@
 class GalleriesController < ApplicationController
   before_action :set_gallery, only: [:show, :edit, :update, :destroy, :index, :new, :create]
   skip_before_action :verify_authenticity_token
+  load_and_authorize_resource
   # GET /galleries
   # GET /galleries.json
   def index

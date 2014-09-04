@@ -5,6 +5,7 @@ class CreateTeams < ActiveRecord::Migration
       t.references :sport, index: true
       t.timestamps,
       t.boolean :active
+      t.string :lider
     end
   end
 end

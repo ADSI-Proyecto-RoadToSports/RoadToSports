@@ -17,10 +17,10 @@
                 else
                     perdio()
                 end  %></td>
+        <td><%= pfutbol.tournament.name %></td>
         <td><%= pfutbol.fecha %></td>
         <td><%= estado(pfutbol.estado) %></td>
         <td><%= pfutbol.user.email %></td>
-        <td><%= pfutbol.tournament.name %></td>
         <td><%= link_to 'Ver', pfutbol , remote: true%></td>
         <% if can? :update, pfutbol %>
         <td><%= link_to 'Editar', edit_pfutbol_path(pfutbol), remote: true %></td>
