@@ -111,15 +111,14 @@ ActiveRecord::Schema.define(version: 20140903194236) do
   create_table "pfutbols", force: true do |t|
     t.string   "equipo1"
     t.integer  "puntos2"
-    t.boolean  "gano1"
     t.string   "equipo2"
-    t.boolean  "gano2"
     t.datetime "fecha"
     t.boolean  "estado"
     t.integer  "user_id"
     t.integer  "tournament_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "puntos1"
   end
 
   create_table "roadtosports", force: true do |t|
@@ -138,6 +137,7 @@ ActiveRecord::Schema.define(version: 20140903194236) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "sport_id"
+    t.integer  "type_rule_id"
   end
 
   create_table "sessions", force: true do |t|
@@ -164,6 +164,7 @@ ActiveRecord::Schema.define(version: 20140903194236) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "active"
+    t.string   "lider",      limit: nil
   end
 
   create_table "tipos_configs", force: true do |t|
@@ -198,13 +199,16 @@ ActiveRecord::Schema.define(version: 20140903194236) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",            null: false
-    t.string   "crypted_password", null: false
-    t.string   "salt",             null: false
+    t.string   "email",                        null: false
+    t.string   "crypted_password",             null: false
+    t.string   "salt",                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
     t.boolean  "usuario"
+    t.string   "nombre",           limit: nil
+    t.integer  "document_type_id"
+    t.string   "documento",        limit: nil
   end
 
 end
