@@ -42,10 +42,6 @@ class Ability
         #    integrante.try(:user) == user
         #end
        
-        else
-            if user.invitado?
-                
-            end
     end
     #
     # The first argument to `can` is the action you are giving the user 

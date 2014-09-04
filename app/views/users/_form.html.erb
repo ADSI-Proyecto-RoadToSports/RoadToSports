@@ -15,6 +15,7 @@
        <%= f.label :email %><br />
        <%= f.text_field :email %>
   </div>
+
   <div class="field">
      <%= f.label :password %><br />
      <%= f.password_field :password %>
@@ -23,19 +24,25 @@
      <%= f.label :password_confirmation %><br />
      <%= f.password_field :password_confirmation %>
   </div>
+<%#ocu(current_user.admin)%> 
+  <% if can? :read, @user %>
   <p>Rol:</p>
   <div class="field">
     <%= f.label :Admin %><br>
-    <%= f.check_box :admin %>
+    <%= f.check_box :admin%>
   </div>
   <div class="field">
     <%= f.label :Usuario %><br>
-    <%= f.check_box :usuario %>
+    <%= f.check_box :usuario%>
   </div>
-  <div class="field">
-    <%= f.label :invitado %><br>
-    <%= f.check_box :invitado %>
+  <% else %>
+
+  <div class="field ocultar">
+    <%= f.label :Usuario %><br>
+    <%= f.check_box :usuario, {:checked=>true} %>
   </div>
+  <% end %>
+<%#</div>%>
   <br>
   <div class="actions">
     <%= f.submit 'Crear', :method=>"get", class: "btn btn-info" %>

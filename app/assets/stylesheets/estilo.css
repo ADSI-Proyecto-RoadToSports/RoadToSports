@@ -215,3 +215,8 @@
 .titulon{
 	color: white;
 }
+
+
+.ocultar{
+	visibility: hidden;
+}
