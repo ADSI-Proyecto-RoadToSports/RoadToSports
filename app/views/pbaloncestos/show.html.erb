@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Equipo1:</strong>
+  <%= @pbaloncesto.equipo1 %>
+</p>
+
+<p>
+  <strong>Puntos:</strong>
+  <%= @pbaloncesto.puntos1 %>
+</p>
+
+<p>
+  <strong>Puntos obtenidos:</strong>
+  <%= @pbaloncesto.puntoso1 %>
+</p>
+
+<p>
+  <strong>Equipo2:</strong>
+  <%= @pbaloncesto.equipo2 %>
+</p>
+
+<p>
+  <strong>Puntos:</strong>
+  <%= @pbaloncesto.puntos2 %>
+</p>
+
+<p>
+  <strong>Puntos obtenidos:</strong>
+  <%= @pbaloncesto.puntoso2 %>
+</p>
+
+<p>
+  <strong>Torneo:</strong>
+  <%= @pbaloncesto.tournament_id %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @pbaloncesto.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @pbaloncesto.estado %>
+</p>
+
+<p>
+  <strong>Responsable:</strong>
+  <%= @pbaloncesto.user.nombre %>
+</p>
+
+<%= link_to 'Edit', edit_pbaloncesto_path(@pbaloncesto) %> |
+<%= link_to 'Back', pbaloncestos_path %>

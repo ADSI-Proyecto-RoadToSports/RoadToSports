@@ -46,7 +46,7 @@
 &raquo;' %> <br>
 Lista de usuarios: <%= @users.count %>
 </div></div></div>
-<% end %>
+<% else %>
 <div class="alerta">
   <div class="alertah">
     <h2 class="panel-title">Acceso No autorizado.</h2>
@@ -56,3 +56,4 @@ Lista de usuarios: <%= @users.count %>
     <p>El usuario: <b><%= current_user.nombre %></b> No esta autorizado para acceder a esta página.</p>
   </div>
 </div>
+<% end %>

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
   	has_many :pfutbols, :dependent => :destroy
+    has_many :pbaloncestos, :dependent => :destroy
   	validates :password, length: { minimum: 4, maximum: 10 }
   	validates :password, confirmation: true
   	validates :password_confirmation, presence: true
