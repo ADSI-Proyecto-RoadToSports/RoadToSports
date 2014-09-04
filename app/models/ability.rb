@@ -23,6 +23,7 @@ class Ability
         can :read, Integrante
         can :read, Event
         can :read, Pfutbol
+        can :read, Nombrepartido
 
 
         #operaciones de editar para algunas vistas
