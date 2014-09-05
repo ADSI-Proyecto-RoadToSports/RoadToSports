@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :participantes
+
   resources :nombrepartidobs
 
   resources :pbaloncestos
@@ -24,6 +26,10 @@ Rails.application.routes.draw do
 
   resources :sports do
     resources :teams
+  end
+  
+  resources :sports do
+    resources :participantes
   end
 
   resources :tournaments do

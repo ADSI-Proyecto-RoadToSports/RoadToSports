@@ -1,258 +1,246 @@
-                 Prefix Verb   URI Pattern                                    Controller#Action
-            integrantes GET    /integrantes(.:format)                         integrantes#index
-                        POST   /integrantes(.:format)                         integrantes#create
-         new_integrante GET    /integrantes/new(.:format)                     integrantes#new
-        edit_integrante GET    /integrantes/:id/edit(.:format)                integrantes#edit
-             integrante GET    /integrantes/:id(.:format)                     integrantes#show
-                        PATCH  /integrantes/:id(.:format)                     integrantes#update
-                        PUT    /integrantes/:id(.:format)                     integrantes#update
-                        DELETE /integrantes/:id(.:format)                     integrantes#destroy
-            sport_teams GET    /sports/:sport_id/teams(.:format)              teams#index
-                        POST   /sports/:sport_id/teams(.:format)              teams#create
-         new_sport_team GET    /sports/:sport_id/teams/new(.:format)          teams#new
-        edit_sport_team GET    /sports/:sport_id/teams/:id/edit(.:format)     teams#edit
-             sport_team GET    /sports/:sport_id/teams/:id(.:format)          teams#show
-                        PATCH  /sports/:sport_id/teams/:id(.:format)          teams#update
-                        PUT    /sports/:sport_id/teams/:id(.:format)          teams#update
-                        DELETE /sports/:sport_id/teams/:id(.:format)          teams#destroy
-                 sports GET    /sports(.:format)                              sports#index
-                        POST   /sports(.:format)                              sports#create
-              new_sport GET    /sports/new(.:format)                          sports#new
-             edit_sport GET    /sports/:id/edit(.:format)                     sports#edit
-                  sport GET    /sports/:id(.:format)                          sports#show
-                        PATCH  /sports/:id(.:format)                          sports#update
-                        PUT    /sports/:id(.:format)                          sports#update
-                        DELETE /sports/:id(.:format)                          sports#destroy
-       team_integrantes GET    /teams/:team_id/integrantes(.:format)          integrantes#index
-                        POST   /teams/:team_id/integrantes(.:format)          integrantes#create
-    new_team_integrante GET    /teams/:team_id/integrantes/new(.:format)      integrantes#new
-   edit_team_integrante GET    /teams/:team_id/integrantes/:id/edit(.:format) integrantes#edit
-        team_integrante GET    /teams/:team_id/integrantes/:id(.:format)      integrantes#show
-                        PATCH  /teams/:team_id/integrantes/:id(.:format)      integrantes#update
-                        PUT    /teams/:team_id/integrantes/:id(.:format)      integrantes#update
-                        DELETE /teams/:team_id/integrantes/:id(.:format)      integrantes#destroy
-                  teams GET    /teams(.:format)                               teams#index
-                        POST   /teams(.:format)                               teams#create
-               new_team GET    /teams/new(.:format)                           teams#new
-              edit_team GET    /teams/:id/edit(.:format)                      teams#edit
-                   team GET    /teams/:id(.:format)                           teams#show
-                        PATCH  /teams/:id(.:format)                           teams#update
-                        PUT    /teams/:id(.:format)                           teams#update
-                        DELETE /teams/:id(.:format)                           teams#destroy
-                        GET    /teams(.:format)                               teams#index
-                        POST   /teams(.:format)                               teams#create
-                        GET    /teams/new(.:format)                           teams#new
-                        GET    /teams/:id/edit(.:format)                      teams#edit
-                        GET    /teams/:id(.:format)                           teams#show
-                        PATCH  /teams/:id(.:format)                           teams#update
-                        PUT    /teams/:id(.:format)                           teams#update
-                        DELETE /teams/:id(.:format)                           teams#destroy
-          user_sessions GET    /user_sessions(.:format)                       user_sessions#index
-                        POST   /user_sessions(.:format)                       user_sessions#create
-       new_user_session GET    /user_sessions/new(.:format)                   user_sessions#new
-      edit_user_session GET    /user_sessions/:id/edit(.:format)              user_sessions#edit
-           user_session GET    /user_sessions/:id(.:format)                   user_sessions#show
-                        PATCH  /user_sessions/:id(.:format)                   user_sessions#update
-                        PUT    /user_sessions/:id(.:format)                   user_sessions#update
-                        DELETE /user_sessions/:id(.:format)                   user_sessions#destroy
-                  users GET    /users(.:format)                               users#index
-                        POST   /users(.:format)                               users#create
-               new_user GET    /users/new(.:format)                           users#new
-              edit_user GET    /users/:id/edit(.:format)                      users#edit
-                   user GET    /users/:id(.:format)                           users#show
-                        PATCH  /users/:id(.:format)                           users#update
-                        PUT    /users/:id(.:format)                           users#update
-                        DELETE /users/:id(.:format)                           users#destroy
-                  login GET    /login(.:format)                               user_sessions#new
-                 logout GET    /logout(.:format)                              user_sessions#destroy
-              galleries GET    /galleries(.:format)                           galleries#index
-                        POST   /galleries(.:format)                           galleries#create
-            new_gallery GET    /galleries/new(.:format)                       galleries#new
-           edit_gallery GET    /galleries/:id/edit(.:format)                  galleries#edit
-                gallery GET    /galleries/:id(.:format)                       galleries#show
-                        PATCH  /galleries/:id(.:format)                       galleries#update
-                        PUT    /galleries/:id(.:format)                       galleries#update
-                        DELETE /galleries/:id(.:format)                       galleries#destroy
-     tipos_config_index GET    /tipos_config/index(.:format)                  tipos_config#index
-                        GET    /sports(.:format)                              sports#index
-                        POST   /sports(.:format)                              sports#create
-                        GET    /sports/new(.:format)                          sports#new
-                        GET    /sports/:id/edit(.:format)                     sports#edit
-                        GET    /sports/:id(.:format)                          sports#show
-                        PATCH  /sports/:id(.:format)                          sports#update
-                        PUT    /sports/:id(.:format)                          sports#update
-                        DELETE /sports/:id(.:format)                          sports#destroy
-                matches GET    /matches(.:format)                             matches#index
-                        POST   /matches(.:format)                             matches#create
-              new_match GET    /matches/new(.:format)                         matches#new
-             edit_match GET    /matches/:id/edit(.:format)                    matches#edit
-                  match GET    /matches/:id(.:format)                         matches#show
-                        PATCH  /matches/:id(.:format)                         matches#update
-                        PUT    /matches/:id(.:format)                         matches#update
-                        DELETE /matches/:id(.:format)                         matches#destroy
-                 scores GET    /scores(.:format)                              scores#index
-                        POST   /scores(.:format)                              scores#create
-              new_score GET    /scores/new(.:format)                          scores#new
-             edit_score GET    /scores/:id/edit(.:format)                     scores#edit
-                  score GET    /scores/:id(.:format)                          scores#show
-                        PATCH  /scores/:id(.:format)                          scores#update
-                        PUT    /scores/:id(.:format)                          scores#update
-                        DELETE /scores/:id(.:format)                          scores#destroy
-         fch_lg_matches GET    /fch_lg_matches(.:format)                      fch_lg_matches#index
-                        POST   /fch_lg_matches(.:format)                      fch_lg_matches#create
-       new_fch_lg_match GET    /fch_lg_matches/new(.:format)                  fch_lg_matches#new
-      edit_fch_lg_match GET    /fch_lg_matches/:id/edit(.:format)             fch_lg_matches#edit
-           fch_lg_match GET    /fch_lg_matches/:id(.:format)                  fch_lg_matches#show
-                        PATCH  /fch_lg_matches/:id(.:format)                  fch_lg_matches#update
-                        PUT    /fch_lg_matches/:id(.:format)                  fch_lg_matches#update
-                        DELETE /fch_lg_matches/:id(.:format)                  fch_lg_matches#destroy
-             modalities GET    /modalities(.:format)                          modalities#index
-                        POST   /modalities(.:format)                          modalities#create
-           new_modality GET    /modalities/new(.:format)                      modalities#new
-          edit_modality GET    /modalities/:id/edit(.:format)                 modalities#edit
-               modality GET    /modalities/:id(.:format)                      modalities#show
-                        PATCH  /modalities/:id(.:format)                      modalities#update
-                        PUT    /modalities/:id(.:format)                      modalities#update
-                        DELETE /modalities/:id(.:format)                      modalities#destroy
-            tournaments GET    /tournaments(.:format)                         tournaments#index
-                        POST   /tournaments(.:format)                         tournaments#create
-         new_tournament GET    /tournaments/new(.:format)                     tournaments#new
-        edit_tournament GET    /tournaments/:id/edit(.:format)                tournaments#edit
-             tournament GET    /tournaments/:id(.:format)                     tournaments#show
-                        PATCH  /tournaments/:id(.:format)                     tournaments#update
-                        PUT    /tournaments/:id(.:format)                     tournaments#update
-                        DELETE /tournaments/:id(.:format)                     tournaments#destroy
-            preferences GET    /preferences(.:format)                         preferences#index
-                        POST   /preferences(.:format)                         preferences#create
-         new_preference GET    /preferences/new(.:format)                     preferences#new
-        edit_preference GET    /preferences/:id/edit(.:format)                preferences#edit
-             preference GET    /preferences/:id(.:format)                     preferences#show
-                        PATCH  /preferences/:id(.:format)                     preferences#update
-                        PUT    /preferences/:id(.:format)                     preferences#update
-                        DELETE /preferences/:id(.:format)                     preferences#destroy
-               sessions GET    /sessions(.:format)                            sessions#index
-                        POST   /sessions(.:format)                            sessions#create
-            new_session GET    /sessions/new(.:format)                        sessions#new
-           edit_session GET    /sessions/:id/edit(.:format)                   sessions#edit
-                session GET    /sessions/:id(.:format)                        sessions#show
-                        PATCH  /sessions/:id(.:format)                        sessions#update
-                        PUT    /sessions/:id(.:format)                        sessions#update
-                        DELETE /sessions/:id(.:format)                        sessions#destroy
-      information_index GET    /information(.:format)                         information#index
-                        POST   /information(.:format)                         information#create
-        new_information GET    /information/new(.:format)                     information#new
-       edit_information GET    /information/:id/edit(.:format)                information#edit
-            information GET    /information/:id(.:format)                     information#show
-                        PATCH  /information/:id(.:format)                     information#update
-                        PUT    /information/:id(.:format)                     information#update
-                        DELETE /information/:id(.:format)                     information#destroy
-              novelties GET    /novelties(.:format)                           novelties#index
-                        POST   /novelties(.:format)                           novelties#create
-            new_novelty GET    /novelties/new(.:format)                       novelties#new
-           edit_novelty GET    /novelties/:id/edit(.:format)                  novelties#edit
-                novelty GET    /novelties/:id(.:format)                       novelties#show
-                        PATCH  /novelties/:id(.:format)                       novelties#update
-                        PUT    /novelties/:id(.:format)                       novelties#update
-                        DELETE /novelties/:id(.:format)                       novelties#destroy
-           constituents GET    /constituents(.:format)                        constituents#index
-                        POST   /constituents(.:format)                        constituents#create
-        new_constituent GET    /constituents/new(.:format)                    constituents#new
-       edit_constituent GET    /constituents/:id/edit(.:format)               constituents#edit
-            constituent GET    /constituents/:id(.:format)                    constituents#show
-                        PATCH  /constituents/:id(.:format)                    constituents#update
-                        PUT    /constituents/:id(.:format)                    constituents#update
-                        DELETE /constituents/:id(.:format)                    constituents#destroy
-                  rules GET    /rules(.:format)                               rules#index
-                        POST   /rules(.:format)                               rules#create
-               new_rule GET    /rules/new(.:format)                           rules#new
-              edit_rule GET    /rules/:id/edit(.:format)                      rules#edit
-                   rule GET    /rules/:id(.:format)                           rules#show
-                        PATCH  /rules/:id(.:format)                           rules#update
-                        PUT    /rules/:id(.:format)                           rules#update
-                        DELETE /rules/:id(.:format)                           rules#destroy
-         configurations GET    /configurations(.:format)                      configurations#index
-                        POST   /configurations(.:format)                      configurations#create
-      new_configuration GET    /configurations/new(.:format)                  configurations#new
-     edit_configuration GET    /configurations/:id/edit(.:format)             configurations#edit
-          configuration GET    /configurations/:id(.:format)                  configurations#show
-                        PATCH  /configurations/:id(.:format)                  configurations#update
-                        PUT    /configurations/:id(.:format)                  configurations#update
-                        DELETE /configurations/:id(.:format)                  configurations#destroy
-             activities GET    /activities(.:format)                          activities#index
-                        POST   /activities(.:format)                          activities#create
-           new_activity GET    /activities/new(.:format)                      activities#new
-          edit_activity GET    /activities/:id/edit(.:format)                 activities#edit
-               activity GET    /activities/:id(.:format)                      activities#show
-                        PATCH  /activities/:id(.:format)                      activities#update
-                        PUT    /activities/:id(.:format)                      activities#update
-                        DELETE /activities/:id(.:format)                      activities#destroy
-       modalities_types GET    /modalities_types(.:format)                    modalities_types#index
-                        POST   /modalities_types(.:format)                    modalities_types#create
-    new_modalities_type GET    /modalities_types/new(.:format)                modalities_types#new
-   edit_modalities_type GET    /modalities_types/:id/edit(.:format)           modalities_types#edit
-        modalities_type GET    /modalities_types/:id(.:format)                modalities_types#show
-                        PATCH  /modalities_types/:id(.:format)                modalities_types#update
-                        PUT    /modalities_types/:id(.:format)                modalities_types#update
-                        DELETE /modalities_types/:id(.:format)                modalities_types#destroy
-             type_rules GET    /type_rules(.:format)                          type_rules#index
-                        POST   /type_rules(.:format)                          type_rules#create
-          new_type_rule GET    /type_rules/new(.:format)                      type_rules#new
-         edit_type_rule GET    /type_rules/:id/edit(.:format)                 type_rules#edit
-              type_rule GET    /type_rules/:id(.:format)                      type_rules#show
-                        PATCH  /type_rules/:id(.:format)                      type_rules#update
-                        PUT    /type_rules/:id(.:format)                      type_rules#update
-                        DELETE /type_rules/:id(.:format)                      type_rules#destroy
-       type_tournaments GET    /type_tournaments(.:format)                    type_tournaments#index
-                        POST   /type_tournaments(.:format)                    type_tournaments#create
-    new_type_tournament GET    /type_tournaments/new(.:format)                type_tournaments#new
-   edit_type_tournament GET    /type_tournaments/:id/edit(.:format)           type_tournaments#edit
-        type_tournament GET    /type_tournaments/:id(.:format)                type_tournaments#show
-                        PATCH  /type_tournaments/:id(.:format)                type_tournaments#update
-                        PUT    /type_tournaments/:id(.:format)                type_tournaments#update
-                        DELETE /type_tournaments/:id(.:format)                type_tournaments#destroy
-       type_preferences GET    /type_preferences(.:format)                    type_preferences#index
-                        POST   /type_preferences(.:format)                    type_preferences#create
-    new_type_preference GET    /type_preferences/new(.:format)                type_preferences#new
-   edit_type_preference GET    /type_preferences/:id/edit(.:format)           type_preferences#edit
-        type_preference GET    /type_preferences/:id(.:format)                type_preferences#show
-                        PATCH  /type_preferences/:id(.:format)                type_preferences#update
-                        PUT    /type_preferences/:id(.:format)                type_preferences#update
-                        DELETE /type_preferences/:id(.:format)                type_preferences#destroy
-    type_configurations GET    /type_configurations(.:format)                 type_configurations#index
-                        POST   /type_configurations(.:format)                 type_configurations#create
- new_type_configuration GET    /type_configurations/new(.:format)             type_configurations#new
-edit_type_configuration GET    /type_configurations/:id/edit(.:format)        type_configurations#edit
-     type_configuration GET    /type_configurations/:id(.:format)             type_configurations#show
-                        PATCH  /type_configurations/:id(.:format)             type_configurations#update
-                        PUT    /type_configurations/:id(.:format)             type_configurations#update
-                        DELETE /type_configurations/:id(.:format)             type_configurations#destroy
-      type_informations GET    /type_informations(.:format)                   type_informations#index
-                        POST   /type_informations(.:format)                   type_informations#create
-   new_type_information GET    /type_informations/new(.:format)               type_informations#new
-  edit_type_information GET    /type_informations/:id/edit(.:format)          type_informations#edit
-       type_information GET    /type_informations/:id(.:format)               type_informations#show
-                        PATCH  /type_informations/:id(.:format)               type_informations#update
-                        PUT    /type_informations/:id(.:format)               type_informations#update
-                        DELETE /type_informations/:id(.:format)               type_informations#destroy
-              new_types GET    /new_types(.:format)                           new_types#index
-                        POST   /new_types(.:format)                           new_types#create
-           new_new_type GET    /new_types/new(.:format)                       new_types#new
-          edit_new_type GET    /new_types/:id/edit(.:format)                  new_types#edit
-               new_type GET    /new_types/:id(.:format)                       new_types#show
-                        PATCH  /new_types/:id(.:format)                       new_types#update
-                        PUT    /new_types/:id(.:format)                       new_types#update
-                        DELETE /new_types/:id(.:format)                       new_types#destroy
-         document_types GET    /document_types(.:format)                      document_types#index
-                        POST   /document_types(.:format)                      document_types#create
-      new_document_type GET    /document_types/new(.:format)                  document_types#new
-     edit_document_type GET    /document_types/:id/edit(.:format)             document_types#edit
-          document_type GET    /document_types/:id(.:format)                  document_types#show
-                        PATCH  /document_types/:id(.:format)                  document_types#update
-                        PUT    /document_types/:id(.:format)                  document_types#update
-                        DELETE /document_types/:id(.:format)                  document_types#destroy
-          usuario_index GET    /usuario/index(.:format)                       usuario#index
-                   home GET    /home(.:format)                                static_pages#home
-                   help GET    /help(.:format)                                static_pages#help
-                  about GET    /about(.:format)                               static_pages#about
-                contact GET    /contact(.:format)                             static_pages#contact
-                   root GET    /                                              inicio#index
+                Prefix Verb   URI Pattern                                          Controller#Action
+         participantes GET    /participantes(.:format)                             participantes#index
+                       POST   /participantes(.:format)                             participantes#create
+      new_participante GET    /participantes/new(.:format)                         participantes#new
+     edit_participante GET    /participantes/:id/edit(.:format)                    participantes#edit
+          participante GET    /participantes/:id(.:format)                         participantes#show
+                       PATCH  /participantes/:id(.:format)                         participantes#update
+                       PUT    /participantes/:id(.:format)                         participantes#update
+                       DELETE /participantes/:id(.:format)                         participantes#destroy
+       nombrepartidobs GET    /nombrepartidobs(.:format)                           nombrepartidobs#index
+                       POST   /nombrepartidobs(.:format)                           nombrepartidobs#create
+    new_nombrepartidob GET    /nombrepartidobs/new(.:format)                       nombrepartidobs#new
+   edit_nombrepartidob GET    /nombrepartidobs/:id/edit(.:format)                  nombrepartidobs#edit
+        nombrepartidob GET    /nombrepartidobs/:id(.:format)                       nombrepartidobs#show
+                       PATCH  /nombrepartidobs/:id(.:format)                       nombrepartidobs#update
+                       PUT    /nombrepartidobs/:id(.:format)                       nombrepartidobs#update
+                       DELETE /nombrepartidobs/:id(.:format)                       nombrepartidobs#destroy
+          pbaloncestos GET    /pbaloncestos(.:format)                              pbaloncestos#index
+                       POST   /pbaloncestos(.:format)                              pbaloncestos#create
+       new_pbaloncesto GET    /pbaloncestos/new(.:format)                          pbaloncestos#new
+      edit_pbaloncesto GET    /pbaloncestos/:id/edit(.:format)                     pbaloncestos#edit
+           pbaloncesto GET    /pbaloncestos/:id(.:format)                          pbaloncestos#show
+                       PATCH  /pbaloncestos/:id(.:format)                          pbaloncestos#update
+                       PUT    /pbaloncestos/:id(.:format)                          pbaloncestos#update
+                       DELETE /pbaloncestos/:id(.:format)                          pbaloncestos#destroy
+        nombrepartidos GET    /nombrepartidos(.:format)                            nombrepartidos#index
+                       POST   /nombrepartidos(.:format)                            nombrepartidos#create
+     new_nombrepartido GET    /nombrepartidos/new(.:format)                        nombrepartidos#new
+    edit_nombrepartido GET    /nombrepartidos/:id/edit(.:format)                   nombrepartidos#edit
+         nombrepartido GET    /nombrepartidos/:id(.:format)                        nombrepartidos#show
+                       PATCH  /nombrepartidos/:id(.:format)                        nombrepartidos#update
+                       PUT    /nombrepartidos/:id(.:format)                        nombrepartidos#update
+                       DELETE /nombrepartidos/:id(.:format)                        nombrepartidos#destroy
+       album_galleries GET    /albums/:album_id/galleries(.:format)                galleries#index
+                       POST   /albums/:album_id/galleries(.:format)                galleries#create
+     new_album_gallery GET    /albums/:album_id/galleries/new(.:format)            galleries#new
+    edit_album_gallery GET    /albums/:album_id/galleries/:id/edit(.:format)       galleries#edit
+         album_gallery GET    /albums/:album_id/galleries/:id(.:format)            galleries#show
+                       PATCH  /albums/:album_id/galleries/:id(.:format)            galleries#update
+                       PUT    /albums/:album_id/galleries/:id(.:format)            galleries#update
+                       DELETE /albums/:album_id/galleries/:id(.:format)            galleries#destroy
+                albums GET    /albums(.:format)                                    albums#index
+                       POST   /albums(.:format)                                    albums#create
+             new_album GET    /albums/new(.:format)                                albums#new
+            edit_album GET    /albums/:id/edit(.:format)                           albums#edit
+                 album GET    /albums/:id(.:format)                                albums#show
+                       PATCH  /albums/:id(.:format)                                albums#update
+                       PUT    /albums/:id(.:format)                                albums#update
+                       DELETE /albums/:id(.:format)                                albums#destroy
+              pfutbols GET    /pfutbols(.:format)                                  pfutbols#index
+                       POST   /pfutbols(.:format)                                  pfutbols#create
+           new_pfutbol GET    /pfutbols/new(.:format)                              pfutbols#new
+          edit_pfutbol GET    /pfutbols/:id/edit(.:format)                         pfutbols#edit
+               pfutbol GET    /pfutbols/:id(.:format)                              pfutbols#show
+                       PATCH  /pfutbols/:id(.:format)                              pfutbols#update
+                       PUT    /pfutbols/:id(.:format)                              pfutbols#update
+                       DELETE /pfutbols/:id(.:format)                              pfutbols#destroy
+                events GET    /events(.:format)                                    events#index
+                       POST   /events(.:format)                                    events#create
+             new_event GET    /events/new(.:format)                                events#new
+            edit_event GET    /events/:id/edit(.:format)                           events#edit
+                 event GET    /events/:id(.:format)                                events#show
+                       PATCH  /events/:id(.:format)                                events#update
+                       PUT    /events/:id(.:format)                                events#update
+                       DELETE /events/:id(.:format)                                events#destroy
+roadtosports_registros GET    /roadtosports/registros(.:format)                    roadtosports#registros
+    roadtosports_index GET    /roadtosports/index(.:format)                        roadtosports#index
+   roadtosports_acerca GET    /roadtosports/acerca(.:format)                       roadtosports#acerca
+ roadtosports_contacto GET    /roadtosports/contacto(.:format)                     roadtosports#contacto
+           integrantes GET    /integrantes(.:format)                               integrantes#index
+                       POST   /integrantes(.:format)                               integrantes#create
+        new_integrante GET    /integrantes/new(.:format)                           integrantes#new
+       edit_integrante GET    /integrantes/:id/edit(.:format)                      integrantes#edit
+            integrante GET    /integrantes/:id(.:format)                           integrantes#show
+                       PATCH  /integrantes/:id(.:format)                           integrantes#update
+                       PUT    /integrantes/:id(.:format)                           integrantes#update
+                       DELETE /integrantes/:id(.:format)                           integrantes#destroy
+           sport_teams GET    /sports/:sport_id/teams(.:format)                    teams#index
+                       POST   /sports/:sport_id/teams(.:format)                    teams#create
+        new_sport_team GET    /sports/:sport_id/teams/new(.:format)                teams#new
+       edit_sport_team GET    /sports/:sport_id/teams/:id/edit(.:format)           teams#edit
+            sport_team GET    /sports/:sport_id/teams/:id(.:format)                teams#show
+                       PATCH  /sports/:sport_id/teams/:id(.:format)                teams#update
+                       PUT    /sports/:sport_id/teams/:id(.:format)                teams#update
+                       DELETE /sports/:sport_id/teams/:id(.:format)                teams#destroy
+                sports GET    /sports(.:format)                                    sports#index
+                       POST   /sports(.:format)                                    sports#create
+             new_sport GET    /sports/new(.:format)                                sports#new
+            edit_sport GET    /sports/:id/edit(.:format)                           sports#edit
+                 sport GET    /sports/:id(.:format)                                sports#show
+                       PATCH  /sports/:id(.:format)                                sports#update
+                       PUT    /sports/:id(.:format)                                sports#update
+                       DELETE /sports/:id(.:format)                                sports#destroy
+      tournament_teams GET    /tournaments/:tournament_id/teams(.:format)          teams#index
+                       POST   /tournaments/:tournament_id/teams(.:format)          teams#create
+   new_tournament_team GET    /tournaments/:tournament_id/teams/new(.:format)      teams#new
+  edit_tournament_team GET    /tournaments/:tournament_id/teams/:id/edit(.:format) teams#edit
+       tournament_team GET    /tournaments/:tournament_id/teams/:id(.:format)      teams#show
+                       PATCH  /tournaments/:tournament_id/teams/:id(.:format)      teams#update
+                       PUT    /tournaments/:tournament_id/teams/:id(.:format)      teams#update
+                       DELETE /tournaments/:tournament_id/teams/:id(.:format)      teams#destroy
+           tournaments GET    /tournaments(.:format)                               tournaments#index
+                       POST   /tournaments(.:format)                               tournaments#create
+        new_tournament GET    /tournaments/new(.:format)                           tournaments#new
+       edit_tournament GET    /tournaments/:id/edit(.:format)                      tournaments#edit
+            tournament GET    /tournaments/:id(.:format)                           tournaments#show
+                       PATCH  /tournaments/:id(.:format)                           tournaments#update
+                       PUT    /tournaments/:id(.:format)                           tournaments#update
+                       DELETE /tournaments/:id(.:format)                           tournaments#destroy
+      team_integrantes GET    /teams/:team_id/integrantes(.:format)                integrantes#index
+                       POST   /teams/:team_id/integrantes(.:format)                integrantes#create
+   new_team_integrante GET    /teams/:team_id/integrantes/new(.:format)            integrantes#new
+  edit_team_integrante GET    /teams/:team_id/integrantes/:id/edit(.:format)       integrantes#edit
+       team_integrante GET    /teams/:team_id/integrantes/:id(.:format)            integrantes#show
+                       PATCH  /teams/:team_id/integrantes/:id(.:format)            integrantes#update
+                       PUT    /teams/:team_id/integrantes/:id(.:format)            integrantes#update
+                       DELETE /teams/:team_id/integrantes/:id(.:format)            integrantes#destroy
+                 teams GET    /teams(.:format)                                     teams#index
+                       POST   /teams(.:format)                                     teams#create
+              new_team GET    /teams/new(.:format)                                 teams#new
+             edit_team GET    /teams/:id/edit(.:format)                            teams#edit
+                  team GET    /teams/:id(.:format)                                 teams#show
+                       PATCH  /teams/:id(.:format)                                 teams#update
+                       PUT    /teams/:id(.:format)                                 teams#update
+                       DELETE /teams/:id(.:format)                                 teams#destroy
+                       GET    /teams(.:format)                                     teams#index
+                       POST   /teams(.:format)                                     teams#create
+                       GET    /teams/new(.:format)                                 teams#new
+                       GET    /teams/:id/edit(.:format)                            teams#edit
+                       GET    /teams/:id(.:format)                                 teams#show
+                       PATCH  /teams/:id(.:format)                                 teams#update
+                       PUT    /teams/:id(.:format)                                 teams#update
+                       DELETE /teams/:id(.:format)                                 teams#destroy
+         user_sessions GET    /user_sessions(.:format)                             user_sessions#index
+                       POST   /user_sessions(.:format)                             user_sessions#create
+      new_user_session GET    /user_sessions/new(.:format)                         user_sessions#new
+     edit_user_session GET    /user_sessions/:id/edit(.:format)                    user_sessions#edit
+          user_session GET    /user_sessions/:id(.:format)                         user_sessions#show
+                       PATCH  /user_sessions/:id(.:format)                         user_sessions#update
+                       PUT    /user_sessions/:id(.:format)                         user_sessions#update
+                       DELETE /user_sessions/:id(.:format)                         user_sessions#destroy
+                 users GET    /users(.:format)                                     users#index
+                       POST   /users(.:format)                                     users#create
+              new_user GET    /users/new(.:format)                                 users#new
+             edit_user GET    /users/:id/edit(.:format)                            users#edit
+                  user GET    /users/:id(.:format)                                 users#show
+                       PATCH  /users/:id(.:format)                                 users#update
+                       PUT    /users/:id(.:format)                                 users#update
+                       DELETE /users/:id(.:format)                                 users#destroy
+                 login GET    /login(.:format)                                     user_sessions#index
+                logout GET    /logout(.:format)                                    user_sessions#destroy
+             galleries GET    /galleries(.:format)                                 galleries#index
+                       POST   /galleries(.:format)                                 galleries#create
+           new_gallery GET    /galleries/new(.:format)                             galleries#new
+          edit_gallery GET    /galleries/:id/edit(.:format)                        galleries#edit
+               gallery GET    /galleries/:id(.:format)                             galleries#show
+                       PATCH  /galleries/:id(.:format)                             galleries#update
+                       PUT    /galleries/:id(.:format)                             galleries#update
+                       DELETE /galleries/:id(.:format)                             galleries#destroy
+    tipos_config_index GET    /tipos_config/index(.:format)                        tipos_config#index
+                       GET    /sports(.:format)                                    sports#index
+                       POST   /sports(.:format)                                    sports#create
+                       GET    /sports/new(.:format)                                sports#new
+                       GET    /sports/:id/edit(.:format)                           sports#edit
+                       GET    /sports/:id(.:format)                                sports#show
+                       PATCH  /sports/:id(.:format)                                sports#update
+                       PUT    /sports/:id(.:format)                                sports#update
+                       DELETE /sports/:id(.:format)                                sports#destroy
+                       GET    /tournaments(.:format)                               tournaments#index
+                       POST   /tournaments(.:format)                               tournaments#create
+                       GET    /tournaments/new(.:format)                           tournaments#new
+                       GET    /tournaments/:id/edit(.:format)                      tournaments#edit
+                       GET    /tournaments/:id(.:format)                           tournaments#show
+                       PATCH  /tournaments/:id(.:format)                           tournaments#update
+                       PUT    /tournaments/:id(.:format)                           tournaments#update
+                       DELETE /tournaments/:id(.:format)                           tournaments#destroy
+              sessions GET    /sessions(.:format)                                  sessions#index
+                       POST   /sessions(.:format)                                  sessions#create
+           new_session GET    /sessions/new(.:format)                              sessions#new
+          edit_session GET    /sessions/:id/edit(.:format)                         sessions#edit
+               session GET    /sessions/:id(.:format)                              sessions#show
+                       PATCH  /sessions/:id(.:format)                              sessions#update
+                       PUT    /sessions/:id(.:format)                              sessions#update
+                       DELETE /sessions/:id(.:format)                              sessions#destroy
+             novelties GET    /novelties(.:format)                                 novelties#index
+                       POST   /novelties(.:format)                                 novelties#create
+           new_novelty GET    /novelties/new(.:format)                             novelties#new
+          edit_novelty GET    /novelties/:id/edit(.:format)                        novelties#edit
+               novelty GET    /novelties/:id(.:format)                             novelties#show
+                       PATCH  /novelties/:id(.:format)                             novelties#update
+                       PUT    /novelties/:id(.:format)                             novelties#update
+                       DELETE /novelties/:id(.:format)                             novelties#destroy
+                 rules GET    /rules(.:format)                                     rules#index
+                       POST   /rules(.:format)                                     rules#create
+              new_rule GET    /rules/new(.:format)                                 rules#new
+             edit_rule GET    /rules/:id/edit(.:format)                            rules#edit
+                  rule GET    /rules/:id(.:format)                                 rules#show
+                       PATCH  /rules/:id(.:format)                                 rules#update
+                       PUT    /rules/:id(.:format)                                 rules#update
+                       DELETE /rules/:id(.:format)                                 rules#destroy
+            activities GET    /activities(.:format)                                activities#index
+                       POST   /activities(.:format)                                activities#create
+          new_activity GET    /activities/new(.:format)                            activities#new
+         edit_activity GET    /activities/:id/edit(.:format)                       activities#edit
+              activity GET    /activities/:id(.:format)                            activities#show
+                       PATCH  /activities/:id(.:format)                            activities#update
+                       PUT    /activities/:id(.:format)                            activities#update
+                       DELETE /activities/:id(.:format)                            activities#destroy
+      modalities_types GET    /modalities_types(.:format)                          modalities_types#index
+                       POST   /modalities_types(.:format)                          modalities_types#create
+   new_modalities_type GET    /modalities_types/new(.:format)                      modalities_types#new
+  edit_modalities_type GET    /modalities_types/:id/edit(.:format)                 modalities_types#edit
+       modalities_type GET    /modalities_types/:id(.:format)                      modalities_types#show
+                       PATCH  /modalities_types/:id(.:format)                      modalities_types#update
+                       PUT    /modalities_types/:id(.:format)                      modalities_types#update
+                       DELETE /modalities_types/:id(.:format)                      modalities_types#destroy
+            type_rules GET    /type_rules(.:format)                                type_rules#index
+                       POST   /type_rules(.:format)                                type_rules#create
+         new_type_rule GET    /type_rules/new(.:format)                            type_rules#new
+        edit_type_rule GET    /type_rules/:id/edit(.:format)                       type_rules#edit
+             type_rule GET    /type_rules/:id(.:format)                            type_rules#show
+                       PATCH  /type_rules/:id(.:format)                            type_rules#update
+                       PUT    /type_rules/:id(.:format)                            type_rules#update
+                       DELETE /type_rules/:id(.:format)                            type_rules#destroy
+      type_tournaments GET    /type_tournaments(.:format)                          type_tournaments#index
+                       POST   /type_tournaments(.:format)                          type_tournaments#create
+   new_type_tournament GET    /type_tournaments/new(.:format)                      type_tournaments#new
+  edit_type_tournament GET    /type_tournaments/:id/edit(.:format)                 type_tournaments#edit
+       type_tournament GET    /type_tournaments/:id(.:format)                      type_tournaments#show
+                       PATCH  /type_tournaments/:id(.:format)                      type_tournaments#update
+                       PUT    /type_tournaments/:id(.:format)                      type_tournaments#update
+                       DELETE /type_tournaments/:id(.:format)                      type_tournaments#destroy
+        document_types GET    /document_types(.:format)                            document_types#index
+                       POST   /document_types(.:format)                            document_types#create
+     new_document_type GET    /document_types/new(.:format)                        document_types#new
+    edit_document_type GET    /document_types/:id/edit(.:format)                   document_types#edit
+         document_type GET    /document_types/:id(.:format)                        document_types#show
+                       PATCH  /document_types/:id(.:format)                        document_types#update
+                       PUT    /document_types/:id(.:format)                        document_types#update
+                       DELETE /document_types/:id(.:format)                        document_types#destroy
+         usuario_index GET    /usuario/index(.:format)                             usuario#index
+                  home GET    /home(.:format)                                      static_pages#home
+                  help GET    /help(.:format)                                      static_pages#help
+                 about GET    /about(.:format)                                     static_pages#about
+               contact GET    /contact(.:format)                                   static_pages#contact
+                  root GET    /                                                    inicio#index

@@ -23,9 +23,11 @@ class Ability
         can :read, Integrante
         can :read, Event
         can :read, Pfutbol
-        can :read, Nombrepartido
-
-
+        can :read, Pbaloncesto
+        can :read, Participante
+        can :create, Participante
+        can :update, Participante
+        can :destroy, Participante
         #operaciones de editar para algunas vistas
         can :update, User
         can :update, Integrante do |integrante|

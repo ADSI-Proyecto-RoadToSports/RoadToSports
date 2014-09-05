@@ -1,0 +1,16 @@
+<div class="contenidog">
+  <div class="img1"></div>
+  <div class="img2"></div>
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+
+    </ul>
+  <div id="myTabContent" class="tab-content">
+      <div class="" id="inicio">
+<h1>Nuevo participante</h1>
+
+<%= render 'form' %>
+
+<%=  link_to "Atras", controller: "roadtosports", action: "registros" %>
+<%= button_to 'Ir A Deportes', sports_path, :method=>"get", class: "btn btn-success siguiente" %><br><br>
+<p class="text-danger"><small>Atención: Todos los datos que registres en este formulario deben ser reales, el email debe ser el mismo con el cual estas registrado en Sport SENA.</small></p>
+</div></div></div>

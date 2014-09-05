@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904220806) do
+ActiveRecord::Schema.define(version: 20140905191321) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -113,6 +113,19 @@ ActiveRecord::Schema.define(version: 20140904220806) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "participantes", force: true do |t|
+    t.string   "nombre"
+    t.string   "email"
+    t.integer  "document_type_id"
+    t.string   "documento"
+    t.boolean  "estado"
+    t.integer  "sports_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "participantes", ["sports_id"], name: "index_participantes_on_sports_id"
 
   create_table "pbaloncestos", force: true do |t|
     t.string   "equipo1"

@@ -1,24 +1,19 @@
 <tr id=<%= "sport_#{sport.id}" %>>
-    <td>
-    	<%= button_to 'Ver equipos ⇨ '+ sport.teams.count.to_s + '', sport_teams_path(sport), :method=>"get", class: "btn btn-default btn-sm" %>
-    </td>
-    <td>
-    	<%= sport.name %>
-    </td>
+    <td><%=
+    if sport.modalities_type.id == 2
+     button_to 'Ver equipos ⇨ '+ sport.teams.count.to_s + '', sport_teams_path(sport), :method=>"get", class: "btn btn-default btn-sm" 
+    else
+    button_to 'Participantes ⇨ '+ sport.participantes.count.to_s + '', sport_participantes_path(sport), :method=>"get", class: "btn btn-default btn-sm" 
+    end%></td>
+    <td><%= sport.name %></td>
     <td>
 	    <div class="dc">
 	    	<%= sport.description %>
 	    </div>
     </td>
-    <td>
-    	<%= sport.modalities_type.name rescue nil %>
-    </td>
-    <td>
-    	<%= link_to 'Ver', sport, remote: true %>
-    </td>
+    <td><%= sport.modalities_type.name rescue nil %></td>
+    <td><%= link_to 'Ver', sport, remote: true %></td>
     <% if can? :update, sport %>
-        <td>
-        	<%= link_to 'Editar', edit_sport_path(sport), remote: true %>
-        </td>
+        <td><%= link_to 'Editar', edit_sport_path(sport), remote: true %></td>
     <% end %>
 </tr>

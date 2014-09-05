@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  email: MyString
+  document_type_id: 1
+  documento: MyString
+  estado: false
+  sports_id: 
+
+two:
+  nombre: MyString
+  email: MyString
+  document_type_id: 1
+  documento: MyString
+  estado: false
+  sports_id: 

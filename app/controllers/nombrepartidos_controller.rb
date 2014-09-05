@@ -1,6 +1,6 @@
 class NombrepartidosController < ApplicationController
   before_action :set_nombrepartido, only: [:show, :edit, :update, :destroy]
-
+load_and_authorize_resource
   # GET /nombrepartidos
   # GET /nombrepartidos.json
   def index
