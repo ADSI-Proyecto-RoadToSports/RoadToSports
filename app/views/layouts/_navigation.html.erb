@@ -14,9 +14,15 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
+          <% if current_user.admin == true  %>
             <li>
-              <%= link_to current_user.nombre, edit_user_path(current_user.id) %>
+              <%= link_to current_user.nombre+ ': Administrador', edit_user_path(current_user.id) %>
             </li>
+          <% else %>
+            <li>
+              <%= link_to current_user.nombre+ ': Usuario', edit_user_path(current_user.id) %>
+            </li>
+          <% end %>
             <li>
               <%= link_to "Salir", :logout, method: :get %>
             </li>

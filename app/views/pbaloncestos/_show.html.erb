@@ -1,3 +1,4 @@
+<div class="pbaloncesto">
 <p id="notice">
   <%= notice %>
 </p>
@@ -7,10 +8,17 @@
   <%= @pbaloncesto.equipo1 %>
 </p>
 
-<p>
-  <strong>Puntos:</strong>
-  <%= @pbaloncesto.puntos1 %>
-</p>
+ <p>
+    <strong>Puntos:</strong>
+    <%= @pbaloncesto.puntos1 %>
+    <%= if @pbaloncesto.puntos1 > @pbaloncesto.puntos2
+          gano() 
+        elsif @pbaloncesto.puntos1 == @pbaloncesto.puntos2
+          empate() 
+          else
+            perdio()
+        end %>
+  </p>
 
 <p>
   <strong>Puntos obtenidos:</strong>
@@ -21,12 +29,17 @@
   <strong>Equipo2:</strong>
   <%= @pbaloncesto.equipo2 %>
 </p>
-
-<p>
-  <strong>Puntos:</strong>
-  <%= @pbaloncesto.puntos2 %>
-</p>
-
+ <p>
+    <strong>Puntos:</strong>
+    <%= @pbaloncesto.puntos2 %>
+    <%= if @pbaloncesto.puntos2 > @pbaloncesto.puntos1
+          gano() 
+        elsif @pbaloncesto.puntos1 == @pbaloncesto.puntos2
+          empate() 
+          else
+            perdio()
+        end %>
+  </p>
 <p>
   <strong>Puntos obtenidos:</strong>
   <%= @pbaloncesto.puntoso2 %>
@@ -51,6 +64,4 @@
   <strong>Responsable:</strong>
   <%= @pbaloncesto.user.nombre %>
 </p>
-
-<%= link_to 'Edit', edit_pbaloncesto_path(@pbaloncesto) %> |
-<%= link_to 'Back', pbaloncestos_path %>
+</div>

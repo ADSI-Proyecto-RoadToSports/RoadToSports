@@ -4,12 +4,14 @@ class PbaloncestosController < ApplicationController
   # GET /pbaloncestos
   # GET /pbaloncestos.json
   def index
-    @pbaloncestos = Pbaloncesto.all
+    @pbaloncestos = Pbaloncesto.search(params[:search], params[:page])
+    @nombrepartidobs = Nombrepartidob.all
   end
 
   # GET /pbaloncestos/1
   # GET /pbaloncestos/1.json
   def show
+     @pbaloncesto = Pbaloncesto.find(params[:id])
   end
 
   # GET /pbaloncestos/new
@@ -19,6 +21,7 @@ class PbaloncestosController < ApplicationController
 
   # GET /pbaloncestos/1/edit
   def edit
+    @pbaloncesto = Pbaloncesto.find(params[:id])
   end
 
   # POST /pbaloncestos
@@ -28,7 +31,7 @@ class PbaloncestosController < ApplicationController
 
     respond_to do |format|
       if @pbaloncesto.save
-        format.html { redirect_to @pbaloncesto, notice: 'Pbaloncesto was successfully created.' }
+        format.html { redirect_to pbaloncestos_path, notice: 'Pbaloncesto was successfully created.' }
         format.json { render :show, status: :created, location: @pbaloncesto }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class PbaloncestosController < ApplicationController
   def update
     respond_to do |format|
       if @pbaloncesto.update(pbaloncesto_params)
-        format.html { redirect_to @pbaloncesto, notice: 'Pbaloncesto was successfully updated.' }
+        format.html { redirect_to pbaloncestos_path, notice: 'Pbaloncesto was successfully updated.' }
         format.json { render :show, status: :ok, location: @pbaloncesto }
       else
         format.html { render :edit }

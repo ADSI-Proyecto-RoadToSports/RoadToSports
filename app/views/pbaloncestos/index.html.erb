@@ -1,21 +1,22 @@
-<div class="contenido ">
+<div class="contenidop ">
   <div class="img1"></div>
   <div class="img2"></div>
     <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-
     </ul>
   <div id="myTabContent" class="tab-content">
-    <div class="tab-pane fade active in cont1" id="inicio">
+    <div class="" id="inicio">
+      <%= render 'nombrepartidobs/index' %>
       <h1>Partidos de Baloncesto</h1>
+        <div class="paginacion">Partidos: <b><%= @pbaloncestos.count %> </b><%= will_paginate @pbaloncestos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
       <table class="table">
         <thead>
           <tr>
             <th>Equipo1</th>
-            <th>Puntos</th>
-            <th>Puntos Obtenidos</th>
+            <th  colspan="2">Encestas</th>
+            <th>Puntos_Torneo</th>
             <th>Equipo2</th>
-            <th>Puntos</th>
-            <th>Puntos Obtenidos</th>
+            <th  colspan="2">Encestas</th>
+            <th>Puntos_Torneo</th>
             <th>Torneo</th>
             <th>Fecha</th>
             <th>Estado</th>
@@ -25,53 +26,14 @@
         </thead>
 
         <tbody>
-          <% @pbaloncestos.each do |pbaloncesto| %>
-            <tr>
-              <td>
-                <%= pbaloncesto.equipo1 %>
-              </td>
-              <td>
-                <%= pbaloncesto.puntos1 %>
-              </td>
-              <td>
-                <%= pbaloncesto.puntoso1 %>
-              </td>
-              <td>
-                <%= pbaloncesto.equipo2 %>
-              </td>
-              <td>
-                <%= pbaloncesto.puntos2 %>
-              </td>
-              <td>
-                <%= pbaloncesto.puntoso2 %>
-              </td>
-              <td>
-                <%= pbaloncesto.tournament.name %>
-              </td>
-              <td>
-                <%= pbaloncesto.fecha %>
-              </td>
-              <td>
-                <%= pbaloncesto.estado %>
-              </td>
-              <td>
-                <%= pbaloncesto.user.nombre %>
-              </td>
-              <td>
-                <%= link_to 'Ver', pbaloncesto %>
-              </td>
-              <td>
-                <%= link_to 'Editar', edit_pbaloncesto_path(pbaloncesto) %>
-              </td>
-              <td>
-                <%= link_to 'Eliminar', pbaloncesto, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </td>
-            </tr>
-          <% end %>
+         <%= render @pbaloncestos %>
         </tbody>
       </table>
       <br>
-      <%= link_to 'New Pbaloncesto', new_pbaloncesto_path %>
+      <%= button_to 'Nuevo partido', new_pbaloncesto_path, remote: true, :method => "get", class: "btn btn-info"%>
+      <div class="paginacion">Partidos: <b><%= @pbaloncestos.count %> </b><%= will_paginate @pbaloncestos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
+
+
     </div>
   </div>
 </div>

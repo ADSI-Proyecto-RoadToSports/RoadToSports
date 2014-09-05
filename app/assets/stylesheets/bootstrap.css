@@ -5922,6 +5922,33 @@ button.close {
   box-shadow:         -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
   border-radius: 5px;
 }
+.contenidop{
+  width: 1090px;
+  margin-left: 125px;
+  margin-top: 50px;
+  height: 625px;
+  -webkit-box-shadow: -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  -moz-box-shadow:    -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  box-shadow:         -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y:scroll;
+    overflow-x:none;
+}
+.contenidog{
+  width: 1090px;
+  margin-left: 125px;
+  margin-top: 50px;
+  height: 625px;
+  -webkit-box-shadow: -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  -moz-box-shadow:    -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  box-shadow:         -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y:scroll;
+    overflow-x:none;
+    text-align: center;
+}
 .contenidologin{
   width: 500px;
   margin-left: 400px;
@@ -5934,9 +5961,7 @@ button.close {
   text-align: center;
   padding: 30px;
 }
-.cont1{
-  margin: 20px;
-}
+
 .img1{
   position: absolute;
   top: 150px; right: 10px;
@@ -5965,7 +5990,7 @@ button.close {
 .info{
   position: relative;
   top: 130px;
-  left: 150px;
+  left: 230px;
   border-radius: 20px;
   width: 600px;
 }

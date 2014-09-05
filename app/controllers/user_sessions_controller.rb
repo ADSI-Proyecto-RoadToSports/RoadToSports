@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
     if @user = login(params[:email], params[:password])
       redirect_back_or_to(:users, notice: 'Bienvenido '+ current_user.nombre )
     else
-      flash.now[:alert] = 'Error al iniciar sesión'
+      flash.now[:alert] = 'Error en el Email o contraseña.'
       render action: 'index'
     end
   end

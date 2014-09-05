@@ -1,22 +1,23 @@
-<div class="contenido ">
+<div class="contenidop ">
   <div class="img1"></div>
   <div class="img2"></div>
     <ul class="nav nav-tabs" style="margin-bottom: 15px;">
 
     </ul>
   <div id="myTabContent" class="tab-content">
-    <div class="tab-pane fade active in cont1" id="inicio">
+    <div class="" id="inicio">
       <%= render 'nombrepartidos/index' %>
       <h1>Partidos de futbol</h1>
+      <div class="paginacion">Partidos: <b><%= @pfutbols.count %> </b><%= will_paginate @pfutbols, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
       <table class="table">
         <thead>
           <tr>
             <th>Equipo1</th>
             <th colspan="2">Goles</th>
-            <th>Puntos obtenidos</th>
+            <th>Puntos_Torneo</th>
             <th>Equipo2</th>
             <th colspan="2">Goles</th>
-            <th>Puntos obtenidos</th>
+            <th>Puntos_Torneo</th>
             <th>Torneo</th>
             <th>Fecha</th>
             <th>Estado</th>
@@ -32,9 +33,7 @@
       <%= if can? :create, @pfutbol
         button_to 'Nuevo partido', new_pfutbol_path, :method => "get", class: "btn btn-info", remote: true
       end %>
-      <%= will_paginate @pfutbols, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %> 
-      <br> 
-      Partidos: <%= @pfutbols.count %>
+      <div class="paginacion">Partidos: <b><%= @pfutbols.count %> </b><%= will_paginate @pfutbols, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
     </div>
   </div>
 </div>

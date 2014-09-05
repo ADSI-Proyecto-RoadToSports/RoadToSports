@@ -5,7 +5,7 @@ class Pfutbol < ActiveRecord::Base
 
 	def self.search(search, page)
 		where(['upper(id) like ?',
-		"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("fecha")
+		"%#{search}%".upcase]).paginate(page: page, per_page: 10).order("fecha")
 	end
 
 end
