@@ -1,42 +1,43 @@
 <div class="contenido ">
-<div class="img1"></div>
-<div class="img2"></div>
-<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+  <div class="img1"></div>
+  <div class="img2"></div>
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
 
-</ul>
-<div id="myTabContent" class="tab-content">
-  <div class="tab-pane fade active in cont1" id="inicio">
-<p id="notice"><%= notice %></p>
+    </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active in cont1" id="inicio">
+      <p id="notice">
+        <%= notice %>
+      </p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @integrante.nombre %>
-</p>
+      <p>
+        <strong>Nombre:</strong>
+        <%= @integrante.nombre %>
+      </p>
 
-<p>
-  <strong>Document type:</strong>
-  <%= @integrante.document_type.name %>
-</p>
+      <p>
+        <strong>Document type:</strong>
+        <%= @integrante.document_type.name %>
+      </p>
 
-<p>
-  <strong>Documento:</strong>
-  <%= @integrante.documento %>
-</p>
+      <p>
+        <strong>Documento:</strong>
+        <%= @integrante.documento %>
+      </p>
 
-<p>
-  <strong>Ficha:</strong>
-  <%= @integrante.ficha %>
-</p>
+      <p>
+        <strong>Ficha:</strong>
+        <%= @integrante.ficha %>
+      </p>
 
-<p>
-  <strong>Team:</strong>
-  <%= @integrante.team.nombre %>
-</p>
-<% if can? :update, @integrante %>
-<%= link_to 'Editar', edit_team_integrante_path(@team,@integrante)
-  %> |
-<% end %>
-<%= link_to 'Atras', team_integrantes_path(@team) %>
-</div>
-</div>
+      <p>
+        <strong>Team:</strong>
+        <%= @integrante.team.nombre %>
+      </p>
+      <% if can? :update, @integrante %>
+        <%= link_to 'Editar', edit_team_integrante_path(@team,@integrante) %> |
+      <% end %>
+        <%= link_to 'Atras', team_integrantes_path(@team) %>
+    </div>
+  </div>
 </div>

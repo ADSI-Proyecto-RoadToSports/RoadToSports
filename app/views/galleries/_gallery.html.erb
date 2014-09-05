@@ -1,13 +1,12 @@
-
 <tr class="mov1" id=<%= "gallery_#{gallery.id}" %>>
     <td>
        	<%= link_to image_tag(gallery.image.url(:thumb)), album_gallery_path(@album,gallery), remote: true, class: "image1" %>
         <div class="botones2">
-        <% if can? :update, gallery %>
-        	<%= link_to 'Editar', edit_album_gallery_path(@album,gallery), remote: true, :class => 'btn btn-primary' %>
+            <% if can? :update, gallery %>
+        	   <%= link_to 'Editar', edit_album_gallery_path(@album,gallery), remote: true, :class => 'btn btn-primary' %>
         	<% end %>
         	<% if can? :destroy, gallery %>
-        	<%= link_to 'Eliminar', album_gallery_path(@album,gallery), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+        	   <%= link_to 'Eliminar', album_gallery_path(@album,gallery), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
         	<% end %>
         </div>
     </td>
