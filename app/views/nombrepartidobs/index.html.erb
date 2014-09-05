@@ -1,5 +1,4 @@
 <h1>Listing nombrepartidobs</h1>
-
 <table>
   <thead>
     <tr>
@@ -11,10 +10,18 @@
   <tbody>
     <% @nombrepartidobs.each do |nombrepartidob| %>
       <tr>
-        <td><%= nombrepartidob.nombre %></td>
-        <td><%= link_to 'Show', nombrepartidob %></td>
-        <td><%= link_to 'Edit', edit_nombrepartidob_path(nombrepartidob) %></td>
-        <td><%= link_to 'Destroy', nombrepartidob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= nombrepartidob.nombre %>
+        </td>
+        <td>
+          <%= link_to 'Show', nombrepartidob %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_nombrepartidob_path(nombrepartidob) %>
+        </td>
+        <td>
+          <%= link_to 'Destroy', nombrepartidob, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

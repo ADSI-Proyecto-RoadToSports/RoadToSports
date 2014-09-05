@@ -1,13 +1,23 @@
 <tr id=<%= "novelty_#{novelty.id}" %>>
-    <td><%= novelty.name %></td>
-    <td><%= novelty.description %></td>
+    <td>
+        <%= novelty.name %>
+    </td>
+    <td>
+        <%= novelty.description %>
+    </td>
     <% if can? :read, novelty %>
-    <td><%= link_to 'Ver', novelty, remote: true %></td>
+        <td>
+            <%= link_to 'Ver', novelty, remote: true %>
+        </td>
     <% end %>
     <% if can? :update, novelty %>
-    <td><%= link_to 'Editar', edit_novelty_path(novelty), remote: true %></td>
+        <td>
+            <%= link_to 'Editar', edit_novelty_path(novelty), remote: true %>
+        </td>
     <% end %>
     <% if can? :destroy, novelty %>
-    <td><%= link_to 'Eliminar', novelty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+            <%= link_to 'Eliminar', novelty, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
     <% end %>
 </tr>

@@ -1,24 +1,25 @@
 <div class="encab">
-<p id="notice"><%= notice %></p>
+	<p id="notice">
+		<%= notice %>
+	</p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @rule.name %>
-</p>
-<div class="dc">
-<p>
-  <strong>Descripción:</strong>
-  <%= @rule.description %>
-</p>
-</div>
-<p>
-  <strong>Estado:</strong>
-  <%= rule(@rule.state) %>
-</p>
-<%  %>
-<%= if can? :update, rule
-	link_to 'Editar', edit_rule_path(@rule), remote: true
-	%> |
-<% end %>
-<%= link_to 'Atras', rules_path %>
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @rule.name %>
+	</p>
+	<div class="dc">
+		<p>
+		  <strong>Descripción:</strong>
+		  <%= @rule.description %>
+		</p>
+	</div>
+	<p>
+	  <strong>Estado:</strong>
+	  <%= rule(@rule.state) %>
+	</p>
+	<%#<%  %>
+	<%= if can? :update, rule
+		link_to 'Editar', edit_rule_path(@rule), remote: true %> |
+	<% end %>
+	<%= link_to 'Atras', rules_path %>
 </div>

@@ -1,33 +1,63 @@
 <tr id=<%= "pfutbol_#{pfutbol.id}" %>>
-        <td class="equi1"><%= pfutbol.equipo1 %></td>
-        <td class="equi1"><%= pfutbol.puntos1 %></td>
-        <td class="equi1"> <%= if pfutbol.puntos1 > pfutbol.puntos2
-                    gano() 
-                elsif pfutbol.puntos1 == pfutbol.puntos2
-                    empate() 
+    <td class="equi1">
+        <%= pfutbol.equipo1 %>
+    </td>
+    <td class="equi1">
+        <%= pfutbol.puntos1 %>
+    </td>
+    <td class="equi1">
+        <%= if pfutbol.puntos1 > pfutbol.puntos2
+                gano() 
+            elsif pfutbol.puntos1 == pfutbol.puntos2
+                empate() 
                 else
                     perdio()
-                end %></td>
-        <td class="equi1"><%= pfutbol.puntoso1 %></td>
-        <td class="equi1 lin"><%= pfutbol.equipo2 %></td>
-        <td class="equi1"><%= pfutbol.puntos2 %></td>
-        <td class="equi1"><%= if pfutbol.puntos2 > pfutbol.puntos1
-                    gano() 
-                elsif pfutbol.puntos1 == pfutbol.puntos2
-                    empate() 
+            end %>
+    </td>
+    <td class="equi1">
+        <%= pfutbol.puntoso1 %>
+    </td>
+    <td class="equi1 lin">
+        <%= pfutbol.equipo2 %>
+    </td>
+    <td class="equi1">
+        <%= pfutbol.puntos2 %>
+    </td>
+    <td class="equi1">
+        <%= if pfutbol.puntos2 > pfutbol.puntos1
+                gano() 
+            elsif pfutbol.puntos1 == pfutbol.puntos2
+                empate() 
                 else
                     perdio()
-                end  %></td>
-        <td class="equi1"><%= pfutbol.puntoso2 %>
-        <td><%= pfutbol.tournament.name %></td>
-        <td><%= pfutbol.fecha %></td>
-        <td><%= estado(pfutbol.estado) %></td>
-        <td><%= pfutbol.user.nombre %></td>
-        <td><%= link_to 'Ver', pfutbol , remote: true%></td>
-        <% if can? :update, pfutbol %>
-        <td><%= link_to 'Editar', edit_pfutbol_path(pfutbol), remote: true %></td>
-        <% end %>
-        <% if can? :destroy, pfutbol %>
-        <td><%= link_to 'Eliminar', pfutbol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
+            end  %>
+    </td>
+    <td class="equi1">
+        <%= pfutbol.puntoso2 %>
+    </td>
+    <td>
+        <%= pfutbol.tournament.name %>
+    </td>
+    <td>
+        <%= pfutbol.fecha %>
+    </td>
+    <td>
+        <%= estado(pfutbol.estado) %>
+    </td>
+    <td>
+        <%= pfutbol.user.nombre %>
+    </td>
+    <td>
+        <%= link_to 'Ver', pfutbol , remote: true%>
+    </td>
+    <% if can? :update, pfutbol %>
+        <td>
+            <%= link_to 'Editar', edit_pfutbol_path(pfutbol), remote: true %>
+        </td>
+    <% end %>
+    <% if can? :destroy, pfutbol %>
+        <td>
+            <%= link_to 'Eliminar', pfutbol, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+    <% end %>
+</tr>

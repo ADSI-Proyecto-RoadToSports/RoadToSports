@@ -1,32 +1,40 @@
 <div class="contenido ">
-<div class="img1"></div>
-<div class="img2"></div>
-<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+  <div class="img1"></div>
+  <div class="img2"></div>
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
 
-</ul>
-<div id="myTabContent" class="tab-content">
-  <div class="tab-pane fade active in cont1" id="inicio">
-<h1>Listing nombrepartidos</h1>
+    </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active in cont1" id="inicio">
+      <h1>Listing nombrepartidos</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @nombrepartidos.each do |nombrepartido| %>
-      <tr>
-        <td><%= nombrepartido.nombre %></td>
-        <td><%= link_to 'Show', nombrepartido %></td>
-        <td><%= link_to 'Edit', edit_nombrepartido_path(nombrepartido) %></td>
-        <td><%= link_to 'Destroy', nombrepartido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-</div></div></div>
+        <tbody>
+          <% @nombrepartidos.each do |nombrepartido| %>
+            <tr>
+              <td>
+                <%= nombrepartido.nombre %>
+              </td>
+              <td>
+                <%= link_to 'Show', nombrepartido %>
+              </td>
+              <td>
+                <%= link_to 'Edit', edit_nombrepartido_path(nombrepartido) %>
+              </td>
+              <td>
+                <%= link_to 'Destroy', nombrepartido, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+    </div>
+  </div>
+</div>
