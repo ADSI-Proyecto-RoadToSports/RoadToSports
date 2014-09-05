@@ -1,21 +1,25 @@
 <div class="encab">
-<p id="notice"><%= notice %></p>
+	<p id="notice">
+		<%= notice %>
+	</p>
 
-<p >
-  <strong>Title:</strong>
-  <%= @album.title %>
-</p>
-<div class="desc">
-<p>
-  <strong>Description:</strong>
-  <%= @album.description%>
-</p>
-</div>
-<p>
-	<%= image_tag @album.image.url(:medium) %>
-</p>
-<% if can? :create, @album %>
-<%= link_to 'Edit', edit_album_path(@album), remote: true, :class => 'btn btn-primary' %> |
-<% end %>
-<%= link_to 'Back', albums_path, :class => 'btn btn-default' %>
+	<p>
+		<strong>Title:</strong>
+		<%= @album.title %>
+	</p>
+
+	<div class="desc">
+		<p>
+  			<strong>Description:</strong>
+  			<%= @album.description%>
+		</p>
+	</div>
+
+	<p>
+		<%= image_tag @album.image.url(:medium) %>
+	</p>
+	<% if can? :create, @album %>
+		<%= link_to 'Edit', edit_album_path(@album), remote: true, :class => 'btn btn-primary' %> |
+	<% end %>
+		<%= link_to 'Back', albums_path, :class => 'btn btn-default' %>
 </div>

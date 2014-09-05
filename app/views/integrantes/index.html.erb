@@ -1,60 +1,69 @@
 <div class="contenido ">
-<div class="img1"></div>
-<div class="img2"></div>
-<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+  <div class="img1"></div>
+  <div class="img2"></div>
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
 
-</ul>
-<div id="myTabContent" class="tab-content">
-  <div class="tab-pane fade active in cont1" id="inicio">
-<h1>Listing integrantes</h1>
-<div id="divi">
-<table class="table table-striped table-hover ">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Tipo de documento</th>
-      <th># Documento</th>
-      <th>Ficha</th>
-      <th colspan="3">Opciones</th>
-    </tr>
-  </thead>
+    </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active in cont1" id="inicio">
+      <h1>Listing integrantes</h1>
+      <div id="divi">
+        <table class="table table-striped table-hover ">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Tipo de documento</th>
+              <th># Documento</th>
+              <th>Ficha</th>
+              <th colspan="3">Opciones</th>
+            </tr>
+          </thead>
 
-  <tbody>
-    <% @integrantes.each do |integrante| %>
-      
-      <tr>
-        <td><%= integrante.nombre %></td>
-        <td><%= integrante.document_type.name rescue nil%></td>
-        <td><%= integrante.documento %></td>
-        <td><%= integrante.ficha %></td>
-        <td><%= link_to 'Ver', team_integrante_path(@team,integrante) %></td>
-        <% if can? :update, integrante %>
-        <td><%= link_to 'Editar', edit_team_integrante_path(@team,integrante) %></td>
-        <% end %>
-        <% if can? :destroy, integrante %>
-        <td><%= link_to 'Eliminar', team_integrante_path(@team,integrante), method: :delete, data: { confirm: 'Esta seguro?' } %></td>
-        <% end %>
-      </tr>
-      <%#= integrante.team.sport_id %>
-    <% end %>
-  </tbody>
-</table>
-
+          <tbody>
+            <% @integrantes.each do |integrante| %>
+              <tr>
+                <td>
+                  <%= integrante.nombre %>
+                </td>
+                <td>
+                  <%= integrante.document_type.name rescue nil%>
+                </td>
+                <td>
+                  <%= integrante.documento %>
+                </td>
+                <td>
+                  <%= integrante.ficha %>
+                </td>
+                <td>
+                  <%= link_to 'Ver', team_integrante_path(@team,integrante) %></td>
+                    <% if can? :update, integrante %>
+                      <td>
+                        <%= link_to 'Editar', edit_team_integrante_path(@team,integrante) %>
+                      </td>
+                    <% end %>
+                    <% if can? :destroy, integrante %>
+                      <td>
+                        <%= link_to 'Eliminar', team_integrante_path(@team,integrante), method: :delete, data: { confirm: 'Esta seguro?' } %>
+                      </td>
+                    <% end %>
+              </tr>
+              <%#= integrante.team.sport_id %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <%#integrante.team.sport_id%>
+      <%= fut(@integrantes.count,@team.sport_id) %>
+      <%= button_to 'Ir a los Torneos', tournaments_path, :method=>"get", class: "btn btn-success siguiente" %> <br>
+      <%= button_to 'Volver a la lista de deportes', sports_path,  :method=>"get", class: "btn btn-primary volver" %>
+      <br>
+      <%#<%=
+        if integrante.limite == true
+          link_to 'New Integrante', new_team_integrante_path(@team) 
+        end
+      @team.sport_id
+      %>
+    </div>
+  </div>
 </div>
-<br>
-
-<%#integrante.team.sport_id%>
-<%= fut(@integrantes.count,@team.sport_id) %>
-<%= button_to 'Ir a los Torneos', tournaments_path, :method=>"get", class: "btn btn-success siguiente" %> <br>
-<%= button_to 'Volver a la lista de deportes', sports_path,  :method=>"get", class: "btn btn-primary volver" %>
-<br>
-
-<%#<%=
-  if integrante.limite == true
-    link_to 'New Integrante', new_team_integrante_path(@team) 
-  end
-@team.sport_id
-%>
-
-
-</div></div></div>

@@ -1,5 +1,4 @@
 <h1>Tipo Documentos</h1>
-
   <table  class="table table-striped table-hover ">
     <thead>
       <tr>
@@ -8,7 +7,6 @@
         <th colspan="3">Opciones</th>
       </tr>
     </thead>
-
     <tbody>
       <% @document_types.each do |document_type| %>
         <tr>
@@ -21,7 +19,5 @@
       <% end %>
     </tbody>
   </table>
-
   <br>
-
   <%= button_to 'Nuevo Tipo de Documento', new_document_type_path, :method=>"get", class: "btn btn-info" %>

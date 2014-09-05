@@ -9,12 +9,12 @@
 		</p>
 		<div class="botones">
 			<% if can? :create, album %>
-			<%= link_to 'Editar', edit_album_path(album), remote: true, :class => 'btn btn-primary' %>
+				<%= link_to 'Editar', edit_album_path(album), remote: true, :class => 'btn btn-primary' %>
 			<% end %>
 			<% if can? :create, album %>
-       		<%= link_to 'Emilinar', album, method: :delete, data: { confirm: 'Esta seguro?' }, :class => 'btn btn-danger'%>
+       			<%= link_to 'Emilinar', album, method: :delete, data: { confirm: 'Esta seguro?' }, :class => 'btn btn-danger'%>
        		<% end %>
-       		<%= link_to 'Ver imagenes', album_galleries_path(album), :class=>"btn btn-default " %> &nbsp;&nbsp;&nbsp;
+       			<%= link_to 'Ver imagenes', album_galleries_path(album), :class=>"btn btn-default " %> &nbsp;&nbsp;&nbsp;
        	</div>
     </td>
 </tr>
