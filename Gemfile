@@ -55,6 +55,12 @@ gem 'paperclip'
 
 gem 'sorcery'
 #gem 'autocomplete-rails'
+
+#gema para ventanas emergentes(modales)
 gem 'lazybox'
 gem 'simple_form'
+#_____________________________________
+
+#gema para seguridad con roles
 gem 'cancan'
+#_____________________________
