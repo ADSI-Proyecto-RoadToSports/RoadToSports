@@ -1,0 +1,37 @@
+<tr id=<%= "pmicrofutbol_#{pmicrofutbol.id}" %>>
+        <td><%= pmicrofutbol.equipo1 %></td>
+        <td><%= pmicrofutbol.puntos1 %></td>
+        <td>
+        <%= if pmicrofutbol.puntos1 > pmicrofutbol.puntos2
+                gano() 
+            elsif pmicrofutbol.puntos1 == pmicrofutbol.puntos2
+                empate() 
+                else
+                    perdio()
+            end %>
+        </td>
+        <td class="lin"><%= pmicrofutbol.puntoso1 %></td>
+        <td class="lin"><%= pmicrofutbol.equipo2 %></td>
+        <td><%= pmicrofutbol.puntos2 %></td>
+        <td>
+        <%= if pmicrofutbol.puntos2 > pmicrofutbol.puntos1
+                gano() 
+            elsif pmicrofutbol.puntos1 == pmicrofutbol.puntos2
+                empate() 
+                else
+                    perdio()
+            end %>
+        </td>
+        <td class="lin"><%= pmicrofutbol.puntoso2 %></td>
+        <td class="lin"><%= pmicrofutbol.tournament.name %></td>
+        <td><%= pmicrofutbol.fecha %></td>
+        <td><%= estado(pmicrofutbol.estado) %></td>
+        <td><%= pmicrofutbol.user.nombre %></td>
+        <td><%= link_to 'Ver', pmicrofutbol, remote: true %></td>
+          <% if can? :update, pmicrofutbol %>
+        <td><%= link_to 'Editar', edit_pmicrofutbol_path(pmicrofutbol), remote: true %></td>
+         <% end %>
+        <% if can? :destroy, pmicrofutbol %>
+        <td><%= link_to 'Eliminar', pmicrofutbol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <% end %>
+      </tr>

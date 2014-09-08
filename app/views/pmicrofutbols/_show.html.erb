@@ -1,0 +1,67 @@
+<div class="pmicrofutbol">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Equipo1:</strong>
+  <%= @pmicrofutbol.equipo1 %>
+</p>
+
+<p>
+  <strong>Puntos:</strong>
+  <%= @pmicrofutbol.puntos1 %>
+  <%= if @pmicrofutbol.puntos1 > @pmicrofutbol.puntos2
+                gano() 
+            elsif @pmicrofutbol.puntos1 == @pmicrofutbol.puntos2
+                empate() 
+                else
+                    perdio()
+  end %>
+</p>
+
+<p>
+  <strong>Puntos_Torneo:</strong>
+  <%= @pmicrofutbol.puntoso1 %>
+</p>
+
+<p>
+  <strong>Equipo2:</strong>
+  <%= @pmicrofutbol.equipo2 %>
+</p>
+
+<p>
+  <strong>Puntos:</strong>
+  <%= @pmicrofutbol.puntos2 %>
+  <%= if @pmicrofutbol.puntos1 > @pmicrofutbol.puntos2
+                gano() 
+            elsif @pmicrofutbol.puntos2 == @pmicrofutbol.puntos1
+                empate() 
+                else
+                    perdio()
+  end %>
+</p>
+
+<p>
+  <strong>Puntos_Torneo:</strong>
+  <%= @pmicrofutbol.puntoso2 %>
+</p>
+
+<p>
+  <strong>Tournament:</strong>
+  <%= @pmicrofutbol.tournament.name %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @pmicrofutbol.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= estado(@pmicrofutbol.estado) %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pmicrofutbol.user.nombre %>
+</p>
+</div>

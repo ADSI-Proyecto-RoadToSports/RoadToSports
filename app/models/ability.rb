@@ -26,6 +26,7 @@ class Ability
         can :read, Pbaloncesto
         can :read, Pajedrez
         can :read, Pvoleibol
+        can :read, Pmicrofutbol
         can :read, Participante
         can :create, Participante
         can :update, Participante
