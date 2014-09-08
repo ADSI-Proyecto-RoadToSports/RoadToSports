@@ -65,4 +65,4 @@ gem 'simple_form'
 gem 'cancan'
 #_____________________________
 #gema para generar pdf
-gem "pdfkit"
+gem 'prawn'

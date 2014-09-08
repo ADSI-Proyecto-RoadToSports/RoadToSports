@@ -6,6 +6,15 @@ class PfutbolsController < ApplicationController
   def index
     @pfutbols = Pfutbol.search(params[:search], params[:page])
     @nombrepartidos = Nombrepartido.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReportPdf.new(@pfutbols)
+        send_data pdf.render, filename: 'pfutbols_#{@pfutbols_id}',
+        type: 'application/pdf',
+        disposition: 'inline'
+      end
+    end
   end
 
   # GET /pfutbols/1
