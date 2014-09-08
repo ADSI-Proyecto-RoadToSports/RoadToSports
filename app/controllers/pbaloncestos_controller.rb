@@ -1,6 +1,7 @@
 class PbaloncestosController < ApplicationController
   before_action :set_pbaloncesto, only: [:show, :edit, :update, :destroy]
-load_and_authorize_resource
+
+
   # GET /pbaloncestos
   # GET /pbaloncestos.json
   def index

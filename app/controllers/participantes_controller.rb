@@ -24,7 +24,7 @@ class ParticipantesController < ApplicationController
   # POST /participantes
   # POST /participantes.json
   def create
-    @participante = Participante.new(participante_params)
+    @participante = Participante.new(participante_params) unless Participante.exists?(participante_params)
     @participante.sport_id = @sport.id
     respond_to do |format|
       if @participante.save

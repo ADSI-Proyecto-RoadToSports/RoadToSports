@@ -45,7 +45,7 @@
   </div>
   <div class="field">
     <label>Administrador</label><br>
-    <%= f.collection_select :user_id, User.all, :id, :email, class: "form-control", prompt: "Seleccione Un Admin" %>
+    <%= f.collection_select :user_id, User.where(Admin: true).all  , :id, :email, class: "form-control", prompt: "Seleccione Un Admin" %>
   </div>
   <div class="field">
      <label>Torneo</label><br>

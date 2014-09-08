@@ -1,6 +1,6 @@
 class RulesController < ApplicationController
   before_action :set_rule, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+
   # GET /rules
   # GET /rules.json
   def index

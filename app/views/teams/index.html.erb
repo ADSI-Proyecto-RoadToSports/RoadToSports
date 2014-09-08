@@ -71,6 +71,8 @@
        button_to 'Ir a los Partidos', pfutbols_path, :method=>"get", class: "btn btn-warning ir" 
         elsif @sport.id == 3
         button_to 'Ir a los Partidos', pbaloncestos_path, :method=>"get", class: "btn btn-warning ir" 
+      elsif @sport.id == 5
+        button_to 'Ir a los Partidos', pvoleibols_path, :method=>"get", class: "btn btn-warning ir" 
         end  
        %>
     </div>

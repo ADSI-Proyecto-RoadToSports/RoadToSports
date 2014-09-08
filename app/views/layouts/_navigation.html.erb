@@ -16,11 +16,11 @@
         <% if current_user %>
           <% if current_user.admin == true  %>
             <li>
-              <%= link_to current_user.nombre+ ': Administrador', edit_user_path(current_user.id) %>
+              <%= link_to 'Administrador: '+ current_user.nombre, edit_user_path(current_user.id) %>
             </li>
           <% else %>
             <li>
-              <%= link_to current_user.nombre+ ': Usuario', edit_user_path(current_user.id) %>
+              <%= link_to 'Usuario: '+current_user.nombre, edit_user_path(current_user.id) %>
             </li>
           <% end %>
             <li>

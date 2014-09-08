@@ -42,7 +42,7 @@ load_and_authorize_resource
   def update
     respond_to do |format|
       if @nombrepartido.update(nombrepartido_params)
-        format.html { redirect_to @nombrepartido, notice: 'Nombrepartido was successfully updated.' }
+        format.html { redirect_to pfutbols_path }
         format.json { render :show, status: :ok, location: @nombrepartido }
       else
         format.html { render :edit }
