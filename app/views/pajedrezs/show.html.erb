@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Participante1:</strong>
+  <%= @pajedrez.participante1 %>
+</p>
+
+<p>
+  <strong>Puntos1:</strong>
+  <%= @pajedrez.puntos1 %>
+</p>
+
+<p>
+  <strong>Participante2:</strong>
+  <%= @pajedrez.participante2 %>
+</p>
+
+<p>
+  <strong>Puntos2:</strong>
+  <%= @pajedrez.puntos2 %>
+</p>
+
+<p>
+  <strong>Tournament:</strong>
+  <%= @pajedrez.tournament_id %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @pajedrez.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @pajedrez.estado %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pajedrez.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_pajedrez_path(@pajedrez) %> |
+<%= link_to 'Back', pajedrezs_path %>

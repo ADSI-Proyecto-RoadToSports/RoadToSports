@@ -1,0 +1,39 @@
+<h1>Listing ptenismesas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Participante1</th>
+      <th>Puntos1</th>
+      <th>Participante2</th>
+      <th>Puntos2</th>
+      <th>Tournament</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ptenismesas.each do |ptenismesa| %>
+      <tr>
+        <td><%= ptenismesa.participante1 %></td>
+        <td><%= ptenismesa.puntos1 %></td>
+        <td><%= ptenismesa.participante2 %></td>
+        <td><%= ptenismesa.puntos2 %></td>
+        <td><%= ptenismesa.tournament_id %></td>
+        <td><%= ptenismesa.fecha %></td>
+        <td><%= ptenismesa.estado %></td>
+        <td><%= ptenismesa.user_id %></td>
+        <td><%= link_to 'Show', ptenismesa %></td>
+        <td><%= link_to 'Edit', edit_ptenismesa_path(ptenismesa) %></td>
+        <td><%= link_to 'Destroy', ptenismesa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ptenismesa', new_ptenismesa_path %>

@@ -1,0 +1,49 @@
+<%= form_for(@ptenismesa) do |f| %>
+  <% if @ptenismesa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ptenismesa.errors.count, "error") %> prohibited this ptenismesa from being saved:</h2>
+
+      <ul>
+      <% @ptenismesa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :participante1 %><br>
+    <%= f.text_field :participante1 %>
+  </div>
+  <div class="field">
+    <%= f.label :puntos1 %><br>
+    <%= f.text_field :puntos1 %>
+  </div>
+  <div class="field">
+    <%= f.label :participante2 %><br>
+    <%= f.text_field :participante2 %>
+  </div>
+  <div class="field">
+    <%= f.label :puntos2 %><br>
+    <%= f.text_field :puntos2 %>
+  </div>
+  <div class="field">
+    <%= f.label :tournament_id %><br>
+    <%= f.number_field :tournament_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.datetime_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.check_box :estado %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

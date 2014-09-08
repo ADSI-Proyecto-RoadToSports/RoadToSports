@@ -1,3 +1,4 @@
+
 <div class="contenidop ">
   <div class="img1"></div>
   <div class="img2"></div>
@@ -15,6 +16,7 @@
               <th>Tipo de documento</th>
               <th># Documento</th>
               <th>Ficha</th>
+              <th>Lesionado?</th>
               <th colspan="3">Opciones</th>
             </tr>
           </thead>
@@ -22,30 +24,63 @@
           <tbody>
             <% @integrantes.each do |integrante| %>
               <tr>
-                <td>
-                  <%= integrante.nombre %>
-                </td>
-                <td>
-                  <%= integrante.document_type.name rescue nil%>
-                </td>
-                <td>
-                  <%= integrante.documento %>
-                </td>
-                <td>
-                  <%= integrante.ficha %>
-                </td>
-                <td>
-                  <%= link_to 'Ver', team_integrante_path(@team,integrante) %></td>
-                    <% if can? :update, integrante %>
-                      <td>
-                        <%= link_to 'Editar', edit_team_integrante_path(@team,integrante) %>
-                      </td>
-                    <% end %>
-                    <% if can? :destroy, integrante %>
-                      <td>
-                        <%= link_to 'Eliminar', team_integrante_path(@team,integrante), method: :delete, data: { confirm: 'Esta seguro?' } %>
-                      </td>
-                    <% end %>
+                <% if integrante.lesion == true %>
+                  <td>
+                    <%= integrante.nombre %>
+                  </td>
+                  <td>
+                    <%= integrante.document_type.name rescue nil%>
+                  </td>
+                  <td>
+                    <%= integrante.documento %>
+                  </td>
+                  <td>
+                    <%= integrante.ficha %>
+                  </td>
+                  <td><span class='label label-danger'>Esta persona no puede jugar por una lesion.</span></td>
+                  <td>
+                    <%= link_to 'Ver', team_integrante_path(@team,integrante) %>
+                  </td>
+                  <% if can? :update, integrante %>
+                    <td>
+                      <%= link_to 'Editar', edit_team_integrante_path(@team,integrante) %>
+                    </td>
+                  <% end %>
+                  <% if can? :destroy, integrante %>
+                    <td>
+                      <%= link_to 'Eliminar', team_integrante_path(@team,integrante), method: :delete, data: { confirm: 'Esta seguro?' } %>
+                    </td>
+                  <% end %>
+                <% else %>
+                  <td>
+                    <%= integrante.nombre %>
+                  </td>
+                  <td>
+                    <%= integrante.document_type.name rescue nil%>
+                  </td>
+                  <td>
+                    <%= integrante.documento %>
+                  </td>
+                  <td>
+                    <%= integrante.ficha %>
+                  </td>
+                  <td>
+                  <span class='label label-success'>Esta persona esta en perfectas condiciones para jugar.</span>
+                  </td>
+                  <td>
+                    <%= link_to 'Ver', team_integrante_path(@team,integrante) %>
+                  </td>
+                  <% if can? :update, integrante %>
+                    <td>
+                      <%= link_to 'Editar', edit_team_integrante_path(@team,integrante) %>
+                    </td>
+                  <% end %>
+                  <% if can? :destroy, integrante %>
+                    <td>
+                      <%= link_to 'Eliminar', team_integrante_path(@team,integrante), method: :delete, data: { confirm: 'Esta seguro?' } %>
+                    </td>
+                  <% end %>
+                <% end %>
               </tr>
               <%#= integrante.team.sport_id %>
             <% end %>

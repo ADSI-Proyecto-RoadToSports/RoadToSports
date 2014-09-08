@@ -30,14 +30,14 @@ class Ability
         can :destroy, Participante
         #operaciones de editar para algunas vistas
         can :update, User
-        can :update, Integrante do |integrante|
-            integrante.try(:user) == user
-        end
+        can :update, Integrante #do |integrante|
+            #integrante.try(:user) == user
+        #end
         
         #operaciones de eliminar para algunas vistas
-        can :destroy, Integrante do |integrante|
-            integrante.try(:user) == user
-        end
+        can :destroy, Integrante #do |integrante|
+            #integrante.try(:user) == user
+        #end
 
         #operaciones de crear para algunas vistas
         #can :create, Integrante do |integrante|

@@ -17,7 +17,7 @@
 
       <p>
         <strong>Document type:</strong>
-        <%= @integrante.document_type.name %>
+        <%= @integrante.document_type.name rescue nil%>
       </p>
 
       <p>
@@ -34,6 +34,17 @@
         <strong>Team:</strong>
         <%= @integrante.team.nombre %>
       </p>
+      <% if @integrante.lesion == true %>
+      <p>
+        <strong>Lesionado?:</strong>
+        <span class='label label-danger'>Esta persona no puede jugar por una lesion.</span>
+      </p>
+      <% else %>
+      <p>
+        <strong>Lesionado?:</strong>
+        <span class='label label-success'>Esta persona esta en perfectas condiciones para jugar.</span>
+      </p>
+      <% end %>
       <% if can? :update, @integrante %>
         <%= link_to 'Editar', edit_team_integrante_path(@team,@integrante) %> |
       <% end %>

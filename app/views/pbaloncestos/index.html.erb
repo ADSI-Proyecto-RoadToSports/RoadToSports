@@ -30,7 +30,9 @@
         </tbody>
       </table>
       <br>
-      <%= button_to 'Nuevo partido', new_pbaloncesto_path, remote: true, :method => "get", class: "btn btn-info"%>
+      <%= if can? :create, @pbaloncesto 
+        button_to 'Nuevo partido', new_pbaloncesto_path, :method => "get", class: "btn btn-info", remote: true 
+      end %>
       <div class="paginacion">Partidos: <b><%= @pbaloncestos.count %> </b><%= will_paginate @pbaloncestos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
 
 

@@ -1,0 +1,39 @@
+<h1>Listing pajedrezs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Participante1</th>
+      <th>Puntos1</th>
+      <th>Participante2</th>
+      <th>Puntos2</th>
+      <th>Tournament</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pajedrezs.each do |pajedrez| %>
+      <tr>
+        <td><%= pajedrez.participante1 %></td>
+        <td><%= pajedrez.puntos1 %></td>
+        <td><%= pajedrez.participante2 %></td>
+        <td><%= pajedrez.puntos2 %></td>
+        <td><%= pajedrez.tournament_id %></td>
+        <td><%= pajedrez.fecha %></td>
+        <td><%= pajedrez.estado %></td>
+        <td><%= pajedrez.user_id %></td>
+        <td><%= link_to 'Show', pajedrez %></td>
+        <td><%= link_to 'Edit', edit_pajedrez_path(pajedrez) %></td>
+        <td><%= link_to 'Destroy', pajedrez, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pajedrez', new_pajedrez_path %>

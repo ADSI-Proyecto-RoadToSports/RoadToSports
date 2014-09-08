@@ -70,6 +70,6 @@ class IntegrantesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def integrante_params
-      params.require(:integrante).permit(:nombre, :document_type_id, :documento, :ficha, :team_id, :limite)
+      params.require(:integrante).permit(:nombre, :documenttype_id, :documento, :ficha, :team_id, :limite, :lesion, :TRoja ,:TAmarilla)
     end
 end

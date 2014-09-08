@@ -72,9 +72,6 @@ module IntegrantesHelper
 			else
 				button_to 'Nuevo Integrante', new_team_integrante_path(@team), :method => "get", class: "btn btn-info"
 			end
-		end
-
-
-		
+		end	
 	end
 end

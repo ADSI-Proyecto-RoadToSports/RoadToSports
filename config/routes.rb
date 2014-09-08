@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :ptenismesas
+
+  resources :pajedrezs
+
+  resources :pmicrofutbols
+
+  resources :pvoleibols
+
   resources :participantes
 
   resources :nombrepartidobs

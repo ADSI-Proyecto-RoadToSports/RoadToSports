@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905191321) do
+ActiveRecord::Schema.define(version: 20140908024143) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -79,13 +79,14 @@ ActiveRecord::Schema.define(version: 20140905191321) do
 
   create_table "integrantes", force: true do |t|
     t.string   "nombre"
-    t.integer  "document_type_id"
+    t.integer  "documenttype_id"
     t.string   "documento"
     t.string   "ficha"
     t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "limite",           default: false
+    t.boolean  "limite",          default: false
+    t.boolean  "lesion"
   end
 
   create_table "modalities_types", force: true do |t|
@@ -114,18 +115,30 @@ ActiveRecord::Schema.define(version: 20140905191321) do
     t.datetime "updated_at"
   end
 
+  create_table "pajedrezs", force: true do |t|
+    t.string   "participante1"
+    t.string   "puntos1"
+    t.string   "participante2"
+    t.string   "puntos2"
+    t.integer  "tournament_id"
+    t.datetime "fecha"
+    t.boolean  "estado"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "participantes", force: true do |t|
     t.string   "nombre"
     t.string   "email"
     t.integer  "document_type_id"
     t.string   "documento"
     t.boolean  "estado"
-    t.integer  "sports_id"
+    t.integer  "sport_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ficha",            limit: nil
   end
-
-  add_index "participantes", ["sports_id"], name: "index_participantes_on_sports_id"
 
   create_table "pbaloncestos", force: true do |t|
     t.string   "equipo1"
@@ -155,6 +168,49 @@ ActiveRecord::Schema.define(version: 20140905191321) do
     t.integer  "puntos1"
     t.integer  "puntoso1"
     t.integer  "puntoso2"
+  end
+
+  create_table "pmicrofutbols", force: true do |t|
+    t.string   "equipo1"
+    t.string   "puntos1"
+    t.string   "puntoso1"
+    t.string   "equipo2"
+    t.string   "puntos2"
+    t.string   "puntoso2"
+    t.integer  "tournament_id"
+    t.datetime "fecha"
+    t.boolean  "estado"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ptenismesas", force: true do |t|
+    t.string   "participante1"
+    t.string   "puntos1"
+    t.string   "participante2"
+    t.string   "puntos2"
+    t.integer  "tournament_id"
+    t.datetime "fecha"
+    t.boolean  "estado"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pvoleibols", force: true do |t|
+    t.string   "equipo1"
+    t.string   "puntos1"
+    t.string   "puntoso1"
+    t.string   "equipo2"
+    t.string   "puntos2"
+    t.string   "puntoso2"
+    t.integer  "tournament_id"
+    t.datetime "fecha"
+    t.boolean  "estado"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "roadtosports", force: true do |t|

@@ -1,4 +1,4 @@
-<tr id=<%= "pbaloncesto_#{pbaloncesto.id}" %>>
+<tr id=<%= "pbaloncesto_#{pbaloncesto.id}"%>>
   <td class="equi1">
     <%= pbaloncesto.equipo1 %>
   </td>
@@ -11,7 +11,7 @@
           elsif pbaloncesto.puntos1 == pbaloncesto.puntos2
               empate() 
               else
-    perdio()
+                perdio()
           end %>
   </td>
   <td class="equi1 lin">
@@ -29,7 +29,7 @@
           elsif pbaloncesto.puntos1 == pbaloncesto.puntos2
               empate() 
               else
-    perdio()
+                perdio()
           end %>
   </td>
   <td class="equi1 lin">
@@ -47,13 +47,19 @@
   <td>
     <%= pbaloncesto.user.nombre %>
   </td>
-  <td>
-    <%= link_to 'Ver', pbaloncesto, remote: true %>
-  </td>
-  <td>
-    <%= link_to 'Editar', edit_pbaloncesto_path(pbaloncesto), remote: true %>
-  </td>
-  <td>
-    <%= link_to 'Eliminar', pbaloncesto, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </td>
+  <% if can? :read, pbaloncesto %>
+    <td>
+      <%= link_to 'Ver', pbaloncesto , remote: true %>
+    </td>
+  <% end %>
+  <% if can? :update, pbaloncesto %>
+    <td>
+      <%= link_to 'Editar', edit_pbaloncesto_path(pbaloncesto), remote: true %>
+    </td>
+  <% end %>
+  <% if can? :destroy, pbaloncesto %>
+    <td>
+      <%= link_to 'Eliminar', pbaloncesto, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+    <% end %>
 </tr>

@@ -1,0 +1,43 @@
+<h1>Listing pmicrofutbols</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Equipo1</th>
+      <th>Puntos1</th>
+      <th>Puntoso1</th>
+      <th>Equipo2</th>
+      <th>Puntos2</th>
+      <th>Puntoso2</th>
+      <th>Tournament</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pmicrofutbols.each do |pmicrofutbol| %>
+      <tr>
+        <td><%= pmicrofutbol.equipo1 %></td>
+        <td><%= pmicrofutbol.puntos1 %></td>
+        <td><%= pmicrofutbol.puntoso1 %></td>
+        <td><%= pmicrofutbol.equipo2 %></td>
+        <td><%= pmicrofutbol.puntos2 %></td>
+        <td><%= pmicrofutbol.puntoso2 %></td>
+        <td><%= pmicrofutbol.tournament_id %></td>
+        <td><%= pmicrofutbol.fecha %></td>
+        <td><%= pmicrofutbol.estado %></td>
+        <td><%= pmicrofutbol.user_id %></td>
+        <td><%= link_to 'Show', pmicrofutbol %></td>
+        <td><%= link_to 'Edit', edit_pmicrofutbol_path(pmicrofutbol) %></td>
+        <td><%= link_to 'Destroy', pmicrofutbol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pmicrofutbol', new_pmicrofutbol_path %>

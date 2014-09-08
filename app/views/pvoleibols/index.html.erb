@@ -1,0 +1,43 @@
+<h1>Listing pvoleibols</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Equipo1</th>
+      <th>Puntos1</th>
+      <th>Puntoso1</th>
+      <th>Equipo2</th>
+      <th>Puntos2</th>
+      <th>Puntoso2</th>
+      <th>Tournament</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pvoleibols.each do |pvoleibol| %>
+      <tr>
+        <td><%= pvoleibol.equipo1 %></td>
+        <td><%= pvoleibol.puntos1 %></td>
+        <td><%= pvoleibol.puntoso1 %></td>
+        <td><%= pvoleibol.equipo2 %></td>
+        <td><%= pvoleibol.puntos2 %></td>
+        <td><%= pvoleibol.puntoso2 %></td>
+        <td><%= pvoleibol.tournament_id %></td>
+        <td><%= pvoleibol.fecha %></td>
+        <td><%= pvoleibol.estado %></td>
+        <td><%= pvoleibol.user_id %></td>
+        <td><%= link_to 'Show', pvoleibol %></td>
+        <td><%= link_to 'Edit', edit_pvoleibol_path(pvoleibol) %></td>
+        <td><%= link_to 'Destroy', pvoleibol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pvoleibol', new_pvoleibol_path %>
