@@ -64,3 +64,5 @@ gem 'simple_form'
 #gema para seguridad con roles
 gem 'cancan'
 #_____________________________
+#gema para generar pdf
+gem "pdfkit"
