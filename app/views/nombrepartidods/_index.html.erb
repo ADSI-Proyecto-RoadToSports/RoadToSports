@@ -1,0 +1,7 @@
+<% @nombrepartidods.each do |nombrepartidod| %>
+    <div class="titulop"><h1 class="titulon"><%= nombrepartidod.nombre %></h1>
+        <% if can? :update, @nombrepartidod %>
+        <%= button_to 'Cambiar el titulo', edit_nombrepartidod_path(nombrepartidod), :method => "get", class: "btn btn-primary opcione pull-right btn-xs", remote: true %>
+   	</div>
+		<% end %>
+<% end %>

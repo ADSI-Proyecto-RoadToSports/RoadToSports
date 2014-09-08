@@ -1,15 +1,18 @@
 class PvoleibolsController < ApplicationController
   before_action :set_pvoleibol, only: [:show, :edit, :update, :destroy]
 
+  
   # GET /pvoleibols
   # GET /pvoleibols.json
   def index
-    @pvoleibols = Pvoleibol.all
+    @pvoleibols = Pvoleibol.search(params[:search], params[:page])
+    @nombrepartidocs = Nombrepartidoc.all
   end
 
   # GET /pvoleibols/1
   # GET /pvoleibols/1.json
   def show
+    @pvoleibols = Pvoleibol.find(params[:id])
   end
 
   # GET /pvoleibols/new
@@ -19,6 +22,7 @@ class PvoleibolsController < ApplicationController
 
   # GET /pvoleibols/1/edit
   def edit
+    @pvoleibols = Pvoleibol.find(params[:id])
   end
 
   # POST /pvoleibols
@@ -28,7 +32,7 @@ class PvoleibolsController < ApplicationController
 
     respond_to do |format|
       if @pvoleibol.save
-        format.html { redirect_to @pvoleibol, notice: 'Pvoleibol was successfully created.' }
+        format.html { redirect_to pvoleibols_path, notice: 'Pvoleibol was successfully created.' }
         format.json { render :show, status: :created, location: @pvoleibol }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class PvoleibolsController < ApplicationController
   def update
     respond_to do |format|
       if @pvoleibol.update(pvoleibol_params)
-        format.html { redirect_to @pvoleibol, notice: 'Pvoleibol was successfully updated.' }
+        format.html { redirect_to pvoleibols_path, notice: 'Pvoleibol was successfully updated.' }
         format.json { render :show, status: :ok, location: @pvoleibol }
       else
         format.html { render :edit }

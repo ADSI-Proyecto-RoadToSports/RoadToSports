@@ -4,12 +4,14 @@ class PajedrezsController < ApplicationController
   # GET /pajedrezs
   # GET /pajedrezs.json
   def index
-    @pajedrezs = Pajedrez.all
+    @pajedrezs = Pajedrez.search(params[:search], params[:page])
+    @nombrepartidods = Nombrepartidod.all
   end
 
   # GET /pajedrezs/1
   # GET /pajedrezs/1.json
   def show
+    @pajedrez = Pajedrez.find(params[:id])
   end
 
   # GET /pajedrezs/new
@@ -19,6 +21,7 @@ class PajedrezsController < ApplicationController
 
   # GET /pajedrezs/1/edit
   def edit
+    @pajedrez = Pajedrez.find(params[:id])
   end
 
   # POST /pajedrezs
@@ -28,7 +31,7 @@ class PajedrezsController < ApplicationController
 
     respond_to do |format|
       if @pajedrez.save
-        format.html { redirect_to @pajedrez, notice: 'Pajedrez was successfully created.' }
+        format.html { redirect_to pajedrezs_path, notice: 'Pajedrez was successfully created.' }
         format.json { render :show, status: :created, location: @pajedrez }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class PajedrezsController < ApplicationController
   def update
     respond_to do |format|
       if @pajedrez.update(pajedrez_params)
-        format.html { redirect_to @pajedrez, notice: 'Pajedrez was successfully updated.' }
+        format.html { redirect_to pajedrezs_path, notice: 'Pajedrez was successfully updated.' }
         format.json { render :show, status: :ok, location: @pajedrez }
       else
         format.html { render :edit }

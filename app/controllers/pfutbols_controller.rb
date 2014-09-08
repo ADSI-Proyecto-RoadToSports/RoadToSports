@@ -1,7 +1,6 @@
 class PfutbolsController < ApplicationController
   before_action :set_pfutbol, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
-  # GET /pfutbols
+
   # GET /pfutbols.json
   def index
     @pfutbols = Pfutbol.search(params[:search], params[:page])

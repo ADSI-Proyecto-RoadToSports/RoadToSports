@@ -42,7 +42,7 @@ load_and_authorize_resource
   def update
     respond_to do |format|
       if @nombrepartidob.update(nombrepartidob_params)
-        format.html { redirect_to @nombrepartidob, notice: 'Nombrepartidob was successfully updated.' }
+        format.html { redirect_to pbaloncestos_path }
         format.json { render :show, status: :ok, location: @nombrepartidob }
       else
         format.html { render :edit }

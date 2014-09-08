@@ -1,0 +1,68 @@
+<div class="pvoleibol">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Equipo1:</strong>
+  <%= @pvoleibol.equipo1 %>
+</p>
+
+<p>
+  <strong>Puntos:</strong>
+  <%= @pvoleibol.puntos1 %>
+  <%= if @pvoleibol.puntos1 > @pvoleibol.puntos2
+              gano() 
+          elsif @pvoleibol.puntos1 == @pvoleibol.puntos2
+              empate() 
+              else
+                perdio()
+  end %>
+</p>
+
+<p>
+  <strong>Puntos Torneos:</strong>
+  <%= @pvoleibol.puntoso1 %>
+</p>
+
+<p>
+  <strong>Equipo2:</strong>
+  <%= @pvoleibol.equipo2 %>
+</p>
+
+<p>
+  <strong>Puntos:</strong>
+  <%= @pvoleibol.puntos2 %>
+  <%= if @pvoleibol.puntos2 > @pvoleibol.puntos1
+              gano() 
+          elsif @pvoleibol.puntos1 == @pvoleibol.puntos2
+              empate() 
+              else
+                perdio()
+          end %>
+</p>
+
+<p>
+  <strong>Puntos Torneos:</strong>
+  <%= @pvoleibol.puntoso2 %>
+</p>
+
+<p>
+  <strong>Torneo:</strong>
+  <%= @pvoleibol.tournament.name %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @pvoleibol.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= estado(@pvoleibol.estado) %>
+</p>
+
+<p>
+  <strong>Responsable:</strong>
+  <%= @pvoleibol.user.nombre %>
+</p>
+
+</div>

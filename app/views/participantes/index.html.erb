@@ -53,8 +53,8 @@
 <%= button_to 'Volver a la lista de deportes', sports_path,  :method=>"get", class: "btn btn-primary volver" %>
       <%= button_to 'Ir a los Torneos', tournaments_path, :method=>"get", class: "btn btn-success siguiente" %>
       <%=
-        if @sport.id == 1
-       button_to 'Ir a los Partidos', pfutbols_path, :method=>"get", class: "btn btn-warning ir" 
+        if @sport.id == 2
+       button_to 'Ir a los Partidos', pajedrezs_path, :method=>"get", class: "btn btn-warning ir" 
         elsif @sport.id == 3
         button_to 'Ir a los Partidos', pbaloncestos_path, :method=>"get", class: "btn btn-warning ir" 
         end  

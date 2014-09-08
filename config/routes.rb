@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :nombrepartidoms
+
+  resources :nombrepartidods
+
+  resources :nombrepartidocs
+
   resources :ptenismesas
 
   resources :pajedrezs

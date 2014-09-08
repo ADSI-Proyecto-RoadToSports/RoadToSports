@@ -4,12 +4,14 @@ class PmicrofutbolsController < ApplicationController
   # GET /pmicrofutbols
   # GET /pmicrofutbols.json
   def index
-    @pmicrofutbols = Pmicrofutbol.all
+    @pmicrofutbols = Pmicrofutbol.search(params[:search], params[:page])
+    @nombrepartidoms = Nombrepartidom.all
   end
 
   # GET /pmicrofutbols/1
   # GET /pmicrofutbols/1.json
   def show
+    @pmicrofutbols = Pmicrofutbol.find(params[:id])
   end
 
   # GET /pmicrofutbols/new
@@ -19,6 +21,7 @@ class PmicrofutbolsController < ApplicationController
 
   # GET /pmicrofutbols/1/edit
   def edit
+    @pmicrofutbols = Pmicrofutbol.find(params[:id])
   end
 
   # POST /pmicrofutbols
@@ -28,7 +31,7 @@ class PmicrofutbolsController < ApplicationController
 
     respond_to do |format|
       if @pmicrofutbol.save
-        format.html { redirect_to @pmicrofutbol, notice: 'Pmicrofutbol was successfully created.' }
+        format.html { redirect_to pmicrofutbols_path, notice: 'Pmicrofutbol was successfully created.' }
         format.json { render :show, status: :created, location: @pmicrofutbol }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class PmicrofutbolsController < ApplicationController
   def update
     respond_to do |format|
       if @pmicrofutbol.update(pmicrofutbol_params)
-        format.html { redirect_to @pmicrofutbol, notice: 'Pmicrofutbol was successfully updated.' }
+        format.html { redirect_to pmicrofutbols_path, notice: 'Pmicrofutbol was successfully updated.' }
         format.json { render :show, status: :ok, location: @pmicrofutbol }
       else
         format.html { render :edit }

@@ -8,7 +8,7 @@
       <%= render 'nombrepartidobs/index' %>
       <h1>Partidos de Baloncesto</h1>
         <div class="paginacion">Partidos: <b><%= @pbaloncestos.count %> </b><%= will_paginate @pbaloncestos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
-      <table class="table">
+      <table class="table table-striped table-hover ">
         <thead>
           <tr>
             <th>Equipo1</th>

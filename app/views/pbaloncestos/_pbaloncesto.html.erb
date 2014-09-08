@@ -1,11 +1,11 @@
 <tr id=<%= "pbaloncesto_#{pbaloncesto.id}"%>>
-  <td class="equi1">
+  <td >
     <%= pbaloncesto.equipo1 %>
   </td>
-  <td class="equi1">
+  <td >
     <%= pbaloncesto.puntos1 %>
   </td>
-  <td class="equi1">
+  <td >
       <%= if pbaloncesto.puntos1 > pbaloncesto.puntos2
               gano() 
           elsif pbaloncesto.puntos1 == pbaloncesto.puntos2
@@ -14,16 +14,16 @@
                 perdio()
           end %>
   </td>
-  <td class="equi1 lin">
+  <td class=" lin">
     <%= pbaloncesto.puntoso1 %>
   </td>
-  <td class="equi1 lin">
+  <td class=" lin">
     <%= pbaloncesto.equipo2 %>
   </td>
-  <td class="equi1">
+  <td >
     <%= pbaloncesto.puntos2 %>
   </td>
-   <td class="equi1">
+   <td >
       <%= if pbaloncesto.puntos2 > pbaloncesto.puntos1
               gano() 
           elsif pbaloncesto.puntos1 == pbaloncesto.puntos2
@@ -32,10 +32,10 @@
                 perdio()
           end %>
   </td>
-  <td class="equi1 lin">
+  <td class="lin">
     <%= pbaloncesto.puntoso2 %>
   </td>
-  <td>
+  <td class="lin">
     <%= pbaloncesto.tournament.name %>
   </td>
   <td>
