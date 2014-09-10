@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="rule">
+	<p id="notice">
+		<%= notice %>
+	</p>
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @rule.name %>
+	</p>
+	<p>
+		<strong>Descripción:</strong>
+		<%= @rule.description %>
+	</p>
+	<p>
+	  <strong>Deporte:</strong>
+	  <%= @rule.sport.name %>
+	</p>
+	<p>
+	  <strong>Tipo De Regla:</strong>
+	  <%= @rule.type_rule.name %>
+	</p>
+	<p>
+	  <strong>Estado:</strong>
+	  <%= rul(@rule.state) %>
+	</p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @rule.name %>
-</p>
-
-<p>
-  <strong>Descripción:</strong>
-  <%= @rule.description %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @rule.state %>
-</p>
-
-<%= link_to 'Editar', edit_rule_path(@rule) %> |
-<%= link_to 'Atras', rules_path %>
+</div>

@@ -16,6 +16,7 @@ gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -43,8 +44,7 @@ gem 'will_paginate'
 gem 'bootstrap-sass'
 
 group :development do
-gem 'better_errors'
-gem "binding_of_caller" 
+gem 'better_errors' 
 gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
 gem 'quiet_assets'
 gem 'rails_layout'
@@ -54,9 +54,15 @@ end
 gem 'paperclip'
 
 gem 'sorcery'
+#gem 'autocomplete-rails'
 
+#gema para ventanas emergentes(modales)
 gem 'lazybox'
 gem 'simple_form'
+#_____________________________________
 
-gem 'rails4-autocomplete'
-gem 'jquery-ui-rails'
+#gema para seguridad con roles
+gem 'cancan'
+#_____________________________
+#gema para generar pdf
+gem 'prawn'

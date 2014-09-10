@@ -1,4 +1,33 @@
 Rails.application.routes.draw do
+  resources :nombrepartidoms
+
+  resources :nombrepartidods
+
+  resources :nombrepartidocs
+
+  resources :ptenismesas
+
+  resources :pajedrezs
+
+  resources :pmicrofutbols
+
+  resources :pvoleibols
+
+  resources :participantes
+
+  resources :nombrepartidobs
+
+  resources :pbaloncestos
+
+  resources :nombrepartidos
+
+  resources :albums do
+    resources :galleries
+  end
+  resources :pfutbols
+
+  resources :events
+
   get 'roadtosports/registros'
 
   get 'roadtosports/index'
@@ -11,6 +40,10 @@ Rails.application.routes.draw do
 
   resources :sports do
     resources :teams
+  end
+  
+  resources :sports do
+    resources :participantes
   end
 
   resources :tournaments do
@@ -26,7 +59,7 @@ Rails.application.routes.draw do
 resources :user_sessions
 resources :users
 
-get 'login' => 'user_sessions#new', :as => :login
+get 'login' => 'user_sessions#index', :as => :login
 get 'logout' => 'user_sessions#destroy', :as => :logout
 
   resources :galleries
@@ -35,29 +68,13 @@ get 'logout' => 'user_sessions#destroy', :as => :logout
 
   resources :sports
 
-  resources :matches
-
-  resources :scores
-
-  resources :fch_lg_matches
-
-  resources :modalities
-
   resources :tournaments
-
-  resources :preferences
 
   resources :sessions
 
-  resources :information
-
   resources :novelties
 
-  resources :constituents
-
   resources :rules
-
-  resources :configurations
 
   resources :activities
 
@@ -66,14 +83,6 @@ get 'logout' => 'user_sessions#destroy', :as => :logout
   resources :type_rules
 
   resources :type_tournaments
-
-  resources :type_preferences
-
-  resources :type_configurations
-
-  resources :type_informations
-
-  resources :new_types
 
   resources :document_types
 

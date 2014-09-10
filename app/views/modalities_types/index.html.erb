@@ -1,5 +1,4 @@
 <h1>Tipos de Modalidades</h1>
-
 <table  class="table table-striped table-hover ">
   <thead>
     <tr>
@@ -12,11 +11,21 @@
   <tbody>
     <% @modalities_types.each do |modalities_type| %>
       <tr>
-        <td><%= modalities_type.name %></td>
-        <td><%= modalities_type.description %></td>
-        <td><%= link_to 'Ver', modalities_type %></td>
-        <td><%= link_to 'Editar', edit_modalities_type_path(modalities_type) %></td>
-        <td><%= link_to 'Eliminar', modalities_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= modalities_type.name %>
+        </td>
+        <td>
+          <%= modalities_type.description %>
+        </td>
+        <td>
+          <%= link_to 'Ver', modalities_type %>
+        </td>
+        <td>
+          <%= link_to 'Editar', edit_modalities_type_path(modalities_type) %>
+        </td>
+        <td>
+          <%= link_to 'Eliminar', modalities_type, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

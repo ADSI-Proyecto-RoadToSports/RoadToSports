@@ -1,0 +1,58 @@
+<%= form_for(@pbaloncesto) do |f| %>
+  <% if @pbaloncesto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pbaloncesto.errors.count, "error") %> prohibited this pbaloncesto from being saved:</h2>
+
+      <ul>
+      <% @pbaloncesto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :equipo1 %><br>
+    <%= f.text_field :equipo1 %>
+  </div>
+  <div class="field">
+    <label>Puntos</label><br>
+    <%= f.text_field :puntos1 %>
+  </div>
+  <div class="field">
+    <label>Puntos obtenidos</label><br>
+    <%= f.text_field :puntoso1 %>
+  </div>
+  <div class="field">
+    <%= f.label :equipo2 %><br>
+    <%= f.text_field :equipo2 %>
+  </div>
+  <div class="field">
+    <label>Puntos</label><br>
+    <%= f.text_field :puntos2 %>
+  </div>
+  <div class="field">
+    <label>Puntos Obtenidos</label><br>
+    <%= f.text_field :puntoso2 %>
+  </div>
+  <div class="field">
+     <label>Torneo</label><br>
+    <%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: "form-control", prompt: "Seleccione Un Torneo" %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.datetime_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.check_box :estado %>
+  </div>
+  <div class="field">
+    <label>Administrador</label><br>
+    <%= f.collection_select :user_id, User.where(Admin: true).all, :id, :email, class: "form-control", prompt: "Seleccione Un Admin" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "guardar" %>
+  </div>
+<% end %>

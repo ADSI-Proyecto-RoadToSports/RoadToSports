@@ -11,9 +11,22 @@
     </div>
   <% end %>
 
+   <div class="field">
+       <%= f.label :nombre %><br />
+       <%= f.text_field :nombre %>
+  </div>
+
  <div class="field">
        <%= f.label :email %><br />
        <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <label>Tipo de documento</label><br>
+    <%= f.collection_select :document_type_id, DocumentType.all, :id, :description, class: "form-control", prompt: "Seleccione Un tipo de documento" %>
+  </div>
+  <div class="field">
+    <%= f.label :documento %><br>
+    <%= f.text_field :documento %>
   </div>
   <div class="field">
      <%= f.label :password %><br />
@@ -22,7 +35,27 @@
   <div class="field">
      <%= f.label :password_confirmation %><br />
      <%= f.password_field :password_confirmation %>
-  </div><br>
+  </div>
+<%#ocu(current_user.admin)%> 
+  <% if can? :read, @user %>
+  <p>Rol:</p>
+  <div class="field">
+    <%= f.label :Admin %><br>
+    <%= f.check_box :admin%>
+  </div>
+  <div class="field">
+    <%= f.label :Usuario %><br>
+    <%= f.check_box :usuario%>
+  </div>
+  <% else %>
+
+  <div class="field ocultar">
+    <%= f.label :Usuario %><br>
+    <%= f.check_box :usuario, {:checked=>true} %>
+  </div>
+  <% end %>
+<%#</div>%>
+  <br>
   <div class="actions">
     <%= f.submit 'Crear', :method=>"get", class: "btn btn-info" %>
   </div>

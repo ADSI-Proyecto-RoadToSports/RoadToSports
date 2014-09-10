@@ -1,0 +1,65 @@
+<tr id=<%= "pbaloncesto_#{pbaloncesto.id}"%>>
+  <td >
+    <%= pbaloncesto.equipo1 %>
+  </td>
+  <td >
+    <%= pbaloncesto.puntos1 %>
+  </td>
+  <td >
+      <%= if pbaloncesto.puntos1 > pbaloncesto.puntos2
+              gano() 
+          elsif pbaloncesto.puntos1 == pbaloncesto.puntos2
+              empate() 
+              else
+                perdio()
+          end %>
+  </td>
+  <td class=" lin">
+    <%= pbaloncesto.puntoso1 %>
+  </td>
+  <td class=" lin">
+    <%= pbaloncesto.equipo2 %>
+  </td>
+  <td >
+    <%= pbaloncesto.puntos2 %>
+  </td>
+   <td >
+      <%= if pbaloncesto.puntos2 > pbaloncesto.puntos1
+              gano() 
+          elsif pbaloncesto.puntos1 == pbaloncesto.puntos2
+              empate() 
+              else
+                perdio()
+          end %>
+  </td>
+  <td class="lin">
+    <%= pbaloncesto.puntoso2 %>
+  </td>
+  <td class="lin">
+    <%= pbaloncesto.tournament.name %>
+  </td>
+  <td>
+    <%= pbaloncesto.fecha %>
+  </td>
+  <td>
+    <%= estado(pbaloncesto.estado) %>
+  </td>
+  <td>
+    <%= pbaloncesto.user.nombre %>
+  </td>
+  <% if can? :read, pbaloncesto %>
+    <td>
+      <%= link_to 'Ver', pbaloncesto , remote: true %>
+    </td>
+  <% end %>
+  <% if can? :update, pbaloncesto %>
+    <td>
+      <%= link_to 'Editar', edit_pbaloncesto_path(pbaloncesto), remote: true %>
+    </td>
+  <% end %>
+  <% if can? :destroy, pbaloncesto %>
+    <td>
+      <%= link_to 'Eliminar', pbaloncesto, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+    <% end %>
+</tr>

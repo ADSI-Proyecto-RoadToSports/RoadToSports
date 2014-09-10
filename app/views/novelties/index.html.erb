@@ -1,39 +1,32 @@
-<div class="contenido ">
-<div class="img1"></div>
-<div class="img2"></div>
-<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+<div class="contenidop ">
+	<div class="img1"></div>
+	<div class="img2"></div>
+		<ul class="nav nav-tabs" style="margin-bottom: 15px;">
 
-</ul>
-<div id="myTabContent" class="tab-content">
-  <div class="tab-pane fade active in cont1" id="inicio">
-<h1>Novedades y Noticias</h1>
-<%= form_tag novelties_path, :method => 'get' do %>
-<% content_tag :label do %>
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag "Buscar", :name => nil %>
-<% end %>
-<% end %>
-<table class="table table-striped table-hover ">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Descripción</th>
-      <th colspan="3">Opciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-      <%= render @novelties %>
-  </tbody>
-</table>
-
-<br>
-
-<%= button_to 'Nueva Novedad', new_novelty_path ,remote: true, :method=>"get", class: "btn btn-info"%><br>
-<%= will_paginate @novelties, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
-&raquo;' %> 
-<br> 
-Novedades: <%= @novelties.count %>
-</div>
-</div>
+		</ul>
+	<div id="myTabContent" class="tab-content">
+  		<div class="" id="inicio">
+			<h1>Novedades y Noticias</h1>
+			<%= form_tag novelties_path, :method => 'get' do %>
+				<% content_tag :label do %>
+					<%= text_field_tag :search, params[:search], :placeholder => "Buscar por nombre..." %>
+					<%= submit_tag "Buscar", :name => nil %>
+				<% end %>
+			<% end %>
+			<div class="paginacion">Novedades: <b><%= @novelties.count %> </b><%= will_paginate @novelties, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
+			<table class="table table-striped table-hover ">
+	    		<tr>
+	      			<th>Nombre</th>
+	      			<th>Descripción</th>
+	      			<th colspan="3">Opciones</th>
+	    		</tr>
+	    		<%= render @novelties %>
+    		</table>
+    		<br>
+			<% if can? :create, @novelty %>
+				<%= button_to 'Nueva Novedad', new_novelty_path ,remote: true, :method=>"get", class: "btn btn-info"%><br>
+			<% end %>
+			<div class="paginacion">Novedades: <b><%= @novelties.count %> </b><%= will_paginate @novelties, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
+		</div>
+	</div>
 </div>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @participante.nombre %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @participante.email %>
+</p>
+
+<p>
+  <strong>Ficha:</strong>
+  <%= @participante.ficha %>
+</p>
+
+<p>
+  <strong>Document type:</strong>
+  <%= @participante.document_type_id %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @participante.documento %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @participante.estado %>
+</p>
+
+<%= link_to 'Editar', edit_sport_participante_path(@sport,@participante) %> |
+<%= link_to 'Atras', sport_participantes_path(@sport) %>

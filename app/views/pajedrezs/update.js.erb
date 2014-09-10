@@ -1,0 +1,2 @@
+$('tr#pajedrez_<%= @pajedrez.id %>').replaceWith("<%= escape_javascript(render @pajedrez) %>")
+$.lazybox.close()

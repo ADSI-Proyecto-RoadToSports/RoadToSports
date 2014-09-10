@@ -10,7 +10,7 @@ class RulesController < ApplicationController
   # GET /rules/1
   # GET /rules/1.json
   def show
-    @rule = Rule.find(params[:id])
+    @rules = Rule.find(params[:id])
   end
 
   # GET /rules/new
@@ -20,7 +20,7 @@ class RulesController < ApplicationController
 
   # GET /rules/1/edit
   def edit
-    @rule = Rule.find(params[:id])
+    @rules = Rule.find(params[:id])
   end
 
   # POST /rules
@@ -42,7 +42,7 @@ class RulesController < ApplicationController
   def destroy
     @rule.destroy
     respond_to do |format|
-      format.html { redirect_to rules_url, notice: 'Rule was successfully destroyed.' }
+      format.html { redirect_to rules_url, notice: 'La regla ha sido eliminada.' }
       format.json { head :no_content }
     end
   end
@@ -55,6 +55,6 @@ class RulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rule_params
-      params.require(:rule).permit(:name, :description, :state)
+      params.require(:rule).permit(:name, :description, :state, :sport_id, :type_rule_id)
     end
 end

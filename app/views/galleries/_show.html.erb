@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
-<%= image_tag @gallery.image.url(:medium) %>
+<div class="encab">
 
-<%= link_to 'Atras', galleries_path %>
+	<p id="notice">
+		<%= notice %>
+	</p>
+	<%= image_tag @gallery.image.url(:medium) %>
+	<%= link_to 'Atras', album_galleries_path %>
+</div>

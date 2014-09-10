@@ -1,20 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="encab">
+	<p id="notice">
+		<%= notice %>
+	</p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @sport.name %>
-</p>
-
-<p>
-  <strong>Descripción:</strong>
-  <%= @sport.description %>
-</p>
-
-<p>
-  <strong>Modalidad:</strong>
-  <%= @sport.modalities_type.name rescue nil %>
-</p>
-
-
-<%= link_to 'Editar', edit_sport_path(@sport) %> |
-<%= link_to 'Atras', sports_path %>
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @sport.name %>
+	</p>
+	<div class="dc">
+		<p>
+		  <strong>Descripción:</strong>
+		  <%= @sport.description %>
+		</p>
+	</div>
+	<p>
+	  <strong>Modalidad:</strong>
+	  <%= @sport.modalities_type.name rescue nil %>
+	</p>
+	<% if can? :update, @sport %>
+		<%= link_to 'Editar', edit_sport_path(@sport) %> |
+	<% end %>
+	<%= link_to 'Atras', sports_path %>
+</div>

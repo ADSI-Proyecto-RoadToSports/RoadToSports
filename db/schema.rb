@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814202914) do
+ActiveRecord::Schema.define(version: 20140908212131) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -21,17 +21,16 @@ ActiveRecord::Schema.define(version: 20140814202914) do
     t.datetime "updated_at"
   end
 
-  create_table "configurations", force: true do |t|
-    t.string   "name"
+  create_table "albums", force: true do |t|
+    t.string   "title"
     t.text     "description"
-    t.integer  "typeconfiguration_id"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
-
-  add_index "configurations", ["typeconfiguration_id"], name: "index_configurations_on_typeconfiguration_id"
-  add_index "configurations", ["user_id"], name: "index_configurations_on_user_id"
 
   create_table "constituents", force: true do |t|
     t.string   "name"
@@ -53,18 +52,14 @@ ActiveRecord::Schema.define(version: 20140814202914) do
     t.datetime "updated_at"
   end
 
-  create_table "fch_lg_matches", force: true do |t|
-    t.date     "startdate"
-    t.date     "endingdate"
-    t.string   "place"
+  create_table "events", force: true do |t|
+    t.string   "title"
     t.text     "description"
-    t.string   "team"
-    t.integer  "tournament_id"
+    t.datetime "start"
+    t.datetime "end"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "fch_lg_matches", ["tournament_id"], name: "index_fch_lg_matches_on_tournament_id"
 
   create_table "galleries", force: true do |t|
     t.datetime "created_at"
@@ -73,17 +68,8 @@ ActiveRecord::Schema.define(version: 20140814202914) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "album_id"
   end
-
-  create_table "information", force: true do |t|
-    t.text     "description"
-    t.boolean  "state"
-    t.integer  "typeinformation_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "information", ["typeinformation_id"], name: "index_information_on_typeinformation_id"
 
   create_table "inicios", force: true do |t|
     t.string   "index"
@@ -93,49 +79,49 @@ ActiveRecord::Schema.define(version: 20140814202914) do
 
   create_table "integrantes", force: true do |t|
     t.string   "nombre"
-    t.integer  "document_type_id"
+    t.integer  "documenttype_id"
     t.string   "documento"
     t.string   "ficha"
     t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "limite",           default: false
+    t.boolean  "limite",          default: false
+    t.boolean  "lesion"
   end
-
-  create_table "matches", force: true do |t|
-    t.string   "teamA"
-    t.string   "teamB"
-    t.integer  "modalitie_id"
-    t.integer  "tournament_id"
-    t.integer  "score_id"
-    t.integer  "fchlgmatch_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "matches", ["fchlgmatch_id"], name: "index_matches_on_fchlgmatch_id"
-  add_index "matches", ["modalitie_id"], name: "index_matches_on_modalitie_id"
-  add_index "matches", ["score_id"], name: "index_matches_on_score_id"
-  add_index "matches", ["tournament_id"], name: "index_matches_on_tournament_id"
-
-  create_table "modalities", force: true do |t|
-    t.string   "players"
-    t.integer  "activity_id"
-    t.integer  "tournament_id"
-    t.integer  "modalities_type_id"
-    t.integer  "sport_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "modalities", ["activity_id"], name: "index_modalities_on_activity_id"
-  add_index "modalities", ["modalities_type_id"], name: "index_modalities_on_modalities_type_id"
-  add_index "modalities", ["sport_id"], name: "index_modalities_on_sport_id"
-  add_index "modalities", ["tournament_id"], name: "index_modalities_on_tournament_id"
 
   create_table "modalities_types", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nombrepartidobs", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nombrepartidocs", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nombrepartidods", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nombrepartidoms", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nombrepartidos", force: true do |t|
+    t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -147,17 +133,103 @@ ActiveRecord::Schema.define(version: 20140814202914) do
     t.datetime "updated_at"
   end
 
-  create_table "preferences", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "typepreference_id"
-    t.integer  "session_id"
+  create_table "pajedrezs", force: true do |t|
+    t.string   "participante1"
+    t.string   "puntos1"
+    t.string   "participante2"
+    t.string   "puntos2"
+    t.integer  "tournament_id"
+    t.datetime "fecha"
+    t.boolean  "estado"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "preferences", ["session_id"], name: "index_preferences_on_session_id"
-  add_index "preferences", ["typepreference_id"], name: "index_preferences_on_typepreference_id"
+  create_table "participantes", force: true do |t|
+    t.string   "nombre"
+    t.string   "email"
+    t.integer  "document_type_id"
+    t.string   "documento"
+    t.boolean  "estado"
+    t.integer  "sport_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "ficha",            limit: nil
+  end
+
+  create_table "pbaloncestos", force: true do |t|
+    t.string   "equipo1"
+    t.string   "puntos1"
+    t.string   "puntoso1"
+    t.string   "equipo2"
+    t.string   "puntos2"
+    t.string   "puntoso2"
+    t.integer  "tournament_id"
+    t.datetime "fecha"
+    t.boolean  "estado"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pfutbols", force: true do |t|
+    t.string   "equipo1"
+    t.integer  "puntos2"
+    t.string   "equipo2"
+    t.datetime "fecha"
+    t.boolean  "estado"
+    t.integer  "user_id"
+    t.integer  "tournament_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "puntos1"
+    t.integer  "puntoso1"
+    t.integer  "puntoso2"
+  end
+
+  create_table "pmicrofutbols", force: true do |t|
+    t.string   "equipo1"
+    t.string   "puntos1"
+    t.string   "puntoso1"
+    t.string   "equipo2"
+    t.string   "puntos2"
+    t.string   "puntoso2"
+    t.integer  "tournament_id"
+    t.datetime "fecha"
+    t.boolean  "estado"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ptenismesas", force: true do |t|
+    t.string   "participante1"
+    t.string   "puntos1"
+    t.string   "participante2"
+    t.string   "puntos2"
+    t.integer  "tournament_id"
+    t.datetime "fecha"
+    t.boolean  "estado"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pvoleibols", force: true do |t|
+    t.string   "equipo1"
+    t.string   "puntos1"
+    t.string   "puntoso1"
+    t.string   "equipo2"
+    t.string   "puntos2"
+    t.string   "puntoso2"
+    t.integer  "tournament_id"
+    t.datetime "fecha"
+    t.boolean  "estado"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roadtosports", force: true do |t|
     t.string   "registros"
@@ -174,19 +246,9 @@ ActiveRecord::Schema.define(version: 20140814202914) do
     t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sport_id"
+    t.integer  "type_rule_id"
   end
-
-  create_table "scores", force: true do |t|
-    t.text     "description"
-    t.date     "datescore"
-    t.integer  "modalitie_id"
-    t.integer  "team_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "scores", ["modalitie_id"], name: "index_scores_on_modalitie_id"
-  add_index "scores", ["team_id"], name: "index_scores_on_team_id"
 
   create_table "sessions", force: true do |t|
     t.string   "name"
@@ -212,6 +274,7 @@ ActiveRecord::Schema.define(version: 20140814202914) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "active"
+    t.string   "lider",      limit: nil
   end
 
   create_table "tipos_configs", force: true do |t|
@@ -231,27 +294,6 @@ ActiveRecord::Schema.define(version: 20140814202914) do
     t.integer  "sport_id"
   end
 
-  create_table "type_configurations", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "type_informations", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "type_preferences", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "type_rules", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -267,13 +309,16 @@ ActiveRecord::Schema.define(version: 20140814202914) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",            null: false
-    t.string   "crypted_password", null: false
-    t.string   "salt",             null: false
+    t.string   "email",                        null: false
+    t.string   "crypted_password",             null: false
+    t.string   "salt",                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin"
+    t.boolean  "usuario"
+    t.string   "nombre",           limit: nil
+    t.integer  "document_type_id"
+    t.string   "documento",        limit: nil
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

@@ -16,8 +16,8 @@
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :document_type_id %><br>
-    <%= f.text_field :document_type_id %>
+    <label>Tipo de documento</label><br>
+    <%= f.collection_select :documenttype_id, DocumentType.all, :id, :name, class: "form-control", prompt: "Seleccione Un tipo de documento" %>
   </div>
   <div class="field">
     <%= f.label :documento %><br>
@@ -27,7 +27,11 @@
     <%= f.label :ficha %><br>
     <%= f.text_field :ficha %>
   </div>
+  <div class="field">
+    <%= f.label :tiene_alguna_lesion?%><br>
+    <%= f.check_box :lesion %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  "Guardar"%>
   </div>
 <% end %>

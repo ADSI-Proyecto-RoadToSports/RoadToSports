@@ -1,5 +1,4 @@
 <h1>Listing novelties</h1>
-
 <table>
   <thead>
     <tr>
@@ -12,8 +11,12 @@
   <tbody>
     <% @novelties.each do |novelty| %>
       <tr>
-        <td><%= novelty.name %></td>
-        <td><%= novelty.description %></td>
+        <td>
+          <%= novelty.name %>
+        </td>
+        <td>
+          <%= novelty.description %>
+        </td>
       </tr>
     <% end %>
   </tbody>

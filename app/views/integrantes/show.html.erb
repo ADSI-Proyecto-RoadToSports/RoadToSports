@@ -1,29 +1,54 @@
-<p id="notice"><%= notice %></p>
+<div class="contenido ">
+  <div class="img1"></div>
+  <div class="img2"></div>
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @integrante.nombre %>
-</p>
+    </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active in cont1" id="inicio">
+      <p id="notice">
+        <%= notice %>
+      </p>
 
-<p>
-  <strong>Document type:</strong>
-  <%= @integrante.document_type.name %>
-</p>
+      <p>
+        <strong>Nombre:</strong>
+        <%= @integrante.nombre %>
+      </p>
 
-<p>
-  <strong>Documento:</strong>
-  <%= @integrante.documento %>
-</p>
+      <p>
+        <strong>Document type:</strong>
+        <%= @integrante.document_type.name rescue nil%>
+      </p>
 
-<p>
-  <strong>Ficha:</strong>
-  <%= @integrante.ficha %>
-</p>
+      <p>
+        <strong>Documento:</strong>
+        <%= @integrante.documento %>
+      </p>
 
-<p>
-  <strong>Team:</strong>
-  <%= @integrante.team.nombre %>
-</p>
+      <p>
+        <strong>Ficha:</strong>
+        <%= @integrante.ficha %>
+      </p>
 
-<%= link_to 'Editar', edit_team_integrante_path(@team,@integrante) %> |
-<%= link_to 'Atras', team_integrantes_path(@team) %>
+      <p>
+        <strong>Team:</strong>
+        <%= @integrante.team.nombre %>
+      </p>
+      <% if @integrante.lesion == true %>
+      <p>
+        <strong>Lesionado?:</strong>
+        <span class='label label-danger'>Esta persona no puede jugar por una lesion.</span>
+      </p>
+      <% else %>
+      <p>
+        <strong>Lesionado?:</strong>
+        <span class='label label-success'>Esta persona esta en perfectas condiciones para jugar.</span>
+      </p>
+      <% end %>
+      <% if can? :update, @integrante %>
+        <%= link_to 'Editar', edit_team_integrante_path(@team,@integrante) %> |
+      <% end %>
+        <%= link_to 'Atras', team_integrantes_path(@team) %>
+    </div>
+  </div>
+</div>

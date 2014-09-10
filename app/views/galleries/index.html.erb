@@ -1,35 +1,31 @@
-<div class="contenido ">
-<div class="img1"></div>
-<div class="img2"></div>
-<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+<div class="contenidop">
+  <div class="img1"></div>
+  <div class="img2"></div>
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
 
-</ul>
-<div id="myTabContent" class="tab-content">
-  <div class="tab-pane fade active in cont1" id="inicio">
-<h1>Galeria</h1>
-  <%= form_tag galleries_path, :method => 'get' do %> 
-    <% content_tag :label do %> 
-    <%= hidden_field_tag :search, params[:search] %> 
-    <% end %> 
-  <% end %>
-<div id="galpi">
-  <div id="galeria">
-    <ul id="gallery">
-      <table>
-          <tr>
-            <th></th>
-          </tr>
-            <%= render @galleries %>
-      </table>
     </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="" id="inicio">
+      <ul class="nav nav-pills">
+        <li class="active"><a href="#"><strong>Galeria</strong> <span class="badge"><%= @galleries.count %> </span> Imagenes</a></li>
+      </ul>
+      <%= div(@galleries.count) %>
+        <ul>
+          <table>
+            <tr>
+              <th></th>
+            </tr>
+            <%= render @galleries %>
+          </table>
+        </ul>
+      </div>
+      <% if can? :create, @gallery %>
+        <%= link_to 'Nueva Foto', new_album_gallery_path(@album), remote: true, class: "btn btn-info siguiente" %>
+      <% end %>
+      <br>
+      <%= link_to 'Back to Albums', albums_path, :class=>"btn btn-default volver" %><br>
+      <%#=<%= will_paginate @galleries, :previous_label => '&laquo; Pagina Anterior', :next_label => 'Siguiente Pagina &raquo;' %>
+      <br> 
+    </div>
   </div>
-</div>
-
-<%= button_to 'Nueva Foto', new_gallery_path, remote: true, :method=>"get", class: "btn btn-info" %><br>
-<%= will_paginate @galleries, :previous_label => '&laquo; Pagina Anterior', :next_label => 'Siguiente Pagina 
-&raquo;' %>
-<br> 
-Numero De Imagenes: <%= @galleries.count %>
-</div>
-</div>
 </div>

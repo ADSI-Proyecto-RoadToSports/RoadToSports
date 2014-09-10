@@ -1,0 +1,67 @@
+<div class="pbaloncesto">
+<p id="notice">
+  <%= notice %>
+</p>
+
+<p>
+  <strong>Equipo1:</strong>
+  <%= @pbaloncesto.equipo1 %>
+</p>
+
+ <p>
+    <strong>Puntos:</strong>
+    <%= @pbaloncesto.puntos1 %>
+    <%= if @pbaloncesto.puntos1 > @pbaloncesto.puntos2
+          gano() 
+        elsif @pbaloncesto.puntos1 == @pbaloncesto.puntos2
+          empate() 
+          else
+            perdio()
+        end %>
+  </p>
+
+<p>
+  <strong>Puntos obtenidos:</strong>
+  <%= @pbaloncesto.puntoso1 %>
+</p>
+
+<p>
+  <strong>Equipo2:</strong>
+  <%= @pbaloncesto.equipo2 %>
+</p>
+ <p>
+    <strong>Puntos:</strong>
+    <%= @pbaloncesto.puntos2 %>
+    <%= if @pbaloncesto.puntos2 > @pbaloncesto.puntos1
+          gano() 
+        elsif @pbaloncesto.puntos1 == @pbaloncesto.puntos2
+          empate() 
+          else
+            perdio()
+        end %>
+  </p>
+<p>
+  <strong>Puntos obtenidos:</strong>
+  <%= @pbaloncesto.puntoso2 %>
+</p>
+
+<p>
+  <strong>Torneo:</strong>
+  <%= @pbaloncesto.tournament.name %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @pbaloncesto.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= estado(@pbaloncesto.estado) %>
+</p>
+
+<p>
+  <strong>Responsable:</strong>
+  <%= @pbaloncesto.user.nombre %>
+</p>
+</div>

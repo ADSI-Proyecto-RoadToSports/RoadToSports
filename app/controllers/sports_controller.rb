@@ -1,6 +1,6 @@
 class SportsController < ApplicationController
   before_action :set_sport, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /sports
   # GET /sports.json
   def index
@@ -42,7 +42,7 @@ class SportsController < ApplicationController
   def destroy
     @sport.destroy
     respond_to do |format|
-      format.html { redirect_to sports_url, notice: 'Sport was successfully destroyed.' }
+      format.html { redirect_to sports_url, notice: 'El deporte ha sido eliminado.' }
       format.json { head :no_content }
     end
   end

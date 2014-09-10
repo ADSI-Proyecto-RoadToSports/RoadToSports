@@ -28,7 +28,7 @@ class ModalitiesTypesController < ApplicationController
 
     respond_to do |format|
       if @modalities_type.save
-        format.html { redirect_to @modalities_type, notice: 'Modalities type was successfully created.' }
+        format.html { redirect_to @modalities_type }
         format.json { render :show, status: :created, location: @modalities_type }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ModalitiesTypesController < ApplicationController
   def update
     respond_to do |format|
       if @modalities_type.update(modalities_type_params)
-        format.html { redirect_to @modalities_type, notice: 'Modalities type was successfully updated.' }
+        format.html { redirect_to @modalities_type }
         format.json { render :show, status: :ok, location: @modalities_type }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ModalitiesTypesController < ApplicationController
   def destroy
     @modalities_type.destroy
     respond_to do |format|
-      format.html { redirect_to modalities_types_url, notice: 'Modalities type was successfully destroyed.' }
+      format.html { redirect_to modalities_types_url, notice: 'El partido ha sido eliminado.' }
       format.json { head :no_content }
     end
   end

@@ -1,19 +1,22 @@
-<div class="activity">
-<p id="notice"><%= notice %></p>
+<div class="encab">
+	<p id="notice">
+		<%= notice %>
+	</p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @activity.name %>
-</p>
+	<p>
+		<strong>Nombre:</strong>
+		<%= @activity.name %>
+	</p>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @activity.state %>
-</p>
-
-<p>
-  <strong>Descripción:</strong>
-  <%= @activity.description %>
-</p>
-
+	<p>
+		<strong>Estado:</strong>
+		<%= @activity.state %>
+	</p>
+	
+	<div class="dc">
+		<p>
+			<strong>Descripción:</strong>
+			<%= @activity.description %>
+		</p>
+	</div>
 </div>

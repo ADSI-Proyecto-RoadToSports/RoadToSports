@@ -1,0 +1,40 @@
+
+      <tr id=<%= "pvoleibol_#{pvoleibol.id}"%>>
+        <td ><%= pvoleibol.equipo1 %></td>
+        <td ><%= pvoleibol.puntos1 %></td>
+        <td >
+          <%= if pvoleibol.puntos1 > pvoleibol.puntos2
+              gano() 
+          elsif pvoleibol.puntos1 == pvoleibol.puntos2
+              empate() 
+              else
+                perdio()
+          end %>
+        </td>
+        <td class=" lin"><%= pvoleibol.puntoso1 %></td>
+        <td class="lin"><%= pvoleibol.equipo2 %></td>
+        <td ><%= pvoleibol.puntos2 %></td>
+        <td >
+          <%= if pvoleibol.puntos2 > pvoleibol.puntos1
+              gano() 
+          elsif pvoleibol.puntos1 == pvoleibol.puntos2
+              empate() 
+              else
+                perdio()
+          end %>
+        </td>
+        <td class=" lin"><%= pvoleibol.puntoso2 %></td>
+        <td class=" lin"><%= pvoleibol.tournament.name %></td>
+        <td><%= pvoleibol.fecha %></td>
+        <td><%= estado(pvoleibol.estado) %></td>
+        <td><%= pvoleibol.user.nombre %></td>
+        <% if can? :read, pvoleibol %>
+        <td><%= link_to 'Ver', pvoleibol, remote: true %></td>
+         <% end %>
+        <% if can? :update, pvoleibol %>
+        <td><%= link_to 'Editar', edit_pvoleibol_path(pvoleibol), remote: true %></td>
+        <% end %>
+        <% if can? :destroy, pvoleibol %>
+        <td><%= link_to 'Eliminar', pvoleibol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>

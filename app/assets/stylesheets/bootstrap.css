@@ -3006,6 +3006,7 @@ input[type="button"].btn-block {
 }
 .dropdown-menu {
   position: absolute;
+  color: white;
   top: 100%;
   left: 0;
   z-index: 1000;
@@ -3040,13 +3041,13 @@ input[type="button"].btn-block {
   clear: both;
   font-weight: normal;
   line-height: 1.42857143;
-  color: #333333;
+  color: white;
   white-space: nowrap;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #ffffff;
+  color: black;
   background-color: #2fa4e7;
 }
 .dropdown-menu > .active > a,
@@ -5921,10 +5922,37 @@ button.close {
   box-shadow:         -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
   border-radius: 5px;
 }
+.contenidop{
+  width: 1090px;
+  margin-left: 125px;
+  margin-top: 50px;
+  height: 625px;
+  -webkit-box-shadow: -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  -moz-box-shadow:    -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  box-shadow:         -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y:scroll;
+    overflow-x:none;
+}
+.contenidog{
+  width: 1090px;
+  margin-left: 125px;
+  margin-top: 50px;
+  height: 625px;
+  -webkit-box-shadow: -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  -moz-box-shadow:    -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  box-shadow:         -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y:scroll;
+    overflow-x:none;
+    text-align: center;
+}
 .contenidologin{
   width: 500px;
   margin-left: 400px;
-  margin-top: 150px;
+  margin-top: 100px;
   height: auto;
   -webkit-box-shadow: -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
   -moz-box-shadow:    -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
@@ -5933,9 +5961,7 @@ button.close {
   text-align: center;
   padding: 30px;
 }
-.cont1{
-  margin: 20px;
-}
+
 .img1{
   position: absolute;
   top: 150px; right: 10px;
@@ -5953,18 +5979,18 @@ button.close {
 }
 .logo{
  position: absolute;
-  top: 50px; left: 10px;
-  width: 150px;
-  height: 130px;
+  top: 20px; left: 5px;
+  width: 160px;
+  height: 140px;
   z-index:9998; 
 }
 .flechita{
  z-index:9999; 
 }
 .info{
-  position: absolute;
-  bottom: 50px;
-  left: 365px;
+  position: relative;
+  top: 130px;
+  left: 230px;
   border-radius: 20px;
   width: 600px;
 }
@@ -5987,11 +6013,35 @@ button.close {
 .siguiente {
   position: absolute;
   right: 250px;
-  bottom: 150px;
+  bottom: 120px;
 }
 
 .volver{
   position: absolute;
   
-  bottom: 150px;
+  bottom: 120px;
+}
+
+.ir{
+  position: absolute;
+  left: 650px;
+  bottom: 120px;
+}
+
+.nevento{
+  position: absolute;
+  top: 160px;
+  left: 100px;
+}
+#divi{
+  width: 900px;
+  height: 320px;
+  background-color: #f8f8f8;
+  border: 2px #3399ff solid;
+  border-radius: 5px;
+  z-index: 100;
+    opacity: 1;
+    box-shadow:0 0px 10px #0066cc, 0 0px 5px #787878 inset;
+    overflow-y:scroll;
+    overflow-x:none;
 }

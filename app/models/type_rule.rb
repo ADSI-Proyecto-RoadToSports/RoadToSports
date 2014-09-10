@@ -1,2 +1,3 @@
 class TypeRule < ActiveRecord::Base
-end
+	has_many :rules
+end 

@@ -1,6 +1,8 @@
 class NoveltiesController < ApplicationController
   before_action :set_novelty, only: [:show, :edit, :update, :destroy]
 
+  # comments_controller.rb possibility
+
   # GET /novelties
   # GET /novelties.json
   def index

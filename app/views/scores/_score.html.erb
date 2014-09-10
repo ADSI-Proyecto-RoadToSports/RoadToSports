@@ -1,9 +1,0 @@
-<tr id=<%= "score_#{score.id}" %>>
-        <td><%= score.description %></td>
-        <td><%= score.datescore %></td>
-        <td><%= score.modalitie %></td>
-        <td><%= score.team %></td>
-        <td><%= link_to 'Ver', score, remote: true %></td>
-        <td><%= link_to 'Editar', edit_score_path(score), remote: true %></td>
-        <td><%= link_to 'Eliminar', score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>

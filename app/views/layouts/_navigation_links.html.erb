@@ -1,27 +1,82 @@
 <%# add navigation links to this file %>
-<li><%= link_to 'Inicio ▼', root_path, class: 'navbar-brand flechita' %>
-	<ul class="dropdown-menu">
-		<li><%= link_to "Torneos", tournaments_path %></li>
-	    <li><%= link_to "Galerias", galleries_path %></li>
-	    <li><%= link_to "Novedades y Noticias", novelties_path %></li>
-	    <li><%= link_to "Actividades", activities_path %></li>
-	    <%#comentario de prueba%>
-	</ul>
-</li>
-<li><%= link_to "Usuarios ▼", controller: "usuario", action: "index" %>
-	<ul class="dropdown-menu">
-		<li><%= link_to "Deportes", sports_path %></li>
-	    <li><%= link_to "Partidos realizados", matches_path %></li>
-	    <li><%= link_to "Partidos pendientes", fch_lg_matches_path %></li>
-	    <li><%= link_to "Puntajes", scores_path %></li>
-	    <li><%= link_to "Reglas", rules_path %></li>
-	</ul>
-</li>
-<li><%= link_to "Administración ▼", "#" %>
-	<ul class="dropdown-menu">
-		<li><%= link_to "Configuraciones de tipos", controller: "tipos_config", action: "index" %></li>
-		<li><%= link_to "Modalidades", modalities_path %></li>
-
-	</ul>
-</li>
-<li><%= link_to "Registrate", controller: "roadtosports", action: "registros" %></li>
+<% if can? :read, Sport %>
+	<li>
+		<%= link_to 'Inicio ▼', root_path, class: 'navbar-brand flechita' %>
+		<ul class="btn-info dropdown-menu">
+			<li>
+				<%= link_to "Torneos", tournaments_path %>
+			</li>
+			<li>
+			    <%= link_to "Galerias", albums_path %>
+			</li>
+			<li>
+			    <%= link_to "Novedades y Noticias", novelties_path %>
+			</li>
+			<li>
+			    <%= link_to "Actividades", activities_path %>
+			</li>
+			<%#comentario de prueba%>
+		</ul>
+	</li>
+<% else %>
+	<li>
+		<%= link_to 'Inicio', user_sessions_path, class: 'navbar-brand' %>
+	</li>
+	<li>
+		<h3 class="mensa">¡Registrate o Inicia sesión para ingresar a Sports SENA!</h3>
+	</li>
+<% end %>
+<% if can? :read, Sport %>
+	<li>
+		<%= link_to "Usuarios ▼", controller: "usuario", action: "index" %>
+		<ul class="btn-info dropdown-menu">
+			<li>
+				<%= link_to "Deportes", sports_path %>
+			</li>
+			<li>
+				<%= link_to "Agenda", events_path %>
+			</li>
+		    <li>
+		    	<%= link_to "Reglas", rules_path %>
+		    </li>
+		</ul>
+	</li>
+	<li>
+		<%= link_to "Partidos y encuentros ▼",  "#"%>
+		<ul class="btn-info dropdown-menu">
+			<li>
+				<%= link_to "Futbol", pfutbols_path %>
+			</li>
+			<li>
+				<%= link_to "Baloncesto", pbaloncestos_path %>
+			</li>
+			<li>
+				<%= link_to "Voleibol", pvoleibols_path %>
+			</li>
+			<li>
+				<%= link_to "Ajedrez", pajedrezs_path %>
+			</li>
+			<li>
+				<%= link_to "Micro Futbol", pmicrofutbols_path %>
+			</li>
+		</ul>
+	</li>
+<% end %>
+<% if can? :destroy, DocumentType %>
+	<li>
+		<%= link_to "Administración ▼", "#", class: "" %>
+		<ul class=" btn-info dropdown-menu">
+			<li>
+				<%= link_to "Configuraciones de tipos", controller: "tipos_config", action: "index" %>
+			</li>
+			<li>
+				<%= link_to "Usuarios registrados", users_path %>
+			</li>
+		</ul>
+	</li>
+<% end %>
+<% if can? :read, Team %>
+	<li>
+		<%= link_to "Registrate", controller: "roadtosports", action: "registros" %>
+	</li>
+<% end %>

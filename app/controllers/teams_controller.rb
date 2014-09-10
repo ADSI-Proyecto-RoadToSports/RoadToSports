@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy, :index, :new, :create]
-
-  # GET /teams
+  
+  # GET /TeamsController
   # GET /teams.json
   def index
     @teams = @sport.teams.all
@@ -70,6 +70,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:nombre, :sport_id, :active)
+      params.require(:team).permit(:nombre, :sport_id, :active, :lider)
     end
 end
