@@ -7,7 +7,7 @@ class ReportPdf < Prawn::Document
 		
 	end
   def titulo
-  	text "Dato De Toda La Tabla De Partidos", size: 15, style: :bold, :align => :center, :color => [10, 81, 10, 80]
+  	text "Tabla de partidos de futbol", size: 15, style: :bold, :align => :center, :color => [10, 81, 10, 80]
   	text "________________________________________________________________________________\n", style: :bold, :align => :center
   end
   def cosas
