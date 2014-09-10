@@ -6,6 +6,15 @@ class PmicrofutbolsController < ApplicationController
   def index
     @pmicrofutbols = Pmicrofutbol.search(params[:search], params[:page])
     @nombrepartidoms = Nombrepartidom.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReportmPdf.new(@pmicrofutbols)
+        send_data pdf.render, filename: 'pmicrofutbols_#{@pmicrofutbols_id}',
+        type: 'application/pdf',
+        disposition: 'inline'
+      end
+    end
   end
 
   # GET /pmicrofutbols/1

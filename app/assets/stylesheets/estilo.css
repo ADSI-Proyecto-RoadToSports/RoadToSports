@@ -114,6 +114,15 @@
  	overflow-y:scroll;
     overflow-x:none; 
 }
+.dcrul{
+	border:1px solid transparent;
+	width: 250px;
+	height: 62px;	
+	word-break: break-all;
+ 	word-wrap: break-word;
+ 	overflow-y:scroll;
+    overflow-x:none; 
+}
 /*:___________________________galerias_______________________:*/
 
 .mov1{

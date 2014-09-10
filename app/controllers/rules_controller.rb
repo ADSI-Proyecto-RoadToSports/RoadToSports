@@ -10,7 +10,7 @@ class RulesController < ApplicationController
   # GET /rules/1
   # GET /rules/1.json
   def show
-    @rule = Rule.find(params[:id])
+    @rules = Rule.find(params[:id])
   end
 
   # GET /rules/new
@@ -20,7 +20,7 @@ class RulesController < ApplicationController
 
   # GET /rules/1/edit
   def edit
-    @rule = Rule.find(params[:id])
+    @rules = Rule.find(params[:id])
   end
 
   # POST /rules

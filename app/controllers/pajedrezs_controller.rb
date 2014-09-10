@@ -6,6 +6,15 @@ class PajedrezsController < ApplicationController
   def index
     @pajedrezs = Pajedrez.search(params[:search], params[:page])
     @nombrepartidods = Nombrepartidod.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReportaPdf.new(@pajedrezs)
+        send_data pdf.render, filename: 'pajedrezs_#{@pajedrezs_id}',
+        type: 'application/pdf',
+        disposition: 'inline'
+      end
+    end
   end
 
   # GET /pajedrezs/1

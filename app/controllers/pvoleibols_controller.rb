@@ -7,6 +7,15 @@ class PvoleibolsController < ApplicationController
   def index
     @pvoleibols = Pvoleibol.search(params[:search], params[:page])
     @nombrepartidocs = Nombrepartidoc.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReportvPdf.new(@pvoleibols)
+        send_data pdf.render, filename: 'pvoleibols_#{@pvoleibols_id}',
+        type: 'application/pdf',
+        disposition: 'inline'
+      end
+    end
   end
 
   # GET /pvoleibols/1

@@ -7,6 +7,15 @@ class PbaloncestosController < ApplicationController
   def index
     @pbaloncestos = Pbaloncesto.search(params[:search], params[:page])
     @nombrepartidobs = Nombrepartidob.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReportbPdf.new(@pbaloncestos)
+        send_data pdf.render, filename: 'pbaloncestos_#{@pbaloncestos_id}',
+        type: 'application/pdf',
+        disposition: 'inline'
+      end
+    end
   end
 
   # GET /pbaloncestos/1
