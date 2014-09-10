@@ -35,7 +35,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'El evento ha sido actualizado.' }
+        format.html { redirect_to @event }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }

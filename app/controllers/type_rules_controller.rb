@@ -28,7 +28,7 @@ class TypeRulesController < ApplicationController
 
     respond_to do |format|
       if @type_rule.save
-        format.html { redirect_to @type_rule, notice: 'Type rule was successfully created.' }
+        format.html { redirect_to @type_rule }
         format.json { render :show, status: :created, location: @type_rule }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TypeRulesController < ApplicationController
   def update
     respond_to do |format|
       if @type_rule.update(type_rule_params)
-        format.html { redirect_to @type_rule, notice: 'Type rule was successfully updated.' }
+        format.html { redirect_to @type_rule}
         format.json { render :show, status: :ok, location: @type_rule }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TypeRulesController < ApplicationController
   def destroy
     @type_rule.destroy
     respond_to do |format|
-      format.html { redirect_to type_rules_url, notice: 'Type rule was successfully destroyed.' }
+      format.html { redirect_to type_rules_url, notice: 'El partido ha sido eliminado.' }
       format.json { head :no_content }
     end
   end

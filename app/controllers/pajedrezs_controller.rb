@@ -6,6 +6,15 @@ class PajedrezsController < ApplicationController
   def index
     @pajedrezs = Pajedrez.search(params[:search], params[:page])
     @nombrepartidods = Nombrepartidod.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReportaPdf.new(@pajedrezs)
+        send_data pdf.render, filename: 'pajedrezs_#{@pajedrezs_id}',
+        type: 'application/pdf',
+        disposition: 'inline'
+      end
+    end
   end
 
   # GET /pajedrezs/1
@@ -31,7 +40,7 @@ class PajedrezsController < ApplicationController
 
     respond_to do |format|
       if @pajedrez.save
-        format.html { redirect_to pajedrezs_path, notice: 'Pajedrez was successfully created.' }
+        format.html { redirect_to pajedrezs_path}
         format.json { render :show, status: :created, location: @pajedrez }
       else
         format.html { render :new }
@@ -45,7 +54,7 @@ class PajedrezsController < ApplicationController
   def update
     respond_to do |format|
       if @pajedrez.update(pajedrez_params)
-        format.html { redirect_to pajedrezs_path, notice: 'Pajedrez was successfully updated.' }
+        format.html { redirect_to pajedrezs_path}
         format.json { render :show, status: :ok, location: @pajedrez }
       else
         format.html { render :edit }
@@ -59,7 +68,7 @@ class PajedrezsController < ApplicationController
   def destroy
     @pajedrez.destroy
     respond_to do |format|
-      format.html { redirect_to pajedrezs_url, notice: 'Pajedrez was successfully destroyed.' }
+      format.html { redirect_to pajedrezs_url, notice: 'El partido ha sido eliminado.' }
       format.json { head :no_content }
     end
   end

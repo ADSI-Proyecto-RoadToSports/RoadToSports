@@ -3,22 +3,22 @@
         <%= rule.name %>
     </td>
     <td>
-        <div class="dc">
+        <div class="dcrul">
             <%= rule.description %>
         </div>
     </td>
     <td>
-        <%= rule.sport.name%>
+        <%= rule.sport.name %>
     </td>
     <td>
         <%= rule.type_rule.name %>
     </td>
     <td>
-        <%= rule(rule.state) %>
+        <%= rul(rule.state) %>
     </td>
-    <td>
-        <%= link_to 'Ver', rule, remote: true %>
-    </td>
+    <% if can? :read, rule %>
+        <td><%= link_to 'Mostrar', rule, remote: true %></td>
+    <% end %>
     <% if can? :update, rule %>
         <td>
             <%= link_to 'Editar', edit_rule_path(rule), remote: true %>

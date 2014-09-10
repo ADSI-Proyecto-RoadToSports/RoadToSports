@@ -6,6 +6,15 @@ class PmicrofutbolsController < ApplicationController
   def index
     @pmicrofutbols = Pmicrofutbol.search(params[:search], params[:page])
     @nombrepartidoms = Nombrepartidom.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReportmPdf.new(@pmicrofutbols)
+        send_data pdf.render, filename: 'pmicrofutbols_#{@pmicrofutbols_id}',
+        type: 'application/pdf',
+        disposition: 'inline'
+      end
+    end
   end
 
   # GET /pmicrofutbols/1
@@ -31,7 +40,7 @@ class PmicrofutbolsController < ApplicationController
 
     respond_to do |format|
       if @pmicrofutbol.save
-        format.html { redirect_to pmicrofutbols_path, notice: 'Pmicrofutbol was successfully created.' }
+        format.html { redirect_to pmicrofutbols_path}
         format.json { render :show, status: :created, location: @pmicrofutbol }
       else
         format.html { render :new }
@@ -45,7 +54,7 @@ class PmicrofutbolsController < ApplicationController
   def update
     respond_to do |format|
       if @pmicrofutbol.update(pmicrofutbol_params)
-        format.html { redirect_to pmicrofutbols_path, notice: 'Pmicrofutbol was successfully updated.' }
+        format.html { redirect_to pmicrofutbols_path}
         format.json { render :show, status: :ok, location: @pmicrofutbol }
       else
         format.html { render :edit }
@@ -59,7 +68,7 @@ class PmicrofutbolsController < ApplicationController
   def destroy
     @pmicrofutbol.destroy
     respond_to do |format|
-      format.html { redirect_to pmicrofutbols_url, notice: 'Pmicrofutbol was successfully destroyed.' }
+      format.html { redirect_to pmicrofutbols_url, notice: 'El partido ha sido eliminado.' }
       format.json { head :no_content }
     end
   end

@@ -30,7 +30,7 @@ class AlbumsController < ApplicationController
     #render action: :new unless @album.save
     respond_to do |format|
       if @album.save
-        format.html { redirect_to albums_path, notice: 'Album was successfully created.' }
+        format.html { redirect_to albums_path}
         format.json { render :show, status: :created, location: @album }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class AlbumsController < ApplicationController
     #render action: :edit unless @album.update_attributes(album_params)
     respond_to do |format|
       if @album.update(album_params)
-        format.html { redirect_to albums_path, notice: 'Album was successfully updated.' }
+        format.html { redirect_to albums_path}
         format.json { render :show, status: :ok, location: @album }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album.destroy
     respond_to do |format|
-      format.html { redirect_to albums_url, notice: 'Album was successfully destroyed.' }
+      format.html { redirect_to albums_url, notice: 'El Album ha sido eliminado.' }
       format.json { head :no_content }
     end
   end

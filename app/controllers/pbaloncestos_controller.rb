@@ -7,6 +7,15 @@ class PbaloncestosController < ApplicationController
   def index
     @pbaloncestos = Pbaloncesto.search(params[:search], params[:page])
     @nombrepartidobs = Nombrepartidob.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReportbPdf.new(@pbaloncestos)
+        send_data pdf.render, filename: 'pbaloncestos_#{@pbaloncestos_id}',
+        type: 'application/pdf',
+        disposition: 'inline'
+      end
+    end
   end
 
   # GET /pbaloncestos/1
@@ -32,7 +41,7 @@ class PbaloncestosController < ApplicationController
 
     respond_to do |format|
       if @pbaloncesto.save
-        format.html { redirect_to pbaloncestos_path, notice: 'Pbaloncesto was successfully created.' }
+        format.html { redirect_to pbaloncestos_path }
         format.json { render :show, status: :created, location: @pbaloncesto }
       else
         format.html { render :new }
@@ -46,7 +55,7 @@ class PbaloncestosController < ApplicationController
   def update
     respond_to do |format|
       if @pbaloncesto.update(pbaloncesto_params)
-        format.html { redirect_to pbaloncestos_path, notice: 'Pbaloncesto was successfully updated.' }
+        format.html { redirect_to pbaloncestos_path }
         format.json { render :show, status: :ok, location: @pbaloncesto }
       else
         format.html { render :edit }
@@ -60,7 +69,7 @@ class PbaloncestosController < ApplicationController
   def destroy
     @pbaloncesto.destroy
     respond_to do |format|
-      format.html { redirect_to pbaloncestos_url, notice: 'Pbaloncesto was successfully destroyed.' }
+      format.html { redirect_to pbaloncestos_url, notice: 'El partido ha sido eliminado.' }
       format.json { head :no_content }
     end
   end

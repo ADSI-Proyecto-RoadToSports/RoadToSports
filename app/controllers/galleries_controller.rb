@@ -36,7 +36,7 @@ class GalleriesController < ApplicationController
     @gallery = @album.galleries.new(gallery_params)
     respond_to do |format|
       if @gallery.save
-        format.html { redirect_to album_galleries_path(@album), notice: 'Team was successfully created.' }
+        format.html { redirect_to album_galleries_path(@album) }
         format.json { render :show, status: :created, location: @gallery }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class GalleriesController < ApplicationController
   def update
     respond_to do |format|
       if @gallery.update(gallery_params)
-        format.html { redirect_to album_galleries_path(@album), notice: 'Team was successfully updated.' }
+        format.html { redirect_to album_galleries_path(@album) }
         format.json { render :show, status: :ok, location: @gallery }
       else
         format.html { render :edit }

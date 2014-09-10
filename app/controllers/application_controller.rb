@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
 private
 def not_authenticated
-    redirect_to login_path, alert: "Porfavor inicia sesión primero."
+    redirect_to login_path
 end
 #rescue_from CanCan::AccessDenied do |exception|
 #   redirect_to root_path, :alert => exception.message

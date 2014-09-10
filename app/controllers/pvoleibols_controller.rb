@@ -7,6 +7,15 @@ class PvoleibolsController < ApplicationController
   def index
     @pvoleibols = Pvoleibol.search(params[:search], params[:page])
     @nombrepartidocs = Nombrepartidoc.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReportvPdf.new(@pvoleibols)
+        send_data pdf.render, filename: 'pvoleibols_#{@pvoleibols_id}',
+        type: 'application/pdf',
+        disposition: 'inline'
+      end
+    end
   end
 
   # GET /pvoleibols/1
@@ -32,7 +41,7 @@ class PvoleibolsController < ApplicationController
 
     respond_to do |format|
       if @pvoleibol.save
-        format.html { redirect_to pvoleibols_path, notice: 'Pvoleibol was successfully created.' }
+        format.html { redirect_to pvoleibols_path}
         format.json { render :show, status: :created, location: @pvoleibol }
       else
         format.html { render :new }
@@ -46,7 +55,7 @@ class PvoleibolsController < ApplicationController
   def update
     respond_to do |format|
       if @pvoleibol.update(pvoleibol_params)
-        format.html { redirect_to pvoleibols_path, notice: 'Pvoleibol was successfully updated.' }
+        format.html { redirect_to pvoleibols_path}
         format.json { render :show, status: :ok, location: @pvoleibol }
       else
         format.html { render :edit }
@@ -60,7 +69,7 @@ class PvoleibolsController < ApplicationController
   def destroy
     @pvoleibol.destroy
     respond_to do |format|
-      format.html { redirect_to pvoleibols_url, notice: 'Pvoleibol was successfully destroyed.' }
+      format.html { redirect_to pvoleibols_url, notice: 'El partido ha sido eliminado.' }
       format.json { head :no_content }
     end
   end

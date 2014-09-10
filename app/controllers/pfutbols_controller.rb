@@ -50,7 +50,7 @@ class PfutbolsController < ApplicationController
   def destroy
     @pfutbol.destroy
     respond_to do |format|
-      format.html { redirect_to pfutbols_url, notice: 'Pfutbol was successfully destroyed.' }
+      format.html { redirect_to pfutbols_url, notice: 'El partido ha sido eliminado.' }
       format.json { head :no_content }
     end
   end
