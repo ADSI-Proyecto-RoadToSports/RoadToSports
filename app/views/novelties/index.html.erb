@@ -14,15 +14,9 @@
 				<% end %>
 			<% end %>
 			<div class="paginacion">Novedades: <b><%= @novelties.count %> </b><%= will_paginate @novelties, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
-			<table class="table table-striped table-hover ">
-	    		<tr>
-	      			<th>Nombre</th>
-	      			<th>Descripción</th>
-	      			<th colspan="3">Opciones</th>
-	    		</tr>
+
 	    		<%= render @novelties %>
-    		</table>
-    		<br>
+			<br>
 			<% if can? :create, @novelty %>
 				<%= button_to 'Nueva Novedad', new_novelty_path ,remote: true, :method=>"get", class: "btn btn-info"%><br>
 			<% end %>

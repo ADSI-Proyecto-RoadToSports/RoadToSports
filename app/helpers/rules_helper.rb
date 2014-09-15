@@ -3,9 +3,9 @@ module RulesHelper
 	def rul(state)
 
 		if state 
-			" <p class=\"text-success\">Habilitada</p>".html_safe
+			" <span class=\"label label-success\">Habilitada</span>".html_safe
 		else
-			" <p class=\"text-danger\">Deshabilitada</p>".html_safe
+			" <span class=\"label label-danger\">Deshabilitada</span>".html_safe
 		end
 	end
 

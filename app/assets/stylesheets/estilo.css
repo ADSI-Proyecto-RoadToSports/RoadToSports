@@ -114,6 +114,31 @@
  	overflow-y:scroll;
     overflow-x:none; 
 }
+.dcacti{
+	border:1px solid transparent;
+	width: 1020px;
+	height: 102px;	
+	word-break: break-all;
+ 	word-wrap: break-word;
+ 	overflow-y:scroll;
+    overflow-x:none; 
+}
+.dcacti1{
+	border:1px solid transparent;
+	width: 1020px;
+	height: 42px;	
+	word-break: break-all;
+ 	word-wrap: break-word;
+ 	overflow-y:scroll;
+    overflow-x:none; 
+}
+.activ{
+	text-align: center;
+}
+.lin:hover{
+	text-decoration: none;
+}
+
 .dcrul{
 	border:1px solid transparent;
 	width: 250px;
@@ -277,4 +302,26 @@ box-shadow:         -3px 3px 12px 0px rgba(0, 0, 0, 1);
 
 a {
   color: #000;
+}
+
+.lis:hover{
+	cursor: default;
+}
+.rel{
+	margin-left: 220px;
+}
+.reld{
+	width: 200px;
+	text-align: center;
+	display: inline-block;
+}
+.reld2{
+	width: 250px;
+	text-align: center;
+	display: inline-block;
+}
+.reld3{
+	width: 300px;
+	text-align: center;
+	display: inline-block;
 }

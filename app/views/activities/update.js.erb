@@ -1,2 +1,2 @@
-$('tr#activity_<%= @activity.id %>').replaceWith("<%= escape_javascript(render @activity) %>")
-$.lazybox.close()
+$.lazybox.close();
+location.reload();

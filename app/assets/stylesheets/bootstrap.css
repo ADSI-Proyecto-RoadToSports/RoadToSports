@@ -6013,19 +6013,19 @@ button.close {
 .siguiente {
   position: absolute;
   right: 250px;
-  bottom: 120px;
+  bottom: 100px;
 }
 
 .volver{
   position: absolute;
   
-  bottom: 120px;
+  bottom: 100px;
 }
 
 .ir{
   position: absolute;
   left: 650px;
-  bottom: 120px;
+  bottom: 100px;
 }
 
 .nevento{
