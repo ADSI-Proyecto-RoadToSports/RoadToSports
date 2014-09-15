@@ -1,23 +1,29 @@
 <tr id=<%= "novelty_#{novelty.id}" %>>
-    <td>
-        <%= novelty.name %>
-    </td>
-    <td>
-        <%= novelty.description %>
-    </td>
-    <% if can? :read, novelty %>
-        <td>
-            <%= link_to 'Ver', novelty, remote: true %>
-        </td>
-    <% end %>
-    <% if can? :update, novelty %>
-        <td>
-            <%= link_to 'Editar', edit_novelty_path(novelty), remote: true %>
-        </td>
-    <% end %>
-    <% if can? :destroy, novelty %>
-        <td>
-            <%= link_to 'Eliminar', novelty, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-    <% end %>
+
+    <div class="list-group">
+      <a href="#" class="list-group-item lis">
+        <h4 class="list-group-item-heading"><%= novelty.name %></h4>
+        <p class="list-group-item-text"><div class="dcacti1"><%= novelty.description %></div></p></a>
+        <div class="btn-group">
+            <% if can? :read, novelty %>
+               
+                    <%= link_to 'Ver', novelty, remote: true, class: "btn btn-default btn-xs" %>
+                
+            <% end %>
+            <% if can? :update, novelty %>
+               
+                    <%= link_to 'Editar', edit_novelty_path(novelty), remote: true, class: "btn btn-primary btn-xs" %>
+                
+            <% end %>
+            <% if can? :destroy, novelty %>
+                
+                    <%= link_to 'Eliminar', novelty, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+            <% end %>
+        </div> 
+    </div>
 </tr>
+
+
+
+
+

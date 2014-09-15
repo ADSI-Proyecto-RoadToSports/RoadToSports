@@ -14,15 +14,10 @@
 				<% end %>
 			<% end %>
 			<div class="paginacion">Actividades: <b><%= @activities.count %> </b><%= will_paginate @activities, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
-			<table  class="table table-striped table-hover ">
-				<tr>
-				    <th>Nombre</th>
-				    <th>Estado</th>
-				    <th>Descripción</th>
-				    <th class="opc" colspan="3">Opciones</th>
-				</tr>
+<br>
+				
 				<%= render @activities %>
-			</table>
+			
 			<br>
 				<% if can? :create, @activity %>
 					<%= button_to 'Nueva Actividad', new_activity_path, remote: true, :method=>"get", class: "btn btn-info" %>

@@ -1,26 +1,21 @@
+
 <tr id=<%= "activity_#{activity.id}" %>>
-    <td>
-        <%= activity.name %>
-    </td>
-    <td>
-        <%= activity.state %>
-    </td>
-    <td>
-        <div class="dc">
-            <%= activity.description %>
-        </div>
-    </td>
-    <td>
-        <%= link_to 'Ver', activity, remote: true %>
-    </td>
+<div class="well well-sm activ">
+
+<div class="pull-left"><%= esta(activity.state) %></div>
+  <strong ><%= link_to activity.name, activity, remote: true, class: "lin" %></strong>
+    
+
+        <div class="pull-right"><%= link_to 'Descripcion', activity, remote: true %> |
+
     <% if can? :update, activity %>
-        <td>
-            <%= link_to 'Editar', edit_activity_path(activity), remote: true %>
-        </td>
-    <% end %>
+
+            <%= link_to 'Editar', edit_activity_path(activity), remote: true %> |
+        <% end %>
     <% if can? :create, activity %>
-        <td>
+
             <%= link_to 'Eliminar', activity, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
     <% end %>
-</tr>
+ </div>
+  </div>
+  </tr>

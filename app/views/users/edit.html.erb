@@ -9,12 +9,14 @@
   <div class="" id="inicio">
 <h1>Editar usuario</h1>
 
+
 <%= render 'form' %>
 
 <%= link_to 'Mostrar', @user %> 
 <% if can? :read, @user %>|
 <%= link_to 'Atras', users_path %>
 <% end %>
+
 </div></div></div>
 <% else %>
 <div class="alerta">

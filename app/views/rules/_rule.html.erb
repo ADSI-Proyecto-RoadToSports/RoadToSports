@@ -1,32 +1,21 @@
 <tr id=<%= "rule_#{rule.id}" %>>
-    <td>
-        <%= rule.name %>
-    </td>
-    <td>
-        <div class="dcrul">
-            <%= rule.description %>
-        </div>
-    </td>
-    <td>
-        <%= rule.sport.name %>
-    </td>
-    <td>
-        <%= rule.type_rule.name %>
-    </td>
-    <td>
-        <%= rul(rule.state) %>
-    </td>
+    <div class="list-group">
+      <a href="#" class="list-group-item lis">
+        <h4 class="list-group-item-heading"></h4>
+        <p class="list-group-item-text"><div class="reld"><strong>Nombre:</strong><br><%= rule.name %></div><div class="reld2"><strong>Deporte:</strong><br><%= rule.sport.name %></div><div class="reld3"><strong>Tipo de regla:</strong><br><%= rule.type_rule.name %></div><div class="reld"><strong>Estado: </strong><br><%= rul(rule.state)%></div>
+        <div class="dcacti1"><strong>Descripcion: </strong><%= rule.description %></div></p></a>
+        <div class="btn-group">
     <% if can? :read, rule %>
-        <td><%= link_to 'Mostrar', rule, remote: true %></td>
+        <%= link_to 'Mostrar', rule, remote: true, class: "btn btn-default btn-xs" %>
     <% end %>
     <% if can? :update, rule %>
-        <td>
-            <%= link_to 'Editar', edit_rule_path(rule), remote: true %>
-        </td>
+        
+            <%= link_to 'Editar', edit_rule_path(rule), remote: true, class: "btn btn-primary btn-xs" %>
+        
     <% end %>
     <% if can? :destroy, rule %>
-        <td>
-            <%= link_to 'Eliminar', rule, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        
+            <%= link_to 'Eliminar', rule, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+        
     <% end %>
 </tr>
