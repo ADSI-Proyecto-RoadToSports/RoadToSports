@@ -28,6 +28,7 @@ class Ability
         can :read, Pvoleibol
         can :read, Pmicrofutbol
         can :read, Participante
+        can :read, Ptenismesa
         can :create, Participante
         can :update, Participante
         can :destroy, Participante

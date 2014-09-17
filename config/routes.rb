@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :nombrepartidots
+
   resources :nombrepartidoms
 
   resources :nombrepartidods

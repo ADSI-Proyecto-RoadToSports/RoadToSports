@@ -15,21 +15,29 @@
     <%= f.label :participante1 %><br>
     <%= f.text_field :participante1 %>
   </div>
+   <div class="field">
+    <%= f.label :gano %><br>
+    <%= f.check_box :gano1 %>
+  </div>
   <div class="field">
-    <%= f.label :puntos1 %><br>
+    <label>Puntos obtenidos</label><br>
     <%= f.text_field :puntos1 %>
   </div>
   <div class="field">
     <%= f.label :participante2 %><br>
     <%= f.text_field :participante2 %>
   </div>
+   <div class="field">
+    <%= f.label :gano %><br>
+    <%= f.check_box :gano2 %>
+  </div>
   <div class="field">
-    <%= f.label :puntos2 %><br>
+    <label>Puntos obtenidos</label><br>
     <%= f.text_field :puntos2 %>
   </div>
   <div class="field">
-    <%= f.label :tournament_id %><br>
-    <%= f.number_field :tournament_id %>
+     <label>Torneo</label><br>
+    <%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: "form-control", prompt: "Seleccione Un Torneo" %>
   </div>
   <div class="field">
     <%= f.label :fecha %><br>
@@ -40,10 +48,10 @@
     <%= f.check_box :estado %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+   <label>Administrador</label><br>
+    <%= f.collection_select :user_id, User.where(Admin: true).all  , :id, :email, class: "form-control", prompt: "Seleccione Un Admin" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" %>
   </div>
 <% end %>

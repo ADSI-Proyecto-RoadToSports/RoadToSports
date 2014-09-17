@@ -23,10 +23,7 @@
             end %>
         </td>
         <td class="lin"><%= pmicrofutbol.puntoso2 %></td>
-        <td class="lin"><%= pmicrofutbol.tournament.name %></td>
-        <td><%= pmicrofutbol.fecha %></td>
-        <td><%= estado(pmicrofutbol.estado) %></td>
-        <td><%= pmicrofutbol.user.nombre %></td>
+        <td class="lin"><%= pmicrofutbol.user.nombre %></td>
         <td><%= link_to 'Ver', pmicrofutbol, remote: true %></td>
           <% if can? :update, pmicrofutbol %>
         <td><%= link_to 'Editar', edit_pmicrofutbol_path(pmicrofutbol), remote: true %></td>

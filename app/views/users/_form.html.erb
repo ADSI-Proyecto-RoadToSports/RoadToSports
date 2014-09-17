@@ -59,7 +59,7 @@
   <div class="actions">
     <%= f.submit 'Crear', :method=>"get", class: "btn btn-info" %>
   </div>
- <% if @user.email == 'sportsena.cfdcm@gmail.com' %>
+ <% if @user.email == 'sportsena.cfdcm@gmail.com' || @user.email == nil %>
  <% else %>
   <%= button_to 'Eliminar esta cuenta de Sport SENA', @user, method: :delete, data: { confirm: 'Estas seguro?' }, class: "btn btn-danger siguiente" %>
   <% end %>

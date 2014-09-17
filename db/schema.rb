@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140908212131) do
+ActiveRecord::Schema.define(version: 20140917194437) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -121,6 +121,12 @@ ActiveRecord::Schema.define(version: 20140908212131) do
   end
 
   create_table "nombrepartidos", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nombrepartidots", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"

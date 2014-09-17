@@ -2,30 +2,25 @@
       <tr id=<%= "pajedrez_#{pajedrez.id}"%>>
         <td ><%= pajedrez.participante1 %></td>
          <td >
-          <%= if pajedrez.puntos1 > pajedrez.puntos2
-              gano2() 
-          elsif pajedrez.puntos1 == pajedrez.puntos2
-              empate2() 
-              else
-                perdio2()
-          end %>
+          <%= if pajedrez.gano1 == true and pajedrez.gano2 == true
+                em()
+            else
+                gan(pajedrez.gano1) 
+            end
+            %>
         </td>
         <td class="lin"><%= pajedrez.puntos1 %></td>
         <td class="lin"><%= pajedrez.participante2 %></td>
         <td >
-          <%= if pajedrez.puntos2 > pajedrez.puntos1
-              gano2() 
-          elsif pajedrez.puntos1 == pajedrez.puntos2
-              empate2() 
-              else
-                perdio2()
-          end %>
+          <%= if pajedrez.gano1 == true and pajedrez.gano2 == true
+                em()
+            else
+                gan(pajedrez.gano2) 
+            end
+          %>
         </td>
         <td class="lin"><%= pajedrez.puntos2 %></td>
-        <td class=" lin"><%= pajedrez.tournament.name %></td>
-        <td><%= pajedrez.fecha %></td>
-        <td><%= estado(pajedrez.estado) %></td>
-        <td><%= pajedrez.user.nombre %></td>
+        <td class="lin"><%= pajedrez.user.nombre %></td>
          <% if can? :read, pajedrez %>
         <td><%= link_to 'Ver', pajedrez, remote: true %></td>
          <% end %>

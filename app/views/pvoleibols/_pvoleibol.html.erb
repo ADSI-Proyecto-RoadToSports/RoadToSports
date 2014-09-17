@@ -24,10 +24,7 @@
           end %>
         </td>
         <td class=" lin"><%= pvoleibol.puntoso2 %></td>
-        <td class=" lin"><%= pvoleibol.tournament.name %></td>
-        <td><%= pvoleibol.fecha %></td>
-        <td><%= estado(pvoleibol.estado) %></td>
-        <td><%= pvoleibol.user.nombre %></td>
+        <td class="lin"><%= pvoleibol.user.nombre %></td>
         <% if can? :read, pvoleibol %>
         <td><%= link_to 'Ver', pvoleibol, remote: true %></td>
          <% end %>

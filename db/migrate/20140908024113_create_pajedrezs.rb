@@ -9,7 +9,8 @@ class CreatePajedrezs < ActiveRecord::Migration
       t.datetime :fecha
       t.boolean :estado
       t.integer :user_id
-
+      t.boolean :gano1
+      t.boolean :gano2
       t.timestamps
     end
   end

@@ -12,6 +12,7 @@ class Tournament < ActiveRecord::Base
   has_many :teams, :dependent => :destroy
   has_many :pfutbols, :dependent => :destroy
   has_many :pbaloncestos, :dependent => :destroy
+  has_many :ptenismesas, :dependent => :destroy
   def self.search(search, page)
 		where(['upper(name) like ?',
 		"%#{search}%".upcase]).paginate(page: page, per_page: 3).order("name")

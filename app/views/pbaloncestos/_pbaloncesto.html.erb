@@ -36,15 +36,6 @@
     <%= pbaloncesto.puntoso2 %>
   </td>
   <td class="lin">
-    <%= pbaloncesto.tournament.name %>
-  </td>
-  <td>
-    <%= pbaloncesto.fecha %>
-  </td>
-  <td>
-    <%= estado(pbaloncesto.estado) %>
-  </td>
-  <td>
     <%= pbaloncesto.user.nombre %>
   </td>
   <% if can? :read, pbaloncesto %>

@@ -1,0 +1,34 @@
+<tr id=<%= "ptenismesa_#{ptenismesa.id}"%>>
+        <td><%= ptenismesa.participante1 %></td>
+         <td>
+          <%= 
+            if ptenismesa.gano1 == true and ptenismesa.gano2 == true
+                em()
+            else
+                gan(ptenismesa.gano1) 
+            end
+          %>
+        </td>
+        <td class="lin"><%= ptenismesa.puntos1 %></td>
+        <td class="lin"><%= ptenismesa.participante2 %></td>
+         <td>
+          <%= 
+            if ptenismesa.gano1 == true and ptenismesa.gano2 == true
+                em()
+            else
+                gan(ptenismesa.gano2) 
+            end
+           %>
+        </td>
+        <td class="lin"><%= ptenismesa.puntos2 %></td>
+        <td class="lin"><%= ptenismesa.user.nombre %></td>
+         <% if can? :read, ptenismesa %>
+        <td><%= link_to 'Ver', ptenismesa, remote: true %></td>
+         <% end %>
+        <% if can? :update, ptenismesa %>
+        <td><%= link_to 'Editar', edit_ptenismesa_path(ptenismesa), remote: true %></td>
+         <% end %>
+        <% if can? :destroy, ptenismesa %>
+        <td><%= link_to 'Eliminar', ptenismesa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <% end %>
+      </tr>

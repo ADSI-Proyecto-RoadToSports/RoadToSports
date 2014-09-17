@@ -4,12 +4,14 @@ class PtenismesasController < ApplicationController
   # GET /ptenismesas
   # GET /ptenismesas.json
   def index
-    @ptenismesas = Ptenismesa.all
+    @ptenismesas = Ptenismesa.search(params[:search], params[:page])
+    @nombrepartidots = Nombrepartidot.all
   end
 
   # GET /ptenismesas/1
   # GET /ptenismesas/1.json
   def show
+    @ptenismesa = Ptenismesa.find(params[:id])
   end
 
   # GET /ptenismesas/new
@@ -19,6 +21,7 @@ class PtenismesasController < ApplicationController
 
   # GET /ptenismesas/1/edit
   def edit
+    @ptenismesa = Ptenismesa.find(params[:id])
   end
 
   # POST /ptenismesas
@@ -28,7 +31,7 @@ class PtenismesasController < ApplicationController
 
     respond_to do |format|
       if @ptenismesa.save
-        format.html { redirect_to @ptenismesa, notice: 'Ptenismesa was successfully created.' }
+        format.html { redirect_to ptenismesas_path }
         format.json { render :show, status: :created, location: @ptenismesa }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class PtenismesasController < ApplicationController
   def update
     respond_to do |format|
       if @ptenismesa.update(ptenismesa_params)
-        format.html { redirect_to @ptenismesa, notice: 'Ptenismesa was successfully updated.' }
+        format.html { redirect_to ptenismesas_path }
         format.json { render :show, status: :ok, location: @ptenismesa }
       else
         format.html { render :edit }
@@ -56,7 +59,7 @@ class PtenismesasController < ApplicationController
   def destroy
     @ptenismesa.destroy
     respond_to do |format|
-      format.html { redirect_to ptenismesas_url, notice: 'Ptenismesa was successfully destroyed.' }
+      format.html { redirect_to ptenismesas_url, notice: 'El encuentro ha sido eliminado.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +72,6 @@ class PtenismesasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ptenismesa_params
-      params.require(:ptenismesa).permit(:participante1, :puntos1, :participante2, :puntos2, :tournament_id, :fecha, :estado, :user_id)
+      params.require(:ptenismesa).permit(:participante1, :puntos1, :participante2, :puntos2, :tournament_id, :fecha, :estado, :user_id, :gano1, :gano2)
     end
 end

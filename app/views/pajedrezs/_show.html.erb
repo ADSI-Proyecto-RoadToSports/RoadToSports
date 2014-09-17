@@ -4,13 +4,12 @@
 <p>
   <strong>Participante1:</strong>
   <%= @pajedrez.participante1 %>
-   <%= if @pajedrez.puntos1 > @pajedrez.puntos2
-              gano2() 
-          elsif @pajedrez.puntos1 == @pajedrez.puntos2
-              empate2() 
-              else
-                perdio2()
-   end %>
+   <%= if @pajedrez.gano1 == true and @pajedrez.gano2 == true
+                em()
+            else
+                gan(@pajedrez.gano1) 
+            end
+   %>
 </p>
 
 <p>
@@ -21,13 +20,12 @@
 <p>
   <strong>Participante2:</strong>
   <%= @pajedrez.participante2 %>
-  <%= if @pajedrez.puntos2 > @pajedrez.puntos1
-              gano2() 
-          elsif @pajedrez.puntos1 == @pajedrez.puntos2
-              empate2() 
-              else
-                perdio2()
-   end %>
+  <%= if @pajedrez.gano1 == true and @pajedrez.gano2 == true
+                em()
+            else
+                gan(@pajedrez.gano2) 
+            end
+  %>
 </p>
 
 <p>

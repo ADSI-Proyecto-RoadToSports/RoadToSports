@@ -2,11 +2,13 @@
 <h3>Iniciar Sesión</h3><hr>
 <%= form_tag user_sessions_path, :method => :post do %>
   <div class="field">
-    <%= label_tag :email %><br />
+  <%= label_tag :email %><br />
+  <img src="assets/user.png" class="iuser">
     <%= text_field_tag :email %>
   </div>
   <div class="field">
-    <%= label_tag :password %><br />
+    <%= label_tag :Contraseña %><br />
+    <img src="assets/pass.png" class="iuser">
     <%= password_field_tag :password %>
   </div><br>
   <div class="actions">

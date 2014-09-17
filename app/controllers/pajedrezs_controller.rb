@@ -81,6 +81,6 @@ class PajedrezsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pajedrez_params
-      params.require(:pajedrez).permit(:participante1, :puntos1, :participante2, :puntos2, :tournament_id, :fecha, :estado, :user_id)
+      params.require(:pajedrez).permit(:participante1, :puntos1, :participante2, :puntos2, :tournament_id, :fecha, :estado, :user_id, :gano1, :gano2)
     end
 end

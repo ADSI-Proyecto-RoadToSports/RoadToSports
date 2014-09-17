@@ -1,8 +1,16 @@
+<div class="ptenismesa">
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Participante1:</strong>
-  <%= @ptenismesa.participante1 %>
+  <%= @ptenismesa.participante1%>
+  <%= 
+  if @ptenismesa.gano1 == true and @ptenismesa.gano2 == true
+    em()
+  else
+    gan(@ptenismesa.gano1) 
+  end
+  %>
 </p>
 
 <p>
@@ -13,6 +21,13 @@
 <p>
   <strong>Participante2:</strong>
   <%= @ptenismesa.participante2 %>
+  <%=
+  if @ptenismesa.gano1 == true and @ptenismesa.gano2 == true
+    em()
+  else
+    gan(@ptenismesa.gano2) 
+  end
+  %>
 </p>
 
 <p>
@@ -22,7 +37,7 @@
 
 <p>
   <strong>Tournament:</strong>
-  <%= @ptenismesa.tournament_id %>
+  <%= @ptenismesa.tournament.name %>
 </p>
 
 <p>
@@ -32,13 +47,12 @@
 
 <p>
   <strong>Estado:</strong>
-  <%= @ptenismesa.estado %>
+  <%= estado(@ptenismesa.estado) %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @ptenismesa.user_id %>
+  <%= @ptenismesa.user.nombre %>
 </p>
 
-<%= link_to 'Edit', edit_ptenismesa_path(@ptenismesa) %> |
-<%= link_to 'Back', ptenismesas_path %>
+</div>

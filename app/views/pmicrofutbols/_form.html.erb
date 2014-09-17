@@ -52,6 +52,6 @@
     <%= f.collection_select :user_id, User.where(Admin: true).all  , :id, :email, class: "form-control", prompt: "Seleccione Un Admin" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar"%>
   </div>
 <% end %>
