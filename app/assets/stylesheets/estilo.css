@@ -282,9 +282,29 @@ box-shadow:         -3px 3px 12px 0px rgba(0, 0, 0, 1);
 	color: white;
 }
 
-.login{
+#login{
 	text-align: center;
+	margin:0 auto;
+	z-index:1;
 	
+	-moz-perspective: 800px;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+	
+}
+
+/* Firefox Keyframe Animation */
+@-moz-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 20px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
+}
+
+/* Webkit keyframe animation */
+@-webkit-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 20px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
 }
 
 
@@ -365,7 +385,26 @@ background: -o-radial-gradient(center, ellipse cover, rgba(149,181,249,1) 0%, rg
 background: -ms-radial-gradient(center, ellipse cover, rgba(149,181,249,1) 0%, rgba(213,225,253,1) 42%, rgba(231,237,254,1) 54%, rgba(236,241,254,1) 63%, rgba(255,255,255,1) 100%);
 background: radial-gradient(ellipse at center, rgba(149,181,249,1) 0%, rgba(213,225,253,1) 42%, rgba(231,237,254,1) 54%, rgba(236,241,254,1) 63%, rgba(255,255,255,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95b5f9', endColorstr='#ffffff', GradientType=1 );
-
+/* Enabling 3d space for the transforms */
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	
+	/* When the forms are flipped, they will be hidden */
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+	/* Enabling a smooth animated transition */
+	-moz-transition:1s;
+	-webkit-transition:1s;
+	transition:1s;
+	
+	/* Configure a keyframe animation for Firefox */
+	-moz-animation: pulse 3s infinite;
+	
+	/* Configure it for Chrome and Safari */
+	-webkit-animation: pulse 3s infinite;
 }
 
 #lazybox.lazybox {
@@ -386,3 +425,78 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95b5f9', end
 	width: 20px;
 	height: 20px;
 }
+
+
+.slideExpandUp{
+	animation-name: slideExpandUp;
+	-webkit-animation-name: slideExpandUp;	
+
+	animation-duration: 4s;	
+	-webkit-animation-duration: 0s;
+
+	animation-timing-function: ease-out;	
+	-webkit-animation-timing-function: ease -out;
+
+	visibility: visible !important;	
+}
+
+@keyframes slideExpandUp {
+	0% {
+		transform: translateY(100%) scaleX(0.5);
+	}
+	30%{
+		transform: translateY(-8%) scaleX(0.5);
+	}	
+	40%{
+		transform: translateY(2%) scaleX(0.5);
+	}
+	50%{
+		transform: translateY(0%) scaleX(1.1);
+	}
+	60%{
+		transform: translateY(0%) scaleX(0.9);		
+	}
+	70% {
+		transform: translateY(0%) scaleX(1.05);
+	}			
+	80%{
+		transform: translateY(0%) scaleX(0.95);		
+	}
+	90% {
+		transform: translateY(0%) scaleX(1.02);
+	}	
+	100%{
+		transform: translateY(0%) scaleX(1);		
+	}
+}
+
+@-webkit-keyframes slideExpandUp {
+	0% {
+		-webkit-transform: translateY(100%) scaleX(0.5);
+	}
+	30%{
+		-webkit-transform: translateY(-8%) scaleX(0.5);
+	}	
+	40%{
+		-webkit-transform: translateY(2%) scaleX(0.5);
+	}
+	50%{
+		-webkit-transform: translateY(0%) scaleX(1.1);
+	}
+	60%{
+		-webkit-transform: translateY(0%) scaleX(0.9);		
+	}
+	70% {
+		-webkit-transform: translateY(0%) scaleX(1.05);
+	}			
+	80%{
+		-webkit-transform: translateY(0%) scaleX(0.95);		
+	}
+	90% {
+		-webkit-transform: translateY(0%) scaleX(1.02);
+	}	
+	100%{
+		-webkit-transform: translateY(0%) scaleX(1);		
+	}
+}
+

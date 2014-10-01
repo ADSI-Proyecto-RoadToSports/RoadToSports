@@ -1,4 +1,5 @@
-<div class="login">
+<div id="login">
+
 <h3>Iniciar Sesión</h3><hr>
 <%= form_tag user_sessions_path, :method => :post do %>
   <div class="field">
@@ -15,4 +16,5 @@
     <%= submit_tag "Entrar" , :method=>"get", class: "btn btn-info"%>
   </div>
 <% end %>
+
 </div>

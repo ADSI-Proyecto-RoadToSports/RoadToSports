@@ -4,5 +4,12 @@
 		<%= notice %>
 	</p>
 	<%= image_tag @gallery.image.url(:medium) %>
-	<%= link_to 'Atras', album_galleries_path %>
+	<%
+		
+		po = @gallery.id
+	 %>
+
+	<%#=link_to po, album_gallery_path(@album,po-1), remote: true %>
+	<%#=link_to po, album_gallery_path(@album,po+1), remote: true %>
+
 </div>

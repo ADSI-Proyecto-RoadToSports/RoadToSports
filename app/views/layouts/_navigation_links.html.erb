@@ -19,7 +19,7 @@
 		</ul>
 	</li>
 <% else %>
-	<li>
+	<li >
 		<%= link_to 'Inicio', user_sessions_path, class: 'navbar-brand' %>
 	</li>
 	<li>
@@ -41,8 +41,8 @@
 		    </li>
 		</ul>
 	</li>
-	<li>
-		<%= link_to "Partidos y encuentros ▼",  "#"%>
+	<li data-toggle="tooltip" data-placement="top" title="Ver partidos">
+		<%= link_to "Partidos y encuentros ▼",  "#" %>
 		<ul class="btn-info dropdown-menu">
 			<li>
 				<%= link_to "Futbol", pfutbols_path %>

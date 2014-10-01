@@ -5,7 +5,9 @@
     </ul>
   <div id="myTabContent" class="tab-content">
     <div class="" id="inicio">
+    <div class="slideExpandUp">
     <%= render 'nombrepartidocs/index' %>
+    </div>
 <h1>Partidos de Voleibol</h1>
  <div class="paginacion">Partidos: <b><%= @pvoleibols.count %> </b><%= will_paginate @pvoleibols, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
 
