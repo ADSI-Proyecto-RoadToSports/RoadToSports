@@ -1,8 +1,9 @@
 <%# add navigation links to this file %>
 <% if can? :read, Sport %>
 	<li>
-		<%= link_to 'Inicio ▼', root_path, class: 'navbar-brand flechita' %>
-		<ul class="btn-info dropdown-menu">
+		<%= link_to 'Inicio ▼', root_path, class: 'navbar-brand ' %>
+		<ul class="btn-info dropdown-menu subm">
+		<div class="enl"><p class="lie">◢◣</p></div>
 			<li>
 				<%= link_to "Torneos", tournaments_path %>
 			</li>
@@ -20,7 +21,7 @@
 	</li>
 <% else %>
 	<li >
-		<%= link_to 'Inicio', user_sessions_path, class: 'navbar-brand' %>
+		<%= link_to 'Inicio', user_sessions_path, class: 'navbar-brand ' %>
 	</li>
 	<li>
 		<h3 class="mensa">¡Registrate o Inicia sesión para ingresar a Sports SENA!</h3>
@@ -29,7 +30,8 @@
 <% if can? :read, Sport %>
 	<li>
 		<%= link_to "Usuarios ▼", controller: "usuario", action: "index" %>
-		<ul class="btn-info dropdown-menu">
+		<ul class="btn-info dropdown-menu subm">
+		<div class="enl"><p class="lie">◢◣</p></div>
 			<li>
 				<%= link_to "Deportes", sports_path %>
 			</li>
@@ -43,7 +45,8 @@
 	</li>
 	<li data-toggle="tooltip" data-placement="top" title="Ver partidos">
 		<%= link_to "Partidos y encuentros ▼",  "#" %>
-		<ul class="btn-info dropdown-menu">
+		<ul class="btn-info dropdown-menu subm">
+		<div class="enl"><p class="lie">◢◣</p></div>
 			<li>
 				<%= link_to "Futbol", pfutbols_path %>
 			</li>
@@ -67,8 +70,9 @@
 <% end %>
 <% if can? :destroy, DocumentType %>
 	<li>
-		<%= link_to "Administración ▼", "#", class: "" %>
-		<ul class=" btn-info dropdown-menu">
+		<%= link_to "Administración ▼", "#" %>
+		<ul class=" btn-info dropdown-menu subm">
+		<div class="enl"><p class="lie">◢◣</p></div>
 			<li>
 				<%= link_to "Configuraciones de tipos", controller: "tipos_config", action: "index" %>
 			</li>
