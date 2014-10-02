@@ -11,7 +11,11 @@
         <% if current_user %>
           <% if current_user.admin == true  %>
             <li>
+            <% if current_user.genero == true %>
               <%= link_to 'Administrador: '+ current_user.nombre, edit_user_path(current_user.id) %>
+            <% else %>
+              <%= link_to 'Administradora: '+ current_user.nombre, edit_user_path(current_user.id) %>
+            <% end%>
             </li>
           <% else %>
             <li>

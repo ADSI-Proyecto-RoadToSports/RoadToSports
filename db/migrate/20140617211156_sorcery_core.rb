@@ -9,6 +9,7 @@ class SorceryCore < ActiveRecord::Migration
       t.string :salt,             :null => false
       t.boolean :admin
       t.boolean :usuario
+      t.boolean :genero
 
       t.timestamps
     end

@@ -13,5 +13,12 @@ module UsersHelper
 						
 		end
 	end
+	def gen(genero)
+		if genero == true
+			"<span class='label label-success'>Masculino</span>".html_safe
+		else
+			"<span class='label label-info'>Femenino</span>".html_safe
+		end
+	end
 
 end

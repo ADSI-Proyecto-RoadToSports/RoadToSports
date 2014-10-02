@@ -25,12 +25,18 @@
   <%= @user.documento %>
 </p>
 <p>
-<strong>Rol:</strong>
-<%= rol_usuarioA(@user.admin) %>
-<%= rol_usuarioU(@user.usuario) %>
+  <strong>Rol:</strong>
+  <%= rol_usuarioA(@user.admin) %>
+  <%= rol_usuarioU(@user.usuario) %>
 </p>
-
+<p>
+  <strong>Genero:</strong>
+  <%= gen(@user.genero) %>
+</p>
+<% if @user.email == 'sportsena.cfdcm@gmail.com' %>
+<% else %>
 <%= link_to 'Editar', edit_user_path(@user) %>
+<% end %>
 <% if can? :read, @user %>|
 <%= link_to 'Atras', users_path %>
 <% end %>
