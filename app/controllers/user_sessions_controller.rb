@@ -8,7 +8,11 @@ class UserSessionsController < ApplicationController
 
  def create
     if @user = login(params[:email], params[:password])
-      redirect_back_or_to(:users, notice: 'Bienvenido '+ current_user.nombre )
+      if @user.genero == true
+        redirect_back_or_to(:users, notice: 'Bienvenido '+ current_user.nombre )
+      else
+        redirect_back_or_to(:users, notice: 'Bienvenida '+ current_user.nombre )
+      end
     else
       flash.now[:alert] = 'Error en el Email o contraseña.'
       render action: 'index'
