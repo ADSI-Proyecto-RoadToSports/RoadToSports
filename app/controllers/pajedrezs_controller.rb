@@ -10,7 +10,7 @@ class PajedrezsController < ApplicationController
       format.html
       format.pdf do
         pdf = ReportaPdf.new(@pajedrezs)
-        send_data pdf.render, filename: 'pajedrezs_#{@pajedrezs_id}',
+        send_data pdf.render, filename: 'Encuentros De Ajedrez',
         type: 'application/pdf',
         disposition: 'inline'
       end

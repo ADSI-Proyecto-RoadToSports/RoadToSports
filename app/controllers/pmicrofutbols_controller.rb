@@ -10,7 +10,7 @@ class PmicrofutbolsController < ApplicationController
       format.html
       format.pdf do
         pdf = ReportmPdf.new(@pmicrofutbols)
-        send_data pdf.render, filename: 'pmicrofutbols_#{@pmicrofutbols_id}',
+        send_data pdf.render, filename: 'Partidos De Microfutbol',
         type: 'application/pdf',
         disposition: 'inline'
       end

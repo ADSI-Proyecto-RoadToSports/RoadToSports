@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  modalitiestype_id: 
+  name: torneo1
+  modalitiestype_id: 1
   state: false
   date: 2014-06-11
-  typetournament_id: 
-  acceptance_id: 
+  typetournament_id: 1
+  sport_id: 1
 
 two:
-  name: MyString
-  modalitiestype_id: 
-  state: false
+  name: torneo23
+  modalitiestype_id: 1
+  state: true
   date: 2014-06-11
-  typetournament_id: 
-  acceptance_id: 
+  typetournament_id: 1
+  sport_id: 1 

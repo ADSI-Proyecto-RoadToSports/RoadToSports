@@ -5,6 +5,8 @@ class IntegrantesController < ApplicationController
   # GET /integrantes.json
   def index
       @integrantes = @team.integrantes.all
+
+      
   end
 
   # GET /integrantes/1
@@ -70,6 +72,6 @@ class IntegrantesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def integrante_params
-      params.require(:integrante).permit(:nombre, :documenttype_id, :documento, :ficha, :team_id, :limite, :lesion, :TRoja ,:TAmarilla)
+      params.require(:integrante).permit(:nombre, :documenttype_id, :documento, :ficha, :team_id, :lesion, :TRoja ,:TAmarilla)
     end
 end

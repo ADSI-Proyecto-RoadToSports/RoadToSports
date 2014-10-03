@@ -6,6 +6,15 @@ class PtenismesasController < ApplicationController
   def index
     @ptenismesas = Ptenismesa.search(params[:search], params[:page])
     @nombrepartidots = Nombrepartidot.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReporttmPdf.new(@ptenismesas)
+        send_data pdf.render, filename: 'Encuentros De Tenis de Mesa',
+        type: 'application/pdf',
+        disposition: 'inline'
+      end
+    end
   end
 
   # GET /ptenismesas/1

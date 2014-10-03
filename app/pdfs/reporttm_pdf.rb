@@ -10,7 +10,7 @@ class ReporttmPdf < Prawn::Document
   def logo
     logopath =  "#{Rails.root}/app/assets/images/logo.png"
     image logopath, :width => 60, :height => 60, :position => :center
-    draw_text "Listado de Partidos Tenis de Mesa", :at => [110, 670], size: 22
+    draw_text "Listado de Encuentros Tenis de Mesa", :at => [110, 670], size: 22
   end
 
   #def logo_final
@@ -21,10 +21,9 @@ class ReporttmPdf < Prawn::Document
 
   def ayuda
   	move_down 10
-  	text "En la tabla de partidos tenis de mesa vemos un campo abreviado el cual significa lo siguiente:", size: 15, style: :bold, :align => :center, :color => [10, 81, 10, 80]
+  	text "En la tabla de encuentros tenis de mesa vemos un campo abreviado el cual significa lo siguiente:", size: 15, style: :bold, :align => :center, :color => [10, 81, 10, 80]
   	text "-Com: significa estado del partido completo", size: 15, :align => :center, :color => [10, 20, 10, 80]
   	text "-Ped: significa estado del partido pendiente", size: 15, :align => :center, :color => [10, 20, 10, 80]
-  	text "-una fila tiene como titulo Resp, esto significa responsable", size: 15, :align => :center, :color => [10, 20, 10, 80]
   end
 
   def ptenismesa_rows

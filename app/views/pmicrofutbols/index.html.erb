@@ -36,6 +36,6 @@
   end %>
 <div class="paginacion">Partidos: <b><%= @pmicrofutbols.count %> </b><%= will_paginate @pmicrofutbols, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
 </div>
-<p><%= link_to 'Generar(PDF)', pmicrofutbols_path(@pmicrofutbols, format: "pdf")%></p>
+ <p class="pull-right"><strong>Generar</strong><%= link_to image_tag('pdf.png', :size => "50x50", class: "pdf"), pmicrofutbols_path(@pmicrofutbols, format: "pdf") %></p>
 </div>
 </div>

@@ -34,4 +34,8 @@
 button_to 'Nuevo encuentro', new_ptenismesa_path , remote: true, class: 'btn btn-info', :method => "get"
 end %>
  <div class="paginacion">Encuentros: <b><%= @ptenismesas.count %> </b><%= will_paginate @ptenismesas, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %></div>
-</div></div></div>
+
+</div>
+<p class="pull-right"><strong>Generar</strong><%= link_to image_tag('pdf.png', :size => "50x50", class: "pdf"), ptenismesas_path(@ptenismesas, format: "pdf") %></p>
+</div>
+</div>

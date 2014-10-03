@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: prueba1
   state: false
-  description: MyText
+  description: asdasdasdasda
 
 two:
-  name: MyString
-  state: false
-  description: MyText
+  name: prueba2
+  state: true
+  description: sssssss

@@ -1,23 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  equipo1: MyString
+  equipo1: equipo1
+  puntos1: 1
+  equipo2: equipo2
   puntos2: 1
-  gano1: false
-  equipo2: MyString
-  puntos2: 1
-  gano2: false
   fecha: 2014-08-29 13:23:16
   estado: false
   user_id: 1
+  tournament_id: 1
+  puntoso1: 2
+  puntoso2: 3
 
 two:
-  equipo1: MyString
+  equipo1: equipo3
+  puntos1: 1
+  equipo2: equipo4
   puntos2: 1
-  gano1: false
-  equipo2: MyString
-  puntos2: 1
-  gano2: false
   fecha: 2014-08-29 13:23:16
   estado: false
   user_id: 1
+  tournament_id: 1
+  puntoso1: 2
+  puntoso2: 31

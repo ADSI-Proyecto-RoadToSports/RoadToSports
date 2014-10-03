@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nombre: MyString
-  document_type_id: 
-  documento: MyString
-  ficha: MyString
-  team_id: 
+  nombre: integrante1
+  documenttype_id: 1
+  documento: 2222222
+  ficha: 35658
+  team_id: 1
+  lesion: false
 
 two:
-  nombre: MyString
-  document_type_id: 
-  documento: MyString
-  ficha: MyString
-  team_id: 
+  nombre: integrante2
+  documenttype_id: 1
+  documento: 22222232
+  ficha: 35658
+  team_id: 1
+  lesion: false

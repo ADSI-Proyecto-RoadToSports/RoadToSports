@@ -1,5 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="contenidop">
+  <div class="img1"></div>
+  <div class="img2"></div>
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
 
+    </ul>
+  <div id="myTabContent" class="tab-content">
+<p id="notice"><%= notice %></p>
+<% if current_user.email != @participante.email %>
+  <div class="alerta">
+  <div class="alertah">
+    <h2 class="panel-title">Acceso No autorizado.</h2>
+  </div>
+  <div class="panel-body">
+    <h1> </h1>
+    <p>El usuario: <b><%= current_user.nombre %></b> No esta autorizado para acceder a esta página.</p>
+  </div>
+</div>
+
+<% else %>
 <p>
   <strong>Nombre:</strong>
   <%= @participante.nombre %>
@@ -29,6 +47,7 @@
   <strong>Estado:</strong>
   <%= @participante.estado %>
 </p>
-
+<% end %>
 <%= link_to 'Editar', edit_sport_participante_path(@sport,@participante) %> |
 <%= link_to 'Atras', sport_participantes_path(@sport) %>
+</div></div>

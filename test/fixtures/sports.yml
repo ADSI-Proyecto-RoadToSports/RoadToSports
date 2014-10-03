@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
-  modalitie_id: 
-  rule_id: 
+  name: futbol
+  description: fffffff
+  modalitiestype_id: 1
+
 
 two:
-  name: MyString
-  description: MyText
-  modalitie_id: 
-  rule_id: 
+  name: quidich
+  description: qqqqqqq
+  modalitiestype_id: 1
+

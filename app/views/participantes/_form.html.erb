@@ -1,4 +1,16 @@
 <%= form_for [@sport,@participante] do |f| %>
+<% if current_user.email != @participante.email %>
+  <div class="alerta">
+  <div class="alertah">
+    <h2 class="panel-title">Acceso No autorizado.</h2>
+  </div>
+  <div class="panel-body">
+    <h1> </h1>
+    <p>El usuario: <b><%= current_user.nombre %></b> No esta autorizado para acceder a esta página.</p>
+  </div>
+</div>
+
+<% else %>
   <% if @participante.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@participante.errors.count, "error") %> prohibited this participante from being saved:</h2>
@@ -46,4 +58,5 @@
     <%= f.submit "Guardar" %>
   </div>
 
+<% end %>
 <% end %>

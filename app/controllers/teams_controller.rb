@@ -1,6 +1,5 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy, :index, :new, :create]
-  
   # GET /TeamsController
   # GET /teams.json
   def index

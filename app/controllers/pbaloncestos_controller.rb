@@ -11,7 +11,7 @@ class PbaloncestosController < ApplicationController
       format.html
       format.pdf do
         pdf = ReportbPdf.new(@pbaloncestos)
-        send_data pdf.render, filename: 'pbaloncestos_#{@pbaloncestos_id}',
+        send_data pdf.render, filename: 'Partidos De Baloncesto',
         type: 'application/pdf',
         disposition: 'inline'
       end

@@ -9,7 +9,7 @@ class PfutbolsController < ApplicationController
       format.html
       format.pdf do
         pdf = ReportPdf.new(@pfutbols)
-        send_data pdf.render, filename: 'pfutbols_#{@pfutbols_id}',
+        send_data pdf.render, filename: 'Partidos De Futbol',
         type: 'application/pdf',
         disposition: 'inline'
       end

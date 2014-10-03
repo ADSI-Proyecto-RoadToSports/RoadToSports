@@ -10,7 +10,7 @@ class ReportaPdf < Prawn::Document
   def logo
     logopath =  "#{Rails.root}/app/assets/images/logo.png"
     image logopath, :width => 60, :height => 60, :position => :center
-    draw_text "Listado de Partidos de Ajedrez", :at => [123, 670], size: 22
+    draw_text "Listado de Encuentros de Ajedrez", :at => [123, 670], size: 22
   end
 
   #def logo_final
@@ -21,7 +21,7 @@ class ReportaPdf < Prawn::Document
 
   def ayuda
   	move_down 10
-  	text "En la tabla de partidos de ajedrez vemos un campo abreviado el cual significa lo siguiente:", size: 15, style: :bold, :align => :center, :color => [10, 81, 10, 80]
+  	text "En la tabla de encuentros de ajedrez vemos un campo abreviado el cual significa lo siguiente:", size: 15, style: :bold, :align => :center, :color => [10, 81, 10, 80]
   	text "-Com: significa estado del partido completo", size: 15, :align => :center, :color => [10, 20, 10, 80]
   	text "-Ped: significa estado del partido pendiente", size: 15, :align => :center, :color => [10, 20, 10, 80]
   end

@@ -150,6 +150,8 @@ ActiveRecord::Schema.define(version: 20140917194437) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "gano1"
+    t.boolean  "gano2"
   end
 
   create_table "participantes", force: true do |t|
@@ -220,6 +222,8 @@ ActiveRecord::Schema.define(version: 20140917194437) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "gano1"
+    t.boolean  "gano2"
   end
 
   create_table "pvoleibols", force: true do |t|
@@ -325,6 +329,7 @@ ActiveRecord::Schema.define(version: 20140917194437) do
     t.string   "nombre",           limit: nil
     t.integer  "document_type_id"
     t.string   "documento",        limit: nil
+    t.boolean  "genero"
   end
 
 end

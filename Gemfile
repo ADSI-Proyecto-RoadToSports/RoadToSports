@@ -66,3 +66,5 @@ gem 'cancan'
 #_____________________________
 #gema para generar pdf
 gem 'prawn'
+
+gem 'prawn-table'

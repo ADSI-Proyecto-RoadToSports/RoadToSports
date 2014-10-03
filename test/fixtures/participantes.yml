@@ -1,17 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nombre: MyString
-  email: MyString
+  nombre: john  
+  email: john@gmail.com
   document_type_id: 1
-  documento: MyString
+  documento: 53254687
   estado: false
-  sports_id: 
+  sport_id: 1
+  ficha: 55555
 
 two:
-  nombre: MyString
-  email: MyString
+  nombre: juan 
+  email: johns@gmail.com
   document_type_id: 1
-  documento: MyString
+  documento: 53254687
   estado: false
-  sports_id: 
+  sport_id: 1
+  ficha: 55555 
