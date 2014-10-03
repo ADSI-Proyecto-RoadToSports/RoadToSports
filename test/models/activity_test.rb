@@ -21,5 +21,5 @@ class ActivityTest < ActiveSupport::TestCase
    test "test fecha creacion" do
    	created_at = "2014-10-03 20:39:46"
    	 assert true, created_at >= "2013-05-08 22:05:12"
-   	end
+   end
 end
