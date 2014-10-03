@@ -2,14 +2,14 @@
 
 one:
   nombre: MyString
-  document_type_id: 
+  documenttype_id: 
   documento: MyString
   ficha: MyString
   team_id: 
 
 two:
   nombre: MyString
-  document_type_id: 
+  documenttype_id: 
   documento: MyString
   ficha: MyString
   team_id: 

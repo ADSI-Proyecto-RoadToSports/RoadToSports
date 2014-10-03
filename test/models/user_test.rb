@@ -1,7 +1,9 @@
-require 'test_helper'
+require '../test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+   test "prueba-rol" do
+   	one = 'megajuan_45@hotmail.com'
+   	admin = true
+    assert true, one != admin  
+   end
 end

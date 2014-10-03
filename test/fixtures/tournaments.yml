@@ -5,8 +5,7 @@ one:
   modalitiestype_id: 
   state: false
   date: 2014-06-11
-  typetournament_id: 
-  acceptance_id: 
+  typetournament_id:  
 
 two:
   name: MyString
@@ -14,4 +13,3 @@ two:
   state: false
   date: 2014-06-11
   typetournament_id: 
-  acceptance_id: 

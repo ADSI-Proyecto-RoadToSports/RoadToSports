@@ -6,7 +6,7 @@ one:
   document_type_id: 1
   documento: MyString
   estado: false
-  sports_id: 
+  sport_id: 
 
 two:
   nombre: MyString
@@ -14,4 +14,4 @@ two:
   document_type_id: 1
   documento: MyString
   estado: false
-  sports_id: 
+  sport_id: 

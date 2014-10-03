@@ -2,10 +2,8 @@
 
 one:
   name: MyString
-  description: MyText
-  newtype_id: 
+  description: MyText 
 
 two:
   name: MyString
   description: MyText
-  newtype_id: 

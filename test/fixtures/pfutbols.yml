@@ -3,10 +3,8 @@
 one:
   equipo1: MyString
   puntos2: 1
-  gano1: false
   equipo2: MyString
   puntos2: 1
-  gano2: false
   fecha: 2014-08-29 13:23:16
   estado: false
   user_id: 1
@@ -14,10 +12,8 @@ one:
 two:
   equipo1: MyString
   puntos2: 1
-  gano1: false
   equipo2: MyString
   puntos2: 1
-  gano2: false
   fecha: 2014-08-29 13:23:16
   estado: false
   user_id: 1
