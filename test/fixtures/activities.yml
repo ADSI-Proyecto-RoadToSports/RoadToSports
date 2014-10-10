@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: prueba1
-  state: false
-  description: asdasdasdasda
+  name: prueba2
+  state: t
+  description: sssssss
+  created_at: 2014-10-03 20:39:46
+  updated_at: 2014-10-03 20:39:46
 
 two:
-  name: prueba2
-  state: true
-  description: sssssss
+  name: prueba1
+  state: f
+  description: asdasdasdasda
+  created_at: 2014-10-03 20:39:46
+  updated_at: 2014-10-03 20:39:46

@@ -1,5 +1,5 @@
 <%= form_for [@sport,@participante] do |f| %>
-<% if current_user.email != @participante.email %>
+<% if current_user.email != @participante.email and current_user.admin == false %>
   <div class="alerta">
   <div class="alertah">
     <h2 class="panel-title">Acceso No autorizado.</h2>

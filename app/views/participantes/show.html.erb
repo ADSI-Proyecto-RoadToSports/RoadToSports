@@ -6,7 +6,7 @@
     </ul>
   <div id="myTabContent" class="tab-content">
 <p id="notice"><%= notice %></p>
-<% if current_user.email != @participante.email %>
+<% if current_user.email != @participante.email and current_user.admin == false %>
   <div class="alerta">
   <div class="alertah">
     <h2 class="panel-title">Acceso No autorizado.</h2>
@@ -45,7 +45,7 @@
 
 <p>
   <strong>Estado:</strong>
-  <%= @participante.estado %>
+  <%= mostrar_activo(@participante.estado) %>
 </p>
 <% end %>
 <%= link_to 'Editar', edit_sport_participante_path(@sport,@participante) %> |

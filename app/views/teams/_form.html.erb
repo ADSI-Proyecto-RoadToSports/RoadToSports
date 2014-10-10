@@ -1,14 +1,14 @@
 
 <%= form_for [@sport,@team] do |f| %>
-<%# if current_user.email != @team.lider and current_user.admin == false %>
-<%#  <div class="alerta">
+<% if current_user.email != @team.lider and current_user.admin == false %>
+  <div class="alerta">
   <div class="alertah">
     <h2 class="panel-title">Acceso No autorizado.</h2>
   </div>
   <div class="panel-body">
     <h1> </h1>
-    <p>El usuario: <b><%= current_user.nombre %><%#</b> No esta autorizado para acceder a esta página.</p>
- <%# </div>
+    <p>El usuario: <b><%= current_user.nombre %></b> No esta autorizado para acceder a esta página.</p>
+ </div>
 </div>
 
 <% else %>
@@ -47,5 +47,5 @@
   <div class="actions">
     <%= f.submit  "Guardar"%>
   </div>
-<%# end %>
+<% end %>
 <% end %>
