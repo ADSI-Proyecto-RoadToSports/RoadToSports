@@ -1,7 +1,8 @@
 
       <tr id=<%= "pajedrez_#{pajedrez.id}"%>>
         <td ><%= pajedrez.participante1 %></td>
-         <td >
+        <td class="lin"><%= pajedrez.puntos1 %></td>
+        <td >
           <%= if pajedrez.gano1 == true and pajedrez.gano2 == true
                 em()
             else
@@ -9,8 +10,8 @@
             end
             %>
         </td>
-        <td class="lin"><%= pajedrez.puntos1 %></td>
         <td class="lin"><%= pajedrez.participante2 %></td>
+        <td class="lin"><%= pajedrez.puntos2 %></td>
         <td >
           <%= if pajedrez.gano1 == true and pajedrez.gano2 == true
                 em()
@@ -19,7 +20,6 @@
             end
           %>
         </td>
-        <td class="lin"><%= pajedrez.puntos2 %></td>
         <td class="lin"><%= pajedrez.user.nombre %></td>
          <% if can? :read, pajedrez %>
         <td><%= link_to 'Ver', pajedrez, remote: true %></td>

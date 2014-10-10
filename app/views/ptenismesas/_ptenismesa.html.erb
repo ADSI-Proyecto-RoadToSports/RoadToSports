@@ -1,6 +1,7 @@
 <tr id=<%= "ptenismesa_#{ptenismesa.id}"%>>
         <td><%= ptenismesa.participante1 %></td>
-         <td>
+        <td class="lin"><%= ptenismesa.puntos1 %></td>
+        <td>
           <%= 
             if ptenismesa.gano1 == true and ptenismesa.gano2 == true
                 em()
@@ -9,9 +10,9 @@
             end
           %>
         </td>
-        <td class="lin"><%= ptenismesa.puntos1 %></td>
         <td class="lin"><%= ptenismesa.participante2 %></td>
-         <td>
+        <td class="lin"><%= ptenismesa.puntos2 %></td>
+        <td>
           <%= 
             if ptenismesa.gano1 == true and ptenismesa.gano2 == true
                 em()
@@ -20,7 +21,6 @@
             end
            %>
         </td>
-        <td class="lin"><%= ptenismesa.puntos2 %></td>
         <td class="lin"><%= ptenismesa.user.nombre %></td>
          <% if can? :read, ptenismesa %>
         <td><%= link_to 'Ver', ptenismesa, remote: true %></td>

@@ -13,26 +13,31 @@
 <% else %>
   <% if @participante.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@participante.errors.count, "error") %> prohibited this participante from being saved:</h2>
-
-      <ul>
-      <% @participante.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h2 class="text-warning panel-title"><%= pluralize(@participante.errors.count, "Problemas") %> en el formulario de participantes:</h2>
+        </div>
+        <div class="panel-body">
+         <ul>
+            <% @participante.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+      </div>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %><br>
+    <%= f.label :Nombre %><br>
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label :Email %><br>
     <%= f.text_field :email %>
   </div>
     <div class="field">
-    <%= f.label :ficha %><br>
+    <%= f.label :Ficha %><br>
     <%= f.text_field :ficha %>
   </div>
   <div class="field">
@@ -40,17 +45,17 @@
     <%= f.collection_select :document_type_id, DocumentType.all, :id, :description, class: "form-control", prompt: "Seleccione Un tipo de documento" %>
   </div>
   <div class="field">
-    <%= f.label :documento %><br>
+    <%= f.label :Documento %><br>
     <%= f.text_field :documento %>
   </div>
 <% if current_user.admin %>
   <div class="field">
-    <%= f.label :estado %><br>
+    <%= f.label :Estado %><br>
     <%= f.check_box :estado , {:checked=>false}  %>
   </div>
   <% else %>
   <div class="field ocultar">
-    <%= f.label :estado %><br>
+    <%= f.label :Estado %><br>
     <%= f.check_box :estado  %>
   </div>
 <% end %>

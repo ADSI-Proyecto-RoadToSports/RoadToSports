@@ -16,7 +16,7 @@
       </p>
 
       <p>
-        <strong>Document type:</strong>
+        <strong>Tipo De Documento:</strong>
         <%= @integrante.document_type.name rescue nil%>
       </p>
 
@@ -31,17 +31,17 @@
       </p>
 
       <p>
-        <strong>Team:</strong>
+        <strong>Equipo:</strong>
         <%= @integrante.team.nombre %>
       </p>
       <% if @integrante.lesion == true %>
       <p>
-        <strong>Lesionado?:</strong>
+        <strong>Puede Jugar?:</strong>
         <span class='label label-danger'>Esta persona no puede jugar.</span>
       </p>
       <% else %>
       <p>
-        <strong>Lesionado?:</strong>
+        <strong>Puede Jugar?:</strong>
         <span class='label label-success'>Esta persona esta en perfectas condiciones para jugar.</span>
       </p>
       <% end %>

@@ -4,12 +4,12 @@
 </p>
 
 <p>
-  <strong>Equipo1:</strong>
+  <strong>Primer Equipo:</strong>
   <%= @pbaloncesto.equipo1 %>
 </p>
 
  <p>
-    <strong>Puntos:</strong>
+    <strong>Encesta Equipo1:</strong>
     <%= @pbaloncesto.puntos1 %>
     <%= if @pbaloncesto.puntos1 > @pbaloncesto.puntos2
           gano() 
@@ -21,16 +21,16 @@
   </p>
 
 <p>
-  <strong>Puntos obtenidos:</strong>
+  <strong>Puntos Equipo1:</strong>
   <%= @pbaloncesto.puntoso1 %>
 </p>
-
+<hr>
 <p>
-  <strong>Equipo2:</strong>
+  <strong>Segundo Equipo:</strong>
   <%= @pbaloncesto.equipo2 %>
 </p>
  <p>
-    <strong>Puntos:</strong>
+    <strong>Encestas Equipo 2:</strong>
     <%= @pbaloncesto.puntos2 %>
     <%= if @pbaloncesto.puntos2 > @pbaloncesto.puntos1
           gano() 
@@ -41,10 +41,10 @@
         end %>
   </p>
 <p>
-  <strong>Puntos obtenidos:</strong>
+  <strong>Puntos Equipo2:</strong>
   <%= @pbaloncesto.puntoso2 %>
 </p>
-
+<hr>
 <p>
   <strong>Torneo:</strong>
   <%= @pbaloncesto.tournament.name %>

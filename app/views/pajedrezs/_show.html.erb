@@ -2,24 +2,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Participante1:</strong>
+  <strong>Primer Participante:</strong>
   <%= @pajedrez.participante1 %>
-   <%= if @pajedrez.gano1 == true and @pajedrez.gano2 == true
+</p>
+
+<p>
+  <strong>Puntos Participante1:</strong>
+  <%= @pajedrez.puntos1 %>
+  <%= if @pajedrez.gano1 == true and @pajedrez.gano2 == true
                 em()
             else
                 gan(@pajedrez.gano1) 
             end
    %>
 </p>
-
+<hr>
 <p>
-  <strong>Puntos_Torneo:</strong>
-  <%= @pajedrez.puntos1 %>
+  <strong>Segundo Participante:</strong>
+  <%= @pajedrez.participante2 %>
 </p>
 
 <p>
-  <strong>Participante2:</strong>
-  <%= @pajedrez.participante2 %>
+  <strong>Puntos Participante2:</strong>
+  <%= @pajedrez.puntos2 %>
   <%= if @pajedrez.gano1 == true and @pajedrez.gano2 == true
                 em()
             else
@@ -27,19 +32,14 @@
             end
   %>
 </p>
-
-<p>
-  <strong>Puntos_Torneo:</strong>
-  <%= @pajedrez.puntos2 %>
-</p>
-
+<hr>
 <p>
   <strong>Torneo:</strong>
   <%= @pajedrez.tournament.name %>
 </p>
 
 <p>
-  <strong>Fecha:</strong>
+  <strong>Fecha Del Torneo:</strong>
   <%= @pajedrez.fecha %>
 </p>
 

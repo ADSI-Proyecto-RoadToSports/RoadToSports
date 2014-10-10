@@ -13,18 +13,22 @@
 <% else %>
   <% if @integrante.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@integrante.errors.count, "error") %> prohibited this integrante from being saved:</h2>
-
-      <ul>
-      <% @integrante.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h2 class="text-warning panel-title"><%= pluralize(@integrante.errors.count, "Problemas") %> en el formulario de integrantes :</h2>
+          </div>
+        <div class="panel-body">
+          <ul>
+          <% @integrante.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %><br>
+    <%= f.label :Nombre %><br>
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
@@ -32,15 +36,15 @@
     <%= f.collection_select :documenttype_id, DocumentType.all, :id, :name, class: "form-control", prompt: "Seleccione Un tipo de documento" %>
   </div>
   <div class="field">
-    <%= f.label :documento %><br>
+    <%= f.label :Documento %><br>
     <%= f.text_field :documento %>
   </div>
   <div class="field">
-    <%= f.label :ficha %><br>
+    <%= f.label :Ficha %><br>
     <%= f.text_field :ficha %>
   </div>
   <div class="field">
-    <%= f.label :puede_jugar? %><br>
+    <%= f.label :No_puede_jugar? %><br>
     <%= f.check_box :lesion %>
   </div>
   <div class="actions">

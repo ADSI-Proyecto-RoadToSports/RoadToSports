@@ -90,7 +90,7 @@ get 'logout' => 'user_sessions#destroy', :as => :logout
 
   get 'usuario/index'
 
-  match '/home', to: 'static_pages#home',  via: 'get'
+  match '/home', to: 'inicio#index',  via: 'get'
   match '/help',    to: 'static_pages#help',  via: 'get'
   match '/about',   to: 'static_pages#about',  via: 'get'
   match '/contact', to: 'static_pages#contact',  via: 'get'

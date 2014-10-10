@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :Nombre %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
@@ -24,11 +24,11 @@
     <%=f.collection_select :sport_id, Sport.all, :id, :name, class: "form-control", prompt: "Seleccione Un Deporte" %>
   </div>
   <div class="field">
-    <%= f.label :state %><br>
+    <%= f.label :Estado %><br>
     <%= f.check_box :state %>
   </div>
   <div class="field">
-    <%= f.label :date %><br>
+    <%= f.label :Fecha %><br>
     <%= f.date_select :date %>
   </div>
   <div class="field">

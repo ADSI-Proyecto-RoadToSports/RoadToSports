@@ -10,6 +10,7 @@ class SorceryCore < ActiveRecord::Migration
       t.boolean :admin
       t.boolean :usuario
       t.boolean :genero
+      t.boolean :estado
 
       t.timestamps
     end

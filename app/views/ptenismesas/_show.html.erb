@@ -2,8 +2,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Participante1:</strong>
+  <strong>Primer Participante:</strong>
   <%= @ptenismesa.participante1%>
+</p>
+
+<p>
+  <strong>Puntos Participante1:</strong>
+  <%= @ptenismesa.puntos1 %>
   <%= 
   if @ptenismesa.gano1 == true and @ptenismesa.gano2 == true
     em()
@@ -14,13 +19,13 @@
 </p>
 
 <p>
-  <strong>Puntos1:</strong>
-  <%= @ptenismesa.puntos1 %>
+  <strong>Segundo Participante:</strong>
+  <%= @ptenismesa.participante2 %>
 </p>
 
 <p>
-  <strong>Participante2:</strong>
-  <%= @ptenismesa.participante2 %>
+  <strong>Puntos Participante2:</strong>
+  <%= @ptenismesa.puntos2 %>
   <%=
   if @ptenismesa.gano1 == true and @ptenismesa.gano2 == true
     em()
@@ -28,11 +33,6 @@
     gan(@ptenismesa.gano2) 
   end
   %>
-</p>
-
-<p>
-  <strong>Puntos2:</strong>
-  <%= @ptenismesa.puntos2 %>
 </p>
 
 <p>

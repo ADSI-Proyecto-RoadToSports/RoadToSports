@@ -4,12 +4,12 @@
   </p>
 
   <p>
-    <strong>Equipo1:</strong>
+    <strong>Primer Equipo:</strong>
     <%= @pfutbol.equipo1 %>
   </p>
 
   <p>
-    <strong>Puntos:</strong>
+    <strong>Goles Equipo1:</strong>
     <%= @pfutbol.puntos1 %>
     <%= if @pfutbol.puntos1 > @pfutbol.puntos2
           gano() 
@@ -21,17 +21,17 @@
   </p>
 
   <p>
-    <strong>Puntos Torneo:</strong>
+    <strong>Puntos Equipo1:</strong>
     <%= @pfutbol.puntoso1 %>
   </p>
-
+<hr>
   <p>
-    <strong>Equipo2:</strong>
+    <strong>Segundo Equipo:</strong>
     <%= @pfutbol.equipo2 %>
   </p>
 
   <p>
-    <strong>Puntos:</strong>
+    <strong>Goles Equipo2:</strong>
     <%= @pfutbol.puntos2 %>
     <%= if @pfutbol.puntos2 > @pfutbol.puntos1
           gano() 
@@ -42,9 +42,10 @@
         end %>
   </p>
   <p>
-    <strong>Puntos Torneo:</strong>
+    <strong>Puntos Equipo2:</strong>
     <%= @pfutbol.puntoso2 %>
   </p>
+  <hr>
   <p>
     <strong>Fecha:</strong>
     <%= @pfutbol.fecha %>

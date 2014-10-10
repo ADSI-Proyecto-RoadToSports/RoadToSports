@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :equipo1 %><br>
+    <%= f.label :Primer_Equipo %><br>
     <%= f.text_field :equipo1 %>
   </div>
   <div class="field">
-    <label>Puntos</label><br>
+    <label>Encestas Equipo1</label><br>
     <%= f.text_field :puntos1 %>
   </div>
   <div class="field">
-    <label>Puntos obtenidos</label><br>
+    <label>Puntos Equipo1</label><br>
     <%= f.text_field :puntoso1 %>
   </div>
   <div class="field">
-    <%= f.label :equipo2 %><br>
+    <%= f.label :Segundo_Equipo %><br>
     <%= f.text_field :equipo2 %>
   </div>
   <div class="field">
-    <label>Puntos</label><br>
+    <label>Encestas Equipo2</label><br>
     <%= f.text_field :puntos2 %>
   </div>
   <div class="field">
-    <label>Puntos Obtenidos</label><br>
+    <label>Puntos Equipo2</label><br>
     <%= f.text_field :puntoso2 %>
   </div>
   <div class="field">
@@ -40,11 +40,11 @@
     <%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: "form-control", prompt: "Seleccione Un Torneo" %>
   </div>
   <div class="field">
-    <%= f.label :fecha %><br>
+    <%= f.label :Fecha %><br>
     <%= f.datetime_select :fecha %>
   </div>
   <div class="field">
-    <%= f.label :estado %><br>
+    <%= f.label :Estado %><br>
     <%= f.check_box :estado %>
   </div>
   <div class="field">

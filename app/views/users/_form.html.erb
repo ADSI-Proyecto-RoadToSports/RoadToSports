@@ -28,46 +28,58 @@
     <%= f.label :documento %><br>
     <%= f.text_field :documento %>
   </div>
-  <div class="field">
-     <%= f.label :password %><br />
-     <%= f.password_field :password %>
-  </div>
-  <div class="field">
-     <%= f.label :password_confirmation %><br />
-     <%= f.password_field :password_confirmation %>
-  </div>
 <%#ocu(current_user.admin)%> 
-  <% if can? :read, @user %>
-  <p>Rol:</p>
-  <div class="field">
-    <%= f.label :Admin %><br>
-    <%= f.check_box :admin%>
-  </div>
-  <div class="field">
-    <%= f.label :Usuario %><br>
-    <%= f.check_box :usuario%>
-  </div>
-  <% else %>
-
-  <div class="field ocultar">
-    <%= f.label :Usuario %><br>
-    <%= f.check_box :usuario, {:checked=>true} %>
-  </div>
-  <% end %>
-<%#</div>%>
-  <div class="field">
+    <div class="field">
        <%= f.label :genero %><br />
        Masculino: <%= radio_button :user, :genero, true %>
        Femenino: <%= radio_button :user, :genero, false %>
-   </div>
+    </div>
+    <div class="field">
+       <%= f.label :password %><br />
+       <%= f.password_field :password %>
+    </div>
+    <div class="field">
+       <%= f.label :password_confirmation %><br />
+       <%= f.password_field :password_confirmation %>
+    </div>
+
+  <% if can? :read, @user %>
+    <p>Rol:</p>
+    <div class="field">
+      <%= f.label :Admin %><br>
+      <%= f.check_box :admin%>
+    </div>
+    <div class="field">
+      <%= f.label :Usuario %><br>
+      <%= f.check_box :usuario%>
+    </div>
+
+    <div class="field">
+      <%= f.label :Estado %><br />
+         Activo: <%= radio_button :user, :estado, true %>
+         Inactivo: <%= radio_button :user, :estado, false %>
+    </div>
+  <% else %>
+    <div class="field ocultar">
+      <%= f.label :Usuario %><br>
+      <%= f.check_box :usuario, {:checked=>true} %>
+    </div>
+    <div class="field ocultar">
+      <%= f.label :Estado %><br />
+         Activo: <%= radio_button :user, :estado, true, {:checked=>true} %>
+         Inactivo: <%= radio_button :user, :estado, false %>
+    </div>
+  <% end %>
+<%#</div>%>
+   
   <br>
     <div class="actions">
       <%= f.submit 'Crear', class: "btn btn-info" %>
     </div>
 
 <% end %>
-<% if @user.email == 'sportsena.cfdcm@gmail.com' || @user.email == nil %>
+<%#<% if @user.email == 'sportsena.cfdcm@gmail.com' || @user.email == nil %>
 
-<% else %>
-  <%= button_to 'Eliminar esta cuenta de Sport SENA', @user, method: :delete, data: { confirm: 'Estas seguro?' }, class: "btn btn-info-danger siguiente" %>
-<% end %>
+<%#<% else %>
+<%#  <%= button_to 'Eliminar esta cuenta de Sport SENA', @user, method: :delete, data: { confirm: 'Estas seguro?' }, class: "btn btn-info-danger siguiente" %>
+<%#<% end %>

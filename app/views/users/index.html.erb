@@ -20,10 +20,10 @@
     <tr>
       <th>Nombre</th>
       <th>Email</th>
-      <th>Tipo de documento</th>
-      <th>Documento</th>
+      <th>Estado</th>
+      <th>Rol</th>
       <th>Genero</th>
-      <th colspan="3">Opciones</th>
+      <th colspan="2">Opciones</th>
     </tr>
   </thead>
 
@@ -32,16 +32,21 @@
       <tr>
         <td><%= user.nombre %></td>
         <td><%= user.email %></td>
-        <td><%= user.document_type.description %></td>
-        <td><%= user.documento %></td>
+        <td><%= bloq(user.estado) %></td>
+        <td><%= rol_usuarioA(user.admin) %>
+            <%= rol_usuarioU(user.usuario) %>
+        </td>
         <td><%= gen(user.genero) %></td>
         <td><%= link_to 'Mostrar', user %></td>
         <% if user.email == 'sportsena.cfdcm@gmail.com' %>
         <td><p class="text-danger">--------</p></td>
-        <td><p class="text-danger">--------</p></td>
         <% else %>
-        <td><%= link_to 'Editar', edit_user_path(user) %></td>
-        <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+          <% if user.email == 'sportsena.cfdcm@gmail.com' || current_user.email == user.email || user.usuario == true %>
+            <td><%= link_to 'Editar', edit_user_path(user) %></td>
+            <% else %>
+            <td><p class="text-danger">--------</p></td>
+          <% end %>
+            <%#<td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Estas seguro?' } %><%#</td>%>
         <% end %>
       </tr>
     <% end %>

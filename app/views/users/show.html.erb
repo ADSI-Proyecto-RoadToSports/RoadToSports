@@ -33,6 +33,10 @@
   <strong>Genero:</strong>
   <%= gen(@user.genero) %>
 </p>
+<p>
+  <strong>Estado:</strong>
+  <%= bloq(@user.estado) %>
+</p>
 <% if @user.email == 'sportsena.cfdcm@gmail.com' %>
 <% else %>
 <%= link_to 'Editar', edit_user_path(@user) %>

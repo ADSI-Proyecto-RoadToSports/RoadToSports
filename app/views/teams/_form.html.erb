@@ -33,17 +33,17 @@
     <label>Email del lider del grupo</label><br>
     <%= f.text_field :lider %>
   </div>
-<% if current_user.admin %>
-  <div class="field">
-    <%= f.label :activo %><br>
-    <%= f.check_box :active , {:checked=>false}  %>
-  </div>
+  <% if current_user.admin %>
+      <div class="field">
+        <%= f.label :activo %><br>
+        <%= f.check_box :active , {:checked=>false}  %>
+      </div>
   <% else %>
-  <div class="field ocultar">
-    <%= f.label :activo %><br>
-    <%= f.check_box :active  %>
-  </div>
-<% end %>
+      <div class="field ocultar">
+        <%= f.label :activo %><br>
+        <%= f.check_box :active  %>
+      </div>
+  <% end %>
   <div class="actions">
     <%= f.submit  "Guardar"%>
   </div>

@@ -2,12 +2,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Equipo1:</strong>
+  <strong>Primer Equipo:</strong>
   <%= @pmicrofutbol.equipo1 %>
 </p>
 
 <p>
-  <strong>Puntos:</strong>
+  <strong>Goles Equipo1:</strong>
   <%= @pmicrofutbol.puntos1 %>
   <%= if @pmicrofutbol.puntos1 > @pmicrofutbol.puntos2
                 gano() 
@@ -19,17 +19,17 @@
 </p>
 
 <p>
-  <strong>Puntos_Torneo:</strong>
+  <strong>Puntos Equipo1:</strong>
   <%= @pmicrofutbol.puntoso1 %>
 </p>
-
+<hr>
 <p>
-  <strong>Equipo2:</strong>
+  <strong>Segundo Equipo:</strong>
   <%= @pmicrofutbol.equipo2 %>
 </p>
 
 <p>
-  <strong>Puntos:</strong>
+  <strong>Goles Equipo2:</strong>
   <%= @pmicrofutbol.puntos2 %>
   <%= if @pmicrofutbol.puntos1 > @pmicrofutbol.puntos2
                 gano() 
@@ -41,10 +41,10 @@
 </p>
 
 <p>
-  <strong>Puntos_Torneo:</strong>
+  <strong>Puntos Equipo2:</strong>
   <%= @pmicrofutbol.puntoso2 %>
 </p>
-
+<hr>
 <p>
   <strong>Tournament:</strong>
   <%= @pmicrofutbol.tournament.name %>
